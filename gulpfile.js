@@ -6,6 +6,7 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     rename = require('gulp-rename'),
     minify = require('gulp-minify-css'),
+    sass = require('gulp-sass'),
     paths = {
       js: {
         vendor: [
@@ -17,12 +18,27 @@ var gulp = require('gulp'),
         vendor: [
           'bower_components/jqvmap/jqvmap/jqvmap.css'
         ],
-        site: []
+        site: {
+          all: 'assets/scss/**/*.scss',
+          main: 'assets/scss/style.scss'
+        }
       }
     }
 
 gulp.task('js', function () {
   gulp.src(paths.js.site);
+});
+
+gulp.task('sass', function () {
+  gulp.src(paths.css.site.main)
+  .pipe(plumber({
+    errorHandler: notify.onError({
+      title: 'Gulp',
+      message: 'Failed to compile SASS'
+    })
+  }))
+  .pipe(sass())
+  .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('js:vendor', function () {
@@ -49,4 +65,7 @@ gulp.task('css:vendor', function () {
   .pipe(gulp.dest('dist'));
 });
 
-gulp.task('build', ['js', 'js:vendor', 'css:vendor']);
+gulp.task('build', ['js', 'sass', 'js:vendor', 'css:vendor']);
+gulp.task('watch', ['build'], function () {
+  gulp.watch(paths.css.site.all, ['sass']);
+});
