@@ -1,7 +1,7 @@
 <?php
-namespace VoteForBernie\Wordpress\Services;
+namespace VoteForBernie\Wordpress\Helpers;
 
-class StateUtilsService {
+class VoteInfoHelper {
   const DEFAULT_STATUS_CLASS = 'other';
 
   public $states;
@@ -13,16 +13,16 @@ class StateUtilsService {
     'caucuses' => 'caucus'
   );
   protected static $explanations = array(
-    'open' => 'Explanation Open',
-    'closed' => 'Explanation Closed',
-    'semi-closed' => 'Explanation SemiClosed',
-    'semi-open' => 'Explanation SemiOpen'
+    'open' => 'You can vote for Bernie Sanders regardless of registered party.',
+    'closed' => 'If you are <strong>not</strong> registered as a democrat, you <strong>cannot</strong> vote for Bernie Sanders.',
+    'semi-closed' => 'If you are <strong>not</strong> registered as a democrat or undeclared, you <strong>cannot</strong> vote for Bernie Sanders.',
+    'semi-open' => 'If you are registered as a republican, you <strong>cannot</strong> vote for Bernie Sanders.'
   );
   protected static $actions = array(
-    'open' => 'Action Open',
-    'closed' => 'Action Closed',
-    'semi-closed' => 'Action SemiClosed',
-    'semi-open' => 'Action SemiOpen'
+    'open' => 'Just register to vote!',
+    'closed' => 'Register as a democrat',
+    'semi-closed' => 'Register as a democrat or undeclared',
+    'semi-open' => 'Register as a democrat or undeclared'
   );
 
   private function loadStateField($postID) {
@@ -50,13 +50,17 @@ class StateUtilsService {
   }
 
   public function getExplanationText($state) {
-    if ($state->hasSpecialExplanation()) {
-      return $state->special_explanation;
-    } else if ($this->hasStatusExplanation($state)) {
-      return self::$explanations[$state->status];
-    } else {
-      return '';
+    $explanationText = '';
+    if ($state->hasExtraExplanation()) {
+      $explanationText = $state->extra_explanation . ' ';
     }
+
+    if ($state->hasSpecialExplanation()) {
+      $explanationText .= $state->special_explanation;
+    } else if ($this->hasStatusExplanation($state)) {
+      $explanationText .= self::$explanations[$state->status];
+    }
+    return $explanationText;
   }
 
   public function getActionText($state) {
@@ -73,13 +77,5 @@ class StateUtilsService {
 
   public function hasActionText($state) {
     return isset(self::$actions[$state->status]);
-  }
-
-  public function getTypeText($state) {
-    return $state->type;
-  }
-
-  public function getDeadlineText($state) {
-
   }
 }

@@ -20,27 +20,9 @@ class StateModel extends PostModel {
     'registration_not_required',
     'discussion_link'
   );
-  private $stateUtils;
 
-  public function __construct ($post, $stateUtils) {
+  public function __construct ($post) {
     parent::__construct($post, self::$customFields);
-    $this->stateUtils = $stateUtils;
-  }
-
-  public function getStatusClass() {
-    return $this->stateUtils->getStatusClass($this);
-  }
-
-  public function getExplanationText() {
-    $explanationText = $this->stateUtils->getExplanationText($this);
-    if ($this->hasExtraExplanation()) {
-      $explanationText = $this->exrtra_explanation . ' ' . $explanationText;
-    }
-    return $explanationText;
-  }
-
-  public function getActionText() {
-    return $this->stateUtils->getActionText($this);
   }
 
   public function getTypeText() {

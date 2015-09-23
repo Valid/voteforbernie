@@ -6,7 +6,9 @@
 */
 
 use VoteForBernie\Wordpress\Services\StateService;
+use VoteForBernie\Wordpress\Helpers\VoteInfoHelper;
 $stateService = new StateService();
+$helper = new VoteInfoHelper();
 $states = $stateService->getStates();
 ?>
 
@@ -64,7 +66,7 @@ $states = $stateService->getStates();
 									<?php foreach ($states as $state): ?>
 
 									<div id="<?php echo $state->state; ?>"
-												class="state <?php echo $state->state; ?> <?php echo $state->getStatusClass(); ?>">
+												class="state <?php echo $state->state; ?> <?php echo $helper->getStatusClass($state); ?>">
 										<h3><?php echo $state->getTitle(); ?></h3>
 										<div class="state-info cf">
 											<div class="m-all t-2of3 d-2of3">
@@ -74,12 +76,12 @@ $states = $stateService->getStates();
 													<strong class="status"><?php echo $state->status; ?></strong>
 													<?php echo $state->type; ?>.
 												</p>
-												<p class="explain"><?php echo $state->getExplanationText(); ?></p>
+												<p class="explain"><?php echo $helper->getExplanationText($state); ?></p>
 												<p class="advice">
 													<?php echo $state->denonym; ?> for Bernie:
 													<a href="<?php echo $state->vote_link ?>"
 														data-track="Vote Link, <?php echo $state->state; ?>"
-														target="_blank"><?php echo $state->getActionText(); ?></a></p>
+														target="_blank"><?php echo $helper->getActionText($state); ?></a></p>
 												<?php if ($state->under_18): ?>
 													<p class="explain"><strong>Only 17?</strong> If you will be 18 by November 8, 2016, you can vote in the primaries!</p>
 												<?php endif; ?>
