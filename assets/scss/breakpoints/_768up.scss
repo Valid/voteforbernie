@@ -63,8 +63,6 @@ NAVIGATION STYLES
 			has the possibility of being a mobile device.
 			*/
 			&:hover, &:focus {
-				color: $white;
-				text-decoration: underline;
 			}
 		}
 
@@ -301,6 +299,12 @@ mobile. Make sure to double check these!
 		margin: 0.375em 0;
 	}
 
+	.legend {
+		li {
+			margin: 0 10px;
+		}
+	}
+
 	.state {
 		.advice {
 			text-align: left;
@@ -312,7 +316,11 @@ mobile. Make sure to double check these!
 	}
 }
 
+.did-you-know {
+  font-size: 13px;
+}
+
 // Map
 #vmap {
-	height: 500px;
+	height: 480px;
 }

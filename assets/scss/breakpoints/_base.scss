@@ -155,26 +155,86 @@ HEADER STYLES
 *********************/
 
 .header {
-	background-color: #323944;
+	// background-color: #323944;
 	// border-bottom-left-radius: 10px;
 	// border-bottom-right-radius: 10px;
 
 	.fb-like {
+		display: inline-block;
+		margin-right: 17px;
+		// line-height: 12px;
+	}
+}
+
+.branding {
+	text-align: right;
+	ul {
+		display: inline-block;
 		text-align: center;
-		width: 100%;
-		position: absolute;
+		margin: 0;
+		@media (min-width: 561px) {
+			text-align: right;
+		}
+		@media (min-width: 737px) {
+			margin: 25px 0 0;
+		}
+		li {
+			display: inline-block;
+			padding: 10px 20px 0;
+			a {
+				color: #CA0020;
+				text-decoration: none;
+				font-family: $headerFont;
+				line-height: 1;
+				font-size: 24px;
+				text-transform: uppercase;
+			}
+		}
+	}
+}
+
+
+.feature {
+	background-color: #252B35;
+	padding: 10px;
+	text-align: center;
+	p {
+		margin: 0;
+	}
+	a {
+		text-decoration: none;
+		color: #fff;
+	}
+	strong {
+		color: #D42C2C;
+		text-decoration: underline;
+	}
+	em {
+		font-style: normal;
+		color: #4576BB;
 	}
 }
 
 	#logo {
-		margin: 0.25em 0;
+		margin: 15px auto;
+		@media (min-width: 561px) {
+			display: inline-block;
+			margin: 15px 0;
+			float: left;
+		}
 		a {
-			display: block;
-			margin: 0 auto;
-			text-indent: -999em;
-			background: url(images/vote-for-bernie-sm.png) no-repeat 0 0;
-			height: 61px;
-			width: 300px;
+			display: inline-block;
+			// text-indent: -999em;
+			// background: url(images/vote-for-bernie-sm.png) no-repeat 0 0;
+			color: #0571B0;
+			font-family: $accentFont;
+			&:after {
+				content: '\'16';
+				font-size: 16px;
+				font-family: $headerFont;
+				color: #CA0020;
+				position: absolute;
+			}
 		}
 	}
 
@@ -199,10 +259,7 @@ and more scalable.
 	li {
 
 		a {
-			display: block;
-			color: $white;
 			text-decoration: none;
-			padding: 0.75em;
 
 			/*
 			remember this is for mobile ONLY, so there's no need
@@ -211,7 +268,7 @@ and more scalable.
 			keep this file as small as possible!
 			*/
 			&:hover, &:focus {
-
+				text-decoration: none;
 			}
 		}
 
@@ -268,7 +325,7 @@ POSTS & CONTENT STYLES
 *********************/
 
 #content {
-	margin-top: 1.5em;
+
 }
 
 		.hentry {
@@ -350,8 +407,10 @@ POSTS & CONTENT STYLES
 			}
 
 			ol {
-
-				li {}
+				list-style-type: decimal;
+				li {
+					padding: 5px 0;
+				}
 
 			}
 
@@ -504,6 +563,17 @@ POSTS & CONTENT STYLES
 		margin: 0;
 	}
 
+
+	.content-wrapper {
+    background-color: #fff;
+    color: #7E8A9B;
+    font-size: 13px;
+    font-style: italic;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+	}
+
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
@@ -581,6 +651,17 @@ PAGE NAVI STYLES
 /******************************************************************
 COMMENT STYLES
 ******************************************************************/
+
+.comments, .comment-respond {
+  color: #1c2022;
+  border: 1px solid #e1e8ed;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 14px;
+  padding: 20px 120px 20px 20px;
+  font-family: $sans-serif;
+  margin-top: 60px;
+}
 
 /* h3 comment title */
 #comments-title {
@@ -942,12 +1023,55 @@ FOOTER STYLES
 
 // Vote Info Page
 
+.bernie-book {
+	font-size: 11px;
+	vertical-align: top;
+	margin-top: 74px;
+
+	// I know, it's supposed to be mobile first. I'm a bad person.
+	@media (min-width: 768px) and (max-width: 1029px) {
+		margin-top: 23px;
+	}
+	@media (max-width: 769px) {
+		font-size: 14px;
+		margin-top: 0;
+	}
+	p {
+		margin: 0;
+	}
+	.book-img {
+		float: left;
+		margin-right: 5px;
+		border: 3px solid rgba(50, 57, 68, 0.2);
+		@media (min-width: 768px) and (max-width: 1029px) {
+			width: 80px;
+		}
+		@media (max-width: 769px) {
+
+		}
+	}
+	.disclaimer {
+		color: #999;
+		margin-top: 55px;
+		@media (min-width: 768px) and (max-width: 1029px) {
+			margin-top: 8px;
+			font-size: 8px;
+		}
+		@media (max-width: 769px) {
+			margin-top: 54px;
+			font-size: 11px;
+		}
+	}
+}
 .notice {
   color: #D42C2C;
   font-family: $sans-serif;
   padding: 0 10px;
-  font-size: 13px;
   border-left: 3px solid rgba(50, 57, 68, 0.2);
+  font-size: 13px;
+	@media (min-width: 768px) and (max-width: 1029px) {
+		font-size: 11px;
+	}
   em {
 	  display: block;
 	  font-style: initial;
@@ -978,32 +1102,46 @@ FOOTER STYLES
 	}
 
 	.legend {
+		position: absolute;
+		width: 100%;
+		bottom: 0;
+		margin: 0;
 		li {
-			padding-left: 20px;
+			padding-left: 25px;
 			position: relative;
+			font-size: 22px;
+			font-family: $headerFont;
+			display: inline-block;
+			opacity: 0;
 			&:after {
 				content: '';
 				position: absolute;
 				left: 0;
 				top: 4px;
-				height: 15px;
-				width: 15px;
-				background-color: #3759c7;
+				height: 20px;
+				width: 20px;
+				border-radius: 50%;
+				background-color: #0571b0;
 			}
 		}
 		.closed {
 			&:after {
-				background-color: #C76262;
+				background-color: #ca0020;
 			}
 		}
 		.other {
 			&:after {
-				background-color: #67905E;
+				background-color: #f4a582;
 			}
 		}
-		.caucus {
+		.open-caucus {
 			&:after {
-				background-color: #7d42c7;
+				background-color: #92c5de;
+			}
+		}
+		.closed-caucus {
+			&:after {
+				background-color: #B94F4F;
 			}
 		}
 	}
@@ -1072,19 +1210,27 @@ FOOTER STYLES
 				border-color: #67905E;
 			}
 		}
-		&.caucus {
+		&.open-caucus {
 			h3, strong, .advice a {
-				color: #7d42c7;
+				color: #92c5de;
 			}
 			.state-info {
-				border-color: #7d42c7;
+				border-color: #92c5de;
+			}
+		}
+		&.closed-caucus {
+			h3, strong, .advice a {
+				color: #B94F4F;
+			}
+			.state-info {
+				border-color: #B94F4F;
 			}
 		}
 
 		.resources {
 			background-color: rgba(255, 255, 255, 0.5);
 			border: 1px solid rgba(0, 0, 0, 0.3);
-			padding: 5px 10px;
+			padding: 5px;
 			font-size: 0.8em;
 			h4 {
 				margin: 0;
@@ -1095,6 +1241,11 @@ FOOTER STYLES
 			ul {
 				margin: 0;
 			}
+		}
+
+		.callout {
+			background-color: #fff;
+			padding: 10px 20px;
 		}
 	}
 
@@ -1117,6 +1268,12 @@ FOOTER STYLES
 #vmap {
 	width: 100%;
 	height: 200px;
+	@media (min-width: 1030px) {
+		// margin-top: -75px;
+	}
+	.jqvmap-region {
+		opacity: 0;
+	}
 }
 
 // Tweets
@@ -1134,6 +1291,7 @@ FOOTER STYLES
 	font-family: $sans-serif;
 	max-width: 500px;
 	text-align: left;
+	margin: 10px 10px 10px 0;
 
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
@@ -1155,6 +1313,9 @@ FOOTER STYLES
   	font-weight: 700;
   	background: #fff url(data:image/png;charset=utf-8;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAxUlEQVQ4y2NgGDQgdM07Xjxy4UC8AYh3AHEYELMBsTOyAnUgPgfEQlg0JwHxfzT8DogLgVgApsgKKvEQiL3QDLiExYB/QDwZWREnED9HUnASiEuB2AWIX2Mx4D26M3WAeCUWhbjwTXQDBIH4CwkGLMYW0gEgpxFpQDA2A0SA+BgRmm8AMROu+E4H4m94NP8GxRihBGWLI+R/AXE0Lk0GQNwFxPuA+C8WzZdBBhOyWReIG4B4ExAfB+KdQDwViH2BmJlh0AIAtWxZmS9nAq8AAAAASUVORK5CYII=) no-repeat 8px 7px;
 	}
+  &:visited {
+  	color: #1c2022;
+  }
 	&:hover {
 		background-color: rgba(255, 255, 255, 1);
 		border-color: #ccd6dd;
@@ -1181,38 +1342,127 @@ FOOTER STYLES
 			text-transform: uppercase;
 		}
 	}
-	h2 {
-
-	}
-}
-
-.thunder-container {
-	@media (max-width: 767px) {
-		text-align: center;
-	}
-	position: relative;
-	&:after {
-		content: '';
-		position: absolute;
-		right: -37px;
-		top: 322px;
-		height: 89px;
-		width: 53px;
-		pointer-events: none;
-
-		background: url(images/arrow1.png) right bottom no-repeat;
-		@media (max-width: 767px) {
-			content: initial;
+	.section {
+		h2 {
+			// font-family: $accentFont;
+			font-size: 40px;
+			margin: 0;
+			position: relative;
+			display: inline-block;
+			z-index: 2;
+			span {
+				position: relative;
+				z-index: 2;
+			}
+		}
+		p {
+			margin: 10px 0;
+		}
+		.sample {
+			background-color: #fff;
+			color: #7E8A9B;
+			font-size: 13px;
+			font-style: italic;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			position: relative;
+			&:after {
+				content: 'example';
+				right: 0;
+				top: 0;
+				position: absolute;
+				background-color: #ccc;
+				border-bottom-left-radius: 4px;
+				border-top-right-radius: 4px;
+				color: #fff;
+				font-style: normal;
+				padding: 5px 10px;
+			}
 		}
 	}
+
+	.spread-word {
+		#crestashareiconincontent {
+			margin: 0;
+			vertical-align: top;
+			display: inline-block;
+		}
+	}
+
+	.stay-involved {
+		clear: both;
+		h2 {
+			text-align: center;
+		}
+	}
+
+	// .share-page {
+	// 	text-align: center;
+	// 	margin-bottom: 30px;
+	// }
+
 }
 
+// .thunder-container {
+// 	@media (max-width: 767px) {
+// 		text-align: center;
+// 	}
+// 	position: relative;
+// 	&:after {
+// 		content: '';
+// 		position: absolute;
+// 		right: -37px;
+// 		top: 322px;
+// 		height: 89px;
+// 		width: 53px;
+// 		pointer-events: none;
+
+// 		background: url(images/arrow1.png) right bottom no-repeat;
+// 		@media (max-width: 767px) {
+// 			content: initial;
+// 		}
+// 	}
+// }
+
 // Flip Clock
+// .coming-soon {
+// 	position: relative;
+// 	.section {
+// 		opacity: 0.35;
+// 		pointer-events: none;
+//	}
+// 	&:after {
+// 		content: '';
+// 		background: url(images/fade-to-paper.png) 0 100% repeat-x;
+// 		top: 0;
+// 		left: 0;
+// 		right: 0;
+// 		bottom: 0;
+// 		position: absolute;
+// 	}
+// }
+.clock-wrapper {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 60px;
+	z-index: 2;
+	p {
+		text-align: center;
+		color: #D42C2C;
+		margin: 0;
+	}
+	h4 {
+		text-align: center;
+		margin: 0;
+		font-size: 25px;
+	}
+}
 .flip-clock-wrapper {
 	margin: 0 auto;
 }
 .timer-container {
-	padding-top: 30px;
 	text-align: center;
 	@media (max-width: 767px) {
 		padding-top: 0;
@@ -1224,16 +1474,18 @@ FOOTER STYLES
 	.twitter-share {
 		max-width: 600px;
 		margin: 0 auto;
-		&:after {
-			content: '';
-			position: absolute;
-			right: -37px;
-			top: 322px;
-			height: 89px;
-			width: 53px;
-			pointer-events: none;
+		em {
+			&:after {
+				content: '';
+				position: absolute;
+				left: -35px;
+				bottom: -55px;
+				height: 63px;
+				width: 83px;
+				pointer-events: none;
 
-			background: url(images/arrow1.png) right bottom no-repeat;
+				background: url(images/arrow2.png) 0 0 no-repeat;
+			}
 		}
 	}
 	p {
@@ -1241,7 +1493,7 @@ FOOTER STYLES
 	}
 	@media (min-width: 1030px) {
 		.yks-mailchimpFormContainer {
-			margin-bottom: 80px;
+			// margin-bottom: 20px;
 		}
 	}
 }
@@ -1344,11 +1596,33 @@ FOOTER STYLES
 	}
 }
 
+.first-steps {
+	text-align: left;
+	padding: 0;
+	list-style-type: decimal;
+	max-width: 600px;
+	margin: 0 auto;
+  list-style-position: inside;
+}
+
+.coming-event {
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.6);
+	max-width: 650px;
+	margin: 10px auto;
+	border-radius: 4px;
+	h2 {
+		font-size: 50px;
+		margin: 0;
+	}
+}
+
+
 // Cresta Share Styles
 
 .cresta-share-icon {
 	.cresta-the-total-count {
-		font-size: 16px;
+		font-size: 12px;
 		width: 40px;
 	}
 }
@@ -1394,8 +1668,30 @@ FOOTER STYLES
   }
 	.yks-mailchimpFormDivRow {
 		display: inline-block;
-		width: 49%;
+		width: 40%;
 		margin: 0;
+		&:last-child {
+			.yks_mc_interest_group_text, .yks_mc_interest_group_holder {
+				display: none;
+			}
+		}
+	}
+	.yks-mc-form-row-zip-code {
+		width: 26%;
+	}
+	.yks-mc-form-row-state {
+		float: right;
+		width: 33%;
+	}
+	@media (max-width: 472px) {
+		.yks-mc-form-row-email-address {
+			width: auto;
+			display: block;
+		}
+		.yks-mc-form-row-zip-code, .yks-mc-form-row-state {
+			width: 48%;
+			margin-top: -15px;
+		}
 	}
 	.yks-mailchimpFormDivRowLabel {
 		margin: 5px 0 0;
@@ -1411,8 +1707,8 @@ FOOTER STYLES
 		color: #D42C2C;
 		font-size: 12px;
 	}
-	.yks-mc-form-row-state {
-		float: right;
+	.yks-mc-input-state {
+		background-position: 90% center;
 	}
 	.yks-mailchimpFormDivSubmit {
 		position: absolute;
@@ -1446,4 +1742,88 @@ FOOTER STYLES
 		margin: 5px 0;
 		text-align: center;
 	}
+}
+
+// Newsletter sidebar signup
+@media (min-width: 766px) {
+	.sidebar {
+		.yks-mailchimpFormContainer {
+			.yks-mc-form-row-email-address {
+				width: auto;
+				display: block;
+			}
+			.yks-mc-form-row-zip-code, .yks-mc-form-row-state {
+				width: 48%;
+				margin-top: -15px;
+			}
+		}
+	}
+}
+
+/* Bloom Opt-In Styles
+.et_bloom .et_bloom_form_content #mc_embed_signup .mc-field-group select {
+	display: block;
+	background-color: rgba(0,0,0,0.15);
+	color: #fff;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: none;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 14px;
+  padding: 0 14px !important;
+  font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif;
+}
+
+.et_bloom .et_bloom_flyin_right .et_bloom_form_container {
+	max-width: 400px;
+}
+
+.et_bloom {
+	.mc-state-field {
+		float: left;
+		width: 50% !important;
+	}
+	.mc-zip-field {
+		float: right;
+		width: 40% !important;
+	}
+}
+*/
+
+/* Contact Forms */
+.wpcf7 {
+	input {
+		max-width: none;
+	}
+	.wpcf7-submit {
+		width: 100%;
+		padding: 5px 0;
+		border: 0;
+		background-color: #4099FF;
+		color: #fff;
+		font-family: $headerFont;
+		text-transform: uppercase;
+		font-size: 30px;
+		transition: background-color 1s ease;
+		&:hover {
+			background-color: #4C8CD5;
+		}
+	}
+	p {
+		margin: 0;
+	}
+	.ajax-loader {
+		position: absolute;
+	}
+}
+
+
+.newsletter-unit {
+	width: 728px;
+	height: 90px;
+	background-color: tomato;
+	margin: 10px auto;
 }

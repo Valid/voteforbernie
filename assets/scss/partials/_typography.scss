@@ -49,15 +49,15 @@ I've edited it a bit, but it's a nice starting point.
 
 
 // font stacks
-$sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+$sans-serif:        "Open Sans", Helvetica, Arial, sans-serif;
 $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
-$headerFont:        "Yanone Kaffeesatz", $serif;
-$accentFont:        "Covered By Your Grace", $headerFont;
+$headerFont:        "Neucha", $serif;
+$accentFont:        "Love Ya Like A Sister", $headerFont;
 /*
  i imported this one in the functions file so bones would look sweet.
  don't forget to remove it for your site.
 */
-$bodyFont:              'Bitter', $sans-serif;
+$bodyFont:          "Open Sans", $sans-serif;
 
 /*
 some nice typographical defaults
