@@ -5,7 +5,9 @@ $vfb_includes = array(
   'lib/init.php',
   'lib/assets.php',
   'lib/models/post-model.php',
-  'lib/models/state-model.php'
+  'lib/models/state-model.php',
+  'lib/services/state-service.php',
+  'lib/helpers/vote-info-helper.php'
 );
 
 foreach ($vfb_includes as $file) {

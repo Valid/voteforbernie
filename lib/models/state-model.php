@@ -2,6 +2,7 @@
 namespace VoteForBernie\Wordpress\Models;
 
 class StateModel extends PostModel {
+  const POST_TYPE = 'state';
   public static $customFields = array(
     'state',
     'denonym',
@@ -22,5 +23,33 @@ class StateModel extends PostModel {
 
   public function __construct ($post) {
     parent::__construct($post, self::$customFields);
+  }
+
+  public function getTypeText() {
+    return $this->type === 'cacuses' ? 'Caucus' : 'Primary';
+  }
+
+  public function getPrimaryDate() {
+    if (!empty($this->primary_date)) {
+      return $this->primary_date;
+    } else {
+      return 'TBD';
+    }
+  }
+
+  public function hasSpecialExplanation() {
+    return !empty($this->special_explanation);
+  }
+
+  public function hasExtraExplanation() {
+    return !empty($this->extra_explanation);
+  }
+
+  public function hasAdditionalNote() {
+    return !empty($this->additional_note);
+  }
+
+  public function hasDeadlineDate() {
+    return !empty($this->deadline_date);
   }
 }
