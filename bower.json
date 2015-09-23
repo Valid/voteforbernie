@@ -5,5 +5,8 @@
     "Atticus White <contact@atticuswhite.com>",
     "Jon Hughes <>"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "jqvmap": "https://github.com/manifestinteractive/jqvmap.git"
+  }
 }
