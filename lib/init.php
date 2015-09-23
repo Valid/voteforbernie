@@ -1,9 +1,10 @@
 <?php
 
 namespace VoteForBernie\Wordpress\Init;
+use VoteForBernie\Wordpress\Models\StateModel;
 
 function custom_posts() {
-  register_post_type('state', array(
+  register_post_type(StateModel::POST_TYPE, array(
     'labels' => array(
       'name' => 'States',
       'singular_name' => 'State'

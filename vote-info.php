@@ -4,7 +4,12 @@
  *
  * For more info: http://codex.wordpress.org/Page_Templates
 */
+
+use VoteForBernie\Wordpress\Services\StateService;
+$stateService = new StateService();
+$states = $stateService->getStates();
 ?>
+
 <?php get_header(); ?>
 			<div id="content" class="vote-info">
 				<div class="wrap">
@@ -56,7 +61,73 @@
   									<div class="states">
   									<?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
 
+									<?php foreach ($states as $state): ?>
+
+									<div id="<?php echo $state->state; ?>"
+												class="state <?php echo $state->state; ?> <?php echo $state->getStatusClass(); ?>">
+										<h3><?php echo $state->getTitle(); ?></h3>
+										<div class="state-info cf">
+											<div class="m-all t-2of3 d-2of3">
+												<p class="primaries">
+													<?php echo $state->getTitle(); ?>
+													has
+													<strong class="status"><?php echo $state->status; ?></strong>
+													<?php echo $state->type; ?>.
+												</p>
+												<p class="explain"><?php echo $state->getExplanationText(); ?></p>
+												<p class="advice">
+													<?php echo $state->denonym; ?> for Bernie:
+													<a href="<?php echo $state->vote_link ?>"
+														data-track="Vote Link, <?php echo $state->state; ?>"
+														target="_blank"><?php echo $state->getActionText(); ?></a></p>
+												<?php if ($state->under_18): ?>
+													<p class="explain"><strong>Only 17?</strong> If you will be 18 by November 8, 2016, you can vote in the primaries!</p>
+												<?php endif; ?>
+												<?php if ($state->hasAdditionalNote()): ?>
+													<p class="explain"><?php echo $state->additional_note; ?></p>
+												<?php endif; ?>
+
+												<?php if ($state->state === 'ny') {
+													$today = time();
+													$oct9 = mktime(0,0,0,10,9,2015);
+													$daysLeft = round(($oct9 - $today)/86400);
+													?>
+
+													<div class="callout">
+														<p>There are only <strong><?php echo $daysLeft ?> days left</strong> to update your registration to Democrat!<br/>
+														If you miss the deadline, <strong>you will not be able to vote for Bernie!</strong>.</p>
+														<p class="explain">Check your <a href="https://voterlookup.elections.state.ny.us/votersearch.aspx" data-track="Check Registration, <?php echo $stateCode; ?>" target="_blank">current registration status online</a><br/>
+														If you are not already affiliated as a democrat, <a href="http://dmv.ny.gov/more-info/electronic-voter-registration-application" data-track="Online Register, <?php echo $stateCode; ?>" target="_blank">update your NY registration online</a>. <a href="http://www.ifyouwantbernie.com/NY/" target="_blank">more info</a></p>
+													</div>
+												<?php } ?>
+											</div>
+											<div class="resources m-all t-1of3 d-1of3">
+												<p>
+													<?php echo $state->getTypeText(); ?>:
+													<strong><?php echo $state->getPrimaryDate(); ?></strong>
+												</p>
+												<p>
+													Deadline:
+													<?php if ($state->hasDeadlineDate()): ?>
+														<time title="<?php echo $state->deadline_reference; ?>">
+															<?php echo $state->deadline_date; ?>
+														</time>
+													<?php else: ?>
+														<?php echo $state->deadline_reference; ?>
+													<?php endif; ?>
+												</p>
+												<ul>
+													<li>Discussion: <?php echo $state->discussion_link; ?></li>
+													<!-- <li><a href="<?php echo $state->check_registration_link; ?>" data-track="Check Registration, <?php echo $state->state; ?>">Check your current registration</a></li> -->
+												</ul>
+											</div>
+										</div>
+									</div>
+									<?php endforeach; ?>
+
+
                   <?php
+									die();
                   $stateQuery = new WP_Query(array('post_type' => 'state', 'posts_per_page' => -1, 'order' => 'asc'));
                   while ($stateQuery->have_posts()) : $stateQuery->the_post();
                     $stateCode = get_field('state');

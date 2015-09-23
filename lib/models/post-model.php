@@ -10,7 +10,7 @@ class PostModel {
     } else {
       $this->post = get_post($post);
     }
-    $this->buildCustomFields();
+    $this->buildCustomFields($customFields);
   }
 
   public function getTitle() {
@@ -21,10 +21,13 @@ class PostModel {
     return get_permalink($this->post->ID);
   }
 
+  /**
+   * Defines the properties on the model by the custom fields
+   */
   private function buildCustomFields($fields) {
     foreach ($fields as $fieldName) {
       $fieldValue = get_field($fieldName, $this->post->ID);
-      $this[$fieldName] = $fieldValue;
+      $this->$fieldName = $fieldValue;
     }
   }
 }
