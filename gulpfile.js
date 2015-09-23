@@ -7,12 +7,15 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     minify = require('gulp-minify-css'),
     sass = require('gulp-sass'),
+    imagemin = require('gulp-imagemin'),
+    pngquant = require('imagemin-pngquant'),
     paths = {
       js: {
         vendor: [
-          'bower_components/jqvmap/jqvmap/jquery.vmap.js'
+          'bower_components/jqvmap/jqvmap/jquery.vmap.js',
+          'bower_components/jqvmap/jqvmap/maps/jquery.vmap.usa.js'
         ],
-        site: []
+        site: ['assets/js/**/*.js']
       },
       css: {
         vendor: [
@@ -26,7 +29,9 @@ var gulp = require('gulp'),
     }
 
 gulp.task('js', function () {
-  gulp.src(paths.js.site);
+  gulp.src(paths.js.site)
+  .pipe(concat('site.js'))
+  .pipe(gulp.dest('dist'));
 });
 
 gulp.task('sass', function () {
@@ -65,7 +70,18 @@ gulp.task('css:vendor', function () {
   .pipe(gulp.dest('dist'));
 });
 
-gulp.task('build', ['js', 'sass', 'js:vendor', 'css:vendor']);
+gulp.task('images', function () {
+  gulp.src('assets/images/**/*')
+  .pipe(imagemin({
+    progressive: true,
+    svgoPlugins: [{removeViewBox: false}],
+    use: [pngquant()]
+  }))
+  .pipe(gulp.dest('dist/images'));
+})
+
+gulp.task('build', ['js', 'sass', 'js:vendor', 'css:vendor', 'images']);
 gulp.task('watch', ['build'], function () {
   gulp.watch(paths.css.site.all, ['sass']);
+  gulp.watch('assets/images/**/*', ['images']);
 });

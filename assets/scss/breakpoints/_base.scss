@@ -20,7 +20,7 @@ body {
 	font-size: 100%;
 	line-height: 1.5;
 	color: $text-color;
-	background: $gray url(../images/paper-bg2.png) repeat 0 0;
+	background: $gray url(images/paper-bg2.png) repeat 0 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
@@ -172,7 +172,7 @@ HEADER STYLES
 			display: block;
 			margin: 0 auto;
 			text-indent: -999em;
-			background: url(../images/vote-for-bernie-sm.png) no-repeat 0 0;
+			background: url(images/vote-for-bernie-sm.png) no-repeat 0 0;
 			height: 61px;
 			width: 300px;
 		}
@@ -1200,7 +1200,7 @@ FOOTER STYLES
 		width: 53px;
 		pointer-events: none;
 
-		background: url(../images/arrow1.png) right bottom no-repeat;
+		background: url(images/arrow1.png) right bottom no-repeat;
 		@media (max-width: 767px) {
 			content: initial;
 		}
@@ -1233,7 +1233,7 @@ FOOTER STYLES
 			width: 53px;
 			pointer-events: none;
 
-			background: url(../images/arrow1.png) right bottom no-repeat;
+			background: url(images/arrow1.png) right bottom no-repeat;
 		}
 	}
 	p {
