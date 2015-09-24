@@ -10,7 +10,8 @@ function custom_posts() {
       'singular_name' => 'State'
     ),
     'rewrite' => array('slug' => 'state', 'with_front' => false),
-    'public' => true
+    'public' => true,
+    'archive' => true
   ));
 }
 add_action('init', __NAMESPACE__ . '\\custom_posts');
