@@ -120,7 +120,7 @@
 
       <header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
-        <div id="inner-header" class="branding wrap cf">
+       <div id="inner-header" class="branding wrap cf">
 
           <?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
           <h1 id="logo" class="h1" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></h1>
@@ -140,10 +140,10 @@
                        'menu_class' => 'nav top-nav cf',               // adding custom nav class
                        'theme_location' => 'main-nav',                 // where it's located in the theme
                        'before' => '',                                 // before the menu
-                             'after' => '',                                  // after the menu
-                             'link_before' => '',                            // before each link
-                             'link_after' => '',                             // after each link
-                             'depth' => 0,                                   // limit the depth of the nav
+                       'after' => '',                                  // after the menu
+                       'link_before' => '',                            // before each link
+                       'link_after' => '',                             // after each link
+                       'depth' => 0,                                   // limit the depth of the nav
                        'fallback_cb' => ''                             // fallback function (if there is one)
             )); ?>
 
