@@ -5,22 +5,22 @@
 <!--[if (IE 8)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9"><![endif]-->
 <!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
 
-	<head>
-		<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-		<?php // force Internet Explorer to use the latest rendering engine available ?>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <?php // force Internet Explorer to use the latest rendering engine available ?>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<title><?php wp_title(''); ?></title>
+    <title><?php wp_title(''); ?></title>
 
-		<?php // mobile meta (hooray!) ?>
-		<meta name="HandheldFriendly" content="True">
-		<meta name="MobileOptimized" content="320">
-		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <?php // mobile meta (hooray!) ?>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-		<?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
-		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/dist/images/apple-touch-icon.png">
-		<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
+    <?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
+    <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/dist/images/apple-touch-icon.png">
+    <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
     <link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_template_directory_uri(); ?>/dist/images/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="<?php echo get_template_directory_uri(); ?>/dist/images/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/dist/images/apple-icon-72x72.png">
@@ -36,21 +36,21 @@
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/dist/images/favicon-16x16.png">
 
     <link rel="manifest" href="/manifest.json">
-		<!--[if IE]>
-			<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
-		<![endif]-->
-		<?php // or, set /favicon.ico for IE10 win ?>
-		<meta name="msapplication-TileColor" content="#323944">
-		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/dist/images/win8-tile-icon.png">
+    <!--[if IE]>
+      <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
+    <![endif]-->
+    <?php // or, set /favicon.ico for IE10 win ?>
+    <meta name="msapplication-TileColor" content="#323944">
+    <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/dist/images/win8-tile-icon.png">
             <meta name="theme-color" content="#323944">
 
-		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-		<?php // wordpress head functions ?>
-		<?php wp_head(); ?>
-		<?php // end of wordpress head ?>
+    <?php // wordpress head functions ?>
+    <?php wp_head(); ?>
+    <?php // end of wordpress head ?>
 
-		<?php // drop Google Analytics Here ?>
+    <?php // drop Google Analytics Here ?>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -96,11 +96,11 @@
 
       return t;
     }(document, "script", "twitter-wjs"));</script>
-		<?php // end analytics ?>
+    <?php // end analytics ?>
 
-	</head>
+  </head>
 
-	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
+  <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -110,7 +110,7 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
 
-		<div id="container">
+    <div id="container">
       <?php // Only show on homepage
       if (is_page( 4 )) { ?>
       <div class="feature">
@@ -118,9 +118,9 @@
       </div>
       <?php } ?>
 
-			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+      <header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
-				<div id="inner-header" class="branding wrap cf">
+        <div id="inner-header" class="branding wrap cf">
 
           <?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
           <h1 id="logo" class="h1" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></h1>
@@ -129,26 +129,26 @@
             <li><a href="http://berniesanders.com/Reddit" data-track="CTA,Donate" target="_blank">Donate Today!</a></li>
           </ul>
 
-					<?php // if you'd like to use the site description you can un-comment it below ?>
-					<?php // bloginfo('description'); ?>
+          <?php // if you'd like to use the site description you can un-comment it below ?>
+          <?php // bloginfo('description'); ?>
 
-					<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-						<?php wp_nav_menu(array(
-    					         'container' => false,                           // remove nav container
-    					         'container_class' => 'menu cf',                 // class of container (should you choose to use it)
-    					         'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
-    					         'menu_class' => 'nav top-nav cf',               // adding custom nav class
-    					         'theme_location' => 'main-nav',                 // where it's located in the theme
-    					         'before' => '',                                 // before the menu
-        			               'after' => '',                                  // after the menu
-        			               'link_before' => '',                            // before each link
-        			               'link_after' => '',                             // after each link
-        			               'depth' => 0,                                   // limit the depth of the nav
-    					         'fallback_cb' => ''                             // fallback function (if there is one)
-						)); ?>
+          <nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <?php wp_nav_menu(array(
+                       'container' => false,                           // remove nav container
+                       'container_class' => 'menu cf',                 // class of container (should you choose to use it)
+                       'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
+                       'menu_class' => 'nav top-nav cf',               // adding custom nav class
+                       'theme_location' => 'main-nav',                 // where it's located in the theme
+                       'before' => '',                                 // before the menu
+                             'after' => '',                                  // after the menu
+                             'link_before' => '',                            // before each link
+                             'link_after' => '',                             // after each link
+                             'depth' => 0,                                   // limit the depth of the nav
+                       'fallback_cb' => ''                             // fallback function (if there is one)
+            )); ?>
 
-					</nav>
+          </nav>
 
-				</div>
+        </div>
         <div class="fb-like" data-href="http://voteforbernie.org/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
-			</header>
+      </header>
