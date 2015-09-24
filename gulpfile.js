@@ -5,7 +5,7 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     notify = require('gulp-notify'),
     rename = require('gulp-rename'),
-    minify = require('gulp-minify-css'),
+    minifyCss = require('gulp-minify-css'),
     sass = require('gulp-sass'),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
@@ -30,7 +30,26 @@ var gulp = require('gulp'),
 
 gulp.task('js', function () {
   gulp.src(paths.js.site)
+  .pipe(plumber({
+    errorHandler: notify.onError({
+      title: 'Gulp',
+      message: 'Failed to compile JS'
+    })
+  }))
   .pipe(concat('site.js'))
+  .pipe(gulp.dest('dist'));
+});
+
+gulp.task('js:min', function () {
+  gulp.src(paths.js.site)
+  .pipe(plumber({
+    errorHandler: notify.onError({
+      title: 'Gulp',
+      message: 'Failed to compile JS'
+    })
+  }))
+  .pipe(concat('site.min.js'))
+  .pipe(uglify())
   .pipe(gulp.dest('dist'));
 });
 
@@ -46,6 +65,20 @@ gulp.task('sass', function () {
   .pipe(gulp.dest('dist/'));
 });
 
+gulp.task('sass:min', function () {
+  gulp.src(paths.css.site.main)
+  .pipe(plumber({
+    errorHandler: notify.onError({
+      title: 'Gulp',
+      message: 'Failed to compile SASS'
+    })
+  }))
+  .pipe(sass())
+  .pipe(minifyCss())
+  .pipe(rename('style.min.css'))
+  .pipe(gulp.dest('dist/'));
+});
+
 gulp.task('js:vendor', function () {
   gulp.src(paths.js.vendor)
   .pipe(plumber({
@@ -55,6 +88,19 @@ gulp.task('js:vendor', function () {
     })
   }))
   .pipe(concat('vendor.js'))
+  .pipe(gulp.dest('dist/'));
+});
+
+gulp.task('js:vendor:min', function () {
+  gulp.src(paths.js.vendor)
+  .pipe(plumber({
+    errorHandler: notify.onError({
+      title: 'Gulp',
+      message: 'Failed to build vendor JS'
+    })
+  }))
+  .pipe(concat('vendor.min.js'))
+  .pipe(uglify())
   .pipe(gulp.dest('dist/'));
 });
 
@@ -70,6 +116,19 @@ gulp.task('css:vendor', function () {
   .pipe(gulp.dest('dist'));
 });
 
+gulp.task('css:vendor:min', function () {
+  gulp.src(paths.css.vendor)
+  .pipe(plumber({
+    errorHandler: notify.onError({
+      title: 'Gulp',
+      message: 'Failed to build vendor CSS'
+    })
+  }))
+  .pipe(concatCss('vendor.min.css'))
+  .pipe(minifyCss())
+  .pipe(gulp.dest('dist'));
+});
+
 gulp.task('images', function () {
   gulp.src('assets/images/**/*')
   .pipe(imagemin({
@@ -80,7 +139,17 @@ gulp.task('images', function () {
   .pipe(gulp.dest('dist/images'));
 })
 
-gulp.task('build', ['js', 'sass', 'js:vendor', 'css:vendor', 'images']);
+gulp.task('build', [
+  'js',
+  'sass',
+  'js:vendor',
+  'css:vendor',
+  'js:min',
+  'js:vendor:min',
+  'sass:min',
+  'css:vendor:min',
+  'images'
+]);
 gulp.task('watch', ['build'], function () {
   gulp.watch(paths.css.site.all, ['sass']);
   gulp.watch('assets/images/**/*', ['images']);
