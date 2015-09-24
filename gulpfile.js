@@ -152,5 +152,6 @@ gulp.task('build', [
 ]);
 gulp.task('watch', ['build'], function () {
   gulp.watch(paths.css.site.all, ['sass']);
+  gulp.watch(paths.js.site, ['js']);
   gulp.watch('assets/images/**/*', ['images']);
 });
