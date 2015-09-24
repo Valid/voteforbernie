@@ -46,6 +46,9 @@
 
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
+    <!-- Optimizely A/B testing snippet -->
+    <script src="//cdn.optimizely.com/js/3517780176.js"></script>
+
     <?php // wordpress head functions ?>
     <?php wp_head(); ?>
     <?php // end of wordpress head ?>
