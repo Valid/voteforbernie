@@ -42,7 +42,7 @@
     <?php // or, set /favicon.ico for IE10 win ?>
     <meta name="msapplication-TileColor" content="#323944">
     <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/dist/images/win8-tile-icon.png">
-            <meta name="theme-color" content="#323944">
+    <meta name="theme-color" content="#323944">
 
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
@@ -115,8 +115,8 @@
 
     <div id="container">
       <?php // Only show on homepage
-      if (is_page( 4 )) { ?>
-      <div class="feature">
+      if (is_page( 4 ) && false) { ?>
+      <div class="feature test">
         <p><a href="http://feelthebern.org/flyer-kit/" target="_blank" data-track="CTA,FlyerKit"><em>Just released!</em> &mdash; Print over 20 flyers in 2 languages @ <strong>Flyer Kit</strong></a></p>
       </div>
       <?php } ?>
@@ -126,32 +126,14 @@
        <div id="inner-header" class="branding wrap cf">
 
           <?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-          <h1 id="logo" class="h1" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></h1>
-          <ul>
-            <li><a href="http://feelthebern.org/" data-track="CTA,FTB" target="_blank">Learn Bernie's Stances</a></li>
-            <li><a href="http://berniesanders.com/Reddit" data-track="CTA,Donate" target="_blank">Donate Today!</a></li>
-          </ul>
-
-          <?php // if you'd like to use the site description you can un-comment it below ?>
-          <?php // bloginfo('description'); ?>
-
+          <h1 id="logo" class="h1" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow">#VoteForBernie</a></h1>
           <nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
             <?php wp_nav_menu(array(
-                       'container' => false,                           // remove nav container
-                       'container_class' => 'menu cf',                 // class of container (should you choose to use it)
-                       'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
-                       'menu_class' => 'nav top-nav cf',               // adding custom nav class
-                       'theme_location' => 'main-nav',                 // where it's located in the theme
-                       'before' => '',                                 // before the menu
-                       'after' => '',                                  // after the menu
-                       'link_before' => '',                            // before each link
-                       'link_after' => '',                             // after each link
-                       'depth' => 0,                                   // limit the depth of the nav
-                       'fallback_cb' => ''                             // fallback function (if there is one)
+              'theme_location' => 'header'
             )); ?>
 
           </nav>
+          <div class="fb-like" data-href="http://voteforbernie.org/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
 
         </div>
-        <div class="fb-like" data-href="http://voteforbernie.org/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
       </header>

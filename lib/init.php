@@ -17,14 +17,22 @@ function custom_posts() {
 add_action('init', __NAMESPACE__ . '\\custom_posts');
 
 function sidebars() {
-	register_sidebar(array(
-		'id' => 'sidebar1',
-		'name' => __( 'Sidebar 1', 'bonestheme' ),
-		'description' => __( 'The first (primary) sidebar.', 'bonestheme' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle">',
-		'after_title' => '</h4>',
-	));
+  register_sidebar(array(
+    'id' => 'sidebar1',
+    'name' => __( 'Sidebar 1', 'bonestheme' ),
+    'description' => __( 'The first (primary) sidebar.', 'bonestheme' ),
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<h4 class="widgettitle">',
+    'after_title' => '</h4>',
+  ));
 }
 add_action('widgets_init', __NAMESPACE__ . '\\sidebars');
+
+function navigation_menus() {
+  register_nav_menus(array(
+    'header' => __ ( 'Header Menu'),
+    'footer' => __ ( 'Footer Menu')
+  ));
+}
+add_action('init', __NAMESPACE__ . '\\navigation_menus');
