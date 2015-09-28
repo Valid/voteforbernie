@@ -13,7 +13,9 @@ var gulp = require('gulp'),
       js: {
         vendor: [
           'bower_components/jqvmap/jqvmap/jquery.vmap.js',
-          'bower_components/jqvmap/jqvmap/maps/jquery.vmap.usa.js'
+          'bower_components/jqvmap/jqvmap/maps/jquery.vmap.usa.js',
+          'bower_components/velocity/velocity.js',
+          'bower_components/velocity/velocity.ui.js'
         ],
         site: ['assets/js/**/*.js']
       },
@@ -26,7 +28,7 @@ var gulp = require('gulp'),
           main: 'assets/scss/style.scss'
         }
       }
-    }
+    };
 
 gulp.task('js', function () {
   gulp.src(paths.js.site)
@@ -137,7 +139,7 @@ gulp.task('images', function () {
     use: [pngquant()]
   }))
   .pipe(gulp.dest('dist/images'));
-})
+});
 
 gulp.task('build', [
   'js',

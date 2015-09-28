@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "authors": [
     "Atticus White <contact@atticuswhite.com>",
-    "Jon Hughes <>"
+    "Jon Hughes <jon@validatorian.com>"
   ],
   "license": "MIT",
   "dependencies": {
-    "jqvmap": "https://github.com/manifestinteractive/jqvmap.git"
+    "jqvmap": "https://github.com/Valid/jqvmap.git",
+    "velocity": "~1.2.2"
   }
 }
