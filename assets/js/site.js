@@ -162,7 +162,7 @@ vfb.resizeMap = function () {
   viewport = updateViewportDimensions();
 
   if (viewport.width > 767) {
-    $vmap.height(viewport.height - jQuery('.header-wrapper').height() - 40);
+    $vmap.height(viewport.height - $vmap.offset().top - 40);
     jQuery('.map-container').height(viewport.height - jQuery('.header-wrapper').height());
   }
 };
