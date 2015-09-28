@@ -114,26 +114,28 @@
     }(document, 'script', 'facebook-jssdk'));</script>
 
     <div id="container">
-      <?php // Only show on homepage
-      if (is_page( 4 ) && false) { ?>
-      <div class="feature test">
-        <p><a href="http://feelthebern.org/flyer-kit/" target="_blank" data-track="CTA,FlyerKit"><em>Just released!</em> &mdash; Print over 20 flyers in 2 languages @ <strong>Flyer Kit</strong></a></p>
-      </div>
-      <?php } ?>
-
-      <header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-
-       <div id="inner-header" class="branding wrap cf">
-
-          <?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-          <h1 id="logo" class="h1" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow">#VoteForBernie</a></h1>
-          <nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-            <?php wp_nav_menu(array(
-              'theme_location' => 'header'
-            )); ?>
-
-          </nav>
-          <div class="fb-like" data-href="http://voteforbernie.org/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
-
+      <div class="header-wrapper">
+        <?php // Only show on homepage
+        if (is_page( 4 ) && false) { ?>
+        <div class="feature test">
+          <p><a href="http://feelthebern.org/flyer-kit/" target="_blank" data-track="CTA,FlyerKit"><em>Just released!</em> &mdash; Print over 20 flyers in 2 languages @ <strong>Flyer Kit</strong></a></p>
         </div>
-      </header>
+        <?php } ?>
+
+        <header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+
+         <div id="inner-header" class="branding wrap cf">
+
+            <?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
+            <h1 id="logo" class="h1" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow">#VoteForBernie</a></h1>
+            <nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+              <?php wp_nav_menu(array(
+                'theme_location' => 'header'
+              )); ?>
+
+            </nav>
+            <div class="fb-like" data-href="http://voteforbernie.org/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+
+          </div>
+        </header>
+      </div>

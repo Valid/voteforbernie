@@ -110,7 +110,9 @@ function loadGravatars() {
 // Choose state handler
 vfb.chooseState = function (stateCode) {
   var $states = jQuery('.states'),
-    $state = $states.find('.' + stateCode);
+    $state = $states.find('.' + stateCode),
+    $mapState = jQuery('#jqvmap1_' + stateCode),
+    $newsletter = jQuery('.sign-up-notice').eq(0);
 
   $states.find('.active').removeClass('active');
   $state.addClass('active');
@@ -119,7 +121,11 @@ vfb.chooseState = function (stateCode) {
     history.replaceState({}, '', '#' + stateCode);
   }
 
-  jQuery('html, body').animate({ scrollTop: $state.offset().top - 100 }, 'slow');
+  $mapState.velocity('callout.bounce', { complete: function () {
+    $newsletter.insertAfter($state).find('select').val($state.find('h3').text());
+    jQuery('html, body').animate({ scrollTop: $state.offset().top - 100 }, 'slow');
+  }});
+
 };
 
 vfb.trackEvent = function () {
@@ -150,6 +156,16 @@ vfb.trackElements = function () {
   });
 };
 
+vfb.resizeMap = function () {
+  var $vmap = jQuery('#vmap');
+
+  viewport = updateViewportDimensions();
+
+  if (viewport.width > 767) {
+    $vmap.height(viewport.height - jQuery('.header-wrapper').height() - 40);
+    jQuery('.map-container').height(viewport.height - jQuery('.header-wrapper').height());
+  }
+};
 
 vfb.buildMap = function () {
  // Build map if available
@@ -157,17 +173,20 @@ vfb.buildMap = function () {
   var $vmap = jQuery('#vmap');
 
   if ($vmap.length) {
-    var open = '#3759c7',
-    closed = '#C76262',
-    other = '#67905E',
-    caucus = '#7d42c7',
+    vfb.resizeMap();
+
+    var open = '#0571b0',
+    closed = '#ca0020',
+    other = '#f4a582',
+    caucusOpen = '#92c5de',
+    caucusClosed = '#B94F4F',
     $states = jQuery('.states');
 
     $vmap.vectorMap({
         map: 'usa_en',
         backgroundColor: null,
-        borderColor: null,
-        color: '#9B9B9B',
+        borderColor: '#fff',
+        color: '#323944',
         // colors: colors,
         hoverColor: '#c9dfaf',
         selectedColor: '#c9dfaf',
@@ -175,17 +194,35 @@ vfb.buildMap = function () {
         enableZoom: false,
         showTooltip: true,
         selectedRegion: null,
-        // onLabelShow: function (element, label, code) {
-        //   console.log(element, label, code);
-        //   jQuery(label).text(jQuery(label).text() + ' - ' + $states.find('.' + code).find('span').eq(0).text() + ' primaries');
-        // },
+        onLabelShow: function (element, label, code) {
+          // console.log(element, label, code);
+          var $stateDetails = $states.find('.' + code),
+            primaryTextSource = $stateDetails.find('strong').eq(0).text(),
+            primaryText = primaryTextSource.charAt(0).toUpperCase() + primaryTextSource.slice(1);
+
+          jQuery(label).html(jQuery(label).text() + '<br>' + primaryText + ($stateDetails.hasClass('caucus') ? ' Caucus' : ' Primary') );
+        },
         onRegionClick: function (element, code, region) {
           vfb.trackEvent('State click', code);
+          console.log(jQuery('#jqvmap1_' + code));
           vfb.chooseState(code);
         }
     });
 
-    $vmap.css('opacity', 1);
+    // $vmap.css('opacity', 1);
+    // A/B Test - No animation, subtle animation (15 delay, slideDownIn entrance) and heavy (20 delay and )
+    // $vmap.velocity('transition.flipBounceXIn');
+    // $vmap.velocity('transition.perspectiveRightIn');
+    // $vmap.velocity('transition.slideDownBigIn');
+    // $vmap.velocity('transition.slideDownIn');
+    // $vmap.velocity('transition.bounceIn');
+
+    $vmap.find('.jqvmap-region').velocity('transition.perspectiveDownIn', { stagger: 3, opacity: 1 });
+    jQuery('.legend').find('li').velocity('transition.slideLeftIn', { delay: 1000, stagger: 250, display: 'inline-block', opacity: 1 } )
+
+    // $vmap.velocity({}, { duration: 500 })
+    //   .velocity({scaleX: 1, scaleY: 1}, { duration: 1000 });
+
 
     // Animate in map colors
     var delay = 0;
@@ -198,16 +235,23 @@ vfb.buildMap = function () {
       if ($stateOnMap.length) {
         setTimeout(function () {
           if ($state.hasClass('open')) {
-            $stateOnMap.css('fill', open);
+            // $stateOnMap.css('fill', open);
+            $stateOnMap.velocity({ fill: open });
           } else if ($state.hasClass('closed')) {
-            $stateOnMap.css('fill', closed);
-          } else if ($state.hasClass('other')) {
-            $stateOnMap.css('fill', other);
-          } else if ($state.hasClass('caucus')) {
-            $stateOnMap.css('fill', caucus);
+            // $stateOnMap.css('fill', closed);
+            $stateOnMap.velocity({fill: closed});
+          } else if ($state.hasClass('other') || $state.hasClass('other-caucus')) {
+            // $stateOnMap.css('fill', other);
+            $stateOnMap.velocity({fill: other});
+          } else if ($state.hasClass('open-caucus')) {
+            // $stateOnMap.css('fill', caucus);
+            $stateOnMap.velocity({fill: caucusOpen});
+          } else if ($state.hasClass('closed-caucus')) {
+            // $stateOnMap.css('fill', caucus);
+            $stateOnMap.velocity({fill: caucusClosed});
           }
         }, delay);
-        delay += 75;
+        delay += 15;
       }
     });
 
@@ -273,13 +317,14 @@ jQuery(document).ready(function($) {
    * Let's fire off the gravatar function
    * You can remove this if you don't need it
   */
-  loadGravatars();
+  // loadGravatars();
 
-  // Enable tracking clicks
-  vfb.trackElements();
 
 
   vfb.buildMap();
+
+  // Enable tracking clicks
+  vfb.trackElements();
 
   vfb.startCountdown();
 

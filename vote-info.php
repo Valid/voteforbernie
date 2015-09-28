@@ -14,31 +14,16 @@ $states = $stateService->getStates();
 
 <?php get_header(); ?>
       <div id="content" class="vote-info">
-        <div class="wrap">
-          <!-- <h2 class="m-all t-1of4 d-1of4">Did you know?</h2> -->
-          <div class="m-all t-1of4 d-1of4 did-you-know">
-            <h2>Did you know?</h2>
-          </div>
-          <div class="m-all t-3of4 d-3of4">
-            <p>If your state doesn't have open primaries, you may be unable to vote for Bernie Sanders unless you are registered as a Democrat.</p>
-            <!-- <p class="notice"><span>Dates may change at any time. Don't wait until the deadline!</span> <em>If you find any errors, please <a href="mailto:contact@voteforbernie.org">email</a>.</em></p> -->
-<!--            <div class="bernie-book">
-              <a href="http://www.amazon.com/gp/product/1568586841/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1568586841&amp;linkCode=as2&amp;tag=voteforbernie-20&amp;linkId=4GDPARWACHB3OXXI"><img class="book-img" src="http://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=1568586841&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=US&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=voteforbernie-20" alt=""></a>
-              <p>Bernie Sander's book detailing his 8-hour-long filibuster in 2010.</p>
-              <p class="disclaimer">All book proceeds go to charity, and buying from this link helps support this resource.</p>
-              <img src="http://ir-na.amazon-adsystem.com/e/ir?t=voteforbernie-20&amp;l=as2&amp;o=1&amp;a=1568586841" width="1" height="1" border="0" alt="" />
-            </div> -->
-        </div>
-        <!-- <div class="m-all t-3of4 d-3of4"> -->
-        <div class="m-all t-all d-all">
-          <!-- <h1 class="choose-state-header">Choose Your State</h1> -->
-          <ul class="legend">
-            <li class="open">Open Primaries</li>
-            <li class="closed">Closed Primaries</li>
-            <li class="other">Other</li>
-            <li class="caucus">Caucus</li>
-          </ul>
+
+        <div class="map-container">
           <div id="vmap"></div>
+          <ul class="legend">
+            <li class="open">Open Primary</li>
+            <li class="closed">Closed Primary</li>
+            <li class="open-caucus">Open Caucus</li>
+            <li class="closed-caucus">Closed Caucus</li>
+            <li class="other">Other</li>
+          </ul>
         </div>
 
         <div id="inner-content" class="wrap cf">
