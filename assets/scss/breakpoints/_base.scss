@@ -154,17 +154,29 @@ h5, .h5 {
 HEADER STYLES
 *********************/
 
+.action-bar {
+  margin: 0;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid #E5E5E5;
+  a {
+    color: #fff;
+    background-color: rgb(5, 113, 176);
+    border-radius: 3px;
+    padding: 6px 10px;
+    text-decoration: none;
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-family: $headerFont;
+  }
+}
+
 .sub-header {
   clear: both;
 
   .fb-like {
     float: left;
     line-height: 1;
-  }
-  .latest {
-    margin: 0;
-    float: right;
-    font-size: 13px;
   }
 }
 

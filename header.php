@@ -123,7 +123,7 @@
         <?php } ?>
 
         <header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-
+        <p class="action-bar"><strong>Voter Alert &mdash;</strong> New York has only 5 days left <a href="#">Read more</a></p>
           <div id="inner-header" class="branding wrap cf">
 
             <?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
@@ -136,7 +136,7 @@
               </nav>
               <div class="sub-header">
                 <div class="fb-like" data-href="https://voteforbernie.org/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
-                <p class="latest"><strong>Voter Alert &mdash;</strong> New York has only 5 days left <a href="#">Read more</a></p>
+
               </div>
 
             </div>
