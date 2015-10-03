@@ -162,10 +162,16 @@ vfb.resizeMap = function () {
   viewport = updateViewportDimensions();
 
   if (viewport.width > 767) {
-    $vmap.height(viewport.height - $vmap.offset().top - 40);
+    $vmap.height(viewport.height - $vmap.offset().top - 10);
     jQuery('.map-container').height(viewport.height - jQuery('.header-wrapper').height());
   }
 };
+
+jQuery(window).resize(function () {
+    waitForFinalEvent(function(){
+      vfb.resizeMap();
+    }, timeToWaitForLast, "VoteForBernie");
+});
 
 vfb.buildMap = function () {
  // Build map if available
@@ -204,7 +210,6 @@ vfb.buildMap = function () {
         },
         onRegionClick: function (element, code, region) {
           vfb.trackEvent('State click', code);
-          console.log(jQuery('#jqvmap1_' + code));
           vfb.chooseState(code);
         }
     });
@@ -217,8 +222,8 @@ vfb.buildMap = function () {
     // $vmap.velocity('transition.slideDownIn');
     // $vmap.velocity('transition.bounceIn');
 
-    $vmap.find('.jqvmap-region').velocity('transition.perspectiveDownIn', { stagger: 3, opacity: 1 });
-    jQuery('.legend').find('li').velocity('transition.slideLeftIn', { delay: 1000, stagger: 250, display: 'inline-block', opacity: 1 } )
+    $vmap.find('.jqvmap-region').velocity('transition.perspectiveDownIn', { stagger: 0, opacity: 1 });
+    jQuery('.legend').find('li').velocity('transition.slideLeftIn', { delay: 500, stagger: 250, display: 'inline-block', opacity: 1 } );
 
     // $vmap.velocity({}, { duration: 500 })
     //   .velocity({scaleX: 1, scaleY: 1}, { duration: 1000 });
@@ -255,8 +260,8 @@ vfb.buildMap = function () {
       }
     });
 
-  };
-}
+  }
+};
 
 vfb.startCountdown = function () {
 var $clock = jQuery('.flip-counter');
@@ -282,7 +287,7 @@ var $clock = jQuery('.flip-counter');
     // Keep clock in sync, browser timers suck.
     vfb.startClock();
   }, 120000);
-}
+};
 
 vfb.enhanceSharing = function () {
   var $floatShareWrapper = jQuery('#crestashareicon'),
@@ -306,7 +311,35 @@ vfb.enhanceSharing = function () {
     findCounter('twitter');
     findCounter('googleplus');
   }
-}
+};
+
+vfb.handleLegend = function () {
+  var $legend = jQuery('.legend'),
+    $explanations = jQuery('.explanations').find('li');
+
+  if ($legend.length) {
+    $legend.on('mouseover click', 'li', function () {
+      var $this = jQuery(this),
+        $activeExplanation = $explanations.siblings('.active'),
+        $explanation = $explanations.siblings('.' + $this.attr('class'));
+
+      if ($activeExplanation[0] !== $explanation[0]) {
+        $activeExplanation.removeClass('active');
+        $explanation.addClass('active');
+      }
+    });
+  }
+};
+
+vfb.handleStateSelector = function () {
+  var $stateSelector = jQuery('.state-selector');
+
+  $stateSelector.on('change', function () {
+    var code = $stateSelector.val();
+    vfb.trackEvent('State select', code);
+    vfb.chooseState(code);
+  });
+};
 
 /*
  * Put all your regular jQuery in here.
@@ -322,6 +355,10 @@ jQuery(document).ready(function($) {
 
 
   vfb.buildMap();
+
+  vfb.handleLegend();
+
+  vfb.handleStateSelector();
 
   // Enable tracking clicks
   vfb.trackElements();

@@ -15,15 +15,37 @@ $states = $stateService->getStates();
 <?php get_header(); ?>
       <div id="content" class="vote-info">
 
-        <div class="map-container">
-          <div id="vmap"></div>
+        <div class="map-intro">
           <ul class="legend">
-            <li class="open">Open Primary</li>
             <li class="closed">Closed Primary</li>
-            <li class="open-caucus">Open Caucus</li>
+            <li class="open">Open Primary</li>
             <li class="closed-caucus">Closed Caucus</li>
+            <li class="open-caucus">Open Caucus</li>
             <li class="other">Other</li>
           </ul>
+          <div class="inner-content explanation-container">
+            <!-- <h3>You want to vote for Bernie Sanders <strong>but will you be able to?</strong></h3> -->
+            <ul class="explanations">
+              <li class="closed active">Voters in Closed Primary states <strong>must</strong> register as Democrat to vote for Bernie</li>
+              <li class="open">Voters in Open Primary states can vote for Bernie regardless of political affiliation</li>
+              <li class="closed-caucus">Voters in Closed Caucus states <strong>must</strong> affiliate as Democrat to vote for Bernie</li>
+              <li class="open-caucus">Voters in Open Caucus states can vote for Bernie regardless of political affiliation</li>
+              <li class="other">Independents can vote for Bernie in Semi-Closed states, while in Semi-Open states everyone except Republicans can</li>
+            </ul>
+            <div class="state-select">
+              <p>Learn how to vote for Bernie in your state by <span class="no-mobile">clicking it or</span>
+                <select class="state-selector">
+                  <option>Select Your State</option>
+                  <?php foreach ($states as $state): ?>
+                    <option value="<?php echo $state->state; ?>"><?php echo $state->getTitle(); ?></option>
+                  <?php endforeach; ?>
+                </select>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="map-container">
+          <div id="vmap"></div>
         </div>
 
         <div id="inner-content" class="wrap cf">
@@ -38,7 +60,7 @@ $states = $stateService->getStates();
                   <!-- <h1 class="page-title"><?php the_title(); ?></h1> -->
                   <div class="sign-up-notice">
                     <p class="tentative">All dates are tentative and subject to change at any time.<br/>If you want to receive important updates for your state, sign up for the email list.</p>
-                    <?php //echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" ); ?>
+                    <?php echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" ); ?>
                     <p class="byline vcard">Last updated: <?php //the_modified_time(get_option('date_format')); ?>, if you find any mistakes, <a href="/contact/">contact us</a>.</p>
                   </div>
                 </header>

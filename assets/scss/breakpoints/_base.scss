@@ -154,15 +154,17 @@ h5, .h5 {
 HEADER STYLES
 *********************/
 
-.header {
-  // background-color: #323944;
-  // border-bottom-left-radius: 10px;
-  // border-bottom-right-radius: 10px;
+.sub-header {
+  clear: both;
 
   .fb-like {
-    display: inline-block;
-    margin-right: 17px;
-    // line-height: 12px;
+    float: left;
+    line-height: 1;
+  }
+  .latest {
+    margin: 0;
+    float: right;
+    font-size: 13px;
   }
 }
 
@@ -182,12 +184,15 @@ HEADER STYLES
       display: inline-block;
       padding: 10px 20px 0;
       a {
-        color: #CA0020;
+        color: #0571B0;
         text-decoration: none;
         font-family: $headerFont;
         line-height: 1;
         font-size: 24px;
         text-transform: uppercase;
+      }
+      &:last-child {
+        padding-right: 0;
       }
     }
   }
@@ -219,7 +224,7 @@ HEADER STYLES
     margin: 15px auto;
     @media (min-width: 561px) {
       display: inline-block;
-      margin: 15px 0;
+      margin: 15px 0 0;
       float: left;
     }
     a {
@@ -1101,10 +1106,10 @@ FOOTER STYLES
   }
 
   .legend {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    margin: 0;
+    // position: absolute;
+    // width: 100%;
+    // bottom: 0;
+    // margin: 0;
     li {
       padding-left: 25px;
       position: relative;
@@ -1112,11 +1117,12 @@ FOOTER STYLES
       font-family: $headerFont;
       display: inline-block;
       opacity: 0;
+      cursor: pointer;
       &:after {
         content: '';
         position: absolute;
         left: 0;
-        top: 4px;
+        top: 0;
         height: 20px;
         width: 20px;
         border-radius: 50%;
@@ -1825,4 +1831,82 @@ FOOTER STYLES
   height: 90px;
   background-color: tomato;
   margin: 10px auto;
+}
+
+// Map Intro
+.map-intro {
+  text-align: center;
+  font-family: $headerFont;
+  line-height: 1;
+  position: relative;
+  z-index: 3;
+  margin-bottom: -50px;
+  h3 {
+    font-size: 35px;
+    margin: 0;
+    color: #323944;
+    display: inline-block;
+    strong {
+      display: block;
+      font-weight: normal;
+      color: #CA0020;
+      font-size: 52px;
+    }
+  }
+  .explanations {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    li {
+      position: absolute;
+      display: inline-block;
+      top: 0;
+      opacity: 0;
+      background-color: #ca0020;
+      padding: 3px 5px;
+      &.active {
+        position: inherit;
+        opacity: 1;
+      }
+      &.open {
+        background-color: #0571b0;
+      }
+      &.other {
+        background-color: #f4a582;
+        color: #000;
+      }
+      &.open-caucus {
+        background-color: #92c5de;
+        color: #000;
+      }
+      &.closed-caucus {
+        background-color: #B94F4F;
+      }
+    }
+  }
+  p {
+    margin: 5px 0 0;
+  }
+  .inner-content {
+    margin: 0 auto;
+    min-width: 480px;
+  }
+  .state-select {
+    text-align: center;
+    p {
+      margin: 0;
+    }
+  }
+  select {
+    display: inline-block;
+    margin: 0;
+    max-width: 128px;
+    background-color: transparent;
+    border: 2px dashed;
+    border-width: 0 0 2px;
+    border-radius: 0;
+    padding: 0;
+    height: 30px;
+    font-size: 13px;
+  }
 }

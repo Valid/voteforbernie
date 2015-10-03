@@ -134,7 +134,10 @@
               )); ?>
 
             </nav>
-            <div class="fb-like" data-href="http://voteforbernie.org/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+            <div class="sub-header">
+              <div class="fb-like" data-href="https://voteforbernie.org/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+              <p class="latest"><strong>Latest &mdash;</strong> New Yorker? You may only have 9 days. <a href="#">Read the article</a></p>
+            </div>
 
           </div>
         </header>
