@@ -31,7 +31,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
               <li class="open">Voters in Open Primary states can vote for Bernie regardless of political affiliation</li>
               <li class="closed-caucus">Voters in Closed Caucus states <strong>must</strong> affiliate as Democrat to vote for Bernie</li>
               <li class="open-caucus">Voters in Open Caucus states can vote for Bernie regardless of political affiliation</li>
-              <li class="other">Independents can vote for Bernie in Semi-Closed states, while in Semi-Open states everyone except Republicans can</li>
+              <li class="other">Semi-Open? Semi-Closed? Click your state to find out how to vote for Bernie Sanders</li>
             </ul>
             <div class="state-select">
               <p>Learn how to vote for Bernie in your state by <span class="no-mobile">clicking it or</span>
