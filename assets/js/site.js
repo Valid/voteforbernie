@@ -366,6 +366,15 @@ vfb.handleStateSelector = function () {
   });
 };
 
+vfb.scrollOnHash = function () {
+  var code = location.hash ? location.hash.substr(1) : null;
+
+  if (code) {
+    vfb.trackEvent('State hash', code);
+    vfb.chooseState(code);
+  }
+};
+
 /*
  * Put all your regular jQuery in here.
 */
@@ -384,6 +393,8 @@ jQuery(document).ready(function($) {
   vfb.handleLegend();
 
   vfb.handleStateSelector();
+
+  vfb.scrollOnHash();
 
   // Enable tracking clicks
   vfb.trackElements();
