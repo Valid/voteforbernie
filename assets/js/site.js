@@ -206,7 +206,7 @@ vfb.buildMap = function () {
             primaryTextSource = $stateDetails.find('strong').eq(0).text(),
             primaryText = primaryTextSource.charAt(0).toUpperCase() + primaryTextSource.slice(1);
 
-          jQuery(label).html(jQuery(label).text() + '<br>' + primaryText + ($stateDetails.hasClass('caucus') ? ' Caucus' : ' Primary') );
+          jQuery(label).html('<strong>' + jQuery(label).text() + '</strong><br>' + primaryText + ($stateDetails.hasClass('caucus') ? ' Caucus' : ' Primary') );
         },
         onRegionClick: function (element, code, region) {
           vfb.trackEvent('State click', code);
