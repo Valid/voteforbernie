@@ -41,7 +41,11 @@ class VoteInfoHelper {
 
   public function getStatusClass($state) {
     if ($state->type == 'caucuses') {
-      return 'caucus '. self::$statusClasses[$state->status] . '-caucus';
+      $extraClass = '';
+      if (self::$statusClasses[$state->status] == 'other') {
+        $extraClass = 'other ';
+      }
+      return $extraClass . self::$statusClasses[$state->status] . '-caucus caucus';
     } else if (isset(self::$statusClasses[$state->status])) {
       return self::$statusClasses[$state->status];
     } else {

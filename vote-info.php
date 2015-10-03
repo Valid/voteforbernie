@@ -18,11 +18,11 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
 
         <div class="map-intro">
           <ul class="legend">
-            <li class="closed">Closed Primary</li>
-            <li class="open">Open Primary</li>
-            <li class="closed-caucus">Closed Caucus</li>
-            <li class="open-caucus">Open Caucus</li>
-            <li class="other">Other</li>
+            <li class="closed" data-type="closed">Closed Primary</li>
+            <li class="open" data-type="open">Open Primary</li>
+            <li class="closed-caucus" data-type="closed-caucus">Closed Caucus</li>
+            <li class="open-caucus" data-type="open-caucus">Open Caucus</li>
+            <li class="other" data-type="other">Other</li>
           </ul>
           <div class="inner-content explanation-container">
             <!-- <h3>You want to vote for Bernie Sanders <strong>but will you be able to?</strong></h3> -->
@@ -74,7 +74,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                   <?php foreach ($states as $state): ?>
 
                   <div id="<?php echo $state->state; ?>"
-                        class="state <?php echo $state->state; ?> <?php echo $helper->getStatusClass($state); ?>">
+                        class="state <?php echo $state->state; ?> <?php echo $helper->getStatusClass($state); ?>" data-type="<?php echo explode(' ', $helper->getStatusClass($state))[0]; ?>">
                     <h3><?php echo $state->getTitle(); ?></h3>
                     <div class="state-info cf">
                       <div class="m-all t-2of3 d-2of3">

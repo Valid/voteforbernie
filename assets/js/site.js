@@ -208,6 +208,26 @@ vfb.buildMap = function () {
 
           jQuery(label).html('<strong>' + jQuery(label).text() + '</strong><br>' + primaryText + ($stateDetails.hasClass('caucus') ? ' Caucus' : ' Primary') );
         },
+        onRegionOver: function (event, code) {
+          // console.log(element, label, code);
+          var $stateDetails = $states.find('.' + code),
+            type = $stateDetails.data('type');
+
+            jQuery('.legend').find('li').not('.' + type);
+
+          // Fade out other legend items
+          jQuery('.legend').find('li').not('.' + type).velocity({ opacity: 0.3 }, { queue: false });
+
+          // Switch explanation
+          // console.log(type, jQuery('.legend').find('.' + type));
+          vfb.explain(jQuery('.legend').find('.' + type));
+        },
+        onRegionOut: function (event, code) {
+          var $stateDetails = $states.find('.' + code),
+            type = $stateDetails.data('type');
+
+          jQuery('.legend').find('li').not('.' + type).velocity({ opacity: 1 }, { queue: false });
+        },
         onRegionClick: function (element, code, region) {
           vfb.trackEvent('State click', code);
           vfb.chooseState(code);
@@ -314,20 +334,24 @@ vfb.enhanceSharing = function () {
   }
 };
 
+vfb.explain = function (legendItem) {
+  var $this = jQuery(legendItem),
+    $explanations = jQuery('.explanations').find('li'),
+    $activeExplanation = $explanations.siblings('.active'),
+    $explanation = $explanations.siblings('.' + $this.data('type'));
+
+  if ($activeExplanation[0]  !== $explanation[0]) {
+    $activeExplanation.removeClass('active');
+    $explanation.addClass('active');
+  }
+};
+
 vfb.handleLegend = function () {
-  var $legend = jQuery('.legend'),
-    $explanations = jQuery('.explanations').find('li');
+  var $legend = jQuery('.legend');
 
   if ($legend.length) {
     $legend.on('mouseover click', 'li', function () {
-      var $this = jQuery(this),
-        $activeExplanation = $explanations.siblings('.active'),
-        $explanation = $explanations.siblings('.' + $this.attr('class'));
-
-      if ($activeExplanation[0] !== $explanation[0]) {
-        $activeExplanation.removeClass('active');
-        $explanation.addClass('active');
-      }
+      vfb.explain(jQuery(this));
     });
   }
 };
