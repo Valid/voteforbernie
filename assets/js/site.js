@@ -122,7 +122,7 @@ vfb.chooseState = function (stateCode) {
   }
 
   $mapState.velocity('callout.bounce', { complete: function () {
-    $newsletter.insertAfter($state).find('select').val($state.find('h3').text());
+    $newsletter.appendTo($state).find('select').val($state.find('h3').text());
     jQuery('html, body').animate({ scrollTop: $state.offset().top - 100 }, 'slow');
   }});
 
