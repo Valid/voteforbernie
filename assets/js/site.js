@@ -223,7 +223,8 @@ vfb.buildMap = function () {
     // $vmap.velocity('transition.bounceIn');
 
     $vmap.find('.jqvmap-region').velocity('transition.perspectiveDownIn', { stagger: 0, opacity: 1 });
-    jQuery('.legend').find('li').velocity('transition.slideLeftIn', { delay: 500, stagger: 250, display: 'inline-block', opacity: 1 } );
+    jQuery('.legend').find('li').velocity('transition.slideLeftIn', { delay: 500, stagger: 100, display: 'inline-block', opacity: 1 } );
+    jQuery('.inner-content').eq(0).velocity('transition.slideDownIn', { delay: 1000, opacity: 1 } );
 
     // $vmap.velocity({}, { duration: 500 })
     //   .velocity({scaleX: 1, scaleY: 1}, { duration: 1000 });
