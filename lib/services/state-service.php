@@ -17,4 +17,15 @@ class StateService {
     }
     return $states;
   }
+
+  public function determineMostRecentUpdate ($states) {
+    foreach ($states as $state) {
+      if (!isset($mostRecent)) {
+        $mostRecent = $state->post->post_modified;
+      } elseif ($state->post->post_modified > $mostRecent) {
+        $mostRecent = $state->post->post_modified;
+      }
+    }
+    return date('F d, Y', strtotime($mostRecent));
+  }
 }
