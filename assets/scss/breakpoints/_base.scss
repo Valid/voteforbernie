@@ -1863,7 +1863,8 @@ FOOTER STYLES
       top: 0;
       opacity: 0;
       background-color: #ca0020;
-      padding: 3px 5px;
+      padding: 5px 15px;
+      border-radius: 10px;
       &.active {
         position: inherit;
         opacity: 1;
