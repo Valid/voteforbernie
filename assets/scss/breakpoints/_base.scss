@@ -1284,7 +1284,11 @@ FOOTER STYLES
     opacity: 0;
   }
 }
-
+.jqvmap-label {
+  background: rgba(255, 255, 255, 0.75);
+  color: #000;
+  border: 1px solid #000;
+}
 // Tweets
 
 .twitter-share {
