@@ -13,10 +13,10 @@ class VoteInfoHelper {
     'caucuses' => 'caucus'
   );
   protected static $explanations = array(
-    'open' => 'You can vote for Bernie Sanders regardless of registered party.',
-    'closed' => 'If you are <strong>not</strong> registered as a democrat, you <strong>cannot</strong> vote for Bernie Sanders.',
-    'semi-closed' => 'If you are <strong>not</strong> registered as a democrat or undeclared, you <strong>cannot</strong> vote for Bernie Sanders.',
-    'semi-open' => 'If you are registered as a republican, you <strong>cannot</strong> vote for Bernie Sanders.'
+    'open' => '{$denonym} can vote for Bernie Sanders regardless of their registered party',
+    'closed' => '{$denonym} that are <strong>not</strong> registered as a democrat <strong>cannot</strong> vote for Bernie',
+    'semi-closed' => '{$denonym} that are <strong>not</strong> registered as a democrat or undeclared <strong>cannot</strong> vote for Bernie',
+    'semi-open' => '{$denonym} that are are registered as a republican <strong>cannot</strong> vote for Bernie Sanders'
   );
   protected static $actions = array(
     'open' => 'Just register to vote!',
@@ -55,6 +55,7 @@ class VoteInfoHelper {
 
   public function getExplanationText($state) {
     $explanationText = '';
+    $denonym = $state->denonym;
     if ($state->hasExtraExplanation()) {
       $explanationText = $state->extra_explanation . ' ';
     }
@@ -64,7 +65,7 @@ class VoteInfoHelper {
     } else if ($this->hasStatusExplanation($state)) {
       $explanationText .= self::$explanations[$state->status];
     }
-    return $explanationText;
+    return strtr($explanationText, array('{$denonym}' => $denonym));
   }
 
   public function getActionText($state) {
