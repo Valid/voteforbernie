@@ -124,33 +124,3 @@ do they need tweaking?
 		li {}
 	}
 } /* end .footer-links */
-
-
-// // Vote info
-.vote-info {
-	.choose-state-header {
-		font-size: 3em;
-	}
-
-	.legend {
-		text-align: center;
-		li {
-			margin: 0;
-		}
-	}
-
-	.state {
-		.advice {
-			// text-align: left;
-			font-size: 1em;
-			strong {
-				// display: inline-block;
-			}
-		}
-	}
-}
-
-// Map
-#vmap {
-	height: 270px;
-}
