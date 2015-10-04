@@ -108,7 +108,7 @@ function loadGravatars() {
 
 
 // Choose state handler
-vfb.chooseState = function (stateCode) {
+vfb.chooseState = function (stateCode, noAnimation) {
   var $states = jQuery('.states'),
     $state = $states.find('.' + stateCode),
     $mapState = jQuery('#jqvmap1_' + stateCode),
@@ -121,10 +121,15 @@ vfb.chooseState = function (stateCode) {
     history.replaceState({}, '', '#' + stateCode);
   }
 
-  $mapState.velocity('callout.bounce', { complete: function () {
+  if (noAnimation) {
     $newsletter.appendTo($state).find('select').val($state.find('h3').text());
-    jQuery('html, body').animate({ scrollTop: $state.offset().top - 100 }, 'slow');
-  }});
+    jQuery('html, body').animate({ scrollTop: $state.offset().top - 100 }, 'fast');
+  } else {
+    $mapState.velocity('callout.bounce', { complete: function () {
+      $newsletter.appendTo($state).find('select').val($state.find('h3').text());
+      jQuery('html, body').animate({ scrollTop: $state.offset().top - 100 }, 'slow');
+    }});
+  }
 
 };
 
@@ -371,7 +376,7 @@ vfb.scrollOnHash = function () {
 
   if (code) {
     vfb.trackEvent('State hash', code);
-    vfb.chooseState(code);
+    vfb.chooseState(code, true);
   }
 };
 
