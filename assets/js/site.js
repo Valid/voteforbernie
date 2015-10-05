@@ -123,11 +123,13 @@ vfb.chooseState = function (stateCode, noAnimation) {
 
   if (noAnimation) {
     $newsletter.appendTo($state).find('select').val($state.find('h3').text());
-    jQuery('html, body').animate({ scrollTop: $state.offset().top - 100 }, 'fast');
+    if (document.body.scrollTop === 0) {
+      jQuery('html, body').animate({ scrollTop: $state.offset().top - 100 }, 1000);
+    }
   } else {
     $mapState.velocity('callout.bounce', { complete: function () {
       $newsletter.appendTo($state).find('select').val($state.find('h3').text());
-      jQuery('html, body').animate({ scrollTop: $state.offset().top - 100 }, 'slow');
+      jQuery('html, body').animate({ scrollTop: $state.offset().top - 100 }, 1000);
     }});
   }
 
