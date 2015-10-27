@@ -291,32 +291,6 @@ vfb.buildMap = function () {
   }
 };
 
-vfb.startCountdown = function () {
-var $clock = jQuery('.flip-counter');
-
-  vfb.startClock = function () {
-    if ($clock.length) {
-      // TODO: If timer is over, change layout.
-
-      var now = new Date();
-      var end = new Date(Date.UTC(2015, 7, 5, 19, 0, 0));
-      var delta = end.getTime() / 1000 - now.getTime() / 1000;
-
-      $clock.FlipClock(delta, {
-        countdown: true,
-        clockFace: 'DailyCounter'
-      });
-    }
-  };
-
-  vfb.startClock();
-
-  setInterval(function () {
-    // Keep clock in sync, browser timers suck.
-    vfb.startClock();
-  }, 120000);
-};
-
 vfb.enhanceSharing = function () {
   var $floatShareWrapper = jQuery('#crestashareicon'),
   $contentShareWrappers = jQuery('.cresta-share-icon').not($floatShareWrapper);
@@ -382,6 +356,38 @@ vfb.scrollOnHash = function () {
   }
 };
 
+// Replace all img.svg with inline SVG, allowing CSS styling
+vfb.handleSVG = function () {
+  jQuery('img.svg').each(function(){
+    var $img = jQuery(this),
+      imgID = $img.attr('id'),
+      imgClass = $img.attr('class'),
+      imgURL = $img.attr('src');
+
+    jQuery.get(imgURL, function(data) {
+    // Get the SVG tag
+    var $svg = jQuery(data).find('svg');
+
+    // Add replace image ID to the new SVG
+    if(typeof imgID !== 'undefined') {
+    $svg = $svg.attr('id', imgID);
+    }
+    // Add replaced image classes to the new SVG
+    if(typeof imgClass !== 'undefined') {
+    $svg = $svg.attr('class', imgClass+' replaced-svg');
+    }
+
+    // Remove any invalid XML tags as per http://validator.w3.org
+    $svg = $svg.removeAttr('xmlns:a');
+
+    // Replace image with new SVG
+    $img.replaceWith($svg);
+
+    }, 'xml');
+
+  });
+};
+
 /*
  * Put all your regular jQuery in here.
 */
@@ -394,6 +400,7 @@ jQuery(document).ready(function($) {
   // loadGravatars();
 
 
+  vfb.scrollOnHash();
 
   vfb.buildMap();
 
@@ -401,12 +408,10 @@ jQuery(document).ready(function($) {
 
   vfb.handleStateSelector();
 
-  vfb.scrollOnHash();
+  vfb.handleSVG();
 
   // Enable tracking clicks
   vfb.trackElements();
-
-  vfb.startCountdown();
 
   setTimeout(function () {
     vfb.enhanceSharing();
