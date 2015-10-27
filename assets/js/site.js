@@ -362,7 +362,7 @@ vfb.handleSVG = function () {
     var $img = jQuery(this),
       imgID = $img.attr('id'),
       imgClass = $img.attr('class'),
-      imgURL = $img.attr('src');
+      imgURL = $img.data('src');
 
     jQuery.get(imgURL, function(data) {
     // Get the SVG tag
