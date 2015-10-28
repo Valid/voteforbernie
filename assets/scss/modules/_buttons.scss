@@ -25,26 +25,26 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 *********************/
 
 %btn {
-  display: inline-block;
-  position: relative;
-  font-family: $headerFont;
-  text-decoration: none;
-  color: $white;
-  font-size: 0.9em;
-  font-size: 26px;
-  line-height: 34px;
-  font-weight: normal;
-  padding: 5px 15px;
-  border-radius: 4px;
   border: 0;
+  border-radius: 2px;
+  color: $white;
   cursor: pointer;
+  display: inline-block;
+  font-family: $headerFont;
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 34px;
+  padding: 5px 10px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
   @include transition(background-color 0.14s ease-in-out);
 
   // hovering on the btn
   &:hover, &:focus {
     color: $white;
-    text-decoration: none;
     outline: none;
+    text-decoration: none;
   } // end hover
 
   // clicking on the button
@@ -53,33 +53,3 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   } // end active
 
 } // end .button
-
-/*
-An example button.
-You can use this example if you want. Just replace all the variables
-and it will create a button dependant on those variables.
-*/
-.ui-btn {
-  @extend %btn;
-  background-color: $blue;
-
-  &:hover,
-  &:focus {
-    background-color: darken($blue, 4%);
-  }
-
-  &:active {
-    background-color: darken($blue, 5%);
-  }
-
-}
-
-.fb-btn {
-  padding-left: 50px;
-  background-image: url(data:image/png;charset=utf-8;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAcCAYAAACZOmSXAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkI1MjRCQTJBMkRCODExRTVBNkM3RERCNDMxQjk1MUQ5IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkI1MjRCQTJCMkRCODExRTVBNkM3RERCNDMxQjk1MUQ5Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QjUyNEJBMjgyREI4MTFFNUE2QzdEREI0MzFCOTUxRDkiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QjUyNEJBMjkyREI4MTFFNUE2QzdEREI0MzFCOTUxRDkiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6zF90lAAACDElEQVR42uyWsUtbQRzHr5pWTHFI6ZBR3qwl8MTsJf0PGic7uDi7KWq3InZ1K4gOUkpNFyFbs4ioVFLo4CaKEU0sLcmkolWv39PvxV9f3nt5HUyG9gsf7ne/+9397i4vv/eU1lqF4IJ9sAdSTWIt/WAHlEA6LLbZQh/1nT5ETD4v5qyExcaUUs/AS/BI3eoELIF98FjdqYdtH8iCLjF2DnJgG3QL/xO2veCVWO8CfDI7qOhGbXB3eeHL01fW/jrk+HvhW6Nv0ye+0oEdJFWjDlSwSgH+sDl+Y8mY6HwB0+AMbIUs9BwMgofC96vJnGEwx5/kDUgbp0z+ExQ8k34I+4it2dxqSKLvwt4Tm1unPWYHYypcU4y5Aq9VNM2ABB/gybDAZsnLfEr/RuYGR6IEdqg2Sp48DpwW5Ixb44G+qXPtP/kpOG5BzmT99D4V7L6pV822PnD/k3uVMY8DmPX0rTR9ppIts69pK0+cpRi1wmVFOxHw/3c47oIXoEbbqyHW+FrUk2f5ceAELGg1Ct6KF9JXMZZgu8xTZ6Ikt9eZ89xCkGqcUySu8A+YQsbbexcleVbs2PYL4qSjtAvE9gc867jclMsbbLh2vyJTBbO0MxxzwLiIHee48X8WfmMnxJfvLv1VrvVHkfl3K5x8q5mPgG8tyJkCT23yS7SdbTj4tbn2BX6jtVIm3+JvAQYAq0fGuQfv4e0AAAAASUVORK5CYII=);
-  background-position: 10px 50%;
-  background-repeat: no-repeat;
-  &:hover, &:active, &:visited {
-    color: #fff!important;
-  }
-}
