@@ -60,9 +60,9 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                 <header class="article-header">
                   <!-- <h1 class="page-title"><?php the_title(); ?></h1> -->
                   <div class="sign-up-notice">
+                    <p class="last-modified">Last updated on <?php echo $mostRecentStateUpdate ?>.</p>
                     <p class="tentative">Dates and deadlines may change at any time,<br/>sign up to receive updates for your state.</p>
                     <?php echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" ); ?>
-                    <p class="byline vcard">Page last updated: <?php echo $mostRecentStateUpdate ?>.</p>
                     <div class="gaunit"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- Below Newsletter --> <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3203899049474789" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
                   </div>
                 </header>

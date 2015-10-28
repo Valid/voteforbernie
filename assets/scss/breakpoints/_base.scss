@@ -1303,9 +1303,13 @@ FOOTER STYLES
         line-height: 1;
       }
     }
-    .byline {
+    .last-modified {
+      border-bottom: 1px dashed $white;
       font-size: 13px;
-      margin-top: 10px;
+      margin: 0 auto;
+      max-width: 90%;
+      padding-bottom: 5px;
+
     }
   }
 }
