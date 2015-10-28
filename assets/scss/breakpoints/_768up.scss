@@ -350,9 +350,14 @@ mobile. Make sure to double check these!
 	}
 }
 #crestashareicon {
+	.sbutton {
+		margin: 8px 0;
+	}
 	.fb-like {
 		bottom: auto;
 		left: auto;
-		max-width: 45px;
+		max-width: 47px;
+		overflow: hidden;
+		right: 0;
 	}
 }
