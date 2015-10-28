@@ -33,14 +33,6 @@ HEADER STYLES
 
 .header {}
 
-	// #logo {
-	// 	a {
-	// 		background-image: url(images/vote-for-bernie.png);
-	// 		height: 210px;
-	// 		width: 651px;
-	// 	}
-	// }
-
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -48,8 +40,8 @@ NAVIGATION STYLES
 .nav {
 	border: 0;
 	ul {
-		background:$black;
-		margin-top:0;
+		background: $black;
+		margin-top: 0;
 	}
 	li {
 		float: left;
@@ -74,21 +66,22 @@ NAVIGATION STYLES
 		*/
 		ul.sub-menu,
 		ul.children {
-			margin-top: 0;
 			border: 1px solid #ccc;
 			border-top: 0;
+			margin-top: 0;
 			position: absolute;
+			right: 0;
 			visibility: hidden;
 			z-index: 8999;
 
 			li {
 
 				a {
-					padding-left: 10px;
+					border-bottom: 1px solid #ccc;
 					border-right: 0;
 					display: block;
+					padding-left: 10px;
 					width: 180px;
-					border-bottom: 1px solid #ccc;
 
 					&:hover,
 					&:focus {}
@@ -111,8 +104,8 @@ NAVIGATION STYLES
 				for usability. k, bai.
 				*/
 				ul {
-					top:0;
 					left:100%;
+					top:0;
 				}
 			}
 
@@ -127,7 +120,7 @@ NAVIGATION STYLES
 		/* showing sub-menus */
 		&:hover > ul {
 			top: auto;
-			visibility:visible;
+			visibility: visible;
 		}
 
 	} /* end .menu ul li */
@@ -137,13 +130,9 @@ NAVIGATION STYLES
 	li.current_page_item,
 	li.current_page_ancestor {
 		a {}
-	}  /* end current highlighters */
+	}
 
-} /* end .nav */
-
-/*********************
-SIDEBARS & ASIDES
-*********************/
+} // end .nav
 
 .sidebar {
 	margin-top: 2.2em;
@@ -288,3 +277,82 @@ mobile. Make sure to double check these!
 		}
 	}
 } /* end .footer-links */
+
+#logo {
+	margin-top: 15px;
+}
+.branding {
+	text-align: right;
+}
+.map-intro {
+  margin-bottom: -20px;
+}
+.vote-info {
+	.state {
+		.state-wrapper {
+			max-width: 80%;
+		}
+		.state-title {
+			text-align: left;
+		}
+		.info {
+			background-color: transparent!important;
+			border-radius: 5px;
+      border-style: solid;
+      border-width: 0 2px;
+			display: inline-block;
+			text-align: center;
+		}
+		.st {
+			text-align: left;
+		}
+		h4 {
+			margin-bottom: 15px;
+		}
+		.action-info {
+			text-align: left;
+			p {
+				font-size: 19px;
+			}
+		}
+		.ui-btn {
+			display: block;
+			text-align: center;
+		}
+		&.open {
+      .info {
+        color: $open;
+      }
+    }
+    &.closed {
+      .info {
+        color: $closed;
+      }
+    }
+    &.other {
+      .info {
+        color: $other;
+      }
+      .ui-btn {
+      	font-size: 24px;
+      }
+    }
+    &.open-caucus {
+      .info {
+        color: $caucus-open;
+      }
+    }
+    &.closed-caucus {
+      .info {
+      	color: $caucus-closed;
+      }
+    }
+	}
+}
+#crestashareicon {
+	.fb-like {
+		bottom: auto;
+		left: auto;
+		max-width: 45px;
+	}
+}

@@ -124,3 +124,21 @@ do they need tweaking?
 		li {}
 	}
 } /* end .footer-links */
+
+.vote-info {
+	.state {
+	}
+}
+.map-intro {
+	.explanations {
+		li {
+			font-size: 20px;
+		}
+	}
+	.legend {
+		margin: 20px auto;
+		li {
+			font-size: 22px;
+		}
+	}
+}
