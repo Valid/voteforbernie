@@ -1156,7 +1156,9 @@ FOOTER STYLES
       margin: 60px auto;
     }
     &.active {
-      background: $light-gray;
+      background: $light-gray url(images/paper.png);
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
       border-top: 5px solid $open;
       box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
     }
