@@ -18,6 +18,9 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
+  <!-- Optimizely A/B testing snippet -->
+  <script src="//cdn.optimizely.com/js/3517780176.js"></script>
+
   <?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
   <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/dist/images/apple-touch-icon.png">
   <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
@@ -37,108 +40,97 @@
 
   <link rel="manifest" href="/manifest.json">
     <!--[if IE]>
-      <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
-      <![endif]-->
-      <?php // or, set /favicon.ico for IE10 win ?>
-      <meta name="msapplication-TileColor" content="#323944">
-      <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/dist/images/win8-tile-icon.png">
-      <meta name="theme-color" content="#323944">
+    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
+    <![endif]-->
+    <?php // or, set /favicon.ico for IE10 win ?>
+    <meta name="msapplication-TileColor" content="#323944">
+    <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/dist/images/win8-tile-icon.png">
+    <meta name="theme-color" content="#323944">
 
-      <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-      <!-- Optimizely A/B testing snippet -->
-      <script src="//cdn.optimizely.com/js/3517780176.js"></script>
+    <?php // wordpress head functions ?>
+    <?php wp_head(); ?>
+    <?php // end of wordpress head ?>
 
-      <?php // wordpress head functions ?>
-      <?php wp_head(); ?>
-      <?php // end of wordpress head ?>
+    <?php // drop Google Analytics Here ?>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      <?php // drop Google Analytics Here ?>
-      <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-64072805-1', 'auto');
+      ga('send', 'pageview');
 
-        ga('create', 'UA-64072805-1', 'auto');
-        ga('send', 'pageview');
+    </script>
 
-      </script>
-
-      <script>
-        window.fbAsyncInit = function() {
-          FB.init({
-            appId      : '1615439018737096',
-            xfbml      : true,
-            version    : 'v2.4'
-          });
-        };
-
-        (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
-     </script>
-
-     <script>window.twttr = (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0],
-      t = window.twttr || {};
-      if (d.getElementById(id)) return t;
-      js = d.createElement(s);
-      js.id = id;
-      js.src = "https://platform.twitter.com/widgets.js";
-      fjs.parentNode.insertBefore(js, fjs);
-
-      t._e = [];
-      t.ready = function(f) {
-        t._e.push(f);
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1615439018737096',
+          xfbml      : true,
+          version    : 'v2.4'
+        });
       };
 
-      return t;
+      (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+   </script>
+
+   <script>window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
+
+    return t;
     }(document, "script", "twitter-wjs"));</script>
-    <?php // end analytics ?>
+  <?php // end analytics ?>
 
   </head>
 
   <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
     <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=262075250491007";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-
     <div id="container">
       <div class="header-wrapper">
-        <?php // Only show on homepage
-        if (is_page( 4 ) && false) { ?>
-        <div class="feature test">
-          <p><a href="http://feelthebern.org/flyer-kit/" target="_blank" data-track="CTA,FlyerKit"><em>Just released!</em> &mdash; Print over 20 flyers in 2 languages @ <strong>Flyer Kit</strong></a></p>
-        </div>
-        <?php } ?>
-
         <header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-        <p class="action-bar"><strong>Voter Alert &mdash;</strong> New York has only 5 days left <a href="#">Read more</a></p>
-          <div id="inner-header" class="branding wrap cf">
+          <div class="action-bar">
+            <?php // TODO: Pull from ACF ?>
+            <strong>Voter Alert &mdash;</strong> New York has only 5 days left <a href="#">Read more</a>
+            <div class="fb-like" data-href="https://voteforbernie.org/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+          </div>
+          <div id="inner-header" class="branding">
 
-            <?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-            <h1 id="logo" class="h1" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow">#VoteForBernie</a></h1>
+            <h1 id="logo" class="h1" title="VoteForBernie.org" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow">#VoteForBernie</a></h1>
             <nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-              <?php wp_nav_menu(array(
-                'theme_location' => 'header'
-                )); ?>
 
-              </nav>
-              <div class="sub-header">
-                <div class="fb-like" data-href="https://voteforbernie.org/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
 
-              </div>
+            <?php wp_nav_menu(array(
+                       'container' => false,
+                       'container_class' => 'menu cf',
+                       'menu_class' => 'nav top-nav cf',
+                       'theme_location' => 'header',
+                       'before' => '',
+                       'after' => '',
+                       'link_before' => '',
+                       'link_after' => ''
+            )); ?>
 
-            </div>
-          </header>
+            </nav>
+          </div>
+        </header>
       </div>
