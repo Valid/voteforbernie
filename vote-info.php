@@ -14,6 +14,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
 ?>
 
 <?php get_header(); ?>
+
       <div id="content" class="vote-info">
 
         <div class="map-intro">
@@ -25,7 +26,6 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
             <li class="other" data-type="other">Other</li>
           </ul>
           <div class="inner-content explanation-container">
-            <!-- <h3>You want to vote for Bernie Sanders <strong>but will you be able to?</strong></h3> -->
             <ul class="explanations">
               <li class="closed active">Voters in Closed Primary states <strong>must</strong> register as Democrat to vote for Bernie</li>
               <li class="open">Voters in Open Primary states can vote for Bernie regardless of political affiliation</li>
@@ -49,7 +49,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
           <div id="vmap"></div>
         </div>
 
-        <div id="inner-content" class="wrap cf">
+        <div id="inner-content">
 
             <main id="main" class="m-all t-all d-all cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
@@ -60,76 +60,70 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                 <header class="article-header">
                   <!-- <h1 class="page-title"><?php the_title(); ?></h1> -->
                   <div class="sign-up-notice">
-                    <p class="tentative">All dates are tentative and subject to change at any time.<br/>If you want to receive important updates for your state, sign up for the email list.</p>
+                    <p class="tentative">Dates and deadlines may change at any time,<br/>sign up to receive updates for your state.</p>
                     <?php echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" ); ?>
-                    <p class="byline vcard">Last updated: <?php echo $mostRecentStateUpdate ?>, if you find any mistakes, <a href="/contact/">contact us</a>.</p>
+                    <p class="byline vcard">Page last updated: <?php echo $mostRecentStateUpdate ?>.</p>
+                    <div class="gaunit"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- Below Newsletter --> <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3203899049474789" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
                   </div>
                 </header>
 
                 <section class="entry-content cf" itemprop="articleBody">
-                  <div class="page-content m-all t-all d-all">
+                  <div class="page-content">
                     <div class="states">
-                    <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
+                    <?php // if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
 
                   <?php foreach ($states as $state): ?>
 
                   <div id="<?php echo $state->state; ?>"
                         class="state <?php echo $state->state; ?> <?php echo $helper->getStatusClass($state); ?>" data-type="<?php echo explode(' ', $helper->getStatusClass($state))[0]; ?>">
-                    <h3><?php echo $state->getTitle(); ?></h3>
-                    <div class="state-info cf">
-                      <div class="m-all t-2of3 d-2of3">
-                        <p class="primaries">
-                          <?php echo $state->getTitle(); ?>
-                          has
-                          <strong class="status"><?php echo $state->status; ?></strong>
-                          <?php echo $state->type; ?>.
-                        </p>
-                        <p class="explain"><?php echo $helper->getExplanationText($state); ?></p>
-                        <p class="advice">
-                          <?php echo $state->denonym; ?> for Bernie:
-                          <a href="<?php echo $state->vote_link ?>"
-                            data-track="Vote Link, <?php echo $state->state; ?>"
-                            target="_blank"><?php echo $helper->getActionText($state); ?></a></p>
-                        <?php if ($state->under_18): ?>
-                          <p class="explain"><strong>Only 17?</strong> If you will be 18 by November 8, 2016, you can vote in the primaries!</p>
-                        <?php endif; ?>
-                        <?php if ($state->hasAdditionalNote()): ?>
-                          <p class="explain"><?php echo $state->additional_note; ?></p>
-                        <?php endif; ?>
-
-                        <?php if ($state->state === 'ny') {
-                          $today = time();
-                          $oct9 = mktime(0,0,0,10,9,2015);
-                          $daysLeft = round(($oct9 - $today)/86400);
-                          ?>
-
-                          <div class="callout">
-                            <p>There are only <strong><?php echo $daysLeft ?> days left</strong> to update your registration to Democrat!<br/>
-                            If you miss the deadline, <strong>you will not be able to vote for Bernie!</strong>.</p>
-                            <p class="explain">Check your <a href="https://voterlookup.elections.state.ny.us/votersearch.aspx" data-track="Check Registration, <?php echo $stateCode; ?>" target="_blank">current registration status online</a><br/>
-                            If you are not already affiliated as a democrat, <a href="http://dmv.ny.gov/more-info/electronic-voter-registration-application" data-track="Online Register, <?php echo $stateCode; ?>" target="_blank">update your NY registration online</a>. <a href="http://www.ifyouwantbernie.com/NY/" target="_blank">more info</a></p>
-                          </div>
-                        <?php } ?>
+                    <div class="state-wrapper cf">
+                      <div class="state-title">
+                        <h3><?php echo $state->getTitle(); ?></h3>
+                        <img class="svg" data-src="<?php echo get_template_directory_uri(); ?>/dist/images/svg/states/<?php echo $state->state; ?>.svg"/>
                       </div>
-                      <div class="resources m-all t-1of3 d-1of3">
-                        <p>
-                          <?php echo $state->getTypeText(); ?>:
+
+                      <div class="wr m-all t-3of4 d-3of4">
+                        <div class="st m-all t-all d-3of7">
+                          <p class="info">
+                            <?php echo $state->getTitle(); ?>
+                            has
+                            <strong class="status"><?php echo $state->status; ?></strong>
+                            <?php echo $state->type; ?>.
+                          </p>
+                          <p class="exp"><?php echo $helper->getExplanationText($state); ?></p>
+                          <?php if ($state->under_18): ?>
+                            <p class="exp"><strong>Only 17?</strong> If you will be 18 by November 8, 2016, you can vote in the primaries!</p>
+                          <?php endif; ?>
+                          <?php if ($state->hasAdditionalNote()): ?>
+                            <p class="exp"><?php echo $state->additional_note; ?></p>
+                          <?php endif; ?>
+                        </div>
+
+
+                        <div class="action-info m-all t-all d-4of7">
+                          <p><strong><?php echo $state->denonym; ?> for Bernie</strong> should
+                          <a href="state/<?php echo strtolower($state->getTitle()); ?>" data-track="actTxt,<?php echo $state->state; ?>">
+                          <?php echo strtolower($helper->getActionText($state)); ?></a> to vote for Bernie.</p>
+                          <a class="ui-btn" href="state/<?php echo strtolower($state->getTitle()); ?>" data-track="actBtn,<?php echo $state->state; ?>">
+                          <?php echo $helper->getActionText($state); ?></a>
+                        </div>
+                      </div>
+
+                      <div class="resources m-all t-1of4 d-1of4">
+                        <div class="cal">
+                          <span><?php echo $state->getTitle(); ?> <?php echo $state->type; ?></span>
                           <strong><?php echo $state->getPrimaryDate(); ?></strong>
-                        </p>
-                        <p>
-                          Deadline:
+                        </div>
+<!--                         <p>
+                          Must be
                           <?php if ($state->hasDeadlineDate()): ?>
                             <time title="<?php echo $state->deadline_reference; ?>">
                               <?php echo $state->deadline_date; ?>
                             </time>
                           <?php else: ?>
-                            <?php echo $state->deadline_reference; ?>
+                            <time><?php echo $state->deadline_reference; ?></time>
                           <?php endif; ?>
-                        </p>
-                        <ul>
-                          <li>Discussion: <?php echo $state->discussion_link; ?></li>
-                          <!-- <li><a href="<?php echo $state->check_registration_link; ?>" data-track="Check Registration, <?php echo $state->state; ?>">Check your current registration</a></li> -->
-                        </ul>
+                        </p> -->
                       </div>
                     </div>
                   </div>
