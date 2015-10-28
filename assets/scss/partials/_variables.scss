@@ -17,6 +17,15 @@ Need help w/ choosing your colors? Try this site out:
 http://0to255.com/
 *********************/
 
+
+// State Status Colors
+
+$open:              #0571b0;
+$closed:            #ca0020;
+$other:             #f4a582;
+$caucus-open:       #92c5de;
+$caucus-closed:     #b94f4f;
+
 $alert-yellow:      #ebe16f;
 $alert-red:         #fbe3e4;
 $alert-green:       #e6efc2;
@@ -35,14 +44,19 @@ $tan:               #eceee5;
 $green:             #7dd667;
 
 $bones-pink:        #f01d4f;
-$blue:              #4099FF;
+$blue:              #4099ff;
 
-$link-color:        #0571B0;
+$link-color:        #0571b0;
 $link-hover:        darken($link-color, 9%);
 
 $border-color:      #ccc;
 $disabled-gray:     #cfcfcf;
 
+$blue:              $open;
+$light-blue:        $caucus-open;
+$red:               $closed;
+$light-red:         $caucus-closed;
+$peach:             $other;
 
 /*
 Here's a great tutorial on how to
