@@ -1296,20 +1296,13 @@ FOOTER STYLES
 
   .sign-up-notice {
     text-align: center;
+    padding-bottom: 20px;
     p {
       font-size: 12px;
       &.tentative {
         font-weight: 700;
         line-height: 1;
       }
-    }
-    .last-modified {
-      border-bottom: 1px dashed $white;
-      font-size: 13px;
-      margin: 0 auto;
-      max-width: 90%;
-      padding-bottom: 5px;
-
     }
   }
 }
