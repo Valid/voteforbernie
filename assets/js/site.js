@@ -173,11 +173,40 @@ vfb.resizeMap = function () {
   }
 };
 
+
 jQuery(window).resize(function () {
-    waitForFinalEvent(function(){
-      vfb.resizeMap();
-    }, timeToWaitForLast, "VoteForBernie");
+  waitForFinalEvent(function(){
+    vfb.resizeMap();
+  }, timeToWaitForLast, "VFBMap");
 });
+
+var $top = jQuery('.to-map');
+
+vfb.backToTop = function () {
+  var trigger = 400,
+    scrollTop = document.body.scrollTop;
+
+  if (scrollTop > trigger) {
+    $top.addClass('show');
+  } else {
+    $top.removeClass('show');
+  }
+};
+
+if ($top.length) {
+  jQuery(window).scroll(function () {
+    waitForFinalEvent(function(){
+      vfb.backToTop();
+    }, timeToWaitForLast, "VFBTop");
+  });
+
+  $top.on('click', function (event) {
+    event.preventDefault();
+
+    jQuery('html, body').animate({ scrollTop: 0 }, 500);
+  });
+}
+
 
 vfb.buildMap = function () {
  // Build map if available

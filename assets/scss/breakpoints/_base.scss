@@ -1919,3 +1919,34 @@ FOOTER STYLES
     padding: 0;
   }
 }
+
+.to-map {
+  background-color: $light-gray;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  bottom: -45px;
+  position: fixed;
+  right: 10px;
+  z-index: 60;
+  @include transition(all 0.14s ease-in-out);
+  &.show {
+    bottom: 0;
+    opacity: 1;
+    a {
+      padding-bottom: 5px;
+    }
+  }
+  a {
+    background: url(images/elements/map-icon.png) no-repeat 50% 10px;
+    box-sizing: content-box;
+    display: inline-block;
+    height: 26px;
+    padding: 10px 10px 0;
+    text-indent: -999em;
+    width: 41px;
+    @include transition(padding 0.14s ease-in-out);
+    &:hover {
+      padding-bottom: 10px;
+    }
+  }
+}

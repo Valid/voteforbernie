@@ -134,6 +134,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                     <?php // the_content(); ?>
                   </div>
                 </section>
+                <div class="to-map"><a href="#" title="Back to the map!">Back to top</a></div>
 
                 <?php // comments_template(); ?>
 
