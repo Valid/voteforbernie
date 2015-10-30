@@ -386,7 +386,7 @@ vfb.handleStateSelector = function () {
 vfb.scrollOnHash = function () {
   var code = location.hash ? location.hash.substr(1) : null;
 
-  if (code) {
+  if (code && jQuery('#' + code).length) {
     vfb.trackEvent('State hash', code);
     vfb.chooseState(code, true);
   }
