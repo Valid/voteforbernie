@@ -1189,6 +1189,41 @@ FOOTER STYLES
         margin: 0;
       }
     }
+    .date {
+      background-color: $gray;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      line-height: 1;
+      margin: 0 auto;
+      width: 120px;
+      padding-bottom: 5px;
+      text-transform: uppercase;
+      font-weight: bold;
+      span, strong, em {
+        display: block;
+      }
+      strong {
+        background-color: $blue;
+        border-bottom: 1px dashed;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        color: $white;
+        font-size: 16px;
+        padding: 3px 0;
+      }
+      span {
+        font-family: $headerFont;
+        font-size: 60px;
+        font-weight: normal;
+        line-height: 54px;
+        padding-top: 10px;
+      }
+      em {
+        font-size: 11px;
+        font-style: normal;
+      }
+
+    }
 
     .callout {
       background-color: $white;

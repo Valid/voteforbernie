@@ -109,10 +109,11 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                       </div>
 
                       <div class="resources m-all t-1of4 d-1of4">
-                        <div class="cal">
-                          <span><?php echo $state->getTitle(); ?> <?php echo $state->type; ?></span>
-                          <strong><?php echo $state->getPrimaryDate(); ?></strong>
-                        </div>
+                        <p class="date" title="<?php echo $state->getTitle(); ?> <?php echo $state->type; ?> are on <?php echo $state->getPrimaryDate(); ?>" data-date="<?php echo $state->getPrimaryDate(); ?>">
+                          <strong><?php echo date('F', strtotime($state->getPrimaryDate())); ?></strong>
+                          <span><?php echo date('j', strtotime($state->getPrimaryDate())); ?></span>
+                          <em><?php echo date('l', strtotime($state->getPrimaryDate())); ?></em>
+                        </p>
 <!--                         <p>
                           Must be
                           <?php if ($state->hasDeadlineDate()): ?>
