@@ -76,13 +76,12 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                   <div id="<?php echo $state->state; ?>"
                         class="state <?php echo $state->state; ?> <?php echo $helper->getStatusClass($state); ?>" data-type="<?php echo explode(' ', $helper->getStatusClass($state))[0]; ?>">
                     <div class="state-wrapper cf">
-                      <div class="state-title">
-                        <h3><?php echo $state->getTitle(); ?></h3>
-                        <img class="svg" data-src="<?php echo get_template_directory_uri(); ?>/dist/images/svg/states/<?php echo $state->state; ?>.svg"/>
-                      </div>
-
                       <div class="wr m-all t-3of4 d-3of4">
                         <div class="st m-all t-all d-3of7">
+                        <div class="state-title">
+                          <h3><?php echo $state->getTitle(); ?></h3>
+                          <img class="svg" data-src="<?php echo get_template_directory_uri(); ?>/dist/images/svg/states/<?php echo $state->state; ?>.svg"/>
+                        </div>
                           <p class="info">
                             <?php echo $state->getTitle(); ?>
                             has
@@ -90,12 +89,6 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                             <?php echo $state->type; ?>.
                           </p>
                           <p class="exp"><?php echo $helper->getExplanationText($state); ?></p>
-                          <?php if ($state->under_18): ?>
-                            <p class="exp"><strong>Only 17?</strong> If you will be 18 by November 8, 2016, you can vote in the primaries!</p>
-                          <?php endif; ?>
-                          <?php if ($state->hasAdditionalNote()): ?>
-                            <p class="exp"><?php echo $state->additional_note; ?></p>
-                          <?php endif; ?>
                         </div>
 
 
@@ -125,6 +118,16 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                           <?php endif; ?>
                         </p> -->
                       </div>
+                      <?php if ($state->under_18 || $state->hasAdditionalNote()): ?>
+                        <div class="extra m-all t-all d-all">
+                          <?php if ($state->under_18): ?>
+                            <p class="only17"><strong>Only 17?</strong> If you will be 18 by November 8, 2016, you can vote in the primaries!</p>
+                          <?php endif; ?>
+                          <?php if ($state->hasAdditionalNote()): ?>
+                            <p class="note"><?php echo $state->additional_note; ?></p>
+                          <?php endif; ?>
+                        </div>
+                      <?php endif; ?>
                     </div>
                   </div>
                   <?php endforeach; ?>

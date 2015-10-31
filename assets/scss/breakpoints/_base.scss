@@ -1129,8 +1129,7 @@ FOOTER STYLES
     .exp {
       font-size: 16px;
       font-style: italic;
-      line-height: 1.2;
-      margin-bottom: 30px;
+      line-height: 1;
     }
     .advice {
       a {
@@ -1191,14 +1190,13 @@ FOOTER STYLES
     }
     .date {
       background-color: $gray;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
+      border-radius: 5px;
+      font-weight: bold;
       line-height: 1;
       margin: 0 auto;
-      width: 120px;
       padding-bottom: 5px;
       text-transform: uppercase;
-      font-weight: bold;
+      width: 120px;
       span, strong, em {
         display: block;
       }
@@ -1223,6 +1221,19 @@ FOOTER STYLES
         font-style: normal;
       }
 
+    }
+
+    .extra {
+      color: $black;
+      font-size: 14px;
+      margin-top: 10px;
+      text-align: center;
+      strong {
+        background-color: $light-blue;
+        border-radius: 2px;
+        color: $white;
+        padding: 1px 3px;
+      }
     }
 
     .callout {
