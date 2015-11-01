@@ -953,44 +953,38 @@ FOOTER STYLES
 *********************/
 
 .footer {
-  background-color: $black;
   clear: both;
-  color: $light-gray;
+  color: $black;
+  padding-bottom: 40px;
+  text-align: center;
 
   .note {
-    color: #939393;
-    font-size: 0.6em;
+    color: $meta-gray;
+    font-size: 11px;
     text-align: center;
   }
   .paid-for {
-    margin:  20px 0;
-    text-align: center;
-    .standard {
-      border: 1px solid $white;
-      color: $white;
-      display: inline-block;
-      font-size: 1.2em;
-      padding: 5px 20px;
-      text-transform: uppercase;
-      @media (max-width: 767px) {
-        font-size: 1em;
-      }
-    }
-    p {
-      color: #939393;
-      margin: 0;
-      strong {
-        font-family: $accentFont;
-        font-size: 1.5em;
-        font-weight: normal;
-        padding-right: 10px;
-      }
-      em {
-        font-size: 0.8em;
-        font-weight: normal;
-        // font-style: normal;
-      }
-    }
+    border: 1px solid;
+    display: inline-block;
+    margin:  10px 0 0;
+    padding: 0 10px;
+    text-transform: uppercase;
+  }
+  .jk {
+    color: $light-blue;
+    font-family: $headerFont;
+    font-size: 19px;
+    font-style: italic;
+    margin: 0;
+  }
+  .disclaimer {
+    color: $meta-gray;
+    font-size: 11px;
+    padding: 0 15px;
+  }
+  .copyright {
+    font-family: $headerFont;
+    font-size: 21px;
   }
 }
 

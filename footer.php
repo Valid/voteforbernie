@@ -2,28 +2,28 @@
 
   <div id="inner-footer" class="wrap cf">
 
+    <p class="paid-for">Paid for by GloboCorp Pac</p>
+    <p class="jk">(Just kidding, I made this for free!)</p>
+
     <nav role="navigation">
       <?php wp_nav_menu(array(
-        'container' => 'div',                           // enter '' to remove nav container (just make sure .footer-links in _base.scss isn't wrapping)
-        'container_class' => 'footer-links cf',         // class of container (should you choose to use it)
-        'menu' => __( 'Footer Links', 'bonestheme' ),   // nav name
-        'menu_class' => 'nav footer-nav cf',            // adding custom nav class
-        'theme_location' => 'footer-links',             // where it's located in the theme
-        'before' => '',                                 // before the menu
-        'after' => '',                                  // after the menu
-        'link_before' => '',                            // before each link
-        'link_after' => '',                             // after each link
-        'depth' => 0,                                   // limit the depth of the nav
-        'fallback_cb' => 'bones_footer_links_fallback'  // fallback function
+        'container' => false,
+        'container_class' => 'footer-links cf',
+        'menu_class' => 'nav footer-nav cf',
+        'theme_location' => 'footer',
+        'before' => '',
+        'after' => '',
+        'link_before' => '',
+        'link_after' => '',
+        'depth' => 0
       )); ?>
     </nav>
 
-    <!-- <p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p> -->
-    <div class="paid-for">
-      <p class="standard">Paid for by GloboCorp Pac</p>
-      <p><strong>Just kidding, I made this for free!</strong></p>
-    </div>
-    <p class="note">The content on voteforbernie.org is not a reflection of Senator Sanders, his office, or his campaign. This website is made and maintained by a volunteer with no relation or association with Bernie Sanders.</p>
+
+
+    <p class="disclaimer">VoteForBernie.org was built and is maintained by a volunteer and is not affiliated with the <a href="#" data-track="out,OfficialCampaign">official Bernie Sanders campaign</a>.</p>
+
+    <p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?></p>
 
   </div>
 
@@ -31,9 +31,8 @@
 
 </div>
 
-<?php // all js scripts are loaded in library/bones.php ?>
 <?php wp_footer(); ?>
 
 </body>
 
-</html> <!-- end of site. what a ride! -->
+</html>
