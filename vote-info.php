@@ -15,7 +15,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
 
 <?php get_header(); ?>
 
-      <div id="content" class="vote-info">
+      <div class="vote-info">
 
         <div class="map-intro">
           <ul class="legend">

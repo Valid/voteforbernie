@@ -105,7 +105,7 @@
 
   <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
     <div id="fb-root"></div>
-    <div id="container">
+    <div class="container">
       <div class="header-wrapper">
         <header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
           <div class="action-bar">
