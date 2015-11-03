@@ -9,13 +9,12 @@
 <?php get_header(); ?>
 
       <div id="content" class="debate-page">
-        <div class="wrap">
-          <h2 class="m-all t-all d-1of4 debate-title">#We Want Debate</h2>
-          <div class="m-all t-all d-3of4 intro-text">
+        <div class="intro-text wrap">
           <p>The Democratic National Committee isn't playing fair. They've scheduled <strong>six debates</strong> between the 2016 Democratic Presidential Candidates, <strong>over 4 times fewer</strong> than the 26 held in the 2008 election cycle. This will severely limit voters' understanding of each candidate, especially those that aren't household names.</p>
           <p>To make matters worse, the DNC <strong>forbids</strong> candidates from participating in debates that are not organized by the DNC. This is <em>not about Bernie Sanders</em>. This is <em>not about Hillary Clinton</em>. This is about having <strong>well-informed voters</strong>, a cornerstone of democracy.</p>
           <p>Another cornerstone of democracy is <strong>getting involved</strong>!
           <br/>Make a difference right now by joining our #WeWantDebate campaign.</p>
+          <p class="byline vcard">Last updated: <?php the_modified_time(get_option('date_format')); ?></p>
         </div>
 
         <div id="inner-content" class="wrap cf">
@@ -28,7 +27,7 @@
 
                 <header class="article-header">
                   <!-- <h1 class="page-title"><?php the_title(); ?></h1> -->
-                  <p class="byline vcard">Last updated: <?php the_modified_time(get_option('date_format')); ?></p>
+
                 </header>
 
 
