@@ -1,0 +1,110 @@
+// Email List Signup
+.yks-mailchimpFormContainer {
+  background-color: $white;
+  border-radius: 2px;
+  border: 1px solid #9b9b98;
+  font-size: 13px;
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 0 10px;
+  position: relative;
+  text-align: left;
+  h3 {
+    font-family: $accentFont;
+    font-size: 30px;
+    margin: 0;
+    text-align: center;
+  }
+  .yks-mailchimpFormDivRow {
+    display: inline-block;
+    margin: 0;
+    width: 40%;
+    &:last-child {
+      .yks_mc_interest_group_text, .yks_mc_interest_group_holder {
+        display: none;
+      }
+    }
+  }
+  .yks-mc-form-row-zip-code {
+    width: 26%;
+  }
+  .yks-mc-form-row-state {
+    float: right;
+    width: 33%;
+  }
+  @media (max-width: 472px) {
+    .yks-mc-form-row-email-address {
+      display: block;
+      width: auto;
+    }
+    .yks-mc-form-row-zip-code, .yks-mc-form-row-state {
+      margin-top: -15px;
+      width: 48%;
+    }
+  }
+  .yks-mailchimpFormDivRowLabel {
+    font-family: $headerFont;
+    font-size: 17px;
+    margin: 5px 0 0;
+  }
+  .yks-mailchimpFormDivRowField {
+    input {
+      background-color: #f2f2f2;
+    }
+  }
+  .yks-required-label {
+    color: #D42C2C;
+    font-size: 12px;
+  }
+  .yks-mc-input-state {
+    background-position: 90% center;
+  }
+  .yks-mailchimpFormDivSubmit {
+    left: 0;
+    margin: -34px 0 10px;
+    position: absolute;
+    right: 0;
+    p {
+      margin: 0;
+      padding: 10px;
+      text-align: center;
+    }
+    input {
+      background-color: $blue;
+      border: 0;
+      border-radius: 2px;
+      color: $white;
+      font-family: $headerFont;
+      font-size: 20px;
+      padding: 5px 0;
+      text-transform: uppercase;
+      transition: background-color 1s ease;
+      width: 100%;
+      &:hover {
+        background-color: lighten($blue, 10%);
+      }
+    }
+  }
+  .disclaimer {
+    color: $meta-gray;
+    font-size: 12px;
+    font-style: italic;
+    margin: 15px 0 10px;
+    text-align: center;
+  }
+}
+
+// Newsletter sidebar signup
+@media (min-width: 766px) {
+  .sidebar {
+    .yks-mailchimpFormContainer {
+      .yks-mc-form-row-email-address {
+        display: block;
+        width: auto;
+      }
+      .yks-mc-form-row-zip-code, .yks-mc-form-row-state {
+        width: 48%;
+      }
+    }
+  }
+}
