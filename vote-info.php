@@ -48,6 +48,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
         <div class="map-container">
           <div id="vmap"></div>
         </div>
+        <script>document.getElementById('vmap').style = 'height:' + Math.max(document.documentElement.clientHeight, window.innerHeight || 0) + 'px';</script>
 
         <div id="inner-content">
 
