@@ -1089,6 +1089,9 @@ FOOTER STYLES
       font-weight: normal;
       line-height: 1;
       margin: 0;
+      a {
+        color: $black;
+      }
     }
     .svg {
       height: 30px;
@@ -1162,10 +1165,13 @@ FOOTER STYLES
     .date {
       background-color: $gray;
       border-radius: 5px;
+      color: $black;
+      display: block;
       font-weight: bold;
       line-height: 1;
       margin: 0 auto;
       padding-bottom: 5px;
+      text-decoration: none;
       text-transform: uppercase;
       width: 120px;
       span, strong, em {

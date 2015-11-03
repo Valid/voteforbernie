@@ -79,7 +79,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                       <div class="wr m-all t-3of4 d-3of4">
                         <div class="st m-all t-all d-3of7">
                         <div class="state-title">
-                          <h3><?php echo $state->getTitle(); ?></h3>
+                          <h3><a href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="stateTitle,<?php echo $state->state; ?>"><?php echo $state->getTitle(); ?></a></h3>
                           <img class="svg" data-src="<?php echo get_template_directory_uri(); ?>/dist/images/svg/states/<?php echo $state->state; ?>.svg"/>
                         </div>
                           <p class="info">
@@ -94,29 +94,19 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
 
                         <div class="action-info m-all t-all d-4of7">
                           <p><strong><?php echo $state->denonym; ?> for Bernie</strong> should
-                          <a href="state/<?php echo strtolower($state->getTitle()); ?>" data-track="actTxt,<?php echo $state->state; ?>">
+                          <a href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="actTxt,<?php echo $state->state; ?>">
                           <?php echo strtolower($helper->getActionText($state)); ?></a> to vote for Bernie.</p>
-                          <a class="ui-btn" href="state/<?php echo strtolower($state->getTitle()); ?>" data-track="actBtn,<?php echo $state->state; ?>">
+                          <a class="ui-btn" href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="actBtn,<?php echo $state->state; ?>">
                           <?php echo $helper->getActionText($state); ?></a>
                         </div>
                       </div>
 
                       <div class="resources m-all t-1of4 d-1of4">
-                        <p class="date" title="<?php echo $state->getTitle(); ?> <?php echo $state->type; ?> are on <?php echo $state->getPrimaryDate(); ?>" data-date="<?php echo $state->getPrimaryDate(); ?>">
+                        <a href="<?php echo esc_url( get_permalink($state->post) ); ?>#deadlines" data-track="deadlines,<?php echo $state->state; ?>" class="date" title="<?php echo $state->getTitle(); ?> <?php echo $state->type; ?> are on <?php echo $state->getPrimaryDate(); ?>" data-date="<?php echo $state->getPrimaryDate(); ?>">
                           <strong><?php echo date('F', strtotime($state->getPrimaryDate())); ?></strong>
                           <span><?php echo date('j', strtotime($state->getPrimaryDate())); ?></span>
-                          <em><?php echo date('l', strtotime($state->getPrimaryDate())); ?></em>
-                        </p>
-<!--                         <p>
-                          Must be
-                          <?php if ($state->hasDeadlineDate()): ?>
-                            <time title="<?php echo $state->deadline_reference; ?>">
-                              <?php echo $state->deadline_date; ?>
-                            </time>
-                          <?php else: ?>
-                            <time><?php echo $state->deadline_reference; ?></time>
-                          <?php endif; ?>
-                        </p> -->
+                          <em><?php echo $state->type; ?></em>
+                        </a>
                       </div>
                       <?php if ($state->under_18 || $state->hasAdditionalNote()): ?>
                         <div class="extra m-all t-all d-all">
@@ -140,6 +130,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                 </section>
                 <div class="to-map"><a href="#" title="Back to the map!">Back to top</a></div>
 
+                <?php // echo do_shortcode( '[contact-form-7 id="242" title="Submit Correction" html_class="submit-correction"]' ); ?>
                 <?php // comments_template(); ?>
 
               </article>
