@@ -177,8 +177,6 @@ HEADER STYLES
 }
 
 .branding {
-  margin: 0 auto;
-  max-width: 1160px;
   ul {
     display: inline-block;
     margin: 0;
@@ -1129,7 +1127,7 @@ FOOTER STYLES
       margin: 60px auto;
     }
     &.active {
-      background: $light-gray url(images/paper-saturated.jpg);
+      background: $light-gray url(images/paper.jpg);
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
       border-top: 5px solid $open;
