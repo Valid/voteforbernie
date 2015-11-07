@@ -113,7 +113,7 @@
             <strong>Voter Alert &mdash;</strong> New York has only 5 days left <a href="#">Read more</a>
             <div class="fb-like" data-href="https://voteforbernie.org/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
           </div>
-          <div id="inner-header" class="branding">
+          <div id="inner-header" class="branding wrap">
 
             <h1 id="logo" class="h1" title="VoteForBernie.org" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow">#VoteForBernie</a></h1>
             <nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
