@@ -88,8 +88,9 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                   <div id="<?php echo $state->state; ?>"
                         class="state <?php echo $state->state; ?> <?php echo $helper->getStatusClass($state); ?>" data-type="<?php echo explode(' ', $helper->getStatusClass($state))[0]; ?>">
                     <div class="state-wrapper cf">
+
                       <div class="wr m-all t-3of4 d-3of4">
-                        <div class="st m-all t-all d-3of7">
+                        <div class="st">
                         <div class="state-title">
                           <h3><a href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="stateTitle,<?php echo $state->state; ?>"><?php echo $state->getTitle(); ?></a></h3>
                           <img class="svg" data-src="<?php echo get_template_directory_uri(); ?>/dist/images/svg/states/<?php echo $state->state; ?>.svg"/>
@@ -104,13 +105,24 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                         </div>
 
 
-                        <div class="action-info m-all t-all d-4of7">
+                        <div class="action-info">
                           <p><strong><?php echo $state->denonym; ?> for Bernie</strong> should
                           <a href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="actTxt,<?php echo $state->state; ?>">
                           <?php echo strtolower($helper->getActionText($state)); ?></a> to vote for Bernie.</p>
                           <a class="ui-btn" href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="actBtn,<?php echo $state->state; ?>">
                           <?php echo $helper->getActionText($state); ?></a>
                         </div>
+
+                        <?php if ($state->under_18 || $state->hasAdditionalNote()): ?>
+                          <div class="extra m-all t-all d-all">
+                            <?php if ($state->under_18): ?>
+                              <p class="only17"><strong>Only 17?</strong> If you will be 18 by November 8, 2016, you can vote in the primaries!</p>
+                            <?php endif; ?>
+                            <?php if ($state->hasAdditionalNote()): ?>
+                              <p class="note"><?php echo $state->additional_note; ?></p>
+                            <?php endif; ?>
+                          </div>
+                        <?php endif; ?>
                       </div>
 
                       <div class="resources m-all t-1of4 d-1of4">
@@ -120,16 +132,6 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                           <em><?php echo $state->type; ?></em>
                         </a>
                       </div>
-                      <?php if ($state->under_18 || $state->hasAdditionalNote()): ?>
-                        <div class="extra m-all t-all d-all">
-                          <?php if ($state->under_18): ?>
-                            <p class="only17"><strong>Only 17?</strong> If you will be 18 by November 8, 2016, you can vote in the primaries!</p>
-                          <?php endif; ?>
-                          <?php if ($state->hasAdditionalNote()): ?>
-                            <p class="note"><?php echo $state->additional_note; ?></p>
-                          <?php endif; ?>
-                        </div>
-                      <?php endif; ?>
                     </div>
                   </div>
                   <?php endforeach; ?>

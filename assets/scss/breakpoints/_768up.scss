@@ -292,9 +292,6 @@ mobile. Make sure to double check these!
 		.state-wrapper {
 			max-width: 80%;
 		}
-		.state-title {
-			text-align: left;
-		}
 		.info {
 			background-color: transparent!important;
 			border-radius: 5px;
@@ -303,17 +300,16 @@ mobile. Make sure to double check these!
 			display: inline-block;
 			text-align: center;
 		}
-		.st {
-			text-align: left;
-		}
 		h4 {
 			margin-bottom: 15px;
 		}
 		.action-info {
-			text-align: left;
 			p {
 				font-size: 19px;
 			}
+		}
+		.resources {
+			margin-top: 0;
 		}
 		.ui-btn {
 			display: block;
