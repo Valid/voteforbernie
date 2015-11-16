@@ -9,6 +9,7 @@
   "dependencies": {
     "jqvmap": "https://github.com/Valid/jqvmap.git",
     "velocity": "~1.2.2",
-    "bigtext": "~0.1.8"
+    "bigtext": "~0.1.8",
+    "bower-webfontloader": "https://github.com/Valid/bower-webfontloader.git#master"
   }
 }
