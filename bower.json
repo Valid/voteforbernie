@@ -8,6 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "jqvmap": "https://github.com/Valid/jqvmap.git",
-    "velocity": "~1.2.2"
+    "velocity": "~1.2.2",
+    "bigtext": "~0.1.8"
   }
 }
