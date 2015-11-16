@@ -12,10 +12,12 @@ var gulp = require('gulp'),
     paths = {
       js: {
         vendor: [
+          'bower_components/bower-webfontloader/webfont.js',
           'bower_components/jqvmap/jqvmap/jquery.vmap.js',
           'bower_components/jqvmap/jqvmap/maps/jquery.vmap.usa.js',
           'bower_components/velocity/velocity.js',
-          'bower_components/velocity/velocity.ui.js'
+          'bower_components/velocity/velocity.ui.js',
+          'bower_components/bigtext/dist/bigtext.js'
         ],
         site: ['assets/js/**/*.js']
       },
@@ -57,25 +59,25 @@ gulp.task('js:min', function () {
 
 gulp.task('sass', function () {
   gulp.src(paths.css.site.main)
+  .pipe(sass().on('error', sass.logError))
   .pipe(plumber({
     errorHandler: notify.onError({
       title: 'Gulp',
       message: 'Failed to compile SASS'
     })
   }))
-  .pipe(sass())
   .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('sass:min', function () {
   gulp.src(paths.css.site.main)
+  .pipe(sass().on('error', sass.logError))
   .pipe(plumber({
     errorHandler: notify.onError({
       title: 'Gulp',
       message: 'Failed to compile SASS'
     })
   }))
-  .pipe(sass())
   .pipe(minifyCss())
   .pipe(rename('style.min.css'))
   .pipe(gulp.dest('dist/'));
