@@ -1,9 +1,9 @@
 <!doctype html>
 
-<!--[if lt IE 7]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9"><![endif]-->
-<!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
+<!--[if lt IE 7]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8 lt-ie7 wf-loading"><![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8 wf-loading"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9 wf-loading"><![endif]-->
+<!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js wf-loading"><!--<![endif]-->
 
 <head>
   <meta charset="utf-8">
@@ -101,6 +101,16 @@
     }(document, "script", "twitter-wjs"));</script>
   <?php // end analytics ?>
 
+  <script>
+  // Hide content before fonts loads
+  setTimeout(function () {
+    var css = document.createElement("style");
+
+    css.type = "text/css";
+    css.innerHTML = ".wf-loading {  opacity: 0; }";
+    document.body.appendChild(css);
+  }, 1);
+  </script>
   </head>
 
   <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
@@ -115,7 +125,7 @@
           </div>
           <div id="inner-header" class="branding wrap">
 
-            <h1 id="logo" class="h1" title="VoteForBernie.org" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow">#VoteForBernie</a></h1>
+            <h1 id="logo" class="h1" title="VoteForBernie.org" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>">#VoteForBernie</a></h1>
             <nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 
 
