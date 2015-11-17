@@ -14,12 +14,12 @@ class VoteInfoHelper {
   );
   protected static $explanations = array(
     'open' => '{$denonym} can vote for Bernie Sanders regardless of their registered party',
-    'closed' => '{$denonym} that are <strong>not</strong> registered as a democrat <strong>cannot</strong> vote for Bernie',
-    'semi-closed' => '{$denonym} that are <strong>not</strong> registered as a democrat or undeclared <strong>cannot</strong> vote for Bernie',
-    'semi-open' => '{$denonym} that are are registered as a republican <strong>cannot</strong> vote for Bernie Sanders'
+    'closed' => '{$denonym} <strong>not</strong> registered as Democrat <strong>cannot</strong> vote for Bernie',
+    'semi-closed' => '{$denonym} <strong>not</strong> registered as Democrat or undeclared <strong>cannot</strong> vote for Bernie',
+    'semi-open' => '{$denonym} registered as a republican <strong>cannot</strong> vote for Bernie Sanders'
   );
   protected static $actions = array(
-    'open' => 'Just register to vote!',
+    'open' => 'Get registered',
     'closed' => 'Register as a democrat',
     'semi-closed' => 'Register as a democrat or undeclared',
     'semi-open' => 'Register as a democrat or undeclared'
@@ -83,4 +83,6 @@ class VoteInfoHelper {
   public function hasActionText($state) {
     return isset(self::$actions[$state->status]);
   }
+
+
 }
