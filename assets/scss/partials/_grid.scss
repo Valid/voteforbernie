@@ -85,8 +85,8 @@ them however you see fit.
 
   .t-all {
     @include grid-col;
-    width: 100%;
     padding-right: 0;
+    width: 100%;
   }
 
   .t-1of2 {
@@ -141,8 +141,8 @@ them however you see fit.
 
   .d-all  {
     @include grid-col;
-    width: 100%;
     padding-right: 0;
+    width: 100%;
   }
 
   .d-1of2 {
