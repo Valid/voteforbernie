@@ -18,6 +18,13 @@ class StateModel extends PostModel {
     'primary_date',
     'deadline_reference',
     'deadline_date',
+    'aff_deadline_date',
+    'deadline_note',
+    'early_voting_type',
+    'absentee_ballot_link',
+    'absentee_app_deadline',
+    'absentee_postmark_deadline',
+    'absentee_note',
     'under_18',
     'registration_not_required',
     'discussion_link'
@@ -53,5 +60,17 @@ class StateModel extends PostModel {
 
   public function hasDeadlineDate() {
     return !empty($this->deadline_date);
+  }
+
+  public function hasAbsenteeVoting() {
+    return !empty($this->absentee_app_deadline);
+  }
+
+  public function hasEarlyVoting() {
+    return $this->early_voting_type !== 'None';
+  }
+
+  public function hasAffiliationDeadline() {
+    return !empty($this->aff_deadline_date);
   }
 }
