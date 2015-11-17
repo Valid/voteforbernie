@@ -23,7 +23,8 @@
 
     <p class="disclaimer">VoteForBernie.org was built and is maintained by a volunteer and is not affiliated with the <a href="#" data-track="out,OfficialCampaign">official Bernie Sanders campaign</a>.</p>
 
-    <p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?></p>
+    <p class="source-org copyright">&copy; VoteForBernie.org</p>
+    <?php // echo date('Y'); ?>
 
   </div>
 
