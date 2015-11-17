@@ -14,8 +14,9 @@ you can just remove this stylesheet.
 // alerts and notices
 %alert {
   margin: 10px;
-  padding: 5px 18px;
+  padding: 5px 10px;
   border: 1px solid;
+  border-radius: 2px;
 }
 
 .alert-help {
