@@ -12,6 +12,10 @@ come into play. Have fun!
 
 ******************************************************************/
 
+// Map
+#vmap {
+	max-height: none;
+}
 
 /*********************
 GENERAL STYLES
@@ -32,107 +36,6 @@ HEADER STYLES
 *********************/
 
 .header {}
-
-/*********************
-NAVIGATION STYLES
-*********************/
-
-.nav {
-	border: 0;
-	ul {
-		background: $black;
-		margin-top: 0;
-	}
-	li {
-		float: left;
-		position: relative;
-
-		a {
-			border-bottom: 0;
-
-			/*
-			you can use hover styles here even though this size
-			has the possibility of being a mobile device.
-			*/
-			&:hover, &:focus {
-			}
-		}
-
-		&:first-child {}
-		&:last-child {}
-
-		/*
-		plan your menus and drop-downs wisely.
-		*/
-		ul.sub-menu,
-		ul.children {
-			border: 1px solid #ccc;
-			border-top: 0;
-			margin-top: 0;
-			position: absolute;
-			right: 0;
-			visibility: hidden;
-			z-index: 8999;
-
-			li {
-
-				a {
-					border-bottom: 1px solid #ccc;
-					border-right: 0;
-					display: block;
-					padding-left: 10px;
-					width: 180px;
-
-					&:hover,
-					&:focus {}
-
-					&:link {}
-				}
-
-				&:first-child {}
-
-				&:last-child {
-
-					a {
-						border-bottom: 0;
-					}
-				}
-
-				/*
-				if you need to go deeper, go nuts
-				just remember deeper menus suck
-				for usability. k, bai.
-				*/
-				ul {
-					left:100%;
-					top:0;
-				}
-			}
-
-			/* highlight sub-menu current page */
-			li.current-menu-item,
-			li.current_page_item,
-			li.current_page_ancestor {
-				a {}
-			}
-		}
-
-		/* showing sub-menus */
-		&:hover > ul {
-			top: auto;
-			visibility: visible;
-		}
-
-	} /* end .menu ul li */
-
-	/* highlight current page */
-	li.current-menu-item,
-	li.current_page_item,
-	li.current_page_ancestor {
-		a {}
-	}
-
-} // end .nav
 
 .sidebar {
 	margin-top: 2.2em;
@@ -163,6 +66,136 @@ NAVIGATION STYLES
 			}
 		}
 	}
+
+/*********************
+NAVIGATION STYLES
+*********************/
+
+.nav-toggle {
+	display: none;
+}
+#logo {
+  display: inline-block;
+  margin: 15px 0 0;
+}
+.branding {
+  text-align: right;
+  ul {
+  	margin-top: 30px;
+  	li {
+  		a {
+  			font-size: 24px;
+  		}
+  	}
+  }
+}
+.nav {
+	background: none;
+  border: 0;
+	display: inline-block;
+	max-height: none;
+	opacity: 1;
+	overflow: visible;
+	&.expanded {
+		display: inline-block;
+	}
+	> li {
+		padding-right: 30px;
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+  ul {
+    margin: 25px 0 0;
+  }
+  li {
+    float: left;
+    position: relative;
+
+    a {
+      border-bottom: 0;
+
+      /*
+      you can use hover styles here even though this size
+      has the possibility of being a mobile device.
+      */
+      &:hover, &:focus {
+      }
+    }
+
+    &:first-child {}
+    &:last-child {}
+
+    /*
+    plan your menus and drop-downs wisely.
+    */
+    ul.sub-menu,
+    ul.children {
+      background-color: $white;
+      border: 1px solid $gray;
+      margin-top: 0;
+      opacity: 0;
+      position: absolute;
+      right: 0;
+      visibility: hidden;
+      z-index: 8999;
+
+      li {
+        display: block;
+        float: none;
+        padding: 0;
+        text-align: right;
+        a {
+          background-color: $white;
+          display: block;
+          font-size: 19px;
+          padding: 5px 10px;
+          white-space: nowrap;
+
+          &:hover,
+          &:focus {
+            background-color: $light-gray;
+            @include transition(background-color 0.14s ease-in-out);
+          }
+        }
+
+        /*
+        if you need to go deeper, go nuts
+        just remember deeper menus suck
+        for usability. k, bai.
+        */
+        ul {
+          left: 100%;
+          top: 0;
+        }
+      }
+
+      /* highlight sub-menu current page */
+      li.current-menu-item,
+      li.current_page_item,
+      li.current_page_ancestor {
+        a {}
+      }
+    }
+
+    /* showing sub-menus */
+    &:hover > ul {
+      opacity: 1;
+      top: auto;
+      visibility: visible;
+      @include transition(opacity 0.3s ease-in-out);
+    }
+
+  } /* end .menu ul li */
+
+  /* highlight current page */
+  li.current-menu-item,
+  li.current_page_item,
+  li.current_page_ancestor {
+    a {}
+  }
+
+} // end .nav
 
 
 	/* links widget */
@@ -278,73 +311,31 @@ mobile. Make sure to double check these!
 	}
 } /* end .footer-links */
 
-#logo {
-	margin-top: 15px;
-}
-.branding {
-	text-align: right;
-}
 .map-intro {
   margin-bottom: -20px;
 }
-.vote-info {
-	.state {
-		.state-wrapper {
-			max-width: 80%;
+.state-wrapper {
+	max-width: 760px;
+}
+.state-page {
+	.state-info {
+		h3 {
+			font-size: 50px;
+			margin-top: 30px;
 		}
-		.info {
-			background-color: transparent!important;
-			border-radius: 5px;
-      border-style: solid;
-      border-width: 0 2px;
-			display: inline-block;
-			text-align: center;
+	}
+	.type {
+		.status-info {
+			margin-top: 100px;
 		}
-		h4 {
-			margin-bottom: 15px;
+	}
+	.info-wrapper {
+		h3 {
+			font-size: 20px;
 		}
-		.action-info {
-			p {
-				font-size: 19px;
-			}
-		}
-		.resources {
-			margin-top: 0;
-		}
-		.ui-btn {
-			display: block;
-			text-align: center;
-		}
-		&.open {
-      .info {
-        color: $open;
-      }
-    }
-    &.closed {
-      .info {
-        color: $closed;
-      }
-    }
-    &.other {
-      .info {
-        color: $other;
-      }
-      .ui-btn {
-      	font-size: 24px;
-      }
-    }
-    &.open-caucus {
-      .info {
-        color: $caucus-open;
-      }
-    }
-    &.closed-caucus {
-      .info {
-      	color: $caucus-closed;
-      }
-    }
 	}
 }
+
 #crestashareicon {
 	.sbutton {
 		margin: 8px 0;

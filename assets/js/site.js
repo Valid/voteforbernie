@@ -14,6 +14,8 @@
 
 var vfb = {};
 
+vfb.map = jQuery('#vmap');
+
 /*
  * Get Viewport Dimensions
  * returns object with viewport dimensions to match css in width and height properties
@@ -105,10 +107,22 @@ function loadGravatars() {
 	}
 } // end function
 
+var activeCallback = jQuery.Callbacks();
+
+vfb.loadFonts = function () {
+  WebFont.load({
+    google: {
+      families: ['Abel', 'Maiden Orange']
+    },
+    active: function () { activeCallback.fire(); },
+    inactive: function () { activeCallback.fire(); },
+    timeout: 2000
+  });
+};
 
 
 // Choose state handler
-vfb.chooseState = function (stateCode, noAnimation) {
+vfb.chooseState = function (stateCode) {
   var $states = jQuery('.states'),
     $state = $states.find('.' + stateCode),
     $mapState = jQuery('#jqvmap1_' + stateCode),
@@ -121,17 +135,10 @@ vfb.chooseState = function (stateCode, noAnimation) {
     history.replaceState({}, '', '#' + stateCode);
   }
 
-  if (noAnimation) {
+  $mapState.velocity('callout.bounce', { complete: function () {
     $newsletter.appendTo($state).find('select').val($state.find('h3').text());
-    if (document.body.scrollTop === 0) {
-      jQuery('html, body').animate({ scrollTop: $state.offset().top - 100 }, 1000);
-    }
-  } else {
-    $mapState.velocity('callout.bounce', { complete: function () {
-      $newsletter.appendTo($state).find('select').val($state.find('h3').text());
-      jQuery('html, body').animate({ scrollTop: $state.offset().top - 100 }, 1000);
-    }});
-  }
+    jQuery('html, body').animate({ scrollTop: $state.offset().top - 100 }, 1000);
+  }});
 
 };
 
@@ -142,16 +149,15 @@ vfb.trackEvent = function () {
     args = arguments;
 
     if(args.length < 2 || args.length > 4) {
-      console.debug('Usage: trackEvent(category, action) [' + Array.prototype.slice.call(arguments).toString() + ']');
+      console.debug('trackEvent(category, action) [' + Array.prototype.slice.call(arguments).toString() + ']');
       return false;
     }
 
     ga('send', 'event', args[0], args[1]);
-    console.log(args[0], args[1]);
     return false;
 
   } catch(e) {
-    console.error('Unable to complete google analytics[trackEvent]: ' + e);
+    console.error('GA Error: ' + e);
   }
 };
 
@@ -164,19 +170,20 @@ vfb.trackElements = function () {
 };
 
 vfb.resizeMap = function () {
-  var $vmap = jQuery('#vmap');
-
   viewport = updateViewportDimensions();
 
-  $vmap.height(viewport.height - $vmap.offset().top - 10);
+  if (viewport.width > 460 && document.body.scrollTop < 100) {
+    vfb.map.height(viewport.height - vfb.map.offset().top - 10);
+  }
 };
 
-
-jQuery(window).resize(function () {
-  waitForFinalEvent(function(){
-    vfb.resizeMap();
-  }, timeToWaitForLast, "VFBMap");
-});
+if (vfb.map.length) {
+  jQuery(window).resize(function () {
+    waitForFinalEvent(function(){
+      vfb.resizeMap();
+    }, timeToWaitForLast, "VFBMap");
+  });
+}
 
 var $top = jQuery('.to-map');
 
@@ -209,9 +216,7 @@ if ($top.length) {
 vfb.buildMap = function () {
  // Build map if available
 
-  var $vmap = jQuery('#vmap');
-
-  if ($vmap.length) {
+  if (vfb.map.length) {
     vfb.resizeMap();
 
     var open = '#0571b0',
@@ -221,7 +226,7 @@ vfb.buildMap = function () {
     caucusClosed = '#B94F4F',
     $states = jQuery('.states');
 
-    $vmap.vectorMap({
+    vfb.map.vectorMap({
         map: 'usa_en',
         backgroundColor: null,
         borderColor: '#fff',
@@ -234,7 +239,6 @@ vfb.buildMap = function () {
         showTooltip: true,
         selectedRegion: null,
         onLabelShow: function (element, label, code) {
-          // console.log(element, label, code);
           var $stateDetails = $states.find('.' + code),
             primaryTextSource = $stateDetails.find('strong').eq(0).text(),
             primaryText = primaryTextSource.charAt(0).toUpperCase() + primaryTextSource.slice(1);
@@ -242,7 +246,6 @@ vfb.buildMap = function () {
           jQuery(label).html('<strong>' + jQuery(label).text() + '</strong><br>' + primaryText + ($stateDetails.hasClass('caucus') ? ' Caucus' : ' Primary') );
         },
         onRegionOver: function (event, code) {
-          // console.log(element, label, code);
           var $stateDetails = $states.find('.' + code),
             type = $stateDetails.data('type');
 
@@ -252,7 +255,6 @@ vfb.buildMap = function () {
           jQuery('.legend').find('li').not('.' + type).velocity({ opacity: 0.3 }, { queue: false });
 
           // Switch explanation
-          // console.log(type, jQuery('.legend').find('.' + type));
           vfb.explain(jQuery('.legend').find('.' + type));
         },
         onRegionOut: function (event, code) {
@@ -267,47 +269,51 @@ vfb.buildMap = function () {
         }
     });
 
-    // $vmap.css('opacity', 1);
+    // vfb.map.css('opacity', 1);
     // A/B Test - No animation, subtle animation (15 delay, slideDownIn entrance) and heavy (20 delay and )
-    // $vmap.velocity('transition.flipBounceXIn');
-    // $vmap.velocity('transition.perspectiveRightIn');
-    // $vmap.velocity('transition.slideDownBigIn');
-    // $vmap.velocity('transition.slideDownIn');
-    // $vmap.velocity('transition.bounceIn');
+    // vfb.map.velocity('transition.flipBounceXIn');
+    // vfb.map.velocity('transition.perspectiveRightIn');
+    // vfb.map.velocity('transition.slideDownBigIn');
+    // vfb.map.velocity('transition.slideDownIn');
+    // vfb.map.velocity('transition.bounceIn');
 
-    $vmap.find('.jqvmap-region').velocity('transition.perspectiveDownIn', { stagger: 0, opacity: 1 });
     jQuery('.legend').find('li').velocity('transition.slideLeftIn', { delay: 500, stagger: 100, display: 'inline-block', opacity: 1 } );
-    jQuery('.inner-content').eq(0).velocity('transition.slideDownIn', { delay: 1000, opacity: 1 } );
+    jQuery('.inner-content').eq(0).velocity('transition.slideDownIn', { delay: 1000, opacity: 1 });
+    vfb.map.find('.jqvmap-region').velocity('transition.perspectiveDownIn', { opacity: 1 });
 
-    // $vmap.velocity({}, { duration: 500 })
+    // vfb.map.velocity({}, { duration: 500 })
     //   .velocity({scaleX: 1, scaleY: 1}, { duration: 1000 });
 
 
     // Animate in map colors
     var delay = 0;
+    var $stateList = $states.find('.state');
 
-    $states.find('.state').each(function () {
+    $stateList.each(function (i) {
       var $state = jQuery(this),
-        stateCode = $state.attr('id'),
+        stateCode = $state.data('code'),
         $stateOnMap = jQuery('#jqvmap1_' + stateCode);
 
       if ($stateOnMap.length) {
         setTimeout(function () {
           if ($state.hasClass('open')) {
-            // $stateOnMap.css('fill', open);
             $stateOnMap.velocity({ fill: open });
           } else if ($state.hasClass('closed')) {
-            // $stateOnMap.css('fill', closed);
             $stateOnMap.velocity({fill: closed});
           } else if ($state.hasClass('other') || $state.hasClass('other-caucus')) {
-            // $stateOnMap.css('fill', other);
             $stateOnMap.velocity({fill: other});
           } else if ($state.hasClass('open-caucus')) {
-            // $stateOnMap.css('fill', caucus);
             $stateOnMap.velocity({fill: caucusOpen});
           } else if ($state.hasClass('closed-caucus')) {
-            // $stateOnMap.css('fill', caucus);
             $stateOnMap.velocity({fill: caucusClosed});
+          }
+
+          if (i === $stateList.length - 1) {
+            // Animations Complete
+            setTimeout(function () {
+              vfb.scrollOnHash();
+            }, 1000);
+
           }
         }, delay);
         delay += 15;
@@ -361,6 +367,17 @@ vfb.explain = function (legendItem) {
   }
 };
 
+vfb.handleNavToggle = function () {
+  var $toggleButton = jQuery('.nav-toggle'),
+    $nav = jQuery('.nav');
+
+  $toggleButton.on('click', function (event) {
+    event.preventDefault();
+
+    $nav.toggleClass('expanded');
+  });
+};
+
 vfb.handleLegend = function () {
   var $legend = jQuery('.legend');
 
@@ -384,9 +401,9 @@ vfb.handleStateSelector = function () {
 vfb.scrollOnHash = function () {
   var code = location.hash ? location.hash.substr(1) : null;
 
-  if (code && jQuery('#' + code).length) {
+  if (code && jQuery('#state-' + code).length) {
     vfb.trackEvent('State hash', code);
-    vfb.chooseState(code, true);
+    vfb.chooseState(code);
   }
 };
 
@@ -422,34 +439,49 @@ vfb.handleSVG = function () {
   });
 };
 
+vfb.stateInit = function () {
+  var $statePage = jQuery('.state-page');
+
+  if ($statePage.length) {
+    $newsletter = jQuery('.newsletter');
+
+    $newsletter.find('select').val($statePage.data('state'));
+  }
+};
+
 /*
  * Put all your regular jQuery in here.
 */
 jQuery(document).ready(function($) {
 
-  /*
-   * Let's fire off the gravatar function
-   * You can remove this if you don't need it
-  */
-  // loadGravatars();
+  loadGravatars();
 
+  vfb.loadFonts();
 
-  vfb.scrollOnHash();
-
-  vfb.buildMap();
+  vfb.handleNavToggle();
 
   vfb.handleLegend();
 
-  vfb.handleStateSelector();
-
   vfb.handleSVG();
 
-  // Enable tracking clicks
+  vfb.handleStateSelector();
+
+  vfb.stateInit();
+
   vfb.trackElements();
 
-  setTimeout(function () {
-    vfb.enhanceSharing();
-  }, 1000);
+  activeCallback.add(function () {
+
+    jQuery('.slab').bigtext();
+
+    jQuery('.init').removeClass('init').addClass('done');
+
+    vfb.buildMap();
+
+    setTimeout(function () {
+      vfb.enhanceSharing();
+    }, 1000);
+  });
 
 
 }); /* end of as page load scripts */

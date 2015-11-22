@@ -6,6 +6,25 @@ Stylesheet: Base Mobile Stylesheet
 
 ******************************************************************/
 
+
+// Loading Styles
+
+.wf-loading {
+  background: url(images/svg/loading.svg) no-repeat 50% 50%;
+  background-size: contain;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.wf-active {
+  @include transition(opacity 0.14s ease-in-out);
+}
+
+
 // GENERAL STYLES
 
 body {
@@ -60,7 +79,7 @@ LAYOUT & GRID STYLES
 
 .wrap {
   margin: 0 auto;
-  width: 96%;
+  max-width: 95%;
 }
 
 img {
@@ -77,6 +96,7 @@ a, a:visited {
   /* on hover */
   &:hover, &:focus {
     color: $link-hover;
+    @include transition(color 0.14s ease-in-out);
   }
 
   /* on click */
@@ -100,7 +120,7 @@ H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-  font-family: $headerFont;
+  font-family: $accentFont;
   font-weight: 400;
   text-rendering: optimizelegibility;
   /*
@@ -178,54 +198,43 @@ HEADER STYLES
 
 .branding {
   ul {
-    display: inline-block;
     margin: 0;
-    text-align: center;
-    @media (min-width: 561px) {
-      text-align: right;
-    }
-    @media (min-width: 737px) {
-      margin: 25px 0 0;
-    }
-
+    // text-align: center;
     li {
-      display: inline-block;
-      padding: 10px 20px 0;
+      // display: inline-block;
+      display: block;
+      // padding: 10px 20px 0;
       a {
         color: $open;
         font-family: $headerFont;
-        font-size: 24px;
+        // font-size: 24px;
+        font-size: 18px;
         line-height: 1;
         text-decoration: none;
         text-transform: uppercase;
-      }
-      &:last-child {
-        padding-right: 0;
       }
     }
   }
 }
 
 #logo {
+  float: left;
   margin: 20px auto 0;
-  @media (min-width: 561px) {
-    display: inline-block;
-    float: left;
-    margin: 15px 0 0;
-  }
   a {
     color: $open;
     display: inline-block;
     font-family: $accentFont;
-    font-size: 30px;
+    font-size: 40px;
     &:after {
       -ms-transform: rotate(-7deg); /* IE 9 */
       -webkit-transform: rotate(-7deg); /* Chrome, Safari, Opera */
       color: $closed;
       content: '\'16';
       font-family: $headerFont;
-      font-size: 26px;
+      font-size: 0.5em;
+      letter-spacing: -2px;
       line-height: 1;
+      padding-top: 7px;
       position: absolute;
       transform: rotate(-7deg);
     }
@@ -247,12 +256,24 @@ and more scalable.
 */
 
 .nav {
-  border-bottom: 0;
+  background-color: $light-gray;
+  border: 2px solid $meta-gray;
+  border-width: 2px 0;
+  clear: both;
   margin: 0;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  @include transition(all 0.3s ease-in-out);
+  &.expanded {
+    max-height: 600px;
+    opacity: 1;
+  }
 
   li {
 
     a {
+      padding-left: 10px;
       text-decoration: none;
 
       /*
@@ -283,7 +304,7 @@ and more scalable.
       li {
 
         a {
-          padding-left: 30px;
+          padding-left: 20px;
 
           &:hover,
           &:focus {}
@@ -312,6 +333,32 @@ and more scalable.
   }  /* end current highlighters */
 
 } /* end .nav */
+
+.nav-toggle {
+  background-color: $light-gray;
+  border: 1px solid $gray;
+  border-radius: 3px;
+  display: block;
+  float: right;
+  margin-top: 30px;
+  padding: 8px 5px;
+  width: 35px;
+  &:hover {
+    background-color: $gray;
+  }
+  span {
+    background-color: $meta-gray;
+    border-radius: 2px;
+    display: block;
+    height: 2px;
+    margin-bottom: 4px;
+    overflow: hidden;
+    text-indent: -999em;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
 
 
 /*********************
@@ -964,7 +1011,8 @@ FOOTER STYLES
   .paid-for {
     border: 1px solid;
     display: inline-block;
-    margin:  10px 0 0;
+    font-size: 18px;
+    margin:  10px 0 3px;
     padding: 0 10px;
     text-transform: uppercase;
   }
@@ -972,12 +1020,10 @@ FOOTER STYLES
     color: $light-blue;
     font-family: $headerFont;
     font-size: 19px;
-    font-style: italic;
     margin: 0;
   }
   .disclaimer {
     color: $meta-gray;
-    font-size: 11px;
     padding: 0 15px;
   }
   .copyright {
@@ -1006,7 +1052,9 @@ FOOTER STYLES
   }
 }
 
+
 .vote-info {
+  clear: both;
   h1, h2 {
     font-family: $accentFont;
   }
@@ -1070,7 +1118,11 @@ FOOTER STYLES
   }
 
   .article-header {
-    margin-top: 30px;
+    margin: 30px auto;
+    max-width: 800px;
+    h1 {
+      text-align: center;
+    }
   }
 
   .state {
@@ -1103,34 +1155,20 @@ FOOTER STYLES
       font-style: italic;
       line-height: 1;
     }
-    .advice {
-      a {
-        border: 2px solid;
-        border-radius: 2px;
-        margin-right: 30px;
-        padding: 5px;
-        position: relative;
-        text-align: center;
-        transition: background-color 1s ease;
-        &:last-child {
-          margin: 0;
-          &:after {
-            content: initial;
-          }
-        }
-        &:hover {
-          background-color: $white;
-        }
-      }
-    }
+
     .state-wrapper {
       margin: 15px auto 60px;
       padding: 15px 0;
     }
+
     &.active {
       background: $light-gray url(images/paper.jpg);
       border: 5px solid $open;
       border-width: 5px 0;
+      .sign-up-notice {
+        background: none;
+        border: none;
+      }
     }
     .state-title {
       text-align: center;
@@ -1139,6 +1177,7 @@ FOOTER STYLES
       text-align: center;
     }
     .action-info {
+      font-family: $headerFont;
       margin-top: 30px;
       text-align: center;
       p {
@@ -1149,54 +1188,21 @@ FOOTER STYLES
 
     .resources {
       font-size: 0.8em;
+      margin-top: 30px;
       padding: 0;
       text-align: center;
-      margin-top: 30px;
       h4 {
-        font-size: 1.8em;
+        font-size: 1.5em;
         font-weight: normal;
-        margin: 0;
+        margin: 10px 0 0;
       }
       ul {
         margin: 0;
       }
-    }
-    .date {
-      background-color: $gray;
-      border-radius: 5px;
-      color: $black;
-      display: block;
-      font-weight: bold;
-      line-height: 1;
-      margin: 0 auto;
-      padding-bottom: 5px;
-      text-decoration: none;
-      text-transform: uppercase;
-      width: 120px;
-      span, strong, em {
-        display: block;
+      p {
+        margin: 0;
+        font-size: 1.1em;
       }
-      strong {
-        background-color: $blue;
-        border-bottom: 1px dashed;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        color: $white;
-        font-size: 16px;
-        padding: 3px 0;
-      }
-      span {
-        font-family: $headerFont;
-        font-size: 60px;
-        font-weight: normal;
-        line-height: 54px;
-        padding-top: 10px;
-      }
-      em {
-        font-size: 11px;
-        font-style: normal;
-      }
-
     }
 
     .extra {
@@ -1218,27 +1224,25 @@ FOOTER STYLES
     }
     .wr {
       padding: 0;
-    }
-    .info {
-      color: $white;
-      margin: 0;
-      padding: 0 3px;
-    }
-    .ui-btn {
-      @extend %btn;
-    }
-    // Color each differently
-    &.open {
-      .info {
-        background-color: $open;
+      .action-info {
+        p {
+          font-size: 30px;
+          margin-bottom: 0;
+        }
+        .ui-btn {
+          margin-top: 5px;
+        }
       }
+    }
+
+    &.open {
       .svg {
         fill: $open;
       }
       .ui-btn {
         background-color: $open;
         &:hover {
-          background-color: darken($open, 5%);
+          background-color: darken($open, 10%);
         }
       }
       &.active {
@@ -1246,16 +1250,13 @@ FOOTER STYLES
       }
     }
     &.closed {
-      .info {
-        background-color: $closed;
-      }
       .svg {
         fill: $closed;
       }
       .ui-btn {
         background-color: $closed;
         &:hover {
-          background-color: darken($closed, 5%);
+          background-color: darken($closed, 10%);
         }
       }
       &.active {
@@ -1263,17 +1264,14 @@ FOOTER STYLES
       }
     }
     &.other {
-      .info {
-        background-color: $other;
-      }
       .svg {
         fill: $other;
       }
       .ui-btn {
         background-color: $other;
-        font-size: 20px;
+        font-size: 19px;
         &:hover {
-          background-color: darken($other, 5%);
+          background-color: darken($other, 10%);
         }
       }
       &.active {
@@ -1281,16 +1279,13 @@ FOOTER STYLES
       }
     }
     &.open-caucus {
-      .info {
-        background-color: $caucus-open;
-      }
       .svg {
         fill: $caucus-open;
       }
       .ui-btn {
         background-color: $caucus-open;
         &:hover {
-          background-color: darken($caucus-open, 5%);
+          background-color: darken($caucus-open, 10%);
         }
       }
       &.active {
@@ -1298,16 +1293,13 @@ FOOTER STYLES
       }
     }
     &.closed-caucus {
-      .info {
-        background-color: $caucus-closed;
-      }
       .svg {
         fill: $caucus-closed;
       }
       .ui-btn {
         background-color: $caucus-closed;
         &:hover {
-          background-color: darken($caucus-closed, 5%);
+          background-color: darken($caucus-closed, 10%);
         }
       }
       &.active {
@@ -1317,8 +1309,8 @@ FOOTER STYLES
   }
 
   .sign-up-notice {
+    padding: 10px;
     text-align: center;
-    padding-bottom: 20px;
     p {
       font-size: 12px;
       &.tentative {
@@ -1331,11 +1323,8 @@ FOOTER STYLES
 
 // Map
 #vmap {
-  height: 200px;
+  max-height: 250px;
   width: 100%;
-  @media (min-width: 1030px) {
-    // margin-top: -75px;
-  }
   .jqvmap-region {
     opacity: 0;
   }
@@ -1348,14 +1337,13 @@ FOOTER STYLES
 // Tweets
 
 .twitter-share {
-  -webkit-transition: all 1s ease;
+
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
-  transition: all 1s ease;
-
+  -webkit-transition: all 1s ease;
   background-color: $white;
-  border-radius: 2px;
   border: 1px solid #e1e8ed;
+  border-radius: 2px;
   color: #1c2022;
   display: block;
   font-family: $sans-serif;
@@ -1366,6 +1354,7 @@ FOOTER STYLES
   position: relative;
   text-align: left;
   text-decoration: none;
+  transition: all 1s ease;
 
   span {
     color: #2b7bb9;
@@ -1493,7 +1482,9 @@ FOOTER STYLES
     width: 40px;
   }
 }
-
+.cresta-the-count {
+  pointer-events: none;
+}
 /* Better responsive mode */
 @media (max-width: 767px) {
   #crestashareicon {
@@ -1545,14 +1536,8 @@ FOOTER STYLES
   }
 }
 
-
-// TODO: Responsive Ad Style
-.newsletter-unit {
-  display: none;
-  height: 90px;
-  margin: 10px auto;
-  max-width: 100%;
-  width: 728px;
+.one-percent-here-i-come {
+  margin: 15px auto 0;
 }
 
 // Map Intro
@@ -1634,8 +1619,7 @@ FOOTER STYLES
   &.show {
     bottom: 0;
     a {
-      opacity: 0.5;
-      padding-bottom: 10px;
+      padding-bottom: 15px;
     }
   }
   a {
@@ -1648,33 +1632,402 @@ FOOTER STYLES
     width: 41px;
     @include transition(all 0.14s ease-in-out);
     &:after {
-      -ms-transform: rotate(63deg);
-      -webkit-transform: rotate(63deg);
       border-color: transparent transparent $blue;
       border-style: solid;
       border-width: 0 10.5px 10px;
       content: '';
       height: 0;
       left: 10px;
-      opacity: 0;
       position: absolute;
-      top: 10px;
-      transform: rotate(63deg);
+      right: 0;
+      top: -1px;
       width: 0;
       z-index: -1;
       @include transition(all 0.14s ease-in-out);
     }
     &:hover {
-      opacity: 1;
-      padding-bottom: 15px;
+      padding-bottom: 18px;
       &:after {
-        -ms-transform: rotate(0deg);
-        -webkit-transform: rotate(0deg);
-        opacity: 1;
-        right: 0;
-        top: -1px;
-        transform: rotate(0deg);
+        top: -5px;
       }
+    }
+
+  }
+}
+
+
+// State Pages
+
+.state-header {
+  position: relative;
+  h2 {
+    font-size: 35px;
+    margin: 30px auto 0;
+    max-width: 90%;
+  }
+  span {
+    color: $red;
+    display: block;
+    font-family: $headerFont;
+  }
+  .state-name {
+    color: $blue;
+    font-family: $accentFont;
+    font-size: 40px;
+    font-weight: normal;
+    line-height: 0.9;
+    // text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+    text-shadow: -2px -2px 1px rgb(255,255,255) , -1px -1px 1px rgb(255,255,255) , 1px 1px 1px rgba(232,247,255,0.901961) , 2px 3px 1px rgba(28,67,103,0.498039) , 5px 5px 12px rgba(5,13,20,0.498039);
+    text-transform: uppercase;
+    transition: text-shadow 0.5s cubic-bezier(0.42, 0, 0.58, 1) 0.1s, color 0.5s cubic-bezier(0.42, 0, 0.58, 1) 0.1s;
+    &.done {
+      color: $white;
+      text-shadow: -1px -1px 0 rgb(5, 113, 176), -1px -1px 1px rgb(5, 113, 176) , 1px 1px 1px rgb(5, 113, 176), 1px 1px 0 rgb(42, 101, 139), 2px 2px 0 rgb(41, 99, 138) , 3px 3px 0 rgb(40, 97, 136), 4px 4px 0 rgb(39, 95, 133), 5px 5px 0 rgb(38, 93, 131), 6px 6px 0 rgb(37, 90, 128), 7px 7px 0 rgb(36, 87, 125), 8px 8px 0 rgb(35, 84, 121), 9px 9px 0 rgb(33, 80, 117), 10px 10px 0 rgb(31, 76, 113), 11px 11px 0 rgb(30, 72, 108), 12px 12px 1px rgba(28, 67, 103, 0.5), 14px 14px 12px rgba(5, 13, 20, 0.5);
+    }
+  }
+  .svg {
+    -webkit-filter: drop-shadow( 3px 3px 0 rgba(0, 0, 0, 0.2) );
+    fill: $light-blue;
+    filter: drop-shadow( 3px 3px 0 rgba(0, 0, 0, 0.2) );
+    height: 100%;
+    max-width: 100%;
+    opacity: 0.3;
+    position: absolute;
+    right: 0;
+    stroke: $white;
+    top: 0;
+    transition: height 0.5s ease;
+    z-index: -1;
+  }
+  &.done {
+    .svg {
+      height: 150%;
+    }
+  }
+}
+
+.state-page {
+  clear: both;
+  max-width: 900px;
+  overflow: hidden;
+  .not-state {
+    font-family: $headerFont;
+    font-size: 17px;
+    margin-top: 10px;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    a {
+      color: $meta-gray;
+      text-decoration: none;
+    }
+    span {
+      color: $blue;
+      display: inline-block;
+      padding-left: 45px;
+      position: relative;
+      &:hover {
+        color: darken($blue, 10%);
+      }
+      &:after {
+        background: url(images/elements/map-icon.png) no-repeat 0 0;
+        box-sizing: content-box;
+        content: '';
+        display: inline-block;
+        height: 26px;
+        left: 0;
+        outline: none;
+        position: absolute;
+        top: 0;
+        width: 41px;
+      }
+    }
+  }
+  .share {
+    background: $light-gray url(images/paper.jpg);
+    border: 5px solid $gray;
+    border-width: 5px 0;
+    padding: 10px;
+    text-align: center;
+    h3 {
+      font-size: 70px;
+    }
+    blockquote {
+      font-family: $accentFont;
+      font-size: 40px;
+      line-height: 1;
+      margin: 0;
+    }
+  }
+
+  .state-info {
+    .ui-btn {
+      margin: 0 0 10px;
+      background-color: $blue;
+      &:hover {
+        background-color: darken($blue, 10%);
+      }
+    }
+    h3 {
+      font-size: 37px;
+      line-height: 1;
+      margin: 15px 0 0;
+    }
+    h4 {
+      font-family: $headerFont;
+      font-size: 25px;
+      margin: 20px 0 10px;
+      text-decoration: underline;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin: 0 0 10px;
+    }
+    .newsletter {
+      background: $light-gray url(images/paper.jpg);
+      border: 5px solid $gray;
+      border-width: 5px 0;
+      padding: 20px 0;
+      text-align: center;
+      > p:first-child {
+        color: $red;
+        font-family: $headerFont;
+        font-size: 21px;
+        line-height: 1;
+        margin: 5px 0;
+      }
+    }
+  }
+  .vote-content {
+    padding: 10px 5px;
+  }
+  .info-wrapper {
+    margin: 30px 0;
+    text-align: center;
+    h3 {
+      font-family: $headerFont;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+    p {
+      font-size: 15px;
+      margin-top: 10px;
+      text-align: center;
+      strong {
+        display: block;
+      }
+    }
+  }
+  .type {
+    text-align: center;
+    .status-info {
+      font-family: $headerFont;
+      font-size: 16px;
+      line-height: 1.2;
+      margin: 50px 0 0;
+    }
+    .meaning {
+      background-color: $red;
+      border-radius: 5px;
+      color: $white;
+      font-size: 16px;
+      line-height: 1.2;
+      padding: 5px;
+    }
+  }
+  .status-info {
+     strong {
+      font-weight: 800;
+      position: relative;
+      &:before {
+        background-color: $red;
+        border-radius: 50%;
+        color: $white;
+        display: inline-block;
+        font-family: $accentFont;
+        font-size: 37px;
+        font-weight: normal;
+        left: 0;
+        line-height: 1.1;
+        margin: 0 auto;
+        opacity: 0;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 0;
+        transition: all 1s ease;
+        width: 40px;
+      }
+      &.done {
+        &:before {
+          opacity: 1;
+          top: -30px;
+        }
+      }
+    }
+  }
+  .when {
+    text-align: center;
+    .date {
+      // width: auto;
+    }
+  }
+
+  // Ad Units
+  .leader {
+    margin: 0 auto;
+    max-width: 100%;
+    min-height: 90px;
+    overflow: hidden;
+    padding: 10px 0;
+    width: 728px;
+  }
+
+  .gaunit {
+    margin-top: 30px;
+  }
+
+
+ .action {
+  text-align: center;
+ }
+}
+
+//
+
+.state-info {
+  .info {
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 0 2px;
+    color: $white;
+    display: inline-block;
+    margin: 0;
+    padding: 0 3px;
+    text-align: center;
+  }
+  .ui-btn {
+    @extend %btn;
+    margin: 20px 0 5px;
+  }
+  .date {
+    background-color: $white;
+    border: 4px solid;
+    border-radius: 5px;
+    border-width: 3px 1px;
+    color: $black;
+    display: block;
+    font-weight: bold;
+    line-height: 1;
+    margin: 0 auto;
+    padding-bottom: 5px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 120px;
+    span, strong, em {
+      display: block;
+    }
+    strong {
+      font-size: 16px;
+      padding: 3px 0;
+    }
+    span {
+      font-family: $accentFont;
+      font-size: 60px;
+      font-weight: normal;
+      line-height: 54px;
+    }
+    em {
+      font-size: 11px;
+      font-style: normal;
+    }
+
+  }
+
+
+  // Color each differently
+  &.open {
+    .c-t {
+      color: $open;
+    }
+    .c-b {
+      background-color: $open;
+    }
+    .c-bb {
+      &:before {
+        content: initial;
+      }
+    }
+  }
+  &.closed {
+    .c-t {
+      color: $closed;
+    }
+    .c-b {
+      background-color: $closed;
+    }
+    .c-bb {
+      &:before {
+        background-color: $closed;
+        content: '!';
+      }
+    }
+  }
+  &.other {
+    .c-t {
+      color: $other;
+    }
+    .c-b, {
+      background-color: $other;
+    }
+    .c-bb {
+      &:before {
+        background-color: $other;
+        content: '!';
+      }
+    }
+  }
+  &.open-caucus {
+    .c-t {
+      color: $caucus-open;
+    }
+    .c-b {
+      background-color: $caucus-open;
+    }
+    .c-bb {
+      &:before {
+        content: initial;
+      }
+    }
+  }
+  &.closed-caucus {
+    .c-t {
+      color: $caucus-closed;
+    }
+    .c-b {
+      background-color: $caucus-closed;
+    }
+    .c-bb {
+      &:before {
+        background-color: $caucus-closed;
+        content: '!';
+      }
+    }
+  }
+}
+@media (max-width: 480px) {
+  // Bigtext sucks at responsive, unfortunately.
+  .bigtext {
+    span {
+      font-size: inherit!important;
+      line-height: 1;
+      text-align: center;
+      white-space: inherit;
+      word-spacing: inherit!important;
     }
   }
 }

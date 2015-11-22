@@ -33,55 +33,11 @@ HEADER STYLES
 // 	}
 // }
 
-/*********************
-NAVIGATION STYLES
-*********************/
+// Map
 
-.nav {}
-
-	/* .menu is clearfixed inside mixins.scss */
-	.menu {
-		ul {
-			li {
-				a {
-
-					/*
-					you can use hover styles here even though this size
-					has the possibility of being a mobile device.
-					*/
-					&:hover, &:focus {
-
-					}
-				}
-
-				&:first-child {}
-				&:last-child {}
-
-				/*
-				plan your menus and drop-downs wisely.
-				*/
-				ul.sub-menu,
-				ul.children {
-					li {
-						a {
-							&:hover,
-							&:focus {}
-							&:link {}
-						}
-						&:first-child {}
-						&:last-child {}
-					}
-				}
-			} /* end .menu ul li */
-
-			/* highlight current page */
-			li.current-menu-item,
-			li.current_page_item,
-			li.current_page_ancestor {
-				a {}
-			}  /* end current highlighters */
-		} /* end .menu ul */
-	} /* end .menu */
+#vmap {
+  max-height: 450px;
+}
 
 /*********************
 POSTS & CONTENT STYLES
@@ -127,6 +83,25 @@ do they need tweaking?
 
 .vote-info {
 	.state {
+    h4 {
+      margin-bottom: 15px;
+    }
+    .action-info {
+      p {
+        font-size: 19px;
+      }
+    }
+    .resources {
+      margin-top: 0;
+    }
+    .ui-btn {
+      text-align: center;
+    }
+    &.other {
+      .ui-btn {
+        font-size: 24px;
+      }
+    }
 	}
 }
 .map-intro {
@@ -142,6 +117,11 @@ do they need tweaking?
 		}
 	}
 }
+
+.state-wrapper {
+  max-width: 90%;
+}
+
 #crestashareicon {
 	text-align: center;
 	.sbutton {

@@ -57,7 +57,7 @@
     <?php // end of wordpress head ?>
 
     <noscript>
-      <style type="text/css">.wf-loading { opacity: 1; background: none; position: static; pointer-events: initial; }</style>
+      <style type="text/css">.wf-loading { opacity: 1; background: none; position: static; pointer-events: initial; .nav { max-height: none!important} }</style>
     </noscript>
 
 
@@ -123,6 +123,11 @@
           <div id="inner-header" class="branding wrap">
 
             <h1 id="logo" class="h1" title="VoteForBernie.org" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>">#VoteForBernie</a></h1>
+            <a href="#" class="nav-toggle">
+              <span>Expand Navigation</span>
+              <span></span>
+              <span></span>
+            </a>
             <nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 
 

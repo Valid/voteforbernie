@@ -50,7 +50,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
         </div>
         <script>document.getElementById('vmap').style = 'height:' + Math.max(document.documentElement.clientHeight, window.innerHeight || 0) + 'px';</script>
 
-        <div id="inner-content">
+        <div class="inner-content">
 
             <main id="main" class="m-all t-all d-all cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
@@ -59,11 +59,13 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
               <article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
                 <header class="article-header">
-                  <!-- <h1 class="page-title"><?php the_title(); ?></h1> -->
+                  <h1 class="page-title"><?php the_title(); ?></h1>
+                  <p><?php the_content(); ?></p>
                   <div class="sign-up-notice">
                     <p class="tentative">Last updated on <?php echo $mostRecentStateUpdate ?>.<br/>Dates and deadlines may change at any time! Sign up to receive updates for your state.</p>
                     <?php echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" ); ?>
-                    <div class="gaunit">
+
+                    <div class="one-percent-here-i-come">
                       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                       <!-- Below The Newsletter -->
                       <ins class="adsbygoogle"
@@ -85,8 +87,8 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
 
                   <?php foreach ($states as $state): ?>
 
-                  <div id="<?php echo $state->state; ?>"
-                        class="state <?php echo $state->state; ?> <?php echo $helper->getStatusClass($state); ?>" data-type="<?php echo explode(' ', $helper->getStatusClass($state))[0]; ?>">
+                  <div id="state-<?php echo $state->state; ?>"
+                        class="state state-info <?php echo $state->state; ?> <?php echo $helper->getStatusClass($state); ?>" data-type="<?php echo explode(' ', $helper->getStatusClass($state))[0]; ?>" data-code="<?php echo $state->state; ?>">
                     <div class="state-wrapper cf">
 
                       <div class="wr m-all t-3of4 d-3of4">
@@ -95,7 +97,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                           <h3><a href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="stateTitle,<?php echo $state->state; ?>"><?php echo $state->getTitle(); ?></a></h3>
                           <img class="svg" data-src="<?php echo get_template_directory_uri(); ?>/dist/images/svg/states/<?php echo $state->state; ?>.svg"/>
                         </div>
-                          <p class="info">
+                          <p class="info c-t">
                             <?php echo $state->getTitle(); ?>
                             has
                             <strong class="status"><?php echo $state->status; ?></strong>
@@ -106,9 +108,9 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
 
 
                         <div class="action-info">
-                          <p><strong><?php echo $state->denonym; ?> for Bernie</strong> should
-                          <a href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="actTxt,<?php echo $state->state; ?>">
-                          <?php echo strtolower($helper->getActionText($state)); ?></a> to vote for Bernie.</p>
+                          <p><?php echo $state->denonym; ?> for Bernie:</p>
+                            <!-- <a href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="actTxt,<?php echo $state->state; ?>">
+                            <?php echo strtolower($helper->getActionText($state)); ?></a> to vote for Bernie. -->
                           <a class="ui-btn" href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="actBtn,<?php echo $state->state; ?>">
                           <?php echo $helper->getActionText($state); ?></a>
                         </div>
@@ -116,7 +118,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                         <?php if ($state->under_18 || $state->hasAdditionalNote()): ?>
                           <div class="extra m-all t-all d-all">
                             <?php if ($state->under_18): ?>
-                              <p class="only17"><strong>Only 17?</strong> If you will be 18 by November 8, 2016, you can vote in the primaries!</p>
+                              <p class="only17"><strong>Only 17?</strong> If you will be 18 by November 8, 2016, you can vote in the <?php echo $state->type; ?>!</p>
                             <?php endif; ?>
                             <?php if ($state->hasAdditionalNote()): ?>
                               <p class="note"><?php echo $state->additional_note; ?></p>
@@ -126,11 +128,19 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                       </div>
 
                       <div class="resources m-all t-1of4 d-1of4">
-                        <a href="<?php echo esc_url( get_permalink($state->post) ); ?>#deadlines" data-track="deadlines,<?php echo $state->state; ?>" class="date" title="<?php echo $state->getTitle(); ?> <?php echo $state->type; ?> are on <?php echo $state->getPrimaryDate(); ?>" data-date="<?php echo $state->getPrimaryDate(); ?>">
+                        <a href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="deadlines,<?php echo $state->state; ?>" class="date" title="<?php echo $state->getTitle(); ?> <?php echo $state->type; ?> are on <?php echo $state->getPrimaryDate(); ?>" data-date="<?php echo $state->getPrimaryDate(); ?>">
                           <strong><?php echo date('F', strtotime($state->getPrimaryDate())); ?></strong>
                           <span><?php echo date('j', strtotime($state->getPrimaryDate())); ?></span>
                           <em><?php echo $state->type; ?></em>
                         </a>
+
+                        <h4>Registration Deadline</h4>
+                        <p><?php echo date('F j, Y', strtotime($state->deadline_date)); ?></p>
+
+                        <?php if ($state->hasAffiliationDeadline()) { ?>
+                          <h4>Affiliation Deadline</h4>
+                          <p><?php echo date('F j, Y', strtotime($state->aff_deadline_date)); ?></p>
+                        <?php } ?>
                       </div>
                     </div>
                   </div>
