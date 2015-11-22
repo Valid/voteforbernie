@@ -13,3 +13,14 @@ function assets() {
   wp_enqueue_style('vfb_site_css', get_template_directory_uri() . "/dist/$siteCss");
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
+
+function replace_jquery() {
+  if (!is_admin()) {
+    // comment out the next two lines to load the local copy of jQuery
+    wp_deregister_script('jquery');
+    wp_register_script('jquery', 'https://code.jquery.com/jquery-2.1.4.min.js', false, '2.1.4');
+    wp_enqueue_script('jquery');
+  }
+}
+
+add_action('init', __NAMESPACE__ . '\\replace_jquery');
