@@ -76,12 +76,24 @@ class VoteInfoHelper {
     }
   }
 
+  public function getOnlineRegistrationLink($state) {
+    if ($this->hasOnlineRegistration($state)) {
+      return $state->register_link;
+    } else {
+      return 'http://www.rockthevote.com/register-to-vote/index.html?source=voteforbernie';
+    }
+  }
+
   public function hasStatusExplanation($state) {
     return isset(self::$explanations[$state->status]);
   }
 
   public function hasActionText($state) {
     return isset(self::$actions[$state->status]);
+  }
+
+  public function hasOnlineRegistration($state) {
+    return isset($state->register_link);
   }
 
 
