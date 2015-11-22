@@ -18,6 +18,8 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
+  <style type="text/css">.wf-loading { opacity: 0; }</style>
+
   <!-- Optimizely A/B testing snippet -->
   <script src="//cdn.optimizely.com/js/3517780176.js"></script>
 
@@ -49,9 +51,15 @@
 
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
+
     <?php // wordpress head functions ?>
     <?php wp_head(); ?>
     <?php // end of wordpress head ?>
+
+    <noscript>
+      <style type="text/css">.wf-loading { opacity: 1; background: none; position: static; pointer-events: initial; }</style>
+    </noscript>
+
 
     <?php // drop Google Analytics Here ?>
     <script>
@@ -100,17 +108,6 @@
     return t;
     }(document, "script", "twitter-wjs"));</script>
   <?php // end analytics ?>
-
-  <script>
-  // Hide content before fonts loads
-  setTimeout(function () {
-    var css = document.createElement("style");
-
-    css.type = "text/css";
-    css.innerHTML = ".wf-loading {  opacity: 0; }";
-    document.body.appendChild(css);
-  }, 1);
-  </script>
   </head>
 
   <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
