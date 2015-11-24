@@ -115,7 +115,7 @@
     <div class="container">
       <div class="header-wrapper">
         <header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-          <div class="action-bar">
+          <div class="action-bar np">
             <?php // TODO: Pull from ACF ?>
             <strong>Voter Alert &mdash;</strong> New York has only 5 days left <a href="#">Read more</a>
             <div class="fb-like" data-href="https://voteforbernie.org/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
