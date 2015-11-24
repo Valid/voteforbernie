@@ -15,7 +15,7 @@
     </h2>
     <img class="svg" data-src="<?php echo get_template_directory_uri(); ?>/dist/images/svg/states/<?php echo $state->state; ?>.svg"/>
   </div>
-  <p class="not-state"><a href="<?php echo home_url(); ?>">Not from <?php echo $state->getTitle(); ?>? <span>Choose your state!</span></a></p>
+  <p class="not-state np"><a href="<?php echo home_url(); ?>">Not from <?php echo $state->getTitle(); ?>? <span>Choose your state!</span></a></p>
 
 
   <div class="state-info <?php echo $state->state; ?> <?php echo $helper->getStatusClass($state); ?>">
@@ -25,7 +25,7 @@
       <p class="meaning c-b"><?php echo $helper->getExplanationText($state); ?></p>
     </div>
 
-    <div class="share m-all t-all d-all">
+    <div class="share np m-all t-all d-all">
       <?php if ($state->status !== 'open') { ?>
         <h3>If you didn't know that, you're not alone.</h3>
         <p>Many planning to vote for Bernie in <?php echo $state->getTitle(); ?> <strong>will not be able to!</strong></p>
@@ -70,7 +70,7 @@
         </div>
       </div>
 
-      <div class="m-all t-1of3 d-1of3 last-col">
+      <div class="np m-all t-1of3 d-1of3 last-col">
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <!-- Beside Dates -->
         <ins class="adsbygoogle"
@@ -84,7 +84,7 @@
       </div>
     </div>
 
-    <div class="m-all t-all d-all newsletter">
+    <div class="np m-all t-all d-all newsletter">
       <p>Dates and deadlines can change at any time!</p>
       <p>Sign up to be reminded of deadlines and important changes in <?php echo $state->getTitle(); ?></p>
       <?php echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" ); ?>
@@ -99,7 +99,7 @@
         Good news! Because <?php echo $state->getTitle(); ?> has <?php echo $state->status; ?> <?php echo $state->type; ?>, you can vote for Bernie regardless of your registered party. If you want to vote for Bernie, <strong>just get registered to vote!</strong>
       <?php } ?></p>
 
-      <a class="ui-btn" href="<?php echo $helper->getOnlineRegistrationLink($state); ?>" data-track="regBtn,<?php echo $state->state; ?>">
+      <a class="ui-btn np" href="<?php echo $helper->getOnlineRegistrationLink($state); ?>" data-track="regBtn,<?php echo $state->state; ?>">
         <?php echo $helper->getActionText($state); ?> now!
       </a>
 
@@ -162,7 +162,7 @@
 
     </div>
 
-    <div class="m-all t-1of4 d-1of5 last-col gaunit">
+    <div class="np m-all t-1of4 d-1of5 last-col gaunit">
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <!-- Beside Content -->
       <ins class="adsbygoogle"
@@ -175,7 +175,7 @@
       </script>
     </div>
 
-    <div class="m-all t-all d-all">
+    <div class="np m-all t-all d-all">
       <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
     </div>
 

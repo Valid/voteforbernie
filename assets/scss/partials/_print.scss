@@ -71,10 +71,11 @@ though, go for it.
     }
 
     // hide content people who print don't need to see
+    .np,
     .sidebar,
     .page-navigation,
     .wp-prev-next,
     .respond-form,
     nav {
-      display: none;
+      display: none!important;
     }
