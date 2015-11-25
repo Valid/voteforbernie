@@ -110,16 +110,16 @@
         <p>You have until <?php echo date('F j, Y', strtotime($state->deadline_date)); ?> to register, but registration is open <strong>right now!</strong></p>
       <?php } ?>
 
-      <p>Not sure if you're registered or what you're registered as? Check your <a href="<?php echo $state->check_registration_link ?>" data-track="chkLnk,<?php echo $state->state; ?>">current registration status</a>.</p>
+      <p>Not sure if you're registered or what you're registered as? Check your <a href="<?php echo $state->check_registration_link ?>" data-track="ChkLnk,<?php echo $state->state; ?>" target="_blank">current registration status</a>.</p>
 
       <?php if ($state->hasAbsenteeVoting()) { ?>
         <h4>Vote By Mail</h4>
-        <p><strong>Being busy or working</strong> on election day is the <strong>most common reason</strong> for not voting according to the U.S. Census. This is completely understandable, and will continue to be a problem until <a href="http://www.sanders.senate.gov/democracyday">election day becomes a national holiday</a>.</p>
+        <p><strong>Being busy or working</strong> on election day is the <strong>most common reason</strong> for not voting according to the U.S. Census. This is completely understandable, and will continue to be a problem until <a href="http://www.sanders.senate.gov/democracyday" data-track="DemDay,<?php echo $state->state; ?>" target="_blank">election day becomes a national holiday</a>!</p>
 
-        <p>Fortunately, you can use <a href="http://www.longdistancevoter.org/<?php echo strtolower(str_replace(' ', '_', $state->getTitle())) ?>"><?php echo $state->getTitle(); ?>'s absentee ballot</a>, which allows you to vote by mail before the election!</p>
+        <p>Fortunately, you can use <a href="http://www.longdistancevoter.org/<?php echo strtolower(str_replace(' ', '_', $state->getTitle())) ?>" data-track="AbsBallot,<?php echo $state->state; ?>" target="_blank"><?php echo $state->getTitle(); ?>'s absentee ballot</a>, which allows you to vote by mail before the election!</p>
 
         <?php if ($state->absenteeExcuseRequired()) { ?>
-          <p><?php echo $state->denonym; ?> are required to have <a href="http://www.longdistancevoter.org/absentee_voting_rules">an acceptable excuse</a> to use an absentee ballot.</p>
+          <p><?php echo $state->denonym; ?> are required to have <a href="http://www.longdistancevoter.org/absentee_voting_rules" data-track="AbsRules,<?php echo $state->state; ?>" target="_blank">an acceptable excuse</a> to use an absentee ballot.</p>
         <?php } ?>
       <?php } ?>
 
@@ -140,7 +140,7 @@
       <?php endif; ?>
 
       <h4>Military/Overseas Voters</h4>
-      <p>If you are a Military Voter or outside the United States, you can <a href="https://www.overseasvotefoundation.org/vote/VoterInformation.htm">complete a ballot here</a>.</p>
+      <p>If you are a Military Voter or outside the United States, you can <a href="https://www.overseasvotefoundation.org/vote/VoterInformation.htm" data-track="Overseas,<?php echo $state->state; ?>" target="_blank">complete a ballot here</a>.</p>
       <?php //<p>You have until TODO to request your ballot, and it must be submitted by TODO.</p> ?>
 
       <?php if ($state->hasAdditionalNote()): ?>
@@ -155,7 +155,7 @@
       <h4>Further Information</h4>
       <p>If you have any questions about voting in <?php echo $state->getTitle(); ?> you contact your official elections office.</p>
       <ul>
-        <li><a href="<?php echo $state->state_link; ?>">Official <?php echo $state->getTitle(); ?> Elections Website</a></li>
+        <li><a href="<?php echo $state->state_link; ?>" data-track="StateLink,<?php echo $state->state; ?>" target="_blank">Official <?php echo $state->getTitle(); ?> Elections Website</a></li>
         <li>Phone: <?php echo $state->state_phone; ?></li>
       </ul>
       <p>Find other Bernie supporters in <?php echo $state->getTitle(); ?> at <?php echo $state->discussion_link; ?></p>
