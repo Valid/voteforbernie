@@ -172,7 +172,7 @@ vfb.trackElements = function () {
 vfb.resizeMap = function () {
   viewport = updateViewportDimensions();
 
-  if (viewport.width > 460 && document.body.scrollTop < 100) {
+  if (viewport.width > 460) {
     vfb.map.height(viewport.height - vfb.map.offset().top - 10);
   }
 };
