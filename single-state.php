@@ -55,6 +55,9 @@
             <em>(<?php echo date('l', strtotime($state->deadline_date)); ?>)</em>
           </div>
           <p><?php echo $state->denonym; ?> must <?php echo strtolower($helper->getActionText($state)); ?> by: <strong><?php echo date('F j, Y', strtotime($state->deadline_date)); ?></strong></p>
+          <?php if ($state->hasAffiliationDeadline()) { ?>
+            <p class="warning">Not a Democrat? <?php echo $state->getTitle(); ?> has a special deadline for changing affiliation, which is on <?php echo date('F j, Y', strtotime($state->deadline_date)); ?></p>
+          <?php } ?>
         </div>
       </div>
 
