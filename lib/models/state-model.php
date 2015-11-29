@@ -17,7 +17,6 @@ class StateModel extends PostModel {
     "register_link",
     'primary_date',
     'deadline_date',
-    'deadline_reference',
     'deadline_note',
     'aff_deadline_date',
     'early_voting_start',
@@ -26,9 +25,8 @@ class StateModel extends PostModel {
     'absentee_postmark_deadline',
     'absentee_excuse_required',
     'overseas_app_deadline',
-    'overseas_received_deadline',
+    'overseas_postmark_deadline',
     'under_18',
-    'registration_not_required',
     'discussion_link'
   );
 
@@ -37,7 +35,7 @@ class StateModel extends PostModel {
   }
 
   public function getTypeText() {
-    return $this->type === 'cacuses' ? 'Caucus' : 'Primary';
+    return $this->type === 'caucuses' ? 'Caucus' : 'Primary';
   }
 
   public function getPrimaryDate() {
