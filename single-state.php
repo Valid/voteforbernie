@@ -186,7 +186,7 @@
       <?php echo yksemeProcessSnippet( "2da18e85f7" , "Send me updates!" ); ?>
       <div class="updated">
         <p>Oregon was last updated on February 1st, 2013 <a href="/contact" class="correction-btn ui-btn">submit correction</a></p>
-        <?php echo do_shortcode( '[contact-form-7 id="242" title="Submit Correction" html_class="submit-correction"]' ); ?>
+        <?php echo do_shortcode( '[contact-form-7 id="157" title="Submit Correction" html_class="submit-correction"]' ); ?>
       </div>
     </div>
 
