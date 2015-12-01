@@ -14,9 +14,9 @@ class VoteInfoHelper {
   );
   protected static $explanations = array(
     'open' => '{$denonym} can vote for Bernie Sanders regardless of their registered party',
-    'closed' => '{$denonym} <strong>not</strong> registered as Democrat <strong>cannot</strong> vote for Bernie',
-    'semi-closed' => '{$denonym} <strong>not</strong> registered as Democrat or undeclared <strong>cannot</strong> vote for Bernie',
-    'semi-open' => '{$denonym} registered as a republican <strong>cannot</strong> vote for Bernie Sanders'
+    'closed' => '{$denonym} <strong>not</strong> registered as Democrat <strong>cannot</strong> vote for Bernie!',
+    'semi-closed' => '{$denonym} <strong>not</strong> registered as Democrat or undeclared <strong>cannot</strong> vote for Bernie!',
+    'semi-open' => '{$denonym} registered as a republican <strong>cannot</strong> vote for Bernie Sanders!'
   );
   protected static $actions = array(
     'open' => 'Get registered',

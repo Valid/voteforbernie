@@ -87,12 +87,28 @@ do they need tweaking?
       margin-bottom: 15px;
     }
     .action-info {
-      p {
-        font-size: 19px;
-      }
     }
     .resources {
       margin-top: 0;
+      p {
+        &:after {
+          border-bottom: 3px solid black(0.15);
+          content: '';
+          display: block;
+          margin: 0 auto;
+          padding-bottom: 5px;
+          width: 50%;
+        }
+      }
+      div {
+        &:last-child {
+          p {
+            &:after {
+              display: none;
+            }
+          }
+        }
+      }
     }
     .ui-btn {
       text-align: center;

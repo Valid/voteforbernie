@@ -12,6 +12,12 @@ Stylesheet: Base Mobile Stylesheet
   background: $light-gray url(images/paper-dark.jpg);
 }
 
+.inner-content {
+  margin: 0 auto;
+  opacity: 0;
+  padding: 0 10px;
+}
+
 // Loading Styles
 
 .wf-loading {
@@ -247,7 +253,7 @@ HEADER STYLES
       color: $closed;
       content: '\'16';
       font-family: $headerFont;
-      font-size: 0.5em;
+      font-size: 0.6em;
       letter-spacing: -2px;
       line-height: 1;
       padding-top: 7px;
@@ -318,7 +324,7 @@ and more scalable.
     ul.children {
 
       li {
-
+        margin: 5px 0;
         a {
           padding-left: 20px;
 
@@ -1033,9 +1039,9 @@ FOOTER STYLES
     text-transform: uppercase;
   }
   .jk {
-    color: $light-blue;
-    font-family: $headerFont;
-    font-size: 19px;
+    color: $blue;
+    font-family: $accentFont;
+    font-size: 28px;
     margin: 0;
   }
   .disclaimer {
@@ -1044,7 +1050,7 @@ FOOTER STYLES
   }
   .copyright {
     font-family: $headerFont;
-    font-size: 21px;
+    font-size: 30px;
   }
 }
 
@@ -1141,6 +1147,14 @@ FOOTER STYLES
     }
   }
 
+  .state-content {
+    border-bottom-left-radius: 20px;
+    border-left: 3px solid;
+    margin: 10px 5px;
+    overflow: hidden;
+    padding: 10px;
+  }
+
   .state {
     color: $black;
     overflow: hidden;
@@ -1151,7 +1165,7 @@ FOOTER STYLES
     }
     h3 {
       display: inline-block;
-      font-size: 40px;
+      font-size: 50px;
       font-weight: normal;
       line-height: 1;
       margin: 0;
@@ -1181,24 +1195,12 @@ FOOTER STYLES
       background-color: white(0.7);
       border: 5px solid $open;
       border-width: 5px 0;
+      .state-wrapper {
+        margin-bottom: 15px;
+      }
       .sign-up-notice {
         background: none;
         border: none;
-      }
-    }
-    .state-title {
-      text-align: center;
-    }
-    .st {
-      text-align: center;
-    }
-    .action-info {
-      font-family: $headerFont;
-      margin-top: 30px;
-      text-align: center;
-      p {
-        line-height: 1.3;
-        margin: 0 0 10px;
       }
     }
 
@@ -1209,15 +1211,15 @@ FOOTER STYLES
       text-align: center;
       h4 {
         font-size: 1.5em;
-        font-weight: normal;
         margin: 10px 0 0;
+        text-transform: uppercase;
       }
       ul {
         margin: 0;
       }
       p {
-        margin: 0;
         font-size: 1.1em;
+        margin: 0;
       }
     }
 
@@ -1225,7 +1227,6 @@ FOOTER STYLES
       color: $black;
       font-size: 14px;
       margin-top: 10px;
-      text-align: center;
       strong {
         background-color: $light-blue;
         border-radius: 2px;
@@ -1237,18 +1238,6 @@ FOOTER STYLES
     .callout {
       background-color: $white;
       padding: 10px 20px;
-    }
-    .wr {
-      padding: 0;
-      .action-info {
-        p {
-          font-size: 30px;
-          margin-bottom: 0;
-        }
-        .ui-btn {
-          margin-top: 5px;
-        }
-      }
     }
 
     &.open {
@@ -1330,8 +1319,7 @@ FOOTER STYLES
     p {
       font-size: 12px;
       &.tentative {
-        font-weight: 700;
-        line-height: 1;
+        color: $meta-gray;
       }
     }
   }
@@ -1562,7 +1550,6 @@ FOOTER STYLES
   line-height: 1;
   position: relative;
   text-align: center;
-  z-index: 3;
   .explanations {
     color: $white;
     margin: 0;
@@ -1601,10 +1588,6 @@ FOOTER STYLES
   p {
     margin: 5px 0 0;
   }
-  .inner-content {
-    margin: 0 auto;
-    opacity: 0;
-  }
   .state-select {
     text-align: center;
     p {
@@ -1623,6 +1606,21 @@ FOOTER STYLES
     margin: 0;
     max-width: 128px;
     padding: 0;
+  }
+}
+
+.newsletter {
+  background-color: white(0.7);
+  border: 5px solid $gray;
+  border-width: 5px 0;
+  padding: 20px 0;
+  text-align: center;
+  > p:first-child {
+    color: $red;
+    font-family: $headerFont;
+    font-size: 36px;
+    line-height: 1;
+    margin: 5px 0;
   }
 }
 
@@ -1658,7 +1656,7 @@ FOOTER STYLES
       right: 0;
       top: -1px;
       width: 0;
-      z-index: -1;
+      z-index: 2;
       @include transition(all 0.14s ease-in-out);
     }
     &:hover {
@@ -1673,7 +1671,6 @@ FOOTER STYLES
 
 
 // State Pages
-
 .state-header {
   position: relative;
   h2 {
@@ -1682,13 +1679,13 @@ FOOTER STYLES
     max-width: 90%;
   }
   span {
-    color: $red;
+    color: $blue;
     display: block;
     font-family: $headerFont;
   }
   .state-name {
     color: $blue;
-    font-family: $accentFont;
+    font-family: $stateFont;
     font-size: 40px;
     font-weight: normal;
     line-height: 0.9;
@@ -1778,8 +1775,8 @@ FOOTER STYLES
 
   .state-info {
     .ui-btn {
-      margin: 0 0 10px;
       background-color: $blue;
+      margin: 0 0 10px;
       &:hover {
         background-color: darken($blue, 10%);
       }
@@ -1787,7 +1784,7 @@ FOOTER STYLES
     h3 {
       font-size: 37px;
       line-height: 1;
-      margin: 15px 0 0;
+      margin: 15px 0 30px;
     }
     h4 {
       font-family: $headerFont;
@@ -1800,20 +1797,6 @@ FOOTER STYLES
     p {
       margin: 0 0 10px;
     }
-    .newsletter {
-      background-color: white(0.7);
-      border: 5px solid $gray;
-      border-width: 5px 0;
-      padding: 20px 0;
-      text-align: center;
-      > p:first-child {
-        color: $red;
-        font-family: $headerFont;
-        font-size: 36px;
-        line-height: 1;
-        margin: 5px 0;
-      }
-    }
   }
   .vote-content {
     padding: 10px 5px;
@@ -1822,11 +1805,9 @@ FOOTER STYLES
     margin: 30px 0;
     text-align: center;
     h3 {
-      font-family: $headerFont;
-      font-size: 14px;
+      font-size: 30px;
       font-weight: bold;
-      margin-bottom: 5px;
-      text-transform: uppercase;
+      margin-bottom: 18px;
     }
     p {
       font-size: 15px;
@@ -1843,15 +1824,15 @@ FOOTER STYLES
       font-family: $headerFont;
       font-size: 16px;
       line-height: 1.2;
-      margin: 50px 0 0;
+      margin: 50px 0 15px;
     }
     .meaning {
       background-color: $red;
       border-radius: 5px;
       color: $white;
-      font-size: 16px;
+      font-size: 25px;
       line-height: 1.2;
-      padding: 5px;
+      padding: 65px 5px;
     }
   }
   .status-info {
@@ -1863,7 +1844,7 @@ FOOTER STYLES
         border-radius: 50%;
         color: $white;
         display: inline-block;
-        font-family: $accentFont;
+        font-family: $stateFont;
         font-size: 37px;
         font-weight: normal;
         left: 0;
@@ -1915,16 +1896,6 @@ FOOTER STYLES
 //
 
 .state-info {
-  .info {
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 0 2px;
-    color: $white;
-    display: inline-block;
-    margin: 0;
-    padding: 0 3px;
-    text-align: center;
-  }
   .ui-btn {
     @extend %btn;
     margin: 20px 0 5px;
@@ -1939,23 +1910,20 @@ FOOTER STYLES
     font-weight: bold;
     line-height: 1;
     margin: 0 auto;
-    padding-bottom: 5px;
+    padding: 5px 0;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
-    width: 120px;
+    width: 90px;
     span, strong, em {
       display: block;
     }
     strong {
-      font-size: 16px;
-      padding: 3px 0;
+      font-size: 13px;
     }
     span {
-      font-family: $accentFont;
-      font-size: 60px;
+      font-size: 30px;
       font-weight: normal;
-      line-height: 54px;
     }
     em {
       font-size: 11px;
@@ -1973,6 +1941,9 @@ FOOTER STYLES
     .c-b {
       background-color: $open;
     }
+    .c-bo {
+      border-color: $open;
+    }
     .c-bb {
       &:before {
         content: initial;
@@ -1985,6 +1956,9 @@ FOOTER STYLES
     }
     .c-b {
       background-color: $closed;
+    }
+    .c-bo {
+      border-color: $closed;
     }
     .c-bb {
       &:before {
@@ -2000,6 +1974,9 @@ FOOTER STYLES
     .c-b, {
       background-color: $other;
     }
+    .c-bo {
+      border-color: $other;
+    }
     .c-bb {
       &:before {
         background-color: $other;
@@ -2014,6 +1991,9 @@ FOOTER STYLES
     .c-b {
       background-color: $caucus-open;
     }
+    .c-bo {
+      border-color: $caucus-open;
+    }
     .c-bb {
       &:before {
         content: initial;
@@ -2026,6 +2006,9 @@ FOOTER STYLES
     }
     .c-b {
       background-color: $caucus-closed;
+    }
+    .c-bo {
+      border-color: $caucus-closed;
     }
     .c-bb {
       &:before {

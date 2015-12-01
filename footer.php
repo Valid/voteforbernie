@@ -9,7 +9,7 @@
       <?php wp_nav_menu(array(
         'container' => false,
         'container_class' => 'footer-links cf',
-        'menu_class' => 'nav footer-nav cf',
+        'menu_class' => 'footer-nav cf',
         'theme_location' => 'footer',
         'before' => '',
         'after' => '',

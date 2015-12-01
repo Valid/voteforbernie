@@ -112,7 +112,7 @@ var activeCallback = jQuery.Callbacks();
 vfb.loadFonts = function () {
   WebFont.load({
     google: {
-      families: ['Abel', 'Maiden Orange']
+      families: ['Open Sans:400', 'Open Sans Condensed:300', 'Sue Ellen Francisco', 'Maiden Orange']
     },
     active: function () { activeCallback.fire(); },
     inactive: function () { activeCallback.fire(); },

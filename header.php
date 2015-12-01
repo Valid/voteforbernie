@@ -115,11 +115,11 @@
     <div class="container">
       <div class="header-wrapper">
         <header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-          <div class="action-bar np">
+<!--           <div class="action-bar np">
             <?php // TODO: Pull from ACF ?>
             <strong>Voter Alert &mdash;</strong> New York has only 5 days left <a href="#">Read more</a>
             <div class="fb-like" data-href="https://voteforbernie.org/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
-          </div>
+          </div> -->
           <div id="inner-header" class="branding wrap">
 
             <h1 id="logo" class="h1" title="VoteForBernie.org" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>">#VoteForBernie</a></h1>

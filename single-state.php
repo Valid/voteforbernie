@@ -28,16 +28,16 @@
     <div class="share np m-all t-all d-all">
       <?php if ($state->status !== 'open') { ?>
         <h3>If you didn't know that, you're not alone.</h3>
-        <p>Many planning to vote for Bernie in <?php echo $state->getTitle(); ?> <strong>will not be able to!</strong></p>
+        <p>People are planning to vote for Bernie in <?php echo $state->getTitle(); ?> and they <strong>will not be able to!</strong></p>
       <?php } else { ?>
         <blockquote cite="http://www.thenation.com/article/bernie-sanders-explains-the-new-math-of-2016-to-democratic-leaders/">
           <p>﻿“I think you're looking at the candidate who can substantially increase voter turnout all across the country.”</p>
         </blockquote>
       <?php } ?>
-      <p>Bernie Sanders <em>will win</em> if we can <strong>get enough people to vote!</strong></p>
+      <p>Bernie Sanders will only win if we can <strong>get enough people to vote!</strong></p>
 
       <!-- TODO: Improve this section -->
-      <p>Use the buttons to share this information!</p>
+      <p>Please help get the word out.</p>
       <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
       <!-- <p>You can also print this page, and it turns into a flier you can post or give out!</p> -->
     </div>
@@ -47,7 +47,7 @@
     <div class="info-wrapper m-all t-all d-all">
       <div class="m-1of2 t-1of3 d-1of3">
         <div class="what">
-          <h3>Deadline to Register</h3>
+          <h3>Register By</h3>
 
           <div class="date">
             <strong><?php echo date('F', strtotime($state->deadline_date)); ?></strong>
@@ -63,7 +63,7 @@
 
       <div class="m-1of2 t-1of3 d-1of3">
         <div class="when">
-          <h3><?php echo $state->getTypeText(); ?> Date</h3>
+          <h3><?php echo $state->getTypeText(); ?> On</h3>
           <div class="date">
             <strong><?php echo date('F', strtotime($state->getPrimaryDate())); ?></strong>
             <span><?php echo date('j', strtotime($state->getPrimaryDate())); ?></span>
@@ -94,26 +94,28 @@
     </div>
 
     <div class="vote-content m-all t-3of4 d-4of5">
-      <h3>Voting in <?php echo $state->getTitle(); ?></h3>
-      <p>
-      <?php if ($state->status !== 'open') { ?>
-        Because <?php echo $state->getTitle(); ?> has <strong class="c-t"><?php echo $state->status; ?></strong> <?php echo $state->type; ?>, <strong>you must <?php echo strtolower($helper->getActionText($state)); ?></strong> if you want to vote for Bernie.
-      <?php } else { ?>
-        Good news! Because <?php echo $state->getTitle(); ?> has <?php echo $state->status; ?> <?php echo $state->type; ?>, you can vote for Bernie regardless of your registered party. If you want to vote for Bernie, <strong>just get registered to vote!</strong>
-      <?php } ?></p>
+      <div class="state-vote-info">
+        <h3>Voting in <?php echo $state->getTitle(); ?></h3>
+        <p class="vote-explain">
+        <?php if ($state->status !== 'open') { ?>
+          Because <?php echo $state->getTitle(); ?> has <strong class="c-t"><?php echo $state->status; ?></strong> <?php echo $state->type; ?>, <strong>you must <?php echo strtolower($helper->getActionText($state)); ?></strong> if you want to vote for Bernie.
+        <?php } else { ?>
+          Good news! Because <?php echo $state->getTitle(); ?> has <strong class="c-t"><?php echo $state->status; ?></strong> <?php echo $state->type; ?>, you can vote for Bernie regardless of your registered party. If you want to vote for Bernie, <strong><?php echo strtolower($helper->getActionText($state)); ?></strong>!</strong>
+        <?php } ?></p>
 
-      <a class="ui-btn np" href="<?php echo $helper->getOnlineRegistrationLink($state); ?>" data-track="regBtn,<?php echo $state->state; ?>">
-        <?php echo $helper->getActionText($state); ?> now!
-      </a>
+        <a class="ui-btn np" href="<?php echo $helper->getOnlineRegistrationLink($state); ?>" data-track="regBtn,<?php echo $state->state; ?>">
+          <?php echo $helper->getActionText($state); ?> now!
+        </a>
 
 
-      <?php if ($state->hasAffiliationDeadline()) { ?>
-        <p class="warning">In <?php echo $state->getTitle(); ?>, you must be affiliated as a Democrat by <?php echo date('F j, Y', strtotime($state->deadline_date)); ?>, which is before the registration deadline!</p>
-      <?php } else { ?>
-        <p>You have until <?php echo date('F j, Y', strtotime($state->deadline_date)); ?> to register, but registration is open <strong>right now!</strong></p>
-      <?php } ?>
+        <?php if ($state->hasAffiliationDeadline()) { ?>
+          <p class="warning">In <?php echo $state->getTitle(); ?>, you must be affiliated as a Democrat by <?php echo date('F j, Y', strtotime($state->deadline_date)); ?>, which is before the registration deadline!</p>
+        <?php } else { ?>
+          <p>You have until <?php echo date('F j, Y', strtotime($state->deadline_date)); ?> to register, but registration is open <strong>right now!</strong></p>
+        <?php } ?>
 
-      <p>Not sure if you're registered or what you're registered as? Check your <a href="<?php echo $state->check_registration_link ?>" data-track="ChkLnk,<?php echo $state->state; ?>" target="_blank">current registration status</a>.</p>
+        <p>Not sure if you're registered or what you're registered as? Check your <a href="<?php echo $state->check_registration_link ?>" data-track="ChkLnk,<?php echo $state->state; ?>" target="_blank">current registration status</a>.</p>
+      </div>
 
       <?php if ($state->hasAbsenteeVoting()) { ?>
         <h4>Vote By Mail</h4>
@@ -176,6 +178,12 @@
       <script>
       (adsbygoogle = window.adsbygoogle || []).push({});
       </script>
+    </div>
+
+    <div class="np m-all t-all d-all newsletter">
+      <p>Have you forgotten to vote before?</p>
+      <p>Sign up to receive reminders and alerts of important dates in <?php echo $state->getTitle(); ?></p>
+      <?php echo yksemeProcessSnippet( "2da18e85f7" , "Send me updates!" ); ?>
     </div>
 
     <div class="np m-all t-all d-all">

@@ -25,7 +25,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
             <li class="open-caucus" data-type="open-caucus">Open Caucus</li>
             <li class="other" data-type="other">Other</li>
           </ul>
-          <div class="inner-content explanation-container">
+          <div class="explanation-container">
             <ul class="explanations">
               <li class="closed active">Voters in Closed Primary states <strong>must</strong> register as Democrat to vote for Bernie</li>
               <li class="open">Voters in Open Primary states can vote for Bernie regardless of political affiliation</li>
@@ -61,8 +61,9 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                 <header class="article-header">
                   <h1 class="page-title"><?php the_title(); ?></h1>
                   <p><?php the_content(); ?></p>
-                  <div class="sign-up-notice">
-                    <p class="tentative">Last updated on <?php echo $mostRecentStateUpdate ?>.<br/>Dates and deadlines may change at any time! Sign up to receive updates for your state.</p>
+                  <div class="sign-up-notice newsletter">
+                    <p>Dates and deadlines may change at any time.</p>
+                    <p class="tentative">Last updated on <?php echo $mostRecentStateUpdate ?>.</p>
                     <?php echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" ); ?>
 
                     <div class="one-percent-here-i-come">
@@ -91,56 +92,59 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                         class="state state-info <?php echo $state->state; ?> <?php echo $helper->getStatusClass($state); ?>" data-type="<?php echo explode(' ', $helper->getStatusClass($state))[0]; ?>" data-code="<?php echo $state->state; ?>">
                     <div class="state-wrapper cf">
 
-                      <div class="wr m-all t-3of4 d-3of4">
-                        <div class="st">
+                      <div class="m-all t-all d-all">
                         <div class="state-title">
                           <h3><a href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="stateTitle,<?php echo $state->state; ?>"><?php echo $state->getTitle(); ?></a></h3>
                           <img class="svg" data-src="<?php echo get_template_directory_uri(); ?>/dist/images/svg/states/<?php echo $state->state; ?>.svg"/>
                         </div>
-                          <p class="info c-t">
+                      </div>
+                      <div class="state-content c-bo">
+                        <div class="wr m-all t-3of4 d-3of4">
+                          <p>
                             <?php echo $state->getTitle(); ?>
                             has
-                            <strong class="status"><?php echo $state->status; ?></strong>
+                            <strong class="c-t"><?php echo $state->status; ?></strong>
                             <?php echo $state->type; ?>.
                           </p>
                           <p class="exp"><?php echo $helper->getExplanationText($state); ?></p>
-                        </div>
 
-
-                        <div class="action-info">
-                          <p><?php echo $state->denonym; ?> for Bernie:</p>
+                          <!-- <p><?php echo $state->denonym; ?> for Bernie:</p> -->
                             <!-- <a href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="actTxt,<?php echo $state->state; ?>">
                             <?php echo strtolower($helper->getActionText($state)); ?></a> to vote for Bernie. -->
                           <a class="ui-btn" href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="actBtn,<?php echo $state->state; ?>">
                           <?php echo $helper->getActionText($state); ?></a>
+
+
+                          <?php if ($state->under_18 || $state->hasAdditionalNote()): ?>
+                            <div class="extra">
+                              <?php if ($state->under_18): ?>
+                                <p class="only17"><strong>Only 17?</strong> If you will be 18 by November 8, 2016, you can vote in the <?php echo $state->type; ?>!</p>
+                              <?php endif; ?>
+                              <?php if ($state->hasAdditionalNote()): ?>
+                                <p class="note"><?php echo $state->additional_note; ?></p>
+                              <?php endif; ?>
+                            </div>
+                          <?php endif; ?>
                         </div>
 
-                        <?php if ($state->under_18 || $state->hasAdditionalNote()): ?>
-                          <div class="extra m-all t-all d-all">
-                            <?php if ($state->under_18): ?>
-                              <p class="only17"><strong>Only 17?</strong> If you will be 18 by November 8, 2016, you can vote in the <?php echo $state->type; ?>!</p>
-                            <?php endif; ?>
-                            <?php if ($state->hasAdditionalNote()): ?>
-                              <p class="note"><?php echo $state->additional_note; ?></p>
-                            <?php endif; ?>
+                        <div class="resources m-all t-1of4 d-1of4">
+                          <div class="m-1of2 t-all d-all">
+                            <h4><?php echo $state->getTypeText(); ?> On</h4>
+                            <p><?php echo date('F j', strtotime($state->getPrimaryDate())); ?></p>
                           </div>
-                        <?php endif; ?>
-                      </div>
 
-                      <div class="resources m-all t-1of4 d-1of4">
-                        <a href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="deadlines,<?php echo $state->state; ?>" class="date" title="<?php echo $state->getTitle(); ?> <?php echo $state->type; ?> are on <?php echo $state->getPrimaryDate(); ?>" data-date="<?php echo $state->getPrimaryDate(); ?>">
-                          <strong><?php echo date('F', strtotime($state->getPrimaryDate())); ?></strong>
-                          <span><?php echo date('j', strtotime($state->getPrimaryDate())); ?></span>
-                          <em><?php echo $state->type; ?></em>
-                        </a>
+                          <div class="m-1of2 t-all d-all">
+                            <h4>Register By</h4>
+                            <p><?php echo date('F j', strtotime($state->deadline_date)); ?></p>
+                          </div>
 
-                        <h4>Registration Deadline</h4>
-                        <p><?php echo date('F j, Y', strtotime($state->deadline_date)); ?></p>
-
-                        <?php if ($state->hasAffiliationDeadline()) { ?>
-                          <h4>Affiliation Deadline</h4>
-                          <p><?php echo date('F j, Y', strtotime($state->aff_deadline_date)); ?></p>
-                        <?php } ?>
+                          <?php if ($state->hasAffiliationDeadline()) { ?>
+                            <div class="m-all t-all d-all">
+                              <h4>Affiliate By</h4>
+                              <p><?php echo date('F j, Y', strtotime($state->aff_deadline_date)); ?></p>
+                            </div>
+                          <?php } ?>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -152,7 +156,6 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                     <?php // the_content(); ?>
                   </div>
                 </section>
-                <div class="to-map"><a href="#" title="Back to the map!">Back to top</a></div>
 
                 <?php // echo do_shortcode( '[contact-form-7 id="242" title="Submit Correction" html_class="submit-correction"]' ); ?>
                 <?php // comments_template(); ?>
@@ -182,5 +185,6 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
         </div>
 
       </div>
+      <div class="to-map"><a href="#" title="Back to the map!">Back to top</a></div>
 
 <?php get_footer(); ?>

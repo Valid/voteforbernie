@@ -51,8 +51,9 @@ I've edited it a bit, but it's a nice starting point.
 // font stacks
 $sans-serif:        "Open Sans", Helvetica, Arial, sans-serif;
 $serif:             Cambria, Times New Roman, Times, serif;
-$headerFont:        "Abel", $serif;
-$accentFont:        "Maiden Orange", $headerFont;
+$headerFont:        "Open Sans Condensed", $sans-serif;
+$accentFont:        "Sue Ellen Francisco", $headerFont;
+$stateFont:         "Maiden Orange", $accentFont;
 /*
  i imported this one in the functions file so bones would look sweet.
  don't forget to remove it for your site.
