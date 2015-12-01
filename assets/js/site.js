@@ -443,9 +443,21 @@ vfb.stateInit = function () {
   var $statePage = jQuery('.state-page');
 
   if ($statePage.length) {
-    $newsletter = jQuery('.newsletter');
+    var $newsletter = jQuery('.newsletter'),
+      $submitCorrectionBtn = jQuery('.correction-btn'),
+      $correction = jQuery('.submit-correction'),
+      $correctionForm = jQuery('.updated').find('.wpcf7');
 
     $newsletter.find('select').val($statePage.data('state'));
+    $correction.find('input[name="state"]').val($statePage.data('state'));
+
+    $submitCorrectionBtn.on('click', function (event) {
+      event.preventDefault();
+
+      jQuery(this).parent().hide();
+      $correctionForm.fadeIn();
+    });
+
   }
 };
 

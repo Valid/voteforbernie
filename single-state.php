@@ -56,7 +56,7 @@
           </div>
           <p><?php echo $state->denonym; ?> must <?php echo strtolower($helper->getActionText($state)); ?> by: <strong><?php echo date('F j, Y', strtotime($state->deadline_date)); ?></strong></p>
           <?php if ($state->hasAffiliationDeadline()) { ?>
-            <p class="warning">Not a Democrat? <?php echo $state->getTitle(); ?> has a special deadline for changing affiliation, which is on <?php echo date('F j, Y', strtotime($state->deadline_date)); ?></p>
+            <p><strong>Not a Democrat?</strong> <?php echo $state->getTitle(); ?> has a <em>special deadline</em> for changing affiliation, which is on <strong><?php echo date('F j, Y', strtotime($state->deadline_date)); ?>!</strong></p>
           <?php } ?>
         </div>
       </div>
@@ -95,7 +95,7 @@
 
     <div class="vote-content m-all t-3of4 d-4of5">
       <div class="state-vote-info">
-        <h3>Voting in <?php echo $state->getTitle(); ?></h3>
+        <h3>Voting in the <?php echo $state->getTitle(); ?> <?php echo $state->getTypeText(); ?></h3>
         <p class="vote-explain">
         <?php if ($state->status !== 'open') { ?>
           Because <?php echo $state->getTitle(); ?> has <strong class="c-t"><?php echo $state->status; ?></strong> <?php echo $state->type; ?>, <strong>you must <?php echo strtolower($helper->getActionText($state)); ?></strong> if you want to vote for Bernie.
@@ -157,7 +157,7 @@
 
       <?php endif; ?>
 
-      <h4>Further Information</h4>
+      <h4>More Information</h4>
       <p>If you have any questions about voting in <?php echo $state->getTitle(); ?> you contact your official elections office.</p>
       <ul>
         <li><a href="<?php echo $state->state_link; ?>" data-track="StateLink,<?php echo $state->state; ?>" target="_blank">Official <?php echo $state->getTitle(); ?> Elections Website</a></li>
@@ -181,9 +181,13 @@
     </div>
 
     <div class="np m-all t-all d-all newsletter">
-      <p>Have you forgotten to vote before?</p>
+      <p>Ever forget to vote on time?</p>
       <p>Sign up to receive reminders and alerts of important dates in <?php echo $state->getTitle(); ?></p>
       <?php echo yksemeProcessSnippet( "2da18e85f7" , "Send me updates!" ); ?>
+      <div class="updated">
+        <p>Oregon was last updated on February 1st, 2013 <a href="/contact" class="correction-btn ui-btn">submit correction</a></p>
+        <?php echo do_shortcode( '[contact-form-7 id="242" title="Submit Correction" html_class="submit-correction"]' ); ?>
+      </div>
     </div>
 
     <div class="np m-all t-all d-all">

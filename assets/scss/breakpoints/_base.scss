@@ -1606,6 +1606,8 @@ FOOTER STYLES
     margin: 0;
     max-width: 128px;
     padding: 0;
+    position: relative;
+    z-index: 5;
   }
 }
 
@@ -1797,6 +1799,36 @@ FOOTER STYLES
     p {
       margin: 0 0 10px;
     }
+    .updated {
+      color: $meta-gray;
+      margin-top: 10px;
+      p {
+        font-size: 12px;
+        line-height: 1;
+      }
+      a {
+        background-color: $meta-gray;
+        font-size: 15px;
+        line-height: 1;
+        margin-top: 10px;
+        padding: 5px;
+        &:hover {
+          background-color: lighten($meta-gray, 10%);
+        }
+      }
+      .wpcf7 {
+        background-color: $white;
+        display: none;
+        padding: 20px 10%;
+        textarea {
+          padding: 5px 10px;
+          margin: 0;
+        }
+      }
+      .wpcf7-submit {
+        font-size: 20px;
+      }
+    }
   }
   .vote-content {
     padding: 10px 5px;
@@ -1868,9 +1900,6 @@ FOOTER STYLES
   }
   .when {
     text-align: center;
-    .date {
-      // width: auto;
-    }
   }
 
   // Ad Units
@@ -1922,6 +1951,7 @@ FOOTER STYLES
       font-size: 13px;
     }
     span {
+      font-family: $stateFont;
       font-size: 30px;
       font-weight: normal;
     }
