@@ -14,8 +14,8 @@ class VoteInfoHelper {
   );
   protected static $explanations = array(
     'open' => '{$denonym} can vote for Bernie Sanders regardless of their registered party',
-    'closed' => '{$denonym} <strong>not</strong> registered as Democrat <strong>cannot</strong> vote for Bernie!',
-    'semi-closed' => '{$denonym} <strong>not</strong> registered as Democrat or undeclared <strong>cannot</strong> vote for Bernie!',
+    'closed' => '{$denonym} <strong>must</strong> register as Democrat to vote for Bernie!',
+    'semi-closed' => '{$denonym} <strong>must</strong> register as Democrat or undeclared to vote for Bernie!',
     'semi-open' => '{$denonym} registered as a republican <strong>cannot</strong> vote for Bernie Sanders!'
   );
   protected static $actions = array(
@@ -37,6 +37,17 @@ class VoteInfoHelper {
       $this->loadStateField($state->post->ID);
     }
     return $this->states[$state->stateCode];
+  }
+
+  public function getStateDescription ($state) {
+    $vars = array(
+      '%%title%%' => $state->getTitle(),
+      '%%cf_status%%' => $state->status,
+      '%%cf_type%%' => $state->type,
+      '%%cf_denonym%%' => $state->denonym
+    );
+
+    return strtr(get_post_meta($state->post->ID, '_yoast_wpseo_metadesc', true), $vars);
   }
 
   public function getStatusClass($state) {

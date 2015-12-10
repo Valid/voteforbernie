@@ -22,7 +22,7 @@
 
     <div class="type m-all t-all d-all">
       <div class="slab"><p class="status-info"><?php echo $state->getTitle(); ?> has <strong class="status c-bb c-t init"><?php echo $state->status; ?></strong> <?php echo $state->type; ?></p></div>
-      <p class="meaning c-b"><?php echo $helper->getExplanationText($state); ?></p>
+      <p class="meaning c-t c-bo"><?php echo $helper->getExplanationText($state); ?></p>
     </div>
 
     <div class="share np m-all t-all d-all">
@@ -33,11 +33,10 @@
         <blockquote cite="http://www.thenation.com/article/bernie-sanders-explains-the-new-math-of-2016-to-democratic-leaders/">
           <p>﻿“I think you're looking at the candidate who can substantially increase voter turnout all across the country.”</p>
         </blockquote>
+        <p>Bernie Sanders will only win if we can <strong>get enough people to vote!</strong></p>
       <?php } ?>
-      <p>Bernie Sanders will only win if we can <strong>get enough people to vote!</strong></p>
 
-      <!-- TODO: Improve this section -->
-      <p>Please help get the word out.</p>
+      <p class="share-text">Help <strong>Get The Vote Out</strong> by sharing this page</p>
       <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
       <!-- <p>You can also print this page, and it turns into a flier you can post or give out!</p> -->
     </div>
@@ -54,7 +53,7 @@
             <span><?php echo date('j', strtotime($state->deadline_date)); ?></span>
             <em>(<?php echo date('l', strtotime($state->deadline_date)); ?>)</em>
           </div>
-          <p><?php echo $state->denonym; ?> must <?php echo strtolower($helper->getActionText($state)); ?> by: <strong><?php echo date('F j, Y', strtotime($state->deadline_date)); ?></strong></p>
+          <p><?php echo $helper->getActionText($state); ?> by: <strong><?php echo date('F j, Y', strtotime($state->deadline_date)); ?></strong></p>
           <?php if ($state->hasAffiliationDeadline()) { ?>
             <p><strong>Not a Democrat?</strong> <?php echo $state->getTitle(); ?> has a <em>special deadline</em> for changing affiliation, which is on <strong><?php echo date('F j, Y', strtotime($state->deadline_date)); ?>!</strong></p>
           <?php } ?>
@@ -94,28 +93,26 @@
     </div>
 
     <div class="vote-content m-all t-3of4 d-4of5">
-      <div class="state-vote-info">
-        <h3>Voting in the <?php echo $state->getTitle(); ?> <?php echo $state->getTypeText(); ?></h3>
-        <p class="vote-explain">
-        <?php if ($state->status !== 'open') { ?>
-          Because <?php echo $state->getTitle(); ?> has <strong class="c-t"><?php echo $state->status; ?></strong> <?php echo $state->type; ?>, <strong>you must <?php echo strtolower($helper->getActionText($state)); ?></strong> if you want to vote for Bernie.
-        <?php } else { ?>
-          Good news! Because <?php echo $state->getTitle(); ?> has <strong class="c-t"><?php echo $state->status; ?></strong> <?php echo $state->type; ?>, you can vote for Bernie regardless of your registered party. If you want to vote for Bernie, <strong><?php echo strtolower($helper->getActionText($state)); ?></strong>!</strong>
-        <?php } ?></p>
+      <h3><?php echo $state->getTitle(); ?> Voter Information</h3>
+      <p class="vote-explain">
+      <?php if ($state->status !== 'open') { ?>
+        Because <?php echo $state->getTitle(); ?> has <strong class="c-t"><?php echo $state->status; ?></strong> <?php echo $state->type; ?>, <strong>you must <?php echo strtolower($helper->getActionText($state)); ?></strong> if you want to vote for Bernie.
+      <?php } else { ?>
+        Good news! Because <?php echo $state->getTitle(); ?> has <strong class="c-t"><?php echo $state->status; ?></strong> <?php echo $state->type; ?>, you can vote for Bernie regardless of your registered party. If you want to vote for Bernie, <strong><?php echo strtolower($helper->getActionText($state)); ?></strong>!</strong>
+      <?php } ?></p>
 
-        <a class="ui-btn np" href="<?php echo $helper->getOnlineRegistrationLink($state); ?>" data-track="regBtn,<?php echo $state->state; ?>">
-          <?php echo $helper->getActionText($state); ?> now!
-        </a>
+      <a class="ui-btn np" href="<?php echo $helper->getOnlineRegistrationLink($state); ?>" data-track="regBtn,<?php echo $state->state; ?>">
+        <?php echo $helper->getActionText($state); ?> now!
+      </a>
 
 
-        <?php if ($state->hasAffiliationDeadline()) { ?>
-          <p class="warning">In <?php echo $state->getTitle(); ?>, you must be affiliated as a Democrat by <?php echo date('F j, Y', strtotime($state->deadline_date)); ?>, which is before the registration deadline!</p>
-        <?php } else { ?>
-          <p>You have until <?php echo date('F j, Y', strtotime($state->deadline_date)); ?> to register, but registration is open <strong>right now!</strong></p>
-        <?php } ?>
+      <?php if ($state->hasAffiliationDeadline()) { ?>
+        <p class="warning">In <?php echo $state->getTitle(); ?>, you must be affiliated as a Democrat by <?php echo date('F j, Y', strtotime($state->deadline_date)); ?>, which is before the registration deadline!</p>
+      <?php } else { ?>
+        <p>You have until <?php echo date('F j, Y', strtotime($state->deadline_date)); ?> to register, but registration is open <strong>right now!</strong></p>
+      <?php } ?>
 
-        <p>Not sure if you're registered or what you're registered as? Check your <a href="<?php echo $state->check_registration_link ?>" data-track="ChkLnk,<?php echo $state->state; ?>" target="_blank">current registration status</a>.</p>
-      </div>
+      <p>Not sure if you're registered or what you're registered as? Check your <a href="<?php echo $state->check_registration_link ?>" data-track="ChkLnk,<?php echo $state->state; ?>" target="_blank">current registration status</a>.</p>
 
       <?php if ($state->hasAbsenteeVoting()) { ?>
         <h4>Vote By Mail</h4>

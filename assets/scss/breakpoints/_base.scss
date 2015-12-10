@@ -1077,6 +1077,7 @@ FOOTER STYLES
 
 .vote-info {
   clear: both;
+  overflow: auto;
   h1, h2 {
     font-family: $accentFont;
   }
@@ -1152,7 +1153,7 @@ FOOTER STYLES
     border-left: 3px solid;
     margin: 10px 5px;
     overflow: hidden;
-    padding: 10px;
+    padding: 10px 10px 30px;
   }
 
   .state {
@@ -1210,8 +1211,9 @@ FOOTER STYLES
       padding: 0;
       text-align: center;
       h4 {
+        font-family: $headerFont;
         font-size: 1.5em;
-        margin: 10px 0 0;
+        margin: 7px 0 0;
         text-transform: uppercase;
       }
       ul {
@@ -1439,14 +1441,6 @@ FOOTER STYLES
     }
   }
 
-  .spread-word {
-    #crestashareiconincontent {
-      display: inline-block;
-      margin: 0;
-      vertical-align: top;
-    }
-  }
-
   .stay-involved {
     clear: both;
     h2 {
@@ -1478,40 +1472,6 @@ FOOTER STYLES
 }
 
 
-// Cresta Share Styles
-
-.cresta-share-icon {
-  .cresta-the-total-count {
-    font-size: 12px;
-    width: 40px;
-  }
-}
-.cresta-the-count {
-  pointer-events: none;
-}
-/* Better responsive mode */
-@media (max-width: 767px) {
-  #crestashareicon {
-    background-color: rgba(255, 255, 255, 0.82);
-    bottom: 0;
-    float: none !important;
-    left: 0;
-    padding-top: 5px;
-    right: 0 !important;
-    text-align: left;
-    top: auto !important;
-    .sbutton {
-      display: inline-block !important;
-      float: none !important;
-      margin: 0 2px;
-    }
-    .fb-like {
-      left: auto;
-      right: 65px;
-      top: 15px;
-    }
-  }
-}
 
 /* Contact Forms */
 .wpcf7 {
@@ -1612,8 +1572,8 @@ FOOTER STYLES
 }
 
 .newsletter {
-  background-color: white(0.7);
-  border: 5px solid $gray;
+  background-color: white(0.5);
+  border: 5px solid $dark-gray;
   border-width: 5px 0;
   padding: 20px 0;
   text-align: center;
@@ -1674,6 +1634,7 @@ FOOTER STYLES
 
 // State Pages
 .state-header {
+  padding-top: 30px;
   position: relative;
   h2 {
     font-size: 35px;
@@ -1759,8 +1720,8 @@ FOOTER STYLES
     }
   }
   .share {
-    background-color: white(0.7);
-    border: 5px solid $gray;
+    background-color: white(0.5);
+    border: 5px solid $dark-gray;
     border-width: 5px 0;
     padding: 10px;
     text-align: center;
@@ -1784,9 +1745,12 @@ FOOTER STYLES
       }
     }
     h3 {
-      font-size: 37px;
+      font-family: $sans-serif;
+      font-size: 25px;
+      font-weight: 800;
       line-height: 1;
-      margin: 15px 0 30px;
+      margin: 15px 0;
+      text-transform: uppercase;
     }
     h4 {
       font-family: $headerFont;
@@ -1832,14 +1796,20 @@ FOOTER STYLES
   }
   .vote-content {
     padding: 10px 5px;
+    h3 {
+      font-family: $headerFont;
+      font-size: 40px;
+    }
   }
   .info-wrapper {
     margin: 30px 0;
     text-align: center;
     h3 {
-      font-size: 30px;
+      font-family: $headerFont;
+      font-size: 19px;
       font-weight: bold;
-      margin-bottom: 18px;
+      margin-bottom: 5px;
+      text-transform: uppercase;;
     }
     p {
       font-size: 15px;
@@ -1856,15 +1826,17 @@ FOOTER STYLES
       font-family: $headerFont;
       font-size: 16px;
       line-height: 1.2;
-      margin: 50px 0 15px;
+      margin: 50px 0 0;
     }
     .meaning {
-      background-color: $red;
+      background-color: white(0.5);
       border-radius: 5px;
-      color: $white;
+      border-style: solid;
+      border-width: 2px 5px;
       font-size: 25px;
       line-height: 1.2;
-      padding: 65px 5px;
+      margin: -0.25em 0 50px;
+      padding: 15px 5px;
     }
   }
   .status-info {
@@ -1921,8 +1893,6 @@ FOOTER STYLES
   text-align: center;
  }
 }
-
-//
 
 .state-info {
   .ui-btn {
@@ -2059,4 +2029,28 @@ FOOTER STYLES
       word-spacing: inherit!important;
     }
   }
+}
+
+// Cresta share styles
+.cresta-share-icon {
+  .sbutton i, .sbutton-total {
+    height: 30px !important;
+  }
+  .cresta-the-total-count {
+    font-size: 18px;
+    width: 40px;
+  }
+}
+#crestashareicon {
+  background-color: white(0.7);
+  .sbutton#total-shares {
+    display: inline-block !important;
+  }
+  .sbutton span {
+    display: block !important;
+  }
+  .cresta-the-total-count {
+    font-size: 12px;
+  }
+
 }

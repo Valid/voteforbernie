@@ -62,9 +62,10 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                   <h1 class="page-title"><?php the_title(); ?></h1>
                   <p><?php the_content(); ?></p>
                   <div class="sign-up-notice newsletter">
-                    <p>Dates and deadlines may change at any time.</p>
-                    <p class="tentative">Last updated on <?php echo $mostRecentStateUpdate ?>.</p>
+                    <p>Dates and deadlines can change at any time.</p>
+                    <p>Sign up to be reminded of deadlines and important changes in your state</p>
                     <?php echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" ); ?>
+                    <p class="tentative">Last updated on <?php echo $mostRecentStateUpdate ?>.</p>
 
                     <div class="one-percent-here-i-come">
                       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -98,7 +99,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                           <img class="svg" data-src="<?php echo get_template_directory_uri(); ?>/dist/images/svg/states/<?php echo $state->state; ?>.svg"/>
                         </div>
                       </div>
-                      <div class="state-content c-bo">
+                      <div class="state-content c-bo m-all t-all d-all">
                         <div class="wr m-all t-3of4 d-3of4">
                           <p>
                             <?php echo $state->getTitle(); ?>
