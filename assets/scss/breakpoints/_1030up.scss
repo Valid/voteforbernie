@@ -12,6 +12,11 @@ be seen on the Desktop.
 .wrap {
   width: 1000px;
 }
+.single {
+  .wrap {
+    width: 800px;
+  }
+}
 
 .vote-info {
   .state {

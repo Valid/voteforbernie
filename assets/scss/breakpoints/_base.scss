@@ -7,9 +7,10 @@ Stylesheet: Base Mobile Stylesheet
 ******************************************************************/
 
 
+
 // Container styles
 .container {
-  background: $light-gray url(images/paper-dark.jpg);
+  background: #fff;
 }
 
 .inner-content {
@@ -101,7 +102,6 @@ LAYOUT & GRID STYLES
 
 .wrap {
   margin: 0 auto;
-  max-width: 95%;
 }
 
 img {
@@ -168,16 +168,17 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  font-size: 1.125em;
+  font-size: 2em;
 }
 
 h4, .h4 {
-  font-size: 1.1em;
-  font-weight: 700;
+  font-size: 1.5em;
+  font-weight: normal;
+  margin: 0;
 }
 
 h5, .h5 {
-  font-size: 0.846em;
+  font-size: 1em;
   letter-spacing: 2px;
   line-height: 2.09em;
   text-transform: uppercase;
@@ -388,7 +389,35 @@ POSTS & CONTENT STYLES
 *********************/
 
 #content {
+  clear: both;
+}
 
+// Custom Blog Post Styles
+.single, .page {
+  .hentry {
+    margin-top: 40px;
+  }
+  .entry-content {
+    border: 3px solid $blue;
+    border-bottom-left-radius: 20px;
+    border-width: 0 0 0 3px;
+    margin: 0 5px 10px;
+    overflow: hidden;
+    padding: 10px 10px 30px 15px;
+  }
+  h2, h4 {
+    font-family: $accentFont;
+  }
+}
+
+// Homepage/ State Overrides
+.home, .single-state {
+  .container {
+    background: $light-gray url(images/paper-dark.jpg);
+  }
+  .entry-content {
+    border: 0;
+  }
 }
 
     .hentry {
@@ -419,11 +448,16 @@ POSTS & CONTENT STYLES
       margin: 0;
     }
 
-    .single-title {}
+    .single-title {
+      color: $blue;
+      font-family: $accentFont;
+    }
 
     .page-title {}
 
-    .entry-title {}
+    .entry-title {
+      font-size: 3em;
+    }
 
     .archive-title {}
 
@@ -439,10 +473,10 @@ POSTS & CONTENT STYLES
 
     /* post meta */
     .byline {
-      color: $meta-gray;
-      font-style: italic;
-      margin: 0;
-
+      font-family: $headerFont;
+      font-size: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
       time {}
     }
 
@@ -1041,16 +1075,31 @@ FOOTER STYLES
   .jk {
     color: $blue;
     font-family: $accentFont;
-    font-size: 28px;
+    font-size: 21px;
     margin: 0;
   }
   .disclaimer {
-    color: $meta-gray;
-    padding: 0 15px;
+    font-size: 0.8em;
+    padding: 0 5px;
+    margin: 0;
   }
   .copyright {
     font-family: $headerFont;
     font-size: 30px;
+    margin: 0;
+  }
+}
+.footer-nav {
+  margin: 10px 0;
+  li {
+    display: inline-block;
+    margin-right: 10px;
+    a {
+      text-decoration: none;
+    }
+    &:last-child {
+      margin: 0;
+    }
   }
 }
 
@@ -1213,6 +1262,7 @@ FOOTER STYLES
       h4 {
         font-family: $headerFont;
         font-size: 1.5em;
+        font-weight: 700;
         margin: 7px 0 0;
         text-transform: uppercase;
       }
@@ -1233,6 +1283,7 @@ FOOTER STYLES
         background-color: $light-blue;
         border-radius: 2px;
         color: $white;
+        font-weight: normal;
         padding: 1px 3px;
       }
     }
@@ -1475,7 +1526,7 @@ FOOTER STYLES
 
 /* Contact Forms */
 .wpcf7 {
-  input {
+  input, select {
     max-width: none;
   }
   .wpcf7-submit {
@@ -1492,8 +1543,17 @@ FOOTER STYLES
       background-color: lighten($blue, 10%);
     }
   }
+  h3 {
+    font-family: $headerFont;
+    font-size: 25px;
+    margin: 0;
+  }
   p {
     margin: 0;
+  }
+  .note {
+    margin: 5px 0;
+    font-size: 0.8em;
   }
   .ajax-loader {
     position: absolute;
@@ -1634,12 +1694,13 @@ FOOTER STYLES
 
 // State Pages
 .state-header {
-  padding-top: 30px;
   position: relative;
   h2 {
-    font-size: 35px;
+    font-size: 27px;
     margin: 30px auto 0;
     max-width: 90%;
+    position: relative;
+    z-index: 2;
   }
   span {
     color: $blue;
@@ -1648,13 +1709,12 @@ FOOTER STYLES
   }
   .state-name {
     color: $blue;
-    font-family: $stateFont;
+    font-family: $accentFont;
     font-size: 40px;
     font-weight: normal;
     line-height: 0.9;
     // text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
     text-shadow: -2px -2px 1px rgb(255,255,255) , -1px -1px 1px rgb(255,255,255) , 1px 1px 1px rgba(232,247,255,0.901961) , 2px 3px 1px rgba(28,67,103,0.498039) , 5px 5px 12px rgba(5,13,20,0.498039);
-    text-transform: uppercase;
     transition: text-shadow 0.5s cubic-bezier(0.42, 0, 0.58, 1) 0.1s, color 0.5s cubic-bezier(0.42, 0, 0.58, 1) 0.1s;
     &.done {
       color: $white;
@@ -1673,7 +1733,7 @@ FOOTER STYLES
     stroke: $white;
     top: 0;
     transition: height 0.5s ease;
-    z-index: -1;
+    z-index: 1;
   }
   &.done {
     .svg {
@@ -1692,7 +1752,7 @@ FOOTER STYLES
     margin-top: 10px;
     position: relative;
     text-align: center;
-    z-index: 1;
+    z-index: 2;
     a {
       color: $meta-gray;
       text-decoration: none;
@@ -1755,6 +1815,7 @@ FOOTER STYLES
     h4 {
       font-family: $headerFont;
       font-size: 25px;
+      font-weight: 700;
       margin: 20px 0 10px;
       text-decoration: underline;
       text-transform: uppercase;
@@ -1848,7 +1909,7 @@ FOOTER STYLES
         border-radius: 50%;
         color: $white;
         display: inline-block;
-        font-family: $stateFont;
+        font-family: $accentFont;
         font-size: 37px;
         font-weight: normal;
         left: 0;
@@ -1921,7 +1982,7 @@ FOOTER STYLES
       font-size: 13px;
     }
     span {
-      font-family: $stateFont;
+      font-family: $accentFont;
       font-size: 30px;
       font-weight: normal;
     }

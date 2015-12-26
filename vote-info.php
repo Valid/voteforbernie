@@ -91,7 +91,52 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
 
                   <div id="state-<?php echo $state->state; ?>"
                         class="state state-info <?php echo $state->state; ?> <?php echo $helper->getStatusClass($state); ?>" data-type="<?php echo explode(' ', $helper->getStatusClass($state))[0]; ?>" data-code="<?php echo $state->state; ?>">
-                    <div class="state-wrapper cf">
+                    <?php // DEV ONLY
+$bad = false;
+$result = '';
+
+if (empty($state->getPrimaryDate())) {
+  $bad = true;
+  $result .= 'No Primary Date, ';
+}
+
+if (empty($state->deadline_date)) {
+  $bad = true;
+  $result .= 'No Deadline Date, ';
+}
+
+if (empty($state->state_phone)) {
+  $bad = true;
+  $result .= 'No State Phone number, ';
+}
+
+if (empty($state->state_link)) {
+  $bad = true;
+  $result .= 'No State Info Link, ';
+}
+
+if (empty($state->early_voting_start)) {
+  $bad = true;
+  $result .= 'No Early Voting Start Date, ';
+}
+
+if (empty($state->overseas_app_deadline)) {
+  $bad = true;
+  $result .= 'No Overseas Application Deadline, ';
+}
+
+if (empty($state->absentee_app_deadline)) {
+  $bad = true;
+  $result .= 'No Absentee Application Deadline, ';
+}
+
+
+?>
+                    <div class="state-wrapper cf<?php if ($bad) { echo ' c-t'; } ?>">
+                    <?php echo (isset($result) ? $result : ''); ?>
+
+
+
 
                       <div class="m-all t-all d-all">
                         <div class="state-title">
