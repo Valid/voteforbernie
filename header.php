@@ -122,7 +122,7 @@
           </div> -->
           <div id="inner-header" class="branding wrap">
 
-            <h1 id="logo" class="h1" title="VoteForBernie.org" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>">#VoteForBernie</a></h1>
+            <h1 id="logo" class="h1" title="VoteForBernie.org" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>">VoteForBernie</a></h1>
             <a href="#" class="nav-toggle">
               <span>Expand Navigation</span>
               <span></span>
