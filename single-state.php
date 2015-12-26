@@ -125,7 +125,7 @@
         <?php } ?>
       <?php } ?>
 
-      <?php if ($state->hasAbsenteeVoting()) { ?>
+      <?php if ($state->hasEarlyVoting()) { ?>
         <h4>Early Voting</h4>
         <p><?php echo $state->getTitle(); ?> has Early Voting! This allows <?php echo $state->denonym; ?> to cast their vote in-person prior to election day.</p>
 
@@ -187,8 +187,21 @@
       </div>
     </div>
 
-    <div class="np m-all t-all d-all">
-      <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
+    <div class="vote-content m-all t-all d-all">
+      <h3>Get Involved</h3>
+      <p><em><strong>"I've said it since day one: I can't do it alone." - Bernie Sanders</strong></em></p>
+      <p><strong>Will you help get Bernie elected? &mdash;</strong> If you haven't already, you should <a href="#">sign up to volunteer</a>. If you are unable to volunteer, consider <a href="#">donating to the campaign</a>.</p>
+      <?php if ($state->hasCampaignNeed()) { ?>
+        <h4>Bernie needs you in <?php echo $state->getTitle(); ?>!</h4>
+        <?php echo $state->campaign_special_need; ?>
+      <?php } ?>
+
+      <h4>Phone Bank for Bernie</h4>
+      <p>Over 15,000 calls have been made so far, but we need to reach many more in early primary states. Find out how to <a href="https://docs.google.com/document/d/1n0RtTtYLQUIfA4Am4OzqLet83d-IS2ajbXkrHJgqz2A/edit">Phone-bank for Bernie</a>.</p>
+
+      <div class="np">
+        <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
+      </div>
     </div>
 
   </div>
