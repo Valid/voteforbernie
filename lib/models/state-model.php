@@ -8,6 +8,7 @@ class StateModel extends PostModel {
     'denonym',
     'type',
     'status',
+    'campaign_special_need',
     'special_explanation',
     'exrtra_explanation',
     'additional_note',
@@ -76,5 +77,9 @@ class StateModel extends PostModel {
 
   public function hasAffiliationDeadline() {
     return !empty($this->aff_deadline_date);
+  }
+
+  public function hasCampaignNeed() {
+    return !empty($this->campaign_special_need);
   }
 }
