@@ -108,7 +108,6 @@ class VoteInfoHelper {
   }
 
   public function formatDate($date) {
-
     if (!empty($date)) {
       $dateObj = strtotime($date);
       $diff = $dateObj - strtotime('now');
@@ -116,9 +115,9 @@ class VoteInfoHelper {
         $fDate = '<span class="passed">' . $fDate = date('F j, Y', $dateObj) . '</span>';
       } else {
         if ($dateObj < strtotime('30 day')) {
-          $fDate = date('F j', $dateObj) . ' <span class="soon">(only ' . floor($diff/60/60/24) . ' days!)</span>';
+          $fDate = date('D, F j', $dateObj) . ' <span class="soon">(only ' . floor($diff/60/60/24) . ' days!)</span>';
         } else {
-          $fDate = date('F j', $dateObj);
+          $fDate = date('D, F j', $dateObj);
         }
       }
     } else {
