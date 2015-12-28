@@ -61,9 +61,9 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                       <td><?php echo $state->state_phone; ?></td>
                       <td><?php echo $state->type; ?></td>
                       <td><?php echo $state->status; ?></td>
-                      <td><?php echo $helper->formatDate($state->primary_date); ?></td>
-                      <td><?php echo $helper->formatDate($state->deadline_date); ?></td>
-                      <td><?php echo $helper->formatDate($state->aff_deadline_date); ?></td>
+                      <td><?php echo $state->primary_date ? date('F j, Y', strtotime($state->primary_date)) : ''; ?></td>
+                      <td><?php echo $state->deadline_date ? date('F j, Y', strtotime($state->deadline_date)) : ''; ?></td>
+                      <td><?php echo $state->aff_deadline_date ? date('F j, Y', strtotime($state->aff_deadline_date)) : ''; ?></td>
                       <!-- <td><?php echo $helper->formatDate($state->early_voting_start); ?></td>
                       <td><?php echo $helper->formatDate($state->early_voting_end); ?></td>
                       <td><?php echo $helper->formatDate($state->absentee_app_deadline); ?></td>
