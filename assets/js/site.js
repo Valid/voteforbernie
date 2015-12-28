@@ -244,21 +244,28 @@ vfb.buildMap = function () {
         onLabelShow: function (element, label, code) {
           var $stateDetails = $states.find('.' + code),
             primaryTextSource = $stateDetails.find('strong').eq(0).text(),
-            primaryText = primaryTextSource.charAt(0).toUpperCase() + primaryTextSource.slice(1);
+            primaryText = primaryTextSource.charAt(0).toUpperCase() + primaryTextSource.slice(1),
+            labelText;
 
-          jQuery(label).html('<strong>' + jQuery(label).text() + '</strong><br>' + primaryText + ($stateDetails.hasClass('caucus') ? ' Caucus' : ' Primary') );
+          if ($stateDetails.length) {
+            labelText = primaryText + ($stateDetails.hasClass('caucus') ? ' Caucus' : ' Primary');
+          } else {
+            labelText = 'To Be Announced';
+          }
+
+          jQuery(label).html('<strong>' + jQuery(label).text() + '</strong><br>' + labelText );
         },
         onRegionOver: function (event, code) {
           var $stateDetails = $states.find('.' + code),
             type = $stateDetails.data('type');
 
-            jQuery('.legend').find('li').not('.' + type);
+          if ($stateDetails.length) {
+            // Fade out other legend items
+            jQuery('.legend').find('li').not('.' + type).velocity({ opacity: 0.3 }, { queue: false });
 
-          // Fade out other legend items
-          jQuery('.legend').find('li').not('.' + type).velocity({ opacity: 0.3 }, { queue: false });
-
-          // Switch explanation
-          vfb.explain(jQuery('.legend').find('.' + type));
+            // Switch explanation
+            vfb.explain(jQuery('.legend').find('.' + type));
+          }
         },
         onRegionOut: function (event, code) {
           var $stateDetails = $states.find('.' + code),
