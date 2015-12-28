@@ -111,7 +111,7 @@ class VoteInfoHelper {
 
     if (!empty($date)) {
       $dateObj = strtotime($date);
-      if (date('Y', $dateObj) == '2015') {
+      if ($dateObj < strtotime('now')) {
         $fDate = date('F j, Y', $dateObj);
       } else {
         $fDate = date('F j', $dateObj);
