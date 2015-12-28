@@ -37,37 +37,40 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                 <table>
                   <tr>
                     <th>State</th>
+                    <th>Phone #</th>
                     <th>Type</th>
                     <th>Status</th>
                     <th>Primary/Caucus Date</th>
                     <th>Registration Deadline Date</th>
                     <th>Affiliation Deadline Date</th>
-                    <th>Early Voting Begins</th>
+                    <!-- <th>Early Voting Begins</th>
                     <th>Early Voting Ends</th>
                     <th>Absentee Ballot Request Deadline</th>
                     <th>Absentee Ballot Postmark Deadling</th>
                     <th>Absentee Excuse Required</th>
                     <th>Overseas Application Deadline</th>
-                    <th>Overseas Postmark Deadline</th>
+                    <th>Overseas Postmark Deadline</th> -->
                   </tr>
 
                   <?php foreach ($states as $state): ?>
 
 
                     <tr>
-                      <td><a href="<?php echo home_url(); ?>/wp-admin/post.php?post=<?php echo $state->post->ID; ?>&amp;action=edit"><?php echo $state->getTitle(); ?></a></td>
+                      <!-- <td><a href="<?php echo home_url(); ?>/wp-admin/post.php?post=<?php echo $state->post->ID; ?>&amp;action=edit"><?php echo $state->getTitle(); ?></a></td> -->
+                      <td><?php echo $state->getTitle(); ?></td>
+                      <td><?php echo $state->state_phone; ?></td>
                       <td><?php echo $state->type; ?></td>
                       <td><?php echo $state->status; ?></td>
                       <td><?php echo $helper->formatDate($state->primary_date); ?></td>
                       <td><?php echo $helper->formatDate($state->deadline_date); ?></td>
                       <td><?php echo $helper->formatDate($state->aff_deadline_date); ?></td>
-                      <td><?php echo $helper->formatDate($state->early_voting_start); ?></td>
+                      <!-- <td><?php echo $helper->formatDate($state->early_voting_start); ?></td>
                       <td><?php echo $helper->formatDate($state->early_voting_end); ?></td>
                       <td><?php echo $helper->formatDate($state->absentee_app_deadline); ?></td>
                       <td><?php echo $helper->formatDate($state->absentee_postmark_deadline); ?></td>
                       <td><?php if ($state->absenteeExcuseRequired()) { ?>yes<?php } else {?>no<?php } ?></td>
                       <td><?php echo $helper->formatDate($state->overseas_app_deadline); ?></td>
-                      <td><?php echo $helper->formatDate($state->overseas_postmark_deadline); ?></td>
+                      <td><?php echo $helper->formatDate($state->overseas_postmark_deadline); ?></td> -->
                     </tr>
                   <?php endforeach; ?>
                 </table>
