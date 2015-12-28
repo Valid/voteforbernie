@@ -111,10 +111,15 @@ class VoteInfoHelper {
 
     if (!empty($date)) {
       $dateObj = strtotime($date);
-      if ($dateObj < strtotime('now')) {
-        $fDate = date('F j, Y', $dateObj);
+      $diff = $dateObj - strtotime('now');
+      if ($diff < 0) {
+        $fDate = '<span class="passed">' . $fDate = date('F j, Y', $dateObj) . '</span>';
       } else {
-        $fDate = date('F j', $dateObj);
+        if ($dateObj < strtotime('30 day')) {
+          $fDate = date('F j', $dateObj) . ' <span class="soon">(only ' . floor($diff/60/60/24) . ' days!)</span>';
+        } else {
+          $fDate = date('F j', $dateObj);
+        }
       }
     } else {
       $fDate = 'TBD';
