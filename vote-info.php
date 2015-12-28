@@ -133,7 +133,7 @@ if (empty($state->absentee_app_deadline)) {
 
 ?>
                     <div class="state-wrapper cf<?php if ($bad) { echo ' c-t'; } ?>">
-                    <?php echo (isset($result) ? $result : ''); ?>
+                    <?php echo (isset($result) ? $result . ' <a href="wp-admin/post.php?post=' . $state->post->ID . '&action=edit">edit state</a>' : ''); ?>
 
 
 
