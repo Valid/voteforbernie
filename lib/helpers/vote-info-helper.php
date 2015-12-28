@@ -107,5 +107,21 @@ class VoteInfoHelper {
     return isset($state->register_link);
   }
 
+  public function formatDate($date) {
+
+    if (!empty($date)) {
+      $dateObj = strtotime($date);
+      if (date('Y', $dateObj) == '2015') {
+        $fDate = date('F j, Y', $dateObj);
+      } else {
+        $fDate = date('F j', $dateObj);
+      }
+    } else {
+      $fDate = 'TBD';
+    }
+
+    return $fDate;
+  }
+
 
 }

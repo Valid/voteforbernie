@@ -132,7 +132,7 @@ if (empty($state->absentee_app_deadline)) {
 
 
 ?>
-                    <div class="state-wrapper cf<?php if ($bad) { echo ' c-t'; } ?>">
+                    <div class="state-wrapper cf">
                     <?php echo (isset($result) ? $result . ' <a href="wp-admin/post.php?post=' . $state->post->ID . '&action=edit">edit state</a>' : ''); ?>
 
 
@@ -176,18 +176,18 @@ if (empty($state->absentee_app_deadline)) {
                         <div class="resources m-all t-1of4 d-1of4">
                           <div class="m-1of2 t-all d-all">
                             <h4><?php echo $state->getTypeText(); ?> On</h4>
-                            <p><?php echo date('F j', strtotime($state->getPrimaryDate())); ?></p>
+                            <p><?php echo $helper->formatDate($state->getPrimaryDate()); ?></p>
                           </div>
 
                           <div class="m-1of2 t-all d-all">
                             <h4>Register By</h4>
-                            <p><?php echo date('F j', strtotime($state->deadline_date)); ?></p>
+                            <p><?php echo $helper->formatDate($state->deadline_date); ?></p>
                           </div>
 
                           <?php if ($state->hasAffiliationDeadline()) { ?>
                             <div class="m-all t-all d-all">
                               <h4>Affiliate By</h4>
-                              <p><?php echo date('F j, Y', strtotime($state->aff_deadline_date)); ?></p>
+                              <p><?php echo $helper->formatDate($state->aff_deadline_date); ?></p>
                             </div>
                           <?php } ?>
                         </div>
