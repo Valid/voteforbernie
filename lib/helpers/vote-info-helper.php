@@ -108,7 +108,7 @@ class VoteInfoHelper {
   }
 
   public function formatDate($date) {
-    if (!empty($date)) {
+    if ($date && !empty($date)) {
       $dateObj = strtotime($date);
       $diff = $dateObj - strtotime('now');
       if ($diff < 0) {
