@@ -95,7 +95,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
 $bad = false;
 $result = '';
 
-if (empty($state->getPrimaryDate())) {
+if (empty($state->primary_date)) {
   $bad = true;
   $result .= 'No Primary Date, ';
 }
@@ -176,7 +176,7 @@ if (empty($state->absentee_app_deadline)) {
                         <div class="resources m-all t-1of4 d-1of4">
                           <div class="m-1of2 t-all d-all">
                             <h4><?php echo $state->getTypeText(); ?> On</h4>
-                            <p><?php echo $helper->formatDate($state->getPrimaryDate()); ?></p>
+                            <p><?php echo $helper->formatDate($state->primary_date); ?></p>
                           </div>
 
                           <div class="m-1of2 t-all d-all">
