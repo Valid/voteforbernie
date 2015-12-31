@@ -96,7 +96,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
 
                       <div class="m-all t-all d-all">
                         <div class="state-title">
-                          <h3><a href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="stateTitle,<?php echo $state->state; ?>"><?php echo $state->getTitle(); ?></a></h3>
+                          <h3><a href="<?php echo esc_url( get_permalink($state->post) ); ?>" title="<?php echo $state->getTitle(); ?> Voter Information" data-track="stateTitle,<?php echo $state->state; ?>"><?php echo $state->getTitle(); ?></a></h3>
                           <img class="svg" data-src="<?php echo get_template_directory_uri(); ?>/dist/images/svg/states/<?php echo $state->state; ?>.svg"/>
                         </div>
                       </div>
