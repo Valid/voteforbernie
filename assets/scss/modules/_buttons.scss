@@ -47,9 +47,24 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
     text-decoration: none;
   } // end hover
 
+  &:visited {
+    color: $white;
+  }
+
   // clicking on the button
   &:active {
     top: 1px; // adds a tiny hop to the click
   } // end active
 
+  &.cta {
+    background-color: $blue;
+    &:hover {
+      background-color: darken($blue, 10%);
+    }
+  }
+
 } // end .button
+
+a.ui-btn {
+  @extend %btn;
+}

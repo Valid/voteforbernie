@@ -112,10 +112,9 @@ img {
 LINK STYLES
 *********************/
 
-a, a:visited {
+a {
   color: $link-color;
 
-  /* on hover */
   &:hover, &:focus {
     color: $link-hover;
     @include transition(color 0.14s ease-in-out);
@@ -188,6 +187,11 @@ h5, .h5 {
 HEADER STYLES
 *********************/
 
+.header-wrapper {
+  background: $black;
+  padding-bottom: 20px;
+}
+
 .action-bar {
   background-color: $light-gray;
   font-size: 0.9em;
@@ -220,6 +224,7 @@ HEADER STYLES
 }
 
 .branding {
+  padding: 0 10px;
   ul {
     margin: 0;
     // text-align: center;
@@ -228,7 +233,7 @@ HEADER STYLES
       display: block;
       // padding: 10px 20px 0;
       a {
-        color: $open;
+        color: $light-gray;
         font-family: $headerFont;
         // font-size: 24px;
         font-size: 18px;
@@ -244,14 +249,14 @@ HEADER STYLES
   float: left;
   margin: 20px auto 0;
   a {
-    color: $open;
+    color: $light-gray;
     display: inline-block;
     font-family: $accentFont;
     font-size: 40px;
     &:after {
       -ms-transform: rotate(-7deg); /* IE 9 */
       -webkit-transform: rotate(-7deg); /* Chrome, Safari, Opera */
-      color: $closed;
+      color: $light-red;
       content: '\'16';
       font-family: $headerFont;
       font-size: 0.6em;
@@ -291,6 +296,11 @@ and more scalable.
   &.expanded {
     max-height: 600px;
     opacity: 1;
+    li {
+      a {
+        color: $black;
+      }
+    }
   }
 
   li {
@@ -314,19 +324,13 @@ and more scalable.
 
     &:last-child {}
 
-    /*
-    so you really have to rethink your dropdowns for mobile.
-    you don't want to have it expand too much because the
-    screen is so small. How you manage your menu should
-    depend on the project. Here's some great info on it:
-    http://www.alistapart.com/articles/organizing-mobile/
-    */
     ul.sub-menu,
     ul.children {
 
       li {
         margin: 5px 0;
         a {
+          color: $black;
           padding-left: 20px;
 
           &:hover,
@@ -1221,6 +1225,7 @@ FOOTER STYLES
       margin: 0;
       a {
         color: $black;
+        @include transition(color 0.3s ease-in-out);
       }
     }
     .svg {
@@ -1239,6 +1244,13 @@ FOOTER STYLES
     .state-wrapper {
       margin: 15px auto 60px;
       padding: 15px 0;
+      &:hover {
+        h3 {
+          a {
+            color: $blue;
+          }
+        }
+      }
     }
 
     &.active {
@@ -1380,11 +1392,29 @@ FOOTER STYLES
     padding: 10px;
     text-align: center;
     p {
-      font-size: 12px;
+      font-size: 15px;
+      line-height: 1;
       &.tentative {
         color: $meta-gray;
       }
     }
+  }
+}
+
+// Newsletter Modal
+.newsletter-modal {
+  background: rgba(5, 113, 176, 0.5);
+  bottom: 0;
+  display: none;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 9999;
+  .model-content {
+    background-color: $white;
+    margin: 60px 40px 0;
+    text-align: center;
   }
 }
 
@@ -1649,7 +1679,7 @@ FOOTER STYLES
   text-align: center;
   > p:first-child {
     color: $red;
-    font-family: $headerFont;
+    font-family: $accentFont;
     font-size: 36px;
     line-height: 1;
     margin: 5px 0;
@@ -1967,7 +1997,6 @@ FOOTER STYLES
 
 .state-info {
   .ui-btn {
-    @extend %btn;
     margin: 20px 0 5px;
   }
   .date {
