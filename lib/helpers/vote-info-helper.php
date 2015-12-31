@@ -20,9 +20,9 @@ class VoteInfoHelper {
   );
   protected static $actions = array(
     'open' => 'Get registered',
-    'closed' => 'Register as a democrat',
-    'semi-closed' => 'Register as a democrat or undeclared',
-    'semi-open' => 'Register as a democrat or undeclared'
+    'closed' => 'Register as a Democrat',
+    'semi-closed' => 'Register as a Democrat or undeclared',
+    'semi-open' => 'Register as a Democrat or undeclared'
   );
 
   private function loadStateField($postID) {
