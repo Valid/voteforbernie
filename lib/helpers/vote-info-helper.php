@@ -19,7 +19,7 @@ class VoteInfoHelper {
     'semi-open' => '{$denonym} registered as a republican <strong>cannot</strong> vote for Bernie Sanders!'
   );
   protected static $actions = array(
-    'open' => 'Get registered',
+    'open' => 'Get registered to vote',
     'closed' => 'Register as a Democrat',
     'semi-closed' => 'Register as a Democrat or undeclared',
     'semi-open' => 'Register as a Democrat or undeclared'
