@@ -471,12 +471,27 @@ vfb.stateInit = function () {
   }
 };
 
+vfb.handleNewsletters = function () {
+  jQuery('body').on('submit' ,'.yiks-mailchimp-custom-form', function() {
+    // Don't show newsletter popup if subbed
+    document.cookie = 'vfbsub=true';
+    document.cookie = 'wBounce=true';
+  });
+
+  // Check for newsletter cookie
+  // if (document.cookie.indexOf('vfbsub') === -1) {
+  // }
+
+};
+
 /*
  * Put all your regular jQuery in here.
 */
 jQuery(document).ready(function($) {
 
   loadGravatars();
+
+  vfb.handleNewsletters();
 
   vfb.loadFonts();
 

@@ -1402,19 +1402,55 @@ FOOTER STYLES
 }
 
 // Newsletter Modal
-.newsletter-modal {
-  background: rgba(5, 113, 176, 0.5);
-  bottom: 0;
-  display: none;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 9999;
-  .model-content {
-    background-color: $white;
-    margin: 60px 40px 0;
-    text-align: center;
+.wbounce-modal {
+  .wbounce-modal-sub {
+    cursor: initial;
+  }
+  .modal-title {
+    background-color: darken($blue, 15%);
+  }
+  h3 {
+    font-size: 1.5em;
+    text-transform: none;
+  }
+  .dont-forget {
+    background-color: #fff;
+    display: inline-block;
+    font-size: 1.4em;
+    margin-bottom: 0;
+    padding: 5px;
+    text-align: left;
+    strong {
+      display: block;
+    }
+  }
+  .yks-mailchimpFormContainer {
+    background: none;
+    border: 0;
+  }
+  form {
+    input[type=text] {
+      border: 1px solid $blue;
+      width: 100%;
+      background-color: $white;
+    }
+
+    input[type=submit] {
+      background-color: $blue;
+      width: 100%;
+      &:hover {
+        background-color: darken($blue, 15%);
+      }
+    }
+    select {
+      border: 1px solid $blue;
+      background-color: $white;
+    }
+  }
+  .modal-footer {
+    p {
+      font-size: 0.8em;
+    }
   }
 }
 
