@@ -55,7 +55,7 @@
           </div>
           <p><?php echo $helper->getActionText($state); ?> by: <strong><?php echo date('F j, Y', strtotime($state->deadline_date)); ?></strong></p>
           <?php if ($state->hasAffiliationDeadline()) { ?>
-            <p><strong>Not a Democrat?</strong> <?php echo $state->getTitle(); ?> has a <em>special deadline</em> for changing affiliation, which is on <strong><?php echo date('F j, Y', strtotime($state->deadline_date)); ?>!</strong></p>
+            <p><strong>Not a Democrat?</strong> <?php echo $state->getTitle(); ?> has a <em>special deadline</em> for changing affiliation, which is on <strong><?php echo $helper->formatDate($state->aff_deadline_date); ?>!</strong></p>
           <?php } ?>
         </div>
       </div>
@@ -107,7 +107,7 @@
 
 
       <?php if ($state->hasAffiliationDeadline()) { ?>
-        <p class="warning">In <?php echo $state->getTitle(); ?>, you must be affiliated as a Democrat by <?php echo date('F j, Y', strtotime($state->deadline_date)); ?>, which is before the registration deadline!</p>
+        <p class="warning">In <?php echo $state->getTitle(); ?>, you must be affiliated as a Democrat by <?php echo $helper->formatDate($state->aff_deadline_date); ?>, which is before the registration deadline!</p>
       <?php } else { ?>
         <p>You have until <?php echo date('F j, Y', strtotime($state->deadline_date)); ?> to register, but registration is open <strong>right now!</strong></p>
       <?php } ?>
