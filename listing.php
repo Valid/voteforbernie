@@ -88,8 +88,20 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                       <?php } else { ?>
                         <td><?php echo $state->getTitle(); ?></td>
                       <?php } ?>
-                      <td><a href="<?php echo $state->check_registration_link ?>" data-track="ChkLnk,<?php echo $state->state; ?>" target="_blank">Check Registration Online</a></td>
-                      <td><a href="<?php echo $helper->getOnlineRegistrationLink($state); ?>" data-track="regBtn,<?php echo $state->state; ?>">Register Online</a></td>
+                      <td>
+                      <?php if ($state->check_registration_link) { ?>
+                        <a href="<?php echo $state->check_registration_link ?>" data-track="ChkLnk,<?php echo $state->state; ?>" target="_blank">Check Registration Online</a>
+                      <?php } else { ?>
+                        Not Available
+                      <?php } ?>
+                      </td>
+                      <td>
+                        <?php if ($state->register_link) { ?>
+                          <a href="<?php echo $state->register_link ?>" data-track="regBtn,<?php echo $state->state; ?>">Register Online</a>
+                        <?php } else { ?>
+                          Not Available
+                        <?php } ?>
+                      </td>
                       <td><?php echo $helper->formatDate($state->early_voting_start); ?></td>
                       <td><?php echo $helper->formatDate($state->early_voting_end); ?></td>
                       <td><?php echo $helper->formatDate($state->absentee_app_deadline); ?></td>
