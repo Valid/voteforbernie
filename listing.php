@@ -90,14 +90,14 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                       <?php } ?>
                       <td>
                       <?php if ($state->check_registration_link) { ?>
-                        <a href="<?php echo $state->check_registration_link ?>" data-track="ChkLnk,<?php echo $state->state; ?>" target="_blank">Check Registration Online</a>
+                        <a href="<?php echo $state->check_registration_link ?>" data-track="ChkLnk,<?php echo $state->state; ?>" target="_blank"><?php echo $state->check_registration_link ?></a>
                       <?php } else { ?>
                         Not Available
                       <?php } ?>
                       </td>
                       <td>
                         <?php if ($state->register_link) { ?>
-                          <a href="<?php echo $state->register_link ?>" data-track="regBtn,<?php echo $state->state; ?>">Register Online</a>
+                          <a href="<?php echo $state->register_link ?>" data-track="regBtn,<?php echo $state->state; ?>"><?php echo $state->register_link ?></a>
                         <?php } else { ?>
                           Not Available
                         <?php } ?>
