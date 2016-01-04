@@ -80,7 +80,9 @@ class VoteInfoHelper {
   }
 
   public function getActionText($state) {
-    if ($this->hasActionText($state)) {
+    if ($state->custom_action_text) {
+      return $state->custom_action_text;
+    } else if ($this->hasActionText($state)) {
       return self::$actions[$state->status];
     } else {
       return '';
@@ -97,6 +99,10 @@ class VoteInfoHelper {
 
   public function hasStatusExplanation($state) {
     return isset(self::$explanations[$state->status]);
+  }
+
+  public function hasCustomText($state) {
+    return isset($state->custom_action_text);
   }
 
   public function hasActionText($state) {

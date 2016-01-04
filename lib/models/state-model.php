@@ -11,6 +11,7 @@ class StateModel extends PostModel {
     'campaign_special_need',
     'special_explanation',
     'exrtra_explanation',
+    'custom_action_text',
     'additional_note',
     'state_link',
     'state_phone',
