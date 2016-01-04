@@ -1707,7 +1707,7 @@ FOOTER STYLES
   }
 }
 
-.newsletter {
+.newsletter, .activism {
   background-color: white(0.5);
   border: 5px solid $dark-gray;
   border-width: 5px 0;
@@ -1720,6 +1720,11 @@ FOOTER STYLES
     line-height: 1;
     margin: 5px 0;
   }
+}
+
+.activism {
+  text-align: left;
+  padding: 20px;
 }
 
 .to-map {

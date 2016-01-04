@@ -89,6 +89,10 @@
     <div class="np m-all t-all d-all newsletter">
       <p>Dates and deadlines can change at any time!</p>
       <p>Sign up to be reminded of deadlines and important changes in <?php echo $state->getTitle(); ?></p>
+      <div class="updated">
+        <p>Oregon was last updated on February 1st, 2013 <a href="/contact" class="correction-btn ui-btn">submit correction</a></p>
+        <?php echo do_shortcode( '[contact-form-7 id="157" title="Submit Correction" html_class="submit-correction"]' ); ?>
+      </div>
       <?php echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" ); ?>
     </div>
 
@@ -114,7 +118,7 @@
 
       <p>Not sure if you're registered or what you're registered as? Check your <a href="<?php echo $state->check_registration_link ?>" data-track="ChkLnk,<?php echo $state->state; ?>" target="_blank">current registration status</a>.</p>
 
-      <?php if ($state->hasAbsenteeVoting()) { ?>
+      <?php if (false && $state->hasAbsenteeVoting()) { // Will re-enable after all absentee data is verified ?>
         <h4>Vote By Mail</h4>
         <p><strong>Being busy or working</strong> on election day is the <strong>most common reason</strong> for not voting according to the U.S. Census. This is completely understandable, and will continue to be a problem until <a href="http://www.sanders.senate.gov/democracyday" data-track="DemDay,<?php echo $state->state; ?>" target="_blank">election day becomes a national holiday</a>!</p>
 
@@ -125,7 +129,7 @@
         <?php } ?>
       <?php } ?>
 
-      <?php if ($state->hasEarlyVoting()) { ?>
+      <?php if (false && $state->hasEarlyVoting()) { ?>
         <h4>Early Voting</h4>
         <p><?php echo $state->getTitle(); ?> has Early Voting! This allows <?php echo $state->denonym; ?> to cast their vote in-person prior to election day.</p>
 
@@ -133,8 +137,7 @@
       <?php } ?>
 
       <h4>College Students</h4>
-      <p>In 1971, The U.S. Supreme Court struck down all residency length requirements for students.</p>
-      <p>If you are a college student <strong>not living in your home state</strong>, you can vote for Bernie in either your home state or your state in which you are attending school!</p>
+      <p>If you are a college student <strong>not living in your home state</strong>, you can vote for Bernie in either your home state or in the state in which you are attending school!</p>
 
       <?php if ($state->under_18): ?>
         <h4>Only 17?</h4>
@@ -177,27 +180,22 @@
       </script>
     </div>
 
-    <div class="np m-all t-all d-all newsletter">
-      <p>Ever forget to vote on time?</p>
-      <p>Sign up to receive reminders and alerts of important dates in <?php echo $state->getTitle(); ?></p>
-      <?php echo yksemeProcessSnippet( "2da18e85f7" , "Send me updates!" ); ?>
-      <div class="updated">
-        <p>Oregon was last updated on February 1st, 2013 <a href="/contact" class="correction-btn ui-btn">submit correction</a></p>
-        <?php echo do_shortcode( '[contact-form-7 id="157" title="Submit Correction" html_class="submit-correction"]' ); ?>
-      </div>
-    </div>
+    <div class="np m-all t-all d-all activism">
+      <p>Will you help Bernie win?</p>
+      <p><strong>"I've said it since day one: I can't do it alone." - <em>Bernie Sanders</em></strong></p>
+      <p>This grassroots campaign depends on grassroots supporters <strong>like you!</strong> There are many opportunities to help out Bernie's campaign right now, but first <a href="#">sign up to volunteer with the official campaign</a>. Consider <a href="#">donating to the campaign</a> as well. Bernie isn't using Super PACs and he needs our financial support to run his campaign effectively!</p>
 
-    <div class="vote-content m-all t-all d-all">
-      <h3>Get Involved</h3>
-      <p><em><strong>"I've said it since day one: I can't do it alone." - Bernie Sanders</strong></em></p>
-      <p><strong>Will you help get Bernie elected? &mdash;</strong> If you haven't already, you should <a href="#">sign up to volunteer</a>. If you are unable to volunteer, consider <a href="#">donating to the campaign</a>.</p>
+      <h2>How to help:</h2>
       <?php if ($state->hasCampaignNeed()) { ?>
         <h4>Bernie needs you in <?php echo $state->getTitle(); ?>!</h4>
         <?php echo $state->campaign_special_need; ?>
       <?php } ?>
 
+      <h4>Attend or host a local event</h4>
+      <p>There are Bernie events popping up all over the country!</p>
+
       <h4>Phone Bank for Bernie</h4>
-      <p>Over 15,000 calls have been made so far, but we need to reach many more in early primary states. Find out how to <a href="https://docs.google.com/document/d/1n0RtTtYLQUIfA4Am4OzqLet83d-IS2ajbXkrHJgqz2A/edit">Phone-bank for Bernie</a>.</p>
+      <p>Over 30,000 calls have been made so far, but we need to reach many more in early primary states. Find out how to <a href="https://docs.google.com/document/d/1n0RtTtYLQUIfA4Am4OzqLet83d-IS2ajbXkrHJgqz2A/edit">Phone-bank for Bernie</a>.</p>
 
       <div class="np">
         <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
