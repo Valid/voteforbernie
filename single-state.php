@@ -100,7 +100,8 @@
       <h3><?php echo $state->getTitle(); ?> Voter Information</h3>
       <p class="vote-explain">
       <?php if ($state->status !== 'open') { ?>
-        Because <?php echo $state->getTitle(); ?> has <strong class="c-t"><?php echo $state->status; ?></strong> <?php echo $state->type; ?>, <strong>you must <?php echo strtolower($helper->getActionText($state)); ?></strong> if you want to vote for Bernie.
+      <?php echo $state->getTitle(); ?> has <strong class="c-t"><?php echo $state->status; ?></strong> <?php echo $state->type; ?> &mdash;
+        <?php echo $helper->getExplanationText($state); ?>
       <?php } else { ?>
         Good news! Because <?php echo $state->getTitle(); ?> has <strong class="c-t"><?php echo $state->status; ?></strong> <?php echo $state->type; ?>, you can vote for Bernie regardless of your registered party. If you want to vote for Bernie, <strong><?php echo strtolower($helper->getActionText($state)); ?></strong>!</strong>
       <?php } ?></p>
