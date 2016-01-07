@@ -14,7 +14,7 @@
           <p>To make matters worse, the DNC <strong>forbids</strong> candidates from participating in debates that are not organized by the DNC. This is <em>not about Bernie Sanders</em>. This is <em>not about Hillary Clinton</em>. This is about having <strong>well-informed voters</strong>, a cornerstone of democracy.</p>
           <p>Another cornerstone of democracy is <strong>getting involved</strong>!
           <br/>Make a difference right now by joining our #WeWantDebate campaign.</p>
-          <p class="byline vcard">Last updated: <?php the_modified_time(get_option('date_format')); ?></p>
+          <p class="byline vcard">Last updated: <?php //the_modified_time(get_option('date_format')); ?>August 5, 2015</p>
         </div>
 
         <div id="inner-content" class="wrap cf">
