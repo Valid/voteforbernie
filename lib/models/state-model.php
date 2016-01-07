@@ -18,6 +18,7 @@ class StateModel extends PostModel {
     'check_registration_link',
     'register_link',
     'online_reg',
+    'same_day_registration',
     'primary_date',
     'deadline_date',
     'deadline_note',
@@ -84,4 +85,9 @@ class StateModel extends PostModel {
   public function hasCampaignNeed() {
     return !empty($this->campaign_special_need);
   }
+
+  public function hasCheckRegistrationLink() {
+    return !empty($this->check_registration_link);
+  }
+
 }
