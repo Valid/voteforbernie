@@ -60,8 +60,23 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
 
                 <header class="article-header">
                   <h1 class="page-title"><?php the_title(); ?></h1>
-                  <p><?php the_content(); ?></p>
-                  <div class="sign-up-notice newsletter">
+                  <div class="m-all t-3of4 d-4of5">
+                    <?php the_content(); ?>
+                  </div>
+                  <div class="np m-all t-1of4 d-1of5 last-col gaunit">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Beside Intro Text -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-3203899049474789"
+                         data-ad-slot="4667165153"
+                         data-ad-format="auto"></ins>
+                    <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                  </div>
+
+                  <div class="m-all t-all d-all sign-up-notice newsletter">
                     <p>Dates and deadlines can change at any time.</p>
                     <p>Sign up to be reminded of deadlines and important changes in your state</p>
                     <?php echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" ); ?>
@@ -82,7 +97,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                   </div>
                 </header>
 
-                <section class="entry-content cf" itemprop="articleBody">
+                <section class="m-all t-all d-all entry-content cf" itemprop="articleBody">
                   <div class="page-content">
                     <div class="states">
                     <?php // if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>

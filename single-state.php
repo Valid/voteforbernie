@@ -46,16 +46,23 @@
     <div class="info-wrapper m-all t-all d-all">
       <div class="m-1of2 t-1of3 d-1of3">
         <div class="what">
-          <h3>Register By</h3>
+          <?php if ($state->hasDeadlineDate()) { ?>
+            <h3>Register By</h3>
 
-          <div class="date">
-            <strong><?php echo date('F', strtotime($state->deadline_date)); ?></strong>
-            <span><?php echo date('j', strtotime($state->deadline_date)); ?></span>
-            <em>(<?php echo date('l', strtotime($state->deadline_date)); ?>)</em>
-          </div>
-          <p><?php echo $helper->getActionText($state); ?> by: <strong><?php echo date('F j, Y', strtotime($state->deadline_date)); ?></strong></p>
-          <?php if ($state->hasAffiliationDeadline()) { ?>
-            <p><strong>Not a Democrat?</strong> <?php echo $state->getTitle(); ?> has a <em>special deadline</em> for changing affiliation, which is on <strong><?php echo $helper->formatDate($state->aff_deadline_date); ?>!</strong></p>
+            <div class="date">
+              <strong><?php echo date('F', strtotime($state->deadline_date)); ?></strong>
+              <span><?php echo date('j', strtotime($state->deadline_date)); ?></span>
+              <em>(<?php echo date('l', strtotime($state->deadline_date)); ?>)</em>
+            </div>
+            <p><?php echo $helper->getActionText($state); ?> by:
+            <strong><?php echo $helper->formatDate($state->deadline_date); ?></strong>
+            </p>
+            <?php if ($state->hasAffiliationDeadline()) { ?>
+              <p><strong>Not a Democrat?</strong> <?php echo $state->getTitle(); ?> has a <em>special deadline</em> for changing affiliation: <strong><?php echo $helper->formatDate($state->aff_deadline_date); ?>!</strong></p>
+            <?php } ?>
+          <?php } else { ?>
+            <h3>No Registration!</h3>
+            <p>Just be sure to vote!</p>
           <?php } ?>
         </div>
       </div>
@@ -68,7 +75,7 @@
             <span><?php echo date('j', strtotime($state->getPrimaryDate())); ?></span>
             <em>(<?php echo date('l', strtotime($state->getPrimaryDate())); ?>)</em>
           </div>
-          <p>The <?php echo $state->getTitle(); ?> <?php echo $state->getTypeText(); ?> will be on: <strong><?php echo date('F j, Y', strtotime($state->getPrimaryDate())); ?></strong></p>
+          <p>The <?php echo $state->getTitle(); ?> <?php echo $state->getTypeText(); ?> will be on: <strong><?php echo $helper->formatDate($state->getPrimaryDate()); ?></strong></p>
         </div>
       </div>
 
@@ -102,22 +109,34 @@
       <?php if ($state->status !== 'open') { ?>
       <?php echo $state->getTitle(); ?> has <strong class="c-t"><?php echo $state->status; ?></strong> <?php echo $state->type; ?> &mdash;
         <?php echo $helper->getExplanationText($state); ?>
-      <?php } else { ?>
-        Good news! Because <?php echo $state->getTitle(); ?> has <strong class="c-t"><?php echo $state->status; ?></strong> <?php echo $state->type; ?>, you can vote for Bernie regardless of your registered party. If you want to vote for Bernie, <strong><?php echo strtolower($helper->getActionText($state)); ?></strong>!</strong>
-      <?php } ?></p>
+      <?php } else {
+        if ($state->hasDeadlineDate()) { ?>
+          Good news! Because <?php echo $state->getTitle(); ?> has <strong class="c-t"><?php echo $state->status; ?></strong> <?php echo $state->type; ?>, you can vote for Bernie regardless of your registered party. If you want to vote for Bernie, <strong><?php echo strtolower($helper->getActionText($state)); ?></strong>!</strong>
 
-      <a class="ui-btn np" href="<?php echo $helper->getOnlineRegistrationLink($state); ?>" data-track="regBtn,<?php echo $state->state; ?>">
-        <?php echo $helper->getActionText($state); ?> now!
-      </a>
+        <p><a class="ui-btn np" href="<?php echo $helper->getOnlineRegistrationLink($state); ?>" data-track="regBtn,<?php echo $state->state; ?>">
+          <?php echo $helper->getActionText($state); ?> now!
+        </a></p>
+      <?php } ?>
+        Good news! Because <?php echo $state->getTitle(); ?> doesn't have voter registration, you can vote for Bernie Sanders by just showing up!
+
+
+        <p><a class="ui-btn np" href="<?php echo $state->state_link; ?>" data-track="StateLink,<?php echo $state->state; ?>" target="_blank">Official State Information</a></p>
+      <?php } ?></p>
 
 
       <?php if ($state->hasAffiliationDeadline()) { ?>
         <p class="warning">In <?php echo $state->getTitle(); ?>, you must be affiliated as a Democrat by <?php echo $helper->formatDate($state->aff_deadline_date); ?>, which is before the registration deadline!</p>
-      <?php } else { ?>
-        <p>You have until <?php echo date('F j, Y', strtotime($state->deadline_date)); ?> to register, but registration is open <strong>right now!</strong></p>
+      <?php } else if ($state->hasDeadlineDate()) { ?>
+        <?php if ($state->sameDayRegistration()) { ?>
+          <p><?php echo $state->getTitle(); ?> has <strong>Same-Day Registration</strong> which allows you to register to vote at the <?php echo $state->type; ?> on !</p>
+        <? } else { ?>
+          <p>You have until <?php echo $helper->formatDate($state->deadline_date); ?> to register, but registration is open <strong>right now!</strong></p>
+        <?php } ?>
       <?php } ?>
 
-      <p>Not sure if you're registered or what you're registered as? Check your <a href="<?php echo $state->check_registration_link ?>" data-track="ChkLnk,<?php echo $state->state; ?>" target="_blank">current registration status</a>.</p>
+      <?php if ($state->hasCheckRegistrationLink()) { ?>
+        <p>Not sure if you are registered, or what you're registered as? Check your <a href="<?php echo $state->check_registration_link ?>" data-track="ChkLnk,<?php echo $state->state; ?>" target="_blank">current registration status</a>.</p>
+      <?php } ?>
 
       <?php if (false && $state->hasAbsenteeVoting()) { // Will re-enable after all absentee data is verified ?>
         <h4>Vote By Mail</h4>
@@ -184,9 +203,8 @@
     <div class="np m-all t-all d-all activism">
       <p>Will you help Bernie win?</p>
       <p><strong>"I've said it since day one: I can't do it alone." - <em>Bernie Sanders</em></strong></p>
-      <p>This grassroots campaign depends on grassroots supporters <strong>like you!</strong> There are many opportunities to help out Bernie's campaign right now, but first <a href="#">sign up to volunteer with the official campaign</a>. Consider <a href="#">donating to the campaign</a> as well. Bernie isn't using Super PACs and he needs our financial support to run his campaign effectively!</p>
+      <p>This grassroots campaign depends on grassroots support <strong>like you!</strong> There are many opportunities to help out Bernie's campaign right now, and if you want more <a href="https://go.berniesanders.com/page/s/volunteer-for-bernie?source=voteforbernie" target="_blank">sign up as a volunteer</a> with the official campaign. Many of us don't have much time for volunteer work, and if you're not able to volunteer but still want Bernie to win, <a href="http://berniesanders.com/reddit" target="_blank">donate to his campaign!</a></p>
 
-      <h2>How to help:</h2>
       <?php if ($state->hasCampaignNeed()) { ?>
         <h4>Bernie needs you in <?php echo $state->getTitle(); ?>!</h4>
         <?php echo $state->campaign_special_need; ?>
@@ -198,8 +216,19 @@
       <h4>Phone Bank for Bernie</h4>
       <p>Over 30,000 calls have been made so far, but we need to reach many more in early primary states. Find out how to <a href="https://docs.google.com/document/d/1n0RtTtYLQUIfA4Am4OzqLet83d-IS2ajbXkrHJgqz2A/edit">Phone-bank for Bernie</a>.</p>
 
-      <div class="np">
+      <div class="np m-all t-all d-all">
         <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
+
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- State Bottom -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-3203899049474789"
+             data-ad-slot="8951090753"
+             data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
       </div>
     </div>
 
