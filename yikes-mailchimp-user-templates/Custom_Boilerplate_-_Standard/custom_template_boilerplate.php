@@ -37,6 +37,6 @@
 					?>
 			</form>
 
-			<p class="disclaimer"><?php _e( 'No spam, ever. Only used for very important announcements and reminders.' , 'yikes-inc-easy-mailchimp-extender' ); ?></p>
+			<p class="disclaimer"><?php _e( 'No spam, ever. See our <a href="/privacy">Privacy Policy</a>.' , 'yikes-inc-easy-mailchimp-extender' ); ?></p>
 
 </div>
