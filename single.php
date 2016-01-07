@@ -25,7 +25,9 @@
             <?php printf( __( 'filed under', 'bonestheme' ).': %1$s', get_the_category_list(', ') ); ?>
             <?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
           </footer>
+          <?php echo do_shortcode('[fbcomments]'); ?>
           <?php //comments_template(); ?>
+
         </article>
 
 
