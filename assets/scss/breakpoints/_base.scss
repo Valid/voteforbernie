@@ -246,6 +246,11 @@ HEADER STYLES
         text-decoration: none;
         text-transform: uppercase;
       }
+      &.alerts-link {
+        a {
+          color: $peach;
+        }
+      }
     }
   }
 }
