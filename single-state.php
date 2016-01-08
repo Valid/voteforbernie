@@ -116,12 +116,13 @@
         <p><a class="ui-btn np" href="<?php echo $helper->getOnlineRegistrationLink($state); ?>" data-track="regBtn,<?php echo $state->state; ?>">
           <?php echo $helper->getActionText($state); ?> now!
         </a></p>
-      <?php } ?>
+      <?php } else { ?>
         Good news! Because <?php echo $state->getTitle(); ?> doesn't have voter registration, you can vote for Bernie Sanders by just showing up!
 
 
         <p><a class="ui-btn np" href="<?php echo $state->state_link; ?>" data-track="StateLink,<?php echo $state->state; ?>" target="_blank">Official State Information</a></p>
-      <?php } ?></p>
+      <?php }
+      } ?></p>
 
 
       <?php if ($state->hasAffiliationDeadline()) { ?>
