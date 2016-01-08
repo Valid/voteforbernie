@@ -18,7 +18,8 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <style type="text/css">.wf-loading { opacity: 0; }</style>
+  <style type="text/css">.wf-loading { opacity: 0; } .no-js.wf-loading { opacity: 1; pointer-events: initial; } .no-js.wf-loading:before { background: none; pointer-events: none; } .no-js .nav { max-height: none!important} .no-js .inner-content { opacity: 1; }</style>
+  <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
 
   <!-- Optimizely A/B testing snippet -->
   <script src="//cdn.optimizely.com/js/3517780176.js"></script>
@@ -55,10 +56,6 @@
     <?php // wordpress head functions ?>
     <?php wp_head(); ?>
     <?php // end of wordpress head ?>
-
-    <noscript>
-      <style type="text/css">.wf-loading { opacity: 1; background: none; position: static; pointer-events: initial; .nav { max-height: none!important} }</style>
-    </noscript>
 
 
     <?php // drop Google Analytics Here ?>
@@ -115,11 +112,11 @@
     <div class="container">
       <div class="header-wrapper">
         <header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-<!--           <div class="action-bar np">
+          <div class="action-bar np">
             <?php // TODO: Pull from ACF ?>
-            <strong>Voter Alert &mdash;</strong> New York has only 5 days left <a href="#">Read more</a>
+            <strong>VoteForBernie Facelift &mdash;</strong> New look, new content, same goal: <strong>Get Out The Vote!</strong> <a href="#">See What's New</a>
             <div class="fb-like" data-href="https://voteforbernie.org/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
-          </div> -->
+          </div>
           <div id="inner-header" class="branding wrap">
 
             <h1 id="logo" class="h1" title="VoteForBernie.org" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>">VoteForBernie</a></h1>
