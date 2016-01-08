@@ -175,8 +175,10 @@ vfb.trackElements = function () {
 vfb.resizeMap = function () {
   viewport = updateViewportDimensions();
 
-  if (viewport.width > 460) {
+  if (viewport.width > 460 && viewport.height > 635) {
     vfb.map.height(viewport.height - vfb.map.offset().top - 10);
+  } else {
+    vfb.map.height(400);
   }
 };
 
@@ -351,7 +353,7 @@ vfb.enhanceSharing = function () {
 
   findCounter = function (site) {
     if (!$floatShareWrapper.find('#' + site + '-count').text()) {
-      return setTimeout(function () { findCounter(site) }, 100);
+      return setTimeout(function () { findCounter(site); }, 100);
     } else {
       addCounter($contentShareWrappers.find('.' + site + '-cresta-share'), $floatShareWrapper.find('#' + site + '-count').text());
     }
