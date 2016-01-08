@@ -90,4 +90,8 @@ class StateModel extends PostModel {
     return !empty($this->check_registration_link);
   }
 
+  public function sameDayRegistration() {
+    return !empty($this->same_day_registration);
+  }
+
 }
