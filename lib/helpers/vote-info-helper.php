@@ -14,15 +14,15 @@ class VoteInfoHelper {
   );
   protected static $explanations = array(
     'open' => '{$denonym} can vote for Bernie Sanders regardless of their registered party',
-    'closed' => '{$denonym} <strong>must</strong> register as Democrat to vote for Bernie!',
-    'semi-closed' => '{$denonym} <strong>must</strong> register as Democrat or undeclared to vote for Bernie!',
+    'closed' => '{$denonym} <strong>must</strong> register as democrat to vote for Bernie!',
+    'semi-closed' => '{$denonym} <strong>must</strong> register as democrat or undeclared to vote for Bernie!',
     'semi-open' => '{$denonym} registered as a republican <strong>cannot</strong> vote for Bernie Sanders!'
   );
   protected static $actions = array(
     'open' => 'Get registered to vote',
-    'closed' => 'Register as a Democrat',
-    'semi-closed' => 'Register as a Democrat or undeclared',
-    'semi-open' => 'Register as a Democrat or undeclared'
+    'closed' => 'Register as a democrat',
+    'semi-closed' => 'Register as a democrat or undeclared',
+    'semi-open' => 'Register as a democrat or undeclared'
   );
 
   private function loadStateField($postID) {

@@ -27,9 +27,9 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
           </ul>
           <div class="explanation-container">
             <ul class="explanations">
-              <li class="closed active">Voters in Closed Primary states <strong>must</strong> register as Democrat to vote for Bernie</li>
+              <li class="closed active">Voters in Closed Primary states <strong>must</strong> register as democrat to vote for Bernie</li>
               <li class="open">Voters in Open Primary states can vote for Bernie regardless of political affiliation</li>
-              <li class="closed-caucus">Voters in Closed Caucus states <strong>must</strong> affiliate as Democrat to vote for Bernie</li>
+              <li class="closed-caucus">Voters in Closed Caucus states <strong>must</strong> affiliate as democrat to vote for Bernie</li>
               <li class="open-caucus">Voters in Open Caucus states can vote for Bernie regardless of political affiliation</li>
               <li class="other">Semi-Open? Semi-Closed? Click your state to find out how to vote for Bernie Sanders</li>
             </ul>

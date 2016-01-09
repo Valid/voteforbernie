@@ -59,7 +59,7 @@
             <strong><?php echo $helper->formatDate($state->deadline_date); ?></strong>
             </p>
             <?php if ($state->hasAffiliationDeadline()) { ?>
-              <p><strong>Not a Democrat?</strong> <?php echo $state->getTitle(); ?> has a <em>special deadline</em> for changing affiliation: <strong><?php echo $helper->formatDate($state->aff_deadline_date); ?>!</strong></p>
+              <p><strong>Not a democrat?</strong> <?php echo $state->getTitle(); ?> has a <em>special deadline</em> for changing affiliation: <strong><?php echo $helper->formatDate($state->aff_deadline_date); ?>!</strong></p>
             <?php } ?>
           <?php } else { ?>
             <h3>No Registration!</h3>
@@ -122,7 +122,7 @@
 
 
       <?php if ($state->hasAffiliationDeadline()) { ?>
-        <p class="warning">In <?php echo $state->getTitle(); ?>, you must be affiliated as a Democrat by <?php echo $helper->formatDate($state->aff_deadline_date); ?>, which is before the registration deadline!</p>
+        <p class="warning">In <?php echo $state->getTitle(); ?>, you must be affiliated as a democrat by <?php echo $helper->formatDate($state->aff_deadline_date); ?>, which is before the registration deadline!</p>
       <?php } else if ($state->hasDeadlineDate()) { ?>
         <?php if ($state->sameDayRegistration()) { ?>
           <p><?php echo $state->getTitle(); ?> has <strong>Same-Day Registration</strong> which allows you to register to vote at the <?php echo $state->type; ?> on <strong><?php echo $helper->formatDate($state->deadline_date); ?></strong>!</p>
