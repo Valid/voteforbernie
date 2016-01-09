@@ -22,13 +22,13 @@
 
     <div class="type m-all t-all d-all">
       <div class="slab"><p class="status-info"><?php echo $state->getTitle(); ?> has <strong class="status c-bb c-t init"><?php echo $state->status; ?></strong> <?php echo $state->type; ?></p></div>
-      <p class="meaning c-t c-bo"><?php echo $helper->getExplanationText($state); ?></p>
+      <p class="meaning"><?php echo $helper->getExplanationText($state); ?></p>
     </div>
 
     <div class="share np m-all t-all d-all">
       <?php if ($state->status !== 'open') { ?>
         <h3>If you didn't know that, you're not alone.</h3>
-        <p>People are planning to vote for Bernie in <?php echo $state->getTitle(); ?> and they <strong>will not be able to!</strong></p>
+        <p>People are planning to vote for Bernie in <?php echo $state->getTitle(); ?>, but they <strong>will not be able to!</strong></p>
       <?php } else { ?>
         <blockquote cite="http://www.thenation.com/article/bernie-sanders-explains-the-new-math-of-2016-to-democratic-leaders/">
           <p>﻿“I think you're looking at the candidate who can substantially increase voter turnout all across the country.”</p>
@@ -36,7 +36,7 @@
         <p>Bernie Sanders will only win if we can <strong>get enough people to vote!</strong></p>
       <?php } ?>
 
-      <p class="share-text">Help <strong>Get The Vote Out</strong> by sharing this page</p>
+      <p class="share-text">Help <strong>Get The Vote Out in <?php echo $state->getTitle(); ?></strong> by sharing this page:</p>
       <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
       <!-- <p>You can also print this page, and it turns into a flier you can post or give out!</p> -->
     </div>
@@ -46,6 +46,7 @@
     <div class="info-wrapper m-all t-all d-all">
       <div class="m-1of2 t-1of3 d-1of3">
         <div class="what">
+          <?php // TODO: Should be flag, as !hasDeadlineDate could mean TBD ?>
           <?php if ($state->hasDeadlineDate()) { ?>
             <h3>Register By</h3>
 
@@ -62,7 +63,7 @@
             <?php } ?>
           <?php } else { ?>
             <h3>No Registration!</h3>
-            <p>Just be sure to vote!</p>
+            <p>You don't need to register to vote in <?php echo $state->getTitle(); ?>, just be sure to vote on <strong><?php echo $helper->formatDate($state->getPrimaryDate()); ?>!</strong></p>
           <?php } ?>
         </div>
       </div>
@@ -196,7 +197,7 @@
       </script>
     </div>
 
-    <div class="np m-all t-all d-all activism">
+    <div id="getinvolved" class="np m-all t-all d-all activism">
       <p>Will you help Bernie win?</p>
       <p><strong>"I've said it since day one: I can't do it alone." - <em>Bernie Sanders</em></strong></p>
       <p>This grassroots campaign depends on grassroots support <strong>like you!</strong> There are many opportunities to help out Bernie's campaign right now, and if you want more <a href="https://go.berniesanders.com/page/s/volunteer-for-bernie?source=voteforbernie" target="_blank">sign up as a volunteer</a> with the official campaign. Many of us don't have much time for volunteer work, and if you're not able to volunteer but still want Bernie to win, <a href="http://berniesanders.com/reddit" target="_blank">donate to his campaign!</a></p>
