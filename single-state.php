@@ -175,7 +175,7 @@
       <?php endif; ?>
 
       <h4>More Information</h4>
-      <p>If you have any questions about voting in <?php echo $state->getTitle(); ?> you contact your official elections office.</p>
+      <p>If you have any questions about voting in <?php echo $state->getTitle(); ?> you may contact your official elections office.</p>
       <ul>
         <li><a href="<?php echo $state->state_link; ?>" data-track="StateLink,<?php echo $state->state; ?>" target="_blank">Official <?php echo $state->getTitle(); ?> Elections Website</a></li>
         <li>Phone: <?php echo $state->state_phone; ?></li>
