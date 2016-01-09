@@ -135,6 +135,11 @@
         <p>Not sure if you are registered, or what you're registered as? Check your <a href="<?php echo $state->check_registration_link ?>" data-track="ChkLnk,<?php echo $state->state; ?>" target="_blank">current registration status</a>.</p>
       <?php } ?>
 
+      <?php if ($state->hasCaucusLink()) { ?>
+        <h4>How to caucus in <?php echo $state->getTitle(); ?></h4>
+        <p><strong>Important! &mdash;</strong> Use the <a href="<?php echo $state->bern_advisory_link ?>" target="_blank" data-track="howCaucus,<?php echo $state->state; ?>">interactive caucus tool</a> to familiarize yourself with the process of participating in the <?php echo $state->getTitle(); ?> caucus.</p>
+      <?php } ?>
+
       <?php if (false && $state->hasAbsenteeVoting()) { // Will re-enable after all absentee data is verified ?>
         <h4>Vote By Mail</h4>
         <p><strong>Being busy or working</strong> on election day is the <strong>most common reason</strong> for not voting according to the U.S. Census. This is completely understandable, and will continue to be a problem until <a href="http://www.sanders.senate.gov/democracyday" data-track="DemDay,<?php echo $state->state; ?>" target="_blank">election day becomes a national holiday</a>!</p>

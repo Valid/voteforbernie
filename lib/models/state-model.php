@@ -7,6 +7,7 @@ class StateModel extends PostModel {
     'state',
     'denonym',
     'type',
+    'bern_advisory_link',
     'status',
     'campaign_special_need',
     'special_explanation',
@@ -48,6 +49,10 @@ class StateModel extends PostModel {
     } else {
       return 'TBD';
     }
+  }
+
+  public function hasCaucusLink() {
+    return !empty($this->bern_advisory_link);
   }
 
   public function hasSpecialExplanation() {
