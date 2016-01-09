@@ -98,7 +98,7 @@
       <p>Dates and deadlines can change at any time!</p>
       <p>Sign up to be reminded of deadlines and important changes in <?php echo $state->getTitle(); ?></p>
       <div class="updated">
-        <p>Oregon was last updated on February 1st, 2013 <a href="/contact" class="correction-btn ui-btn">submit correction</a></p>
+        <p><?php echo $state->getTitle(); ?> was last updated on <?php the_modified_time('F j, Y'); ?> <a href="/contact" class="correction-btn ui-btn">submit correction</a></p>
         <?php echo do_shortcode( '[contact-form-7 id="157" title="Submit Correction" html_class="submit-correction"]' ); ?>
       </div>
       <?php echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" ); ?>
