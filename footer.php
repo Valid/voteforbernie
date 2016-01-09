@@ -22,6 +22,7 @@
 
 
     <p class="disclaimer">VoteForBernie.org was built and is maintained by a volunteer and is not affiliated with the <a href="#" data-track="out,OfficialCampaign">official Bernie Sanders campaign</a>.</p>
+    <p class="disclaimer">The dates and information displayed on VoteForBernie.org are subject to change at any time. Though we strive to ensure the information is accurate, we make no guarantee that it is. If you notice something incorrect, <a href="/contact">let us know</a>.</p>
 
     <p class="source-org copyright">&copy; VoteForBernie.org</p>
     <?php // echo date('Y'); ?>
