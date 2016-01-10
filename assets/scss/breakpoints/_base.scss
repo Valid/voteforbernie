@@ -1729,9 +1729,6 @@ FOOTER STYLES
 }
 
 .newsletter, .activism {
-  background-color: white(0.5);
-  border: 5px solid $dark-gray;
-  border-width: 5px 0;
   padding: 20px 0;
   text-align: center;
   > p:first-child {
@@ -1744,8 +1741,11 @@ FOOTER STYLES
 }
 
 .activism {
-  text-align: left;
+  background-color: white(0.5);
+  border-width: 5px 0;
+  border: 5px solid $dark-gray;
   padding: 20px;
+  text-align: left;
 }
 
 .to-map {
@@ -1908,7 +1908,7 @@ FOOTER STYLES
     }
     h3 {
       font-family: $sans-serif;
-      font-size: 25px;
+      font-size: 20px;
       font-weight: 800;
       line-height: 1;
       margin: 15px 0;
@@ -1927,29 +1927,28 @@ FOOTER STYLES
       margin: 0 0 10px;
     }
     .updated {
-      color: $meta-gray;
       margin-top: 10px;
       p {
-        font-size: 12px;
+        font-size: 15px;
         line-height: 1;
       }
       a {
         background-color: $meta-gray;
         font-size: 15px;
         line-height: 1;
-        margin-top: 10px;
+        margin: 10px;
         padding: 5px;
         &:hover {
           background-color: lighten($meta-gray, 10%);
         }
       }
       .wpcf7 {
-        background-color: $white;
         display: none;
         padding: 20px 10%;
         textarea {
-          padding: 5px 10px;
+          border: 1px solid $blue;
           margin: 0;
+          padding: 5px 10px;
         }
       }
       .wpcf7-submit {

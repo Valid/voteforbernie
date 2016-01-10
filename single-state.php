@@ -25,24 +25,6 @@
       <p class="meaning"><?php echo $helper->getExplanationText($state); ?></p>
     </div>
 
-    <div class="share np m-all t-all d-all">
-      <?php if ($state->status !== 'open') { ?>
-        <h3>If you didn't know that, you're not alone.</h3>
-        <p>People are planning to vote for Bernie in <?php echo $state->getTitle(); ?>, but they <strong>will not be able to!</strong></p>
-      <?php } else { ?>
-        <blockquote cite="http://www.thenation.com/article/bernie-sanders-explains-the-new-math-of-2016-to-democratic-leaders/">
-          <p>﻿“I think you're looking at the candidate who can substantially increase voter turnout all across the country.”</p>
-        </blockquote>
-        <p>Bernie Sanders will only win if we can <strong>get enough people to vote!</strong></p>
-      <?php } ?>
-
-      <p class="share-text">Help <strong>Get The Vote Out in <?php echo $state->getTitle(); ?></strong> by sharing this page:</p>
-      <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
-      <!-- <p>You can also print this page, and it turns into a flier you can post or give out!</p> -->
-    </div>
-
-    <!-- <div class="leader"></div> -->
-
     <div class="info-wrapper m-all t-all d-all">
       <div class="m-1of2 t-1of3 d-1of3">
         <div class="what">
@@ -94,14 +76,20 @@
       </div>
     </div>
 
-    <div class="np m-all t-all d-all newsletter">
-      <p>Dates and deadlines can change at any time!</p>
-      <p>Sign up to be reminded of deadlines and important changes in <?php echo $state->getTitle(); ?></p>
-      <div class="updated">
-        <p><?php echo $state->getTitle(); ?> was last updated on <?php the_modified_time('F j, Y'); ?> <a href="/contact" class="correction-btn ui-btn">submit correction</a></p>
-        <?php echo do_shortcode( '[contact-form-7 id="157" title="Submit Correction" html_class="submit-correction"]' ); ?>
-      </div>
-      <?php echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" ); ?>
+    <div class="share np m-all t-all d-all">
+      <?php if ($state->status !== 'open') { ?>
+        <h3>Didn't know about <?php echo $state->status ?> <?php echo $state->type; ?>? You're not alone.</h3>
+        <p>People are planning to vote for Bernie in <?php echo $state->getTitle(); ?>, but they <strong>will not be able to!</strong></p>
+      <?php } else { ?>
+        <blockquote cite="http://www.thenation.com/article/bernie-sanders-explains-the-new-math-of-2016-to-democratic-leaders/">
+          <p>﻿“I think you're looking at the candidate who can substantially increase voter turnout all across the country.”</p>
+        </blockquote>
+        <p>Bernie Sanders will only win if we can <strong>get enough people to vote!</strong></p>
+      <?php } ?>
+
+      <p class="share-text">Help <strong>Get The Vote Out in <?php echo $state->getTitle(); ?></strong> by sharing this page:</p>
+      <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
+      <!-- <p>You can also print this page, and it turns into a flier you can post or give out!</p> -->
     </div>
 
     <div class="vote-content m-all t-3of4 d-4of5">
@@ -202,6 +190,16 @@
       </script>
     </div>
 
+    <div class="np m-all t-all d-all newsletter">
+      <p>Dates and deadlines can change at any time!</p>
+      <p>Sign up to be reminded of deadlines and important changes in <?php echo $state->getTitle(); ?></p>
+      <div class="updated">
+        <p><?php echo $state->getTitle(); ?> was last updated on <?php the_modified_time('F j, Y'); ?> <a href="/contact" class="correction-btn ui-btn">submit correction</a></p>
+        <?php echo do_shortcode( '[contact-form-7 id="157" title="Submit Correction" html_class="submit-correction"]' ); ?>
+      </div>
+      <?php echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" ); ?>
+    </div>
+
     <div id="getinvolved" class="np m-all t-all d-all activism">
       <p>Will you help Bernie win?</p>
       <p><strong>"I've said it since day one: I can't do it alone." - <em>Bernie Sanders</em></strong></p>
@@ -212,6 +210,7 @@
         <?php echo $state->campaign_special_need; ?>
       <?php } ?>
 
+      <p><em>Note: This section not final, content will be added soon</em></p>
       <h4>Attend or host a local event</h4>
       <p>There are Bernie events popping up all over the country!</p>
 
