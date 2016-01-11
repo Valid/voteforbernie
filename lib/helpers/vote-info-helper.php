@@ -67,14 +67,15 @@ class VoteInfoHelper {
   public function getExplanationText($state) {
     $explanationText = '';
     $denonym = $state->denonym;
-    if ($state->hasExtraExplanation()) {
-      $explanationText = $state->extra_explanation . ' ';
-    }
 
     if ($state->hasSpecialExplanation()) {
       $explanationText .= $state->special_explanation;
     } else if ($this->hasStatusExplanation($state)) {
       $explanationText .= self::$explanations[$state->status];
+    }
+
+    if ($state->hasExtraExplanation()) {
+      $explanationText .= ' ' . $state->extra_explanation;
     }
     return strtr($explanationText, array('{$denonym}' => $denonym));
   }
