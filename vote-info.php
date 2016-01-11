@@ -128,7 +128,8 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                           <!-- <p><?php echo $state->denonym; ?> for Bernie:</p> -->
                             <!-- <a href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="actTxt,<?php echo $state->state; ?>">
                             <?php echo strtolower($helper->getActionText($state)); ?></a> to vote for Bernie. -->
-                          <a class="ui-btn" href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="actBtn,<?php echo $state->state; ?>">How to vote for Bernie in <?php echo $state->getTitle(); ?> &raquo;</a>
+                          <!-- <a class="ui-btn" href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="actBtn,<?php echo $state->state; ?>">How to vote for Bernie in <?php echo $state->getTitle(); ?> &raquo;</a> -->
+                          <a class="ui-btn" href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="actBtn,<?php echo $state->state; ?>"><?php echo $helper->getActionText($state); ?></a>
 
 
                           <?php if ($state->under_18 || $state->hasAdditionalNote()): ?>
