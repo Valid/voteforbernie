@@ -45,7 +45,7 @@
             <?php } ?>
           <?php } else { ?>
             <h3>No Registration!</h3>
-            <p>You don't need to register to vote in <?php echo $state->getTitle(); ?>, just be sure to vote on <strong><?php echo $helper->formatDate($state->getPrimaryDate()); ?>!</strong></p>
+            <p>You don't need to register to vote in <?php echo $state->getTitle(); ?>, just be sure to <strong>vote!</strong></strong></p>
           <?php } ?>
         </div>
       </div>
@@ -95,7 +95,7 @@
     <div class="vote-content m-all t-3of4 d-4of5">
       <h3><?php echo $state->getTitle(); ?> Voter Information</h3>
       <?php if (!$state->hasDeadlineDate()) { ?>
-        <p>Good news! Because <?php echo $state->getTitle(); ?> doesn't have voter registration, you can vote for Bernie Sanders by just showing up!</p>
+        <p>Good news! Because <?php echo $state->getTitle(); ?> doesn't have voter registration, you can vote for Bernie Sanders by just showing up and voting!</p>
 
         <p><a class="ui-btn np" href="<?php echo $state->state_link; ?>" data-track="StateLink,<?php echo $state->state; ?>" target="_blank">Official Voter Information</a></p>
       <?php } else if ($state->status == 'open') { ?>
@@ -113,7 +113,7 @@
         <p class="warning">In <?php echo $state->getTitle(); ?>, you must be affiliated as a democrat by <?php echo $helper->formatDate($state->aff_deadline_date); ?>, which is before the registration deadline!</p>
       <?php } else if ($state->hasDeadlineDate()) { ?>
         <?php if ($state->sameDayRegistration()) { ?>
-          <p><?php echo $state->getTitle(); ?> has <strong>Same-Day Registration</strong> which allows you to register to vote at the <?php echo $state->type; ?> on <strong><?php echo $helper->formatDate($state->deadline_date); ?></strong>!</p>
+          <p><?php echo $state->getTitle(); ?> has <strong>Same-Day Registration</strong> which allows you to register to vote at the <?php echo $state->type; ?> on <strong><?php echo $helper->formatDate($state->deadline_date); ?></strong> &mdash; However, you may encounter long lines. Skip the lines and register today!</p>
         <?php } else { ?>
           <p>You have until <?php echo $helper->formatDate($state->deadline_date); ?> to register, but registration is open <strong>right now!</strong></p>
         <?php } ?>
@@ -173,7 +173,7 @@
         <li><a href="<?php echo $state->state_link; ?>" data-track="StateLink,<?php echo $state->state; ?>" target="_blank">Official <?php echo $state->getTitle(); ?> Elections Website</a></li>
         <li>Phone: <?php echo $state->state_phone; ?></li>
       </ul>
-      <p>Find other Bernie supporters in <?php echo $state->getTitle(); ?> at <?php echo $state->discussion_link; ?></p>
+      <p>Find other Bernie supporters and get help from <?php echo $state->discussion_link; ?></p>
 
     </div>
 
@@ -192,30 +192,35 @@
 
     <div class="np m-all t-all d-all newsletter">
       <p>Dates and deadlines can change at any time!</p>
-      <p>Sign up to be reminded of deadlines and important changes in <?php echo $state->getTitle(); ?></p>
+      <p>VoteForBernie.org has <strong>freshly researched data</strong>. Reporting incorrect information is encouraged!</p>
+      <p>Sign up below to be reminded of deadlines and be notified of important changes in <?php echo $state->getTitle(); ?></p>
+      <?php echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" ); ?>
       <div class="updated">
         <p><?php echo $state->getTitle(); ?> was last updated on <?php the_modified_time('F j, Y'); ?> <a href="/contact" class="correction-btn ui-btn">submit correction</a></p>
         <?php echo do_shortcode( '[contact-form-7 id="157" title="Submit Correction" html_class="submit-correction"]' ); ?>
       </div>
-      <?php echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" ); ?>
     </div>
 
     <div id="getinvolved" class="np m-all t-all d-all activism">
       <p>Will you help Bernie win?</p>
       <p><strong>"I've said it since day one: I can't do it alone." - <em>Bernie Sanders</em></strong></p>
-      <p>This grassroots campaign depends on grassroots support <strong>like you!</strong> There are many opportunities to help out Bernie's campaign right now, and if you want more <a href="https://go.berniesanders.com/page/s/volunteer-for-bernie?source=voteforbernie" target="_blank">sign up as a volunteer</a> with the official campaign. Many of us don't have much time for volunteer work, and if you're not able to volunteer but still want Bernie to win, <a href="http://berniesanders.com/reddit" target="_blank">donate to his campaign!</a></p>
+      <p>This grassroots campaign depends on grassroots support <strong>like you!</strong> There are many opportunities to help out Bernie's campaign right now, and if you want more <a href="https://go.berniesanders.com/page/s/volunteer-for-bernie?source=voteforbernie" data-track="volunteer,<?php echo $state->state; ?>" target="_blank">sign up as a volunteer</a> with the official campaign. Many of us don't have much time for volunteer work, and if you're not able to volunteer but still want Bernie to win, <a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" data-track="donate,<?php echo $state->state; ?>" target="_blank">donate to his campaign!</a></p>
 
       <?php if ($state->hasCampaignNeed()) { ?>
         <h4>Bernie needs you in <?php echo $state->getTitle(); ?>!</h4>
         <?php echo $state->campaign_special_need; ?>
       <?php } ?>
 
-      <p><em>Note: This section not final, content will be added soon</em></p>
-      <h4>Attend or host a local event</h4>
-      <p>There are Bernie events popping up all over the country!</p>
-
       <h4>Phone Bank for Bernie</h4>
-      <p>Over 30,000 calls have been made so far, but we need to reach many more in early primary states. Find out how to <a href="https://docs.google.com/document/d/1n0RtTtYLQUIfA4Am4OzqLet83d-IS2ajbXkrHJgqz2A/edit">Phone-bank for Bernie</a>.</p>
+      <p>Phonebanking is the single most important thing you can do for the campaign besides voting. Primaries are here, and we need to be calling people and letting them know about how to vote in their state. <strong>Don't be scared!</strong> I hear from many people that it's daunting to call strangers on the phone, but you will have a script to read and the typical call length is very short.</p>
+      <p><a href="https://go.berniesanders.com/page/content/phonebank?source=voteforbernie" class="ui-btn" data-track="phonebank,<?php echo $state->state; ?>" target="_blank">Start Phonebanking for Bernie!</a></p>
+      <p>If you want to join a group of other phone bankers for Bernie, join <a href="http://www.phonebankduel.com/j/4kwwuD2Pl" data-track="duel,<?php echo $state->state; ?>" target="_blank">Phonebank Duel</a> and compete to see who can make the most calls!</p>
+
+
+      <h4>Attend or host a local event</h4>
+      <p>Phone Banking, Canvassing, Voter Registration Drives, Carpools -- these are just a few of the volunteer-hosted events popping up around the nation in support of Bernie Sanders, and some probably in your city!</p>
+      <p><a class="ui-btn" href="http://map.berniesanders.com/" data-track="attend,<?php echo $state->state; ?>" target="_blank">Find a local event to attend</a></p>
+      <p>If you can't find any events nearby, you should <a href="https://go.berniesanders.com/page/event/create" data-track="host,<?php echo $state->state; ?>" target="_blank">host your own</a> &mdash; I've done it several times and it's been a great experience meeting local Bernie supporters!</p>
 
       <div class="np m-all t-all d-all">
         <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
