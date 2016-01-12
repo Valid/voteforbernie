@@ -177,10 +177,11 @@ h4, .h4 {
 }
 
 h5, .h5 {
+  font-family: $headerFont;
   font-size: 1em;
-  letter-spacing: 2px;
-  line-height: 2.09em;
+  line-height: 1;
   text-transform: uppercase;
+
 }
 
 /*********************
@@ -1165,8 +1166,14 @@ FOOTER STYLES
     text-align: center;
   }
   h2 {
+    color: $blue;
     font-size: 2.8em;
-    margin: 0;
+    line-height: 1;
+    margin: 10px auto;
+    strong {
+      color: $red;
+      font-weight: normal;
+    }
   }
 
   .legend {
@@ -1287,16 +1294,6 @@ FOOTER STYLES
       }
     }
 
-    .passed {
-      color: $light-red;
-    }
-    .soon {
-      color: $blue;
-      display: block;
-      font-size: 0.8em;
-      line-height: 1;
-    }
-
     .resources {
       font-size: 0.8em;
       margin-top: 30px;
@@ -1370,7 +1367,6 @@ FOOTER STYLES
       }
       .ui-btn {
         background-color: $other;
-        font-size: 19px;
         &:hover {
           background-color: darken($other, 10%);
         }
@@ -1707,6 +1703,7 @@ FOOTER STYLES
   }
   .state-select {
     text-align: center;
+    font-size: 30px;
     p {
       margin: 0;
     }
@@ -2092,6 +2089,16 @@ FOOTER STYLES
 
   }
 
+  .passed {
+    color: $light-red;
+  }
+  .soon {
+    color: $blue;
+    display: block;
+    font-size: 0.8em;
+    line-height: 1;
+  }
+
 
   // Color each differently
   &.open {
@@ -2177,6 +2184,10 @@ FOOTER STYLES
       }
     }
   }
+}
+
+.no-mobile {
+  display: none;
 }
 @media (max-width: 480px) {
   // Bigtext sucks at responsive, unfortunately.

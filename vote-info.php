@@ -18,6 +18,17 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
       <div class="vote-info">
 
         <div class="map-intro">
+          <h2>Will you be able to <strong>Vote for Bernie</strong>?</h2>
+          <div class="state-select">
+            <p>Learn how to vote in <span class="no-mobile">your state by clicking it or</span>
+              <select class="state-selector">
+                <option>Select Your State</option>
+                <?php foreach ($states as $state): ?>
+                  <option value="<?php echo $state->state; ?>"><?php echo $state->getTitle(); ?></option>
+                <?php endforeach; ?>
+              </select>
+            </p>
+          </div>
           <ul class="legend">
             <li class="closed" data-type="closed">Closed Primary</li>
             <li class="open" data-type="open">Open Primary</li>
@@ -33,16 +44,6 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
               <li class="open-caucus">Voters in Open Caucus states can vote for Bernie regardless of political affiliation</li>
               <li class="other">Semi-Open? Semi-Closed? Click your state to find out how to vote for Bernie Sanders</li>
             </ul>
-            <div class="state-select">
-              <p>Learn how to vote for Bernie in your state by <span class="no-mobile">clicking it or</span>
-                <select class="state-selector">
-                  <option>Select Your State</option>
-                  <?php foreach ($states as $state): ?>
-                    <option value="<?php echo $state->state; ?>"><?php echo $state->getTitle(); ?></option>
-                  <?php endforeach; ?>
-                </select>
-              </p>
-            </div>
           </div>
         </div>
         <div class="map-container">
@@ -128,8 +129,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                           <!-- <p><?php echo $state->denonym; ?> for Bernie:</p> -->
                             <!-- <a href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="actTxt,<?php echo $state->state; ?>">
                             <?php echo strtolower($helper->getActionText($state)); ?></a> to vote for Bernie. -->
-                          <!-- <a class="ui-btn" href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="actBtn,<?php echo $state->state; ?>">How to vote for Bernie in <?php echo $state->getTitle(); ?> &raquo;</a> -->
-                          <a class="ui-btn" href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="actBtn,<?php echo $state->state; ?>"><?php echo $helper->getActionText($state); ?></a>
+                          <a class="ui-btn" href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="howTo,<?php echo $state->state; ?>">How to vote in <?php echo $state->getTitle(); ?> &raquo;</a>
 
 
                           <?php if ($state->under_18 || $state->hasAdditionalNote()): ?>
