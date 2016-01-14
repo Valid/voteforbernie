@@ -94,6 +94,12 @@
 
     <div class="vote-content m-all t-3of4 d-4of5">
       <h3><?php echo $state->getTitle(); ?> Voter Information</h3>
+      <div class="headsup">
+        <h4>Heads Up!</h4>
+        <p><strong>Jan 14 &mdash;</strong> VoteForBernie just underwent a <strong><a href="#">massive update</a></strong> with lots of new information being added. All information has been researched by myself and volunteers but mistakes can and do happen. To ensure you do not miss a deadline, check back here often, or sign up for the updates newsletter.</p>
+        <p>This is a Grassroots resource, and we rely on the Grassroots to keep us informed! If you notice anything incorrect, please submit a correction from the button at the bottom of the page.</p>
+        <p class="sig">Thank you for your understanding,<br>Jon Hughes, Creator of VoteForBernie.org</p>
+      </div>
       <?php if (!$state->hasDeadlineDate()) { ?>
         <p>Good news! Because <?php echo $state->getTitle(); ?> doesn't have voter registration, you can vote for Bernie Sanders by just showing up and voting!</p>
 
@@ -204,7 +210,11 @@
     <div id="getinvolved" class="np m-all t-all d-all activism">
       <p>Will you help Bernie win?</p>
       <p><strong>"I've said it since day one: I can't do it alone." - <em>Bernie Sanders</em></strong></p>
-      <p>This grassroots campaign depends on grassroots support <strong>like you!</strong> There are many opportunities to help out Bernie's campaign right now, and if you want more <a href="https://go.berniesanders.com/page/s/volunteer-for-bernie?source=voteforbernie" data-track="volunteer,<?php echo $state->state; ?>" target="_blank">sign up as a volunteer</a> with the official campaign. Many of us don't have much time for volunteer work, and if you're not able to volunteer but still want Bernie to win, <a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" data-track="donate,<?php echo $state->state; ?>" target="_blank">donate to his campaign!</a></p>
+      <p>This grassroots campaign depends on grassroots support <strong>like you!</strong> There are many opportunities to help out Bernie's campaign right now, and if you want more, <a href="https://go.berniesanders.com/page/s/volunteer-for-bernie?source=voteforbernie" data-track="volunteer,<?php echo $state->state; ?>" target="_blank">sign up as a volunteer</a> with the official campaign.</p>
+
+      <p>Many of us don't have much time for volunteer work, and if you're not able to volunteer but still want Bernie to win:</p>
+
+      <p><a class="ui-btn" href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" data-track="donate,<?php echo $state->state; ?>" target="_blank">Donate to the Bernie Sanders Campaign</a></p>
 
       <?php if ($state->hasCampaignNeed()) { ?>
         <h4>Bernie needs you in <?php echo $state->getTitle(); ?>!</h4>

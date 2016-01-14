@@ -62,7 +62,36 @@ body {
 
 .rtl {}                           /* for sites that are read right to left (i.e. hebrew) */
 .home {}                          /* home page */
-.blog {}                          /* blog template page */
+.blog {
+  .page-title {
+    border-bottom: 3px solid;
+    border-bottom-left-radius: 10px;
+    color: $light-red;
+    margin-top: 46px;
+    span {
+      color: $black;
+      font-family: $headerFont;
+      font-size: 20px;
+    }
+    a {
+      color: $light-red;
+      text-decoration: none;
+    }
+  }
+
+  .entry-content {
+    border: 3px solid $blue;
+    border-bottom-left-radius: 20px;
+    border-width: 0 0 0 3px;
+    margin: 0 5px 10px;
+    overflow: hidden;
+    padding: 10px;
+  }
+
+
+
+
+}                          /* blog template page */
 .archive {}                       /* archive page */
 .date {}                          /* date archive page */
   .date-paged-1 {}                /* replace the number to the corresponding page number */
@@ -424,12 +453,6 @@ POSTS & CONTENT STYLES
     margin-top: 40px;
   }
   .entry-content {
-    border: 3px solid $blue;
-    border-bottom-left-radius: 20px;
-    border-width: 0 0 0 3px;
-    margin: 0 5px 10px;
-    overflow: hidden;
-    padding: 10px 10px 30px 15px;
   }
   h2, h4 {
     font-family: $accentFont;
@@ -482,7 +505,11 @@ POSTS & CONTENT STYLES
     .page-title {}
 
     .entry-title {
-      font-size: 3em;
+      font-family: $headerFont;
+      font-size: 2em;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 10px;
     }
 
     .archive-title {}
@@ -502,6 +529,7 @@ POSTS & CONTENT STYLES
       font-family: $headerFont;
       font-size: 20px;
       font-weight: 700;
+      margin: 10px 0 0;
       text-transform: uppercase;
       time {}
     }
@@ -1043,7 +1071,12 @@ SIDEBARS & ASIDES
 
 .sidebar {}
 
-  .widgettitle {}
+  .widgettitle {
+    font-family: $headerFont;
+    font-weight: 700;
+    text-transform: uppercase;
+
+  }
 
   .widget {
 
@@ -1167,12 +1200,18 @@ FOOTER STYLES
   }
   h2 {
     color: $blue;
-    font-size: 2.8em;
+    font-family: $headerFont;
+    font-size: 2.5em;
+    font-weight: 700;
     line-height: 1;
     margin: 10px auto;
+    text-transform: uppercase;
     strong {
       color: $red;
+      font-family: $accentFont;
+      font-size: 1.5em;
       font-weight: normal;
+      text-transform: initial;
     }
   }
 
@@ -1892,6 +1931,17 @@ FOOTER STYLES
       font-size: 30px;
       line-height: 1;
       margin: 0;
+    }
+  }
+  .headsup {
+    border: 5px solid $red;
+    border-width: 0 5px;
+    margin: 0 auto;
+    max-width: 75%;
+    padding: 0 20px;
+    .sig {
+      font-size: 0.8em;
+      text-align: right;
     }
   }
 

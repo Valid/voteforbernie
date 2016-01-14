@@ -2,7 +2,9 @@
 
 <div id="content">
   <div id="inner-content" class="wrap cf">
-    <main id="main" class="m-all t-all d-all cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+    <main id="main" class="m-all t-all d-all cf blog" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+
+      <h1 class="page-title"><a href="/alerts/">Voter Alerts <span>Stay Informed. Stay Engaged. &laquo;</span></a></h1>
 
       <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
