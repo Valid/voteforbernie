@@ -18,7 +18,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
       <div class="vote-info">
 
         <div class="map-intro">
-          <h2>Will you be able to <strong>Vote for Bernie</strong>?</h2>
+          <h2>Will you be able to <strong>Vote for Bernie?</strong></h2>
           <div class="state-select">
             <p>Learn how to vote in <span class="no-mobile">your state by clicking it or</span>
               <select class="state-selector">
