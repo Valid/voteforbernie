@@ -129,7 +129,7 @@
         <p class="warning">In <?php echo $state->getTitle(); ?>, you must be affiliated as a democrat by <?php echo $helper->formatDate($state->aff_deadline_date); ?>, which is before the registration deadline!</p>
       <?php } else if ($state->hasRegistration()) { ?>
         <?php if ($state->hasSameDayRegistration()) { ?>
-          <p><?php echo $state->getTitle(); ?> has <strong>Same-Day Registration</strong> which allows you to register to vote at the <?php echo $state->type; ?> on <strong><?php echo $helper->formatDate($state->deadline_date); ?></strong> &mdash; However, you may encounter long lines. Skip the lines and register today!</p>
+          <p><?php echo $state->getTitle(); ?> has <strong>Same-Day Registration</strong> which allows you to register to vote at the <?php echo $state->type; ?> on <strong><?php echo $helper->formatDate($state->getPrimaryDate()); ?></strong> &mdash; However, you may encounter long lines. Skip the lines and register today!</p>
         <?php } else { ?>
           <p>You have until <?php echo $helper->formatDate($state->deadline_date); ?> to register, but registration is open <strong>right now!</strong></p>
         <?php } ?>
