@@ -60,7 +60,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
               <article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
                 <header class="article-header">
-                  <h1 class="page-title"><?php the_title(); ?></h1>
+                  <h1 class="page-title">Why is voting in the primaries important?</h1>
                   <div class="m-all t-3of4 d-4of5">
                     <?php the_content(); ?>
                   </div>
