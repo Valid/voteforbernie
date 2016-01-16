@@ -28,8 +28,7 @@
     <div class="info-wrapper m-all t-all d-all">
       <div class="m-1of2 t-1of3 d-1of3">
         <div class="what">
-          <?php // TODO: Should be flag, as !hasDeadlineDate could mean TBD ?>
-          <?php if ($state->hasDeadlineDate()) { ?>
+          <?php if ($state->hasRegistration()) { ?>
             <h3>Register By</h3>
 
             <div class="date">
@@ -45,7 +44,7 @@
             <?php } ?>
           <?php } else { ?>
             <h3>No Registration!</h3>
-            <p>You don't need to register to vote in <?php echo $state->getTitle(); ?>, just be sure to <strong>vote!</strong></strong></p>
+            <p>You do not need to register in <?php echo $state->getTitle(); ?>, just be sure to vote!</p>
           <?php } ?>
         </div>
       </div>
@@ -100,25 +99,33 @@
         <p>This is a Grassroots resource, and we rely on the Grassroots to keep us informed! If you notice anything incorrect, please submit a correction from the button at the bottom of the page.</p>
         <p class="sig">Thank you for your understanding,<br>Jon Hughes, Creator of VoteForBernie.org</p>
       </div>
-      <?php if (!$state->hasDeadlineDate()) { ?>
+      <?php if (!$state->hasRegistration()) { ?>
         <p>Good news! Because <?php echo $state->getTitle(); ?> doesn't have voter registration, you can vote for Bernie Sanders by just showing up and voting!</p>
 
         <p><a class="ui-btn np" href="<?php echo $state->state_link; ?>" data-track="StateLink,<?php echo $state->state; ?>" target="_blank">Official Voter Information</a></p>
-      <?php } else if ($state->status == 'open') { ?>
+      <?php } else {
+      if ($state->status == 'open') { ?>
         <p>Good news! Because <?php echo $state->getTitle(); ?> has <strong class="c-t"><?php echo $state->status; ?></strong> <?php echo $state->type; ?>, you can vote for Bernie regardless of your registered party. If you want to vote for Bernie, <strong><?php echo strtolower($helper->getActionText($state)); ?></strong>!</strong>
-
-        <p><a class="ui-btn np" href="<?php echo $helper->getOnlineRegistrationLink($state); ?>" data-track="regBtn,<?php echo $state->state; ?>"><?php echo $helper->getActionText($state); ?> now!</a></p>
       <?php } else { ?>
         <p><?php echo $state->getTitle(); ?> has <strong class="c-t"><?php echo $state->status; ?></strong> <?php echo $state->type; ?> &mdash; <?php echo $helper->getExplanationText($state); ?></p>
+      <?php }
 
+      if ($state->hasOnlineRegistration()) { ?>
         <p><a class="ui-btn np" href="<?php echo $helper->getOnlineRegistrationLink($state); ?>" data-track="regBtn,<?php echo $state->state; ?>"><?php echo $helper->getActionText($state); ?> now!</a></p>
-      <?php } ?>
+      <?php } else {
+        ?><p><?php echo $state->getTitle(); ?> does not have online registration, but you can <a href="/register-to-vote/" data-track="RegToVote,<?php echo $state->state; ?>">fill out a registration form</a> to print and mail in.</p>
+
+        <p><a class="ui-btn np" href="/register-to-vote/" data-track="RegToVote,<?php echo $state->state; ?>"><?php echo $helper->getActionText($state); ?> now!</a></p>
+
+        <p>For more information, see <a href="<?php echo $helper->getOnlineRegistrationLink($state); ?>" data-track="moreInfo,<?php echo $state->state; ?>"><?php echo $state->getTitle(); ?> voting</a>.</p>
+      <?php }
+      } ?>
 
 
       <?php if ($state->hasAffiliationDeadline()) { ?>
         <p class="warning">In <?php echo $state->getTitle(); ?>, you must be affiliated as a democrat by <?php echo $helper->formatDate($state->aff_deadline_date); ?>, which is before the registration deadline!</p>
-      <?php } else if ($state->hasDeadlineDate()) { ?>
-        <?php if ($state->sameDayRegistration()) { ?>
+      <?php } else if ($state->hasRegistration()) { ?>
+        <?php if ($state->hasSameDayRegistration()) { ?>
           <p><?php echo $state->getTitle(); ?> has <strong>Same-Day Registration</strong> which allows you to register to vote at the <?php echo $state->type; ?> on <strong><?php echo $helper->formatDate($state->deadline_date); ?></strong> &mdash; However, you may encounter long lines. Skip the lines and register today!</p>
         <?php } else { ?>
           <p>You have until <?php echo $helper->formatDate($state->deadline_date); ?> to register, but registration is open <strong>right now!</strong></p>

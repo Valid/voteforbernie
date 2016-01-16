@@ -129,11 +129,14 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                           <!-- <p><?php echo $state->denonym; ?> for Bernie:</p> -->
                             <!-- <a href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="actTxt,<?php echo $state->state; ?>">
                             <?php echo strtolower($helper->getActionText($state)); ?></a> to vote for Bernie. -->
-                          <a class="ui-btn" href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="howTo,<?php echo $state->state; ?>">How to vote in <?php echo $state->getTitle(); ?> &raquo;</a>
+                          <a class="ui-btn" href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="howTo,<?php echo $state->state; ?>">How to vote in <?php echo $state->getTitle(); ?></a>
 
 
                           <?php if ($state->under_18 || $state->hasAdditionalNote()): ?>
                             <div class="extra">
+                              <?php if ($state->hasOnlineRegistration()) { ?>
+                                <p><strong>Online Registration Available!</strong></p>
+                              <?php } ?>
                               <?php if ($state->under_18): ?>
                                 <p class="only17"><strong>Only 17?</strong> If you will be 18 by November 8, 2016, you can vote in the <?php echo $state->type; ?>!</p>
                               <?php endif; ?>
@@ -150,16 +153,22 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                             <p><?php echo $helper->formatDate($state->primary_date); ?></p>
                           </div>
 
-                          <div class="m-1of2 t-all d-all">
-                            <h4>Register By</h4>
-                            <p><?php echo $helper->formatDate($state->deadline_date); ?></p>
-                          </div>
+                          <?php if ($state->hasRegistration()) { ?>
+                            <div class="m-1of2 t-all d-all">
+                              <h4>Register By</h4>
+                              <p><?php echo $helper->formatDate($state->deadline_date); ?></p>
+                            </div>
+                          <?php } ?>
 
                           <?php if ($state->hasAffiliationDeadline()) { ?>
                             <div class="m-all t-all d-all">
                               <h4>Affiliate By</h4>
                               <p><?php echo $helper->formatDate($state->aff_deadline_date); ?></p>
                             </div>
+                          <?php } ?>
+
+                          <?php if ($state->hasSameDayRegistration()) { ?>
+                            <p>Same-Day Registration!</p>
                           <?php } ?>
                         </div>
                       </div>

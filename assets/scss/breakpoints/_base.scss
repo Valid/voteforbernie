@@ -1276,6 +1276,18 @@ FOOTER STYLES
     margin: 10px 5px;
     overflow: hidden;
     padding: 10px 10px 30px;
+    .ui-btn {
+      &:after {
+        content: '»';
+        margin-left: 5px;
+        @include transition(margin-left 0.14s ease-in-out);
+      }
+      &:hover {
+        &:after {
+          margin-left: 8px;
+        }
+      }
+    }
   }
 
   .state {
@@ -2010,6 +2022,9 @@ FOOTER STYLES
     h3 {
       font-family: $headerFont;
       font-size: 40px;
+    }
+    .soon {
+      display: inline;
     }
   }
   .info-wrapper {

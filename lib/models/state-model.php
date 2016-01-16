@@ -16,6 +16,7 @@ class StateModel extends PostModel {
     'additional_note',
     'state_link',
     'state_phone',
+    'no_registration',
     'check_registration_link',
     'register_link',
     'online_reg',
@@ -49,6 +50,10 @@ class StateModel extends PostModel {
     } else {
       return 'TBD';
     }
+  }
+
+  public function hasRegistration() {
+    return empty($this->no_registration);
   }
 
   public function hasCaucusLink() {
@@ -95,7 +100,11 @@ class StateModel extends PostModel {
     return !empty($this->check_registration_link);
   }
 
-  public function sameDayRegistration() {
+  public function hasOnlineRegistration() {
+    return !empty($this->online_reg);
+  }
+
+  public function hasSameDayRegistration() {
     return !empty($this->same_day_registration);
   }
 
