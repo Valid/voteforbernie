@@ -98,6 +98,10 @@ class VoteInfoHelper {
     }
   }
 
+  public function hasOnlineRegistration($state) {
+    return isset($state->online_reg);
+  }
+
   public function hasStatusExplanation($state) {
     return isset(self::$explanations[$state->status]);
   }
