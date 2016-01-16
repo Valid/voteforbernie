@@ -110,10 +110,6 @@ class VoteInfoHelper {
     return isset(self::$actions[$state->status]);
   }
 
-  public function hasOnlineRegistration($state) {
-    return isset($state->register_link);
-  }
-
   public function formatDate($date) {
     if (!empty($date)) {
       $dateObj = strtotime($date);

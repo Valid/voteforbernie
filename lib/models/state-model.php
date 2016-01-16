@@ -56,6 +56,14 @@ class StateModel extends PostModel {
     return empty($this->no_registration);
   }
 
+  public function hasRegistrationLink() {
+    return empty($this->register_link);
+  }
+
+  public function hasRegistration() {
+    return empty($this->no_registration);
+  }
+
   public function hasCaucusLink() {
     return !empty($this->bern_advisory_link);
   }

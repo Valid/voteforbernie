@@ -117,8 +117,11 @@
 
         <p><a class="ui-btn np" href="/register-to-vote/" data-track="RegToVote,<?php echo $state->state; ?>"><?php echo $helper->getActionText($state); ?> now!</a></p>
 
-        <p>For more information, see <a href="<?php echo $helper->getOnlineRegistrationLink($state); ?>" data-track="moreInfo,<?php echo $state->state; ?>"><?php echo $state->getTitle(); ?> voting</a>.</p>
+        <?php if ($state->hasRegistrationLink()) { ?>
+          <p>For more information, see <a href="<?php echo $helper->getOnlineRegistrationLink($state); ?>" data-track="moreInfo,<?php echo $state->state; ?>"><?php echo $state->getTitle(); ?> voting</a>.</p>
+
       <?php }
+        }
       } ?>
 
 
