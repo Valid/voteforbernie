@@ -122,7 +122,7 @@ class VoteInfoHelper {
         $fDate = '<span class="passed">' . $fDate = date('F j, Y', $dateObj) . '</span>';
       } else {
         if ($dateObj < strtotime('30 day')) {
-          $fDate = date('D, F j', $dateObj) . ' <span class="soon">(only ' . floor($diff/60/60/24) . ' days!)</span>';
+          $fDate = date('D, F j', $dateObj) . ' <span class="soon">(only ' . floor($diff/60/60/24 + 1) . ' days!)</span>';
         } else {
           $fDate = date('D, F j', $dateObj);
         }
