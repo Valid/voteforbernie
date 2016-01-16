@@ -166,7 +166,7 @@
 
       <?php if ($state->under_18): ?>
         <h4>Only 17?</h4>
-        <p>In <?php echo $state->getTitle(); ?>, you can still vote in <?php echo $state->getTitle(); ?>'s <?php echo $state->type; ?> if you will be 18 years old by November 8, 2016.</p>
+        <p>You may still vote in <?php echo $state->getTitle(); ?>'s <?php echo $state->type; ?> if you will be 18 years old by November 8, 2016.</p>
       <?php endif; ?>
 
       <h4>Military/Overseas Voters</h4>
