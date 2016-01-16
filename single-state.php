@@ -133,7 +133,7 @@
       <?php } ?>
 
       <?php if ($state->hasCheckRegistrationLink()) { ?>
-        <p>Not sure if you are registered, or what you're registered as? Check your <a href="<?php echo $state->check_registration_link ?>" data-track="ChkLnk,<?php echo $state->state; ?>" target="_blank">current registration status</a>.</p>
+        <p>Not sure if you are registered, or what you're registered as? Check your <a href="<?php echo $state->check_registration_link ?>" data-track="ChkLnk,<?php echo $state->state; ?>" target="_blank">current registration status online</a>.</p>
       <?php } ?>
 
       <?php if ($state->hasCaucusLink()) { ?>
@@ -168,7 +168,7 @@
       <?php endif; ?>
 
       <h4>Military/Overseas Voters</h4>
-      <p>If you are a Military Voter or outside the United States, you can <a href="https://www.overseasvotefoundation.org/vote/VoterInformation.htm" data-track="Overseas,<?php echo $state->state; ?>" target="_blank">complete a ballot here</a>.</p>
+      <p>If you are a Military Voter or a United States citizen living abroad, you are able to <a href="https://www.overseasvotefoundation.org/vote/VoterInformation.htm" data-track="Overseas,<?php echo $state->state; ?>" target="_blank">complete a ballot here</a>.</p>
       <?php //<p>You have until TODO to request your ballot, and it must be submitted by TODO.</p> ?>
 
       <?php if ($state->hasAdditionalNote()): ?>
