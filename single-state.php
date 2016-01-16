@@ -140,8 +140,7 @@
       <?php } ?>
 
       <?php if ($state->hasCaucusLink()) { ?>
-        <h4>How to caucus in <?php echo $state->getTitle(); ?></h4>
-        <p><strong>Important! &mdash;</strong> Use the <a href="<?php echo $state->bern_advisory_link ?>" target="_blank" data-track="howCaucus,<?php echo $state->state; ?>">interactive caucus tool</a> to familiarize yourself with the process of participating in the <?php echo $state->getTitle(); ?> caucus.</p>
+        <a class="ui-btn" href="<?php echo $state->bern_advisory_link ?>" target="_blank" data-track="howCaucus,<?php echo $state->state; ?>">Learn how to Caucus in <?php echo $state->getTitle(); ?>!</a>
       <?php } ?>
 
       <?php if (false && $state->hasAbsenteeVoting()) { // Will re-enable after all absentee data is verified ?>
