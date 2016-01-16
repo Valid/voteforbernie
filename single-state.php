@@ -95,7 +95,7 @@
       <h3><?php echo $state->getTitle(); ?> Voter Information</h3>
       <div class="headsup">
         <h4>Heads Up!</h4>
-        <p><strong>Jan 15 &mdash;</strong> VoteForBernie just underwent a <strong><a href="/alerts/voteforbernie-two-point-oh">massive update</a></strong> with lots of new information being added. All information has been researched by myself and volunteers but mistakes can and do happen. To ensure you do not miss a deadline, check back here often, or sign up for the updates newsletter.</p>
+        <p><strong>Jan 16 &mdash;</strong> VoteForBernie just underwent a <strong><a href="/alerts/voteforbernie-two-point-oh">massive update</a></strong> with lots of new information being added. All information has been researched by myself and volunteers but mistakes can and do happen. To ensure you do not miss a deadline, check back here often, or sign up for the updates newsletter.</p>
         <p>This is a Grassroots resource, and we rely on the Grassroots to keep us informed! If you notice anything incorrect, please submit a correction from the button at the bottom of the page.</p>
         <p class="sig">Thank you for your understanding,<br>Jon Hughes, Creator of VoteForBernie.org</p>
       </div>
