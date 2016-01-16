@@ -25,7 +25,9 @@
 
                   <?php the_excerpt(); ?>
 
+                  <p><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">Read More</a>
                 </section>
+
 
               </article>
 
