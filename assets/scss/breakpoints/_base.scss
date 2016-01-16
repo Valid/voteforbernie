@@ -41,6 +41,7 @@ Stylesheet: Base Mobile Stylesheet
 
 .wf-active {
   &:before {
+    content: initial;
     transform: translate3d(0, -100%, 0);
     @include transition(all 0.5s ease);
   }
@@ -1316,6 +1317,7 @@ FOOTER STYLES
     .svg {
       height: 30px;
       margin: 0;
+      max-width: 120px;
     }
     p {
       margin: 5px 0;
@@ -1903,6 +1905,7 @@ FOOTER STYLES
   max-width: 900px;
   overflow: hidden;
   .not-state {
+    clear: both;
     font-family: $headerFont;
     font-size: 17px;
     margin-top: 30px;
