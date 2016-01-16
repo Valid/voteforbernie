@@ -52,10 +52,6 @@ class StateModel extends PostModel {
     }
   }
 
-  public function hasRegistration() {
-    return empty($this->no_registration);
-  }
-
   public function hasRegistrationLink() {
     return empty($this->register_link);
   }
