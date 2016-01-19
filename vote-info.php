@@ -132,7 +132,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                           <a class="ui-btn" href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="howTo,<?php echo $state->state; ?>">How to vote in <?php echo $state->getTitle(); ?></a>
 
 
-                          <?php if ($state->under_18 || $state->hasAdditionalNote()): ?>
+                          <?php if ($state->hasOnlineRegistration() || $state->under_18 || $state->hasAdditionalNote()): ?>
                             <div class="extra">
                               <?php if ($state->hasOnlineRegistration()) { ?>
                                 <p><strong>Online Registration Available!</strong></p>
