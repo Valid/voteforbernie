@@ -243,17 +243,6 @@
 
       <div class="np m-all t-all d-all">
         <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
-
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- State Bottom -->
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-3203899049474789"
-             data-ad-slot="8951090753"
-             data-ad-format="auto"></ins>
-        <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
       </div>
     </div>
 
