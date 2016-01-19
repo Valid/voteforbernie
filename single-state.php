@@ -11,7 +11,13 @@
   <div class="state-header init">
     <h2 class="slab">
       <span>How to vote for Bernie Sanders</span>
-      <strong class="state-name init">in <?php echo $state->getTitle(); ?></strong>
+      <strong class="state-name init">
+      <?php if ($state->state == 'da') { ?>
+        from Abroad
+      <?php } else { ?>
+        in <?php echo $state->getTitle(); ?>
+      <?php } ?>
+      </strong>
     </h2>
     <img class="svg" data-src="<?php echo get_template_directory_uri(); ?>/dist/images/svg/states/<?php echo $state->state; ?>.svg"/>
   </div>
@@ -93,12 +99,6 @@
 
     <div class="vote-content m-all t-3of4 d-4of5">
       <h3><?php echo $state->getTitle(); ?> Voter Information</h3>
-      <div class="headsup">
-        <h4>Heads Up!</h4>
-        <p><strong>Jan 16 &mdash;</strong> VoteForBernie just underwent a <strong><a href="/alerts/voteforbernie-two-point-oh">massive update</a></strong> with lots of new information being added. All information has been researched by myself and volunteers but mistakes can and do happen. To ensure you do not miss a deadline, check back here often, or sign up for the updates newsletter.</p>
-        <p>This is a Grassroots resource, and we rely on the Grassroots to keep us informed! If you notice anything incorrect, please submit a correction from the button at the bottom of the page.</p>
-        <p class="sig">Thank you for your understanding,<br>Jon Hughes, Creator of VoteForBernie.org</p>
-      </div>
       <?php if (!$state->hasRegistration()) { ?>
         <p>Good news! Because <?php echo $state->getTitle(); ?> doesn't have voter registration, you can vote for Bernie Sanders by just showing up and voting!</p>
 
