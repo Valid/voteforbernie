@@ -161,16 +161,20 @@
         <p>Early voting in <?php echo $state->getTitle(); ?> begins <?php echo date('F j', strtotime($state->early_voting_start)); ?> and ends on <?php echo date('F j', strtotime($state->early_voting_end)); ?>.</p>
       <?php } ?>
 
-      <h4>College Students</h4>
-      <p>If you are a college student <strong>not living in your home state</strong>, you can vote for Bernie in either your home state or in the state in which you are attending school!</p>
-
       <?php if ($state->under_18): ?>
         <h4>Only 17?</h4>
         <p>You may still vote in <?php echo $state->getTitle(); ?>'s <?php echo $state->type; ?> if you will be 18 years old by November 8, 2016.</p>
       <?php endif; ?>
 
-      <h4>Military/Overseas Voters</h4>
-      <p>If you are a Military Voter or a United States citizen living abroad, you are able to <a href="https://www.overseasvotefoundation.org/vote/VoterInformation.htm" data-track="Overseas,<?php echo $state->state; ?>" target="_blank">complete a ballot here</a>.</p>
+      <?php if ($state->state != 'da') { ?>
+        <h4>College Students</h4>
+        <p>If you are a college student <strong>not living in your home state</strong>, you can vote for Bernie in either your home state or in the state in which you are attending school!</p>
+
+
+        <h4>Military/Overseas Voters</h4>
+        <p>If you are a Military Voter or a United States citizen living abroad, you are able to <a href="https://www.overseasvotefoundation.org/vote/VoterInformation.htm" data-track="Overseas,<?php echo $state->state; ?>" target="_blank">complete a ballot here</a>.</p>
+
+      <?php } ?>
       <?php //<p>You have until TODO to request your ballot, and it must be submitted by TODO.</p> ?>
 
       <?php if ($state->hasAdditionalNote()): ?>
