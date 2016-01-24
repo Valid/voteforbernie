@@ -37,10 +37,10 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                   <tr>
                     <th>State</th>
                     <th>Date</th>
-                    <th>Registration Deadline</th>
                     <th>Type</th>
+                    <th>Registration Deadline</th>
+                    <th>Affiliation Deadline</th>
                     <th>To vote for Bernie:</th>
-                    <th>Get Out the Vote!</th>
                   </tr>
 
                   <?php foreach ($states as $state): ?>
@@ -49,15 +49,10 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                     <tr>
                       <td><a href="<?php echo esc_url( get_permalink($state->post) ); ?>" title="How to vote in <?php echo $state->getTitle(); ?>" data-track="schedule,<?php echo $state->state; ?>"><?php echo $state->getTitle(); ?></a></td>
                       <td><?php echo $helper->formatDate($state->primary_date); ?></td>
-                      <td>
-                        <?php echo $helper->formatDate($state->deadline_date); ?>
-                        <?php echo $helper->formatDate($state->aff_deadline_date); ?>
-                      </td>
                       <td><?php echo $state->status; ?> <?php echo $state->type; ?></td>
-                      <td>
-                        <a href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="scheduleBtn,<?php echo $state->state; ?>"><?php echo $helper->getActionText($state); ?><a/>
-                      </td>
-                      <td><a href="<?php echo esc_url( get_permalink($state->post) ); ?>#getinvolved" title="Help Bernie In <?php echo $state->getTitle(); ?>" data-track="scheduleGOTV,<?php echo $state->state; ?>">GOTV in <?php echo strtoupper($state->state); ?>!</a></td>
+                      <td><?php echo $helper->formatDate($state->deadline_date); ?></td>
+                      <td><?php echo $helper->formatDate($state->aff_deadline_date); ?></td>
+                      <td><a href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="scheduleBtn,<?php echo $state->state; ?>"><?php echo $helper->getActionText($state); ?><a/></td>
                     </tr>
                   <?php endforeach; ?>
                 </table>
