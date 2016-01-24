@@ -323,10 +323,10 @@ vfb.enhanceSharing = function () {
   viewport = updateViewportDimensions();
 
   if (viewport.width < 767) {
-    jQuery('.fb-like').detach().appendTo('#crestashareicon');
+    jQuery('.vfb-like').detach().appendTo('#crestashareicon');
   }
 
-  jQuery('.fb-like').velocity('transition.slideDownBigIn', { stagger: 0, opacity: 1 });
+  jQuery('.vfb-like').velocity('transition.slideDownBigIn', { stagger: 0, opacity: 1 });
   var $floatShareWrapper = jQuery('#crestashareicon'),
   $contentShareWrappers = jQuery('.cresta-share-icon').not($floatShareWrapper);
 

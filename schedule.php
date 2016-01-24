@@ -41,6 +41,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                     <th>Registration Deadline</th>
                     <th>Affiliation Deadline</th>
                     <th>To vote for Bernie:</th>
+                    <th>GOTV!</th>
                   </tr>
 
                   <?php foreach ($states as $state): ?>
@@ -52,7 +53,8 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                       <td><?php echo $state->status; ?> <?php echo $state->type; ?></td>
                       <td><?php echo $helper->formatDate($state->deadline_date); ?></td>
                       <td><?php if ($state->aff_deadline_date) { echo $helper->formatDate($state->aff_deadline_date); } ?></td>
-                      <td><a href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="scheduleBtn,<?php echo $state->state; ?>"><?php echo $helper->getActionText($state); ?><a/></td>
+                      <td><a href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="scheduleBtn,<?php echo $state->state; ?>"><?php echo $helper->getActionText($state); ?></a></td>
+                      <td><div class="fb-like" data-href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div></td>
                     </tr>
                   <?php endforeach; ?>
                 </table>
