@@ -21,9 +21,9 @@ class StateModel extends PostModel {
     'register_link',
     'online_reg',
     'same_day_registration',
+    'same_day_registration_restriction',
     'primary_date',
     'deadline_date',
-    'deadline_note',
     'aff_deadline_date',
     'early_voting_start',
     'early_voting_end',
@@ -110,6 +110,10 @@ class StateModel extends PostModel {
 
   public function hasSameDayRegistration() {
     return !empty($this->same_day_registration);
+  }
+
+  public function hasSameDayRegistrationRestriction() {
+    return !empty($this->same_day_registration_restriction);
   }
 
 }

@@ -45,7 +45,15 @@
             <p><?php echo $helper->getActionText($state); ?> by:
             <strong><?php echo $helper->formatDate($state->deadline_date); ?></strong>
             </p>
-            <?php if ($state->hasAffiliationDeadline()) { ?>
+            <?php if ($state->hasSameDayRegistration()) { ?>
+              <p><strong>Same-Day Registration</strong>
+                <?php echo $state->getTitle(); ?> has <em>Same-Day Registration</em> on <?php echo date('F j', strtotime($state->getPrimaryDate())); ?>
+                <?php if ($state->hasSameDayRegistrationRestriction()) {
+                  echo $state->same_day_registration_restriction;
+                } ?>
+              </p>
+            <?php } ?>
+            <?php if ($state->hasAffiliationDeadline() && !$helper->datePassed($state->aff_deadline_date)) { ?>
               <p><strong>Not a democrat?</strong> <?php echo $state->getTitle(); ?> has a <em>special deadline</em> for changing affiliation: <strong><?php echo $helper->formatDate($state->aff_deadline_date); ?>!</strong></p>
             <?php } ?>
           <?php } else { ?>
@@ -63,7 +71,7 @@
             <span><?php echo date('j', strtotime($state->getPrimaryDate())); ?></span>
             <em>(<?php echo date('l', strtotime($state->getPrimaryDate())); ?>)</em>
           </div>
-          <p>The <?php echo $state->getTitle(); ?> <?php echo $state->getTypeText(); ?> will be on: <strong><?php echo $helper->formatDate($state->getPrimaryDate()); ?></strong></p>
+          <p><?php echo $state->getTitle(); ?> <?php echo $state->getTypeText(); ?>: <strong><?php echo $helper->formatDate($state->getPrimaryDate()); ?></strong></p>
         </div>
       </div>
 
@@ -127,11 +135,16 @@
 
       <?php if ($state->hasAffiliationDeadline()) { ?>
         <p class="warning">In <?php echo $state->getTitle(); ?>, you must be affiliated as a democrat by <?php echo $helper->formatDate($state->aff_deadline_date); ?>, which is before the registration deadline!</p>
-      <?php } else if ($state->hasRegistration()) { ?>
+      <?php }
+      if ($state->hasRegistration()) { ?>
         <?php if ($state->hasSameDayRegistration()) { ?>
-          <p><?php echo $state->getTitle(); ?> has <strong>Same-Day Registration</strong> which allows you to register to vote at the <?php echo $state->type; ?> on <strong><?php echo $helper->formatDate($state->getPrimaryDate()); ?></strong> &mdash; However, you may encounter long lines. Skip the lines and register today!</p>
+          <p><?php echo $state->getTitle(); ?> has <strong>Same-Day Registration</strong> which allows you to register to vote at the <?php echo $state->type; ?> on <strong><?php echo $helper->formatDate($state->getPrimaryDate()); ?></strong>
+            <?php if ($state->hasSameDayRegistrationRestriction()) {
+              echo $state->same_day_registration_restriction;
+            } ?>
+          </p>
         <?php } else { ?>
-          <p>You have until <?php echo $helper->formatDate($state->deadline_date); ?> to register, but registration is open <strong>right now!</strong></p>
+          <p>You <strong>must</strong> be registered by <?php echo $helper->formatDate($state->deadline_date); ?>.</p>
         <?php } ?>
       <?php } ?>
 

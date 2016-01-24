@@ -134,5 +134,17 @@ class VoteInfoHelper {
     return $fDate;
   }
 
+  public function datePassed($date) {
+    if (!empty($date)) {
+      $dateObj = strtotime($date);
+      $diff = $dateObj - strtotime('now');
+      if ($diff < 0) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+
 
 }
