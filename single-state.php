@@ -31,6 +31,13 @@
       <p class="meaning"><?php echo $helper->getExplanationText($state); ?></p>
     </div>
 
+    <?php if ($state->hasVideo()) { ?>
+      <div class="video-slot m-all t-all d-all">
+        <h3>How to participate in <?php echo $state->getTitle(); ?> <?php echo $state->type; ?>:</h3>
+        <?php echo wp_oembed_get($state->state_video); ?>
+      </div>
+    <?php } ?>
+
     <div class="info-wrapper m-all t-all d-all">
       <div class="m-1of2 t-1of3 d-1of3">
         <div class="what">

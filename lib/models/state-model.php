@@ -7,6 +7,7 @@ class StateModel extends PostModel {
     'state',
     'denonym',
     'type',
+    'state_video',
     'bern_advisory_link',
     'status',
     'campaign_special_need',
@@ -58,6 +59,10 @@ class StateModel extends PostModel {
 
   public function hasRegistration() {
     return empty($this->no_registration);
+  }
+
+  public function hasVideo() {
+    return !empty($this->state_video);
   }
 
   public function hasCaucusLink() {
