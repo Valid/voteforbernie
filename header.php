@@ -116,7 +116,7 @@
             <?php // TODO: Pull from ACF ?>
             <?php // <strong>VoteForBernie Facelift &mdash;</strong> New look, new content, same goal: <strong>Get Out The Vote!</strong> <a href="/alerts/voteforbernie-two-point-oh">See What's New</a> ?>
             <?php // <strong>WE DID IT! &mdash;</strong> $1,000,000 raised for Bernie by the grassroots community! <a href="http://berniesanders.com/reddit" data-track="CTA,1mdonate">Donate to Bernie!</a> ?>
-            <strong><?php echo daysAway('Feb 1, 2016') ?> &mdash;</strong> Bernie needs our help in Iowa <a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" data-track="ActionBar,debateDonate">Donate to Bernie!</a>
+            <strong>#NotMeUs &mdash;</strong> <?php echo daysAway('Feb 1, 2016') ?> for Iowa! <a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" data-track="ActionBar,iowaDonate">Donate to Bernie</a>
             <div class="fb-like vfb-like" data-href="http://voteforbernie.org/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
           </div>
           <div id="inner-header" class="branding wrap">
