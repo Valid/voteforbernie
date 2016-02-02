@@ -116,7 +116,8 @@
             <?php // TODO: Pull from ACF ?>
             <?php // <strong>VoteForBernie Facelift &mdash;</strong> New look, new content, same goal: <strong>Get Out The Vote!</strong> <a href="/alerts/voteforbernie-two-point-oh">See What's New</a> ?>
             <?php // <strong>WE DID IT! &mdash;</strong> $1,000,000 raised for Bernie by the grassroots community! <a href="http://berniesanders.com/reddit" data-track="CTA,1mdonate">Donate to Bernie!</a> ?>
-            <strong>#NotMeUs &mdash;</strong> <?php echo daysAway('Feb 9, 2016') ?> for New Hampshire! <a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" data-track="ActionBar,nhDonate">Donate to Bernie</a>
+            <?php // <strong>#NotMeUs &mdash;</strong> echo daysAway('Feb 9, 2016') for New Hampshire! <a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" data-track="ActionBar,nhDonate">Donate to Bernie</a> ?>
+            <strong>#IowaCaucus &mdash;</strong> CNN Says Bernie Supporters will BREAK THE INTERNET with donations. PROVE THEM RIGHT <a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" data-track="CTA,cnnDonate">Donate to Bernie!</a>
             <div class="fb-like vfb-like" data-href="http://voteforbernie.org/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
           </div>
           <div id="inner-header" class="branding wrap">
