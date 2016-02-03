@@ -327,8 +327,9 @@ vfb.enhanceSharing = function () {
   }
 
   jQuery('.vfb-like').velocity('transition.slideDownBigIn', { stagger: 0, opacity: 1 });
-  var $floatShareWrapper = jQuery('#crestashareicon'),
-  $contentShareWrappers = jQuery('.cresta-share-icon').not($floatShareWrapper);
+  var $allContentShareWrappers = jQuery('.cresta-share-icon'),
+  $floatShareWrapper = jQuery('#crestashareicon'),
+  $contentShareWrappers = $allContentShareWrappers.not($floatShareWrapper);
 
   addCounter = function ($parent, count) {
     $parent.append('<span class="cresta-the-count">' + count + '</span>');
@@ -348,6 +349,14 @@ vfb.enhanceSharing = function () {
     findCounter('twitter');
     findCounter('googleplus');
   }
+
+  // Track social shares
+  $allContentShareWrappers.on('click', '.sbutton', function (event) {
+    var type = jQuery(this).get(0).id.split('-')[0],
+      source = jQuery('.state-page').length ? jQuery('.state-page').data('stateCode') : window.location.pathname;
+
+    vfb.trackEvent(type + 'Share', source);
+  });
 };
 
 vfb.explain = function (legendItem) {
