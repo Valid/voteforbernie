@@ -24,7 +24,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
               <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
                 { <?php foreach ($states as $state): ?>
-                <?php echo $state->state; ?>": <?php echo strtotime($state->getPrimaryDate()); ?>,
+                "<?php echo $state->state; ?>": <?php echo strtotime($state->getPrimaryDate()); ?>,
                 <?php endforeach; ?> }
 
 
