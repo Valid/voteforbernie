@@ -231,7 +231,6 @@
 
     <div class="np m-all t-all d-all newsletter">
       <p>Dates and deadlines can change at any time!</p>
-      <p>VoteForBernie.org has <strong>freshly researched data</strong>. Reporting incorrect information is encouraged!</p>
       <p>Sign up below to be reminded of deadlines and be notified of important changes in <?php echo $state->getTitle(); ?></p>
       <?php echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" ); ?>
       <div class="updated">
