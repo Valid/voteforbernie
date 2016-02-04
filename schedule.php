@@ -79,6 +79,7 @@ date_default_timezone_set('America/New_York');
               </div>
               <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
               <p class="map-link np"><a href="<?php echo home_url(); ?>">Not registered to vote? <span>Find your state!</span></a></p>
+              <?php echo do_shortcode('[fbcomments]'); ?>
              </div>
              </section>
 
