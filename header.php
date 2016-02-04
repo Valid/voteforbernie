@@ -118,7 +118,7 @@
             <?php // <strong>WE DID IT! &mdash;</strong> $1,000,000 raised for Bernie by the grassroots community! <a href="http://berniesanders.com/reddit" data-track="CTA,1mdonate">Donate to Bernie!</a> ?>
             <?php // <strong>#NotMeUs &mdash;</strong> echo daysAway('Feb 9, 2016') for New Hampshire! <a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" data-track="ActionBar,nhDonate">Donate to Bernie</a> ?>
             <?php // <strong>#IowaCaucus &mdash;</strong> CNN Says Bernie Supporters will BREAK THE INTERNET with donations. PROVE THEM RIGHT <a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" data-track="CTA,cnnDonate">Donate to Bernie!</a> ?>
-            <strong>#GetOutTheVote &mdash;</strong> 15 deadlines passed, 6 more this week!</strong> <a href="/schedule">See Primary Schedule</a>
+            <strong>#GetOutTheVote &mdash;</strong> 15 deadlines passed, 6 more this week!</strong> <a href="/schedule/" data-track="CTA,schedule">See Primary Schedule</a>
             <div class="fb-like vfb-like" data-href="http://voteforbernie.org/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
           </div>
           <div id="inner-header" class="branding wrap">
