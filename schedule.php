@@ -50,12 +50,12 @@ date_default_timezone_set('America/New_York');
                   <?php echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" ); ?>
                   <p class="tentative">Last updated on <?php echo $mostRecentStateUpdate ?>.</p>
                   <p class="map-link np"><a href="<?php echo home_url(); ?>">Not registered to vote? <span>Find your state!</span></a></p>
+                  <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
                 </div>
 
                 <section class="entry-content cf" itemprop="articleBody">
                   <div class="page-content">
                     <div class="states wrap">
-                    <?php // if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
                 <table class="state-table tablesorter tablesaw tablesaw-stack" data-tablesaw-mode="stack" data-sortlist="[[3,0]]">
                   <thead>
                     <tr>
@@ -77,6 +77,7 @@ date_default_timezone_set('America/New_York');
                   </tbody>
                 </table>
               </div>
+              <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
               <p class="map-link np"><a href="<?php echo home_url(); ?>">Not registered to vote? <span>Find your state!</span></a></p>
              </div>
              </section>
