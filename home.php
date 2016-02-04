@@ -6,7 +6,7 @@
 
             <main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
-              <h1 class="page-title">Voter Alerts <span>Stay Informed. Stay Engaged.</span></h1>
+              <h1 class="voter-alerts">Voter Alerts <span>Stay Informed.</span></h1>
 
               <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 

@@ -114,24 +114,49 @@ class VoteInfoHelper {
     return isset(self::$actions[$state->status]);
   }
 
+
   public function formatDate($date) {
     if (!empty($date)) {
       $dateObj = strtotime($date);
-      $diff = $dateObj - strtotime('now');
-      if ($diff < 0) {
+      $today = strtotime(date('Ymd', strtotime('now')));
+
+      $diff = $dateObj - $today;
+      $daysAway = floor($diff/60/60/24);
+
+      // return $daysAway;
+
+      if ($daysAway == 0) {
+        $fDate = date('D, F j', $dateObj) . ' <span class="now">(today!)</span>';
+      } else if ($daysAway == 1) {
+        $fDate = date('D, F j', $dateObj) . ' <span class="now">(tomorrow!)</span>';
+      } else if ($daysAway < 0) {
         $fDate = '<span class="passed">' . $fDate = date('F j, Y', $dateObj) . '</span>';
+      } else if ($daysAway < 7) {
+        $fDate = date('D, F j', $dateObj) . ' <span class="looming">(' . $daysAway . ' more days!)</span>';
+      } else if ($daysAway < 30) {
+        $fDate = date('D, F j', $dateObj) . ' <span class="soon">(' . $daysAway . ' days away)</span>';
       } else {
-        if ($dateObj < strtotime('30 day')) {
-          $fDate = date('D, F j', $dateObj) . ' <span class="soon">(only ' . floor($diff/60/60/24 + 1) . ' days!)</span>';
-        } else {
-          $fDate = date('D, F j', $dateObj);
-        }
+        $fDate = date('D, F j', $dateObj);
       }
     } else {
       $fDate = 'TBD';
     }
 
     return $fDate;
+  }
+
+  public function daysAway($date) {
+    if (!empty($date)) {
+      $dateObj = strtotime($date);
+      $today = strtotime(date('Ymd', strtotime('now')));
+
+      $diff = $dateObj - $today;
+      $daysAway = floor($diff/60/60/24);
+    } else {
+      $daysAway = null;
+    }
+
+    return $daysAway;
   }
 
   public function datePassed($date) {

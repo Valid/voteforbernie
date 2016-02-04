@@ -117,12 +117,12 @@ vfb.chooseState = function (stateCode) {
   $states.find('.active').removeClass('active');
   $state.addClass('active');
 
-  if (history && history.replaceState) {
-    history.replaceState({}, '', '#' + stateCode);
-  }
-
   $mapState.velocity('callout.bounce', { complete: function () {
-    $newsletter.appendTo($state).find('select').val($state.find('h3').text());
+    if ($state.is('tr')) {
+      $newsletter.insertAfter($state).wrap('<tr><td colspan="4"></td></tr>').find('select').val($state.find('.name').find('span').text());
+    } else {
+      $newsletter.appendTo($state).find('select').val($state.find('h3').text());
+    }
     jQuery('html, body').animate({ scrollTop: $state.offset().top - 100 }, 1000);
   }});
 
@@ -204,7 +204,9 @@ if ($top.length) {
 vfb.buildMap = function () {
  // Build map if available
 
-  if (vfb.map.length) {
+ var $primaryMap = jQuery('.primary-map');
+
+  if ($primaryMap.length) {
     vfb.resizeMap();
 
     var open = '#0571b0',
@@ -214,7 +216,7 @@ vfb.buildMap = function () {
     caucusClosed = '#B94F4F',
     $states = jQuery('.states');
 
-    vfb.map.vectorMap({
+    $primaryMap.vectorMap({
         map: 'usa_en',
         backgroundColor: null,
         borderColor: '#fff',
@@ -465,6 +467,85 @@ vfb.stateInit = function () {
   }
 };
 
+vfb.scheduleInit = function () {
+  var $scheduleMap = jQuery('.schedule-map'),
+    $states = jQuery('.states');
+
+  if ($scheduleMap.length) {
+    vfb.resizeMap();
+
+    $scheduleMap.vectorMap({
+      map: 'usa_en',
+      backgroundColor: null,
+      borderColor: '#fff',
+      color: '#323944',
+      hoverColor: '#c9dfaf',
+      selectedColor: '#c9dfaf',
+      hoverOpacity: 0.5,
+      enableZoom: false,
+      showTooltip: true,
+      selectedRegion: null,
+      onLabelShow: function (element, label, code) {
+        var $stateDetails = $states.find('.' + code),
+          labelText;
+
+        if ($stateDetails.length) {
+          labelText = 'Primary/Caucus Date: <strong>' + $stateDetails.find('.prim').find('span').eq(0).text()  + '</strong><br>';
+          labelText += 'Registration Deadline: <strong>' + $stateDetails.find('.reg').find('span').eq(0).text() + '</strong><br>';
+          if ($stateDetails.find('.aff').find('span').text().length) {
+            labelText += 'Affiliation Deadline: <strong>' + $stateDetails.find('.aff').find('span').eq(0).text() + '</strong>';
+          }
+        } else {
+          labelText = 'To Be Announced';
+        }
+
+        jQuery(label).html('<strong>' + jQuery(label).text() + '</strong><br>' + labelText);
+      },
+      onRegionClick: function (element, code, region) {
+        vfb.trackEvent('Schedule State click', code);
+        vfb.chooseState(code);
+      }
+    });
+
+    vfb.map.find('.jqvmap-region').velocity('transition.perspectiveDownIn', { opacity: 1 });
+
+    // Animate in map colors
+    var delay = 0;
+    var $stateList = $states.find('.state-data');
+
+
+    $stateList.each(function (i) {
+      var $state = jQuery(this),
+        stateCode = $state.data('code'),
+        $stateOnMap = jQuery('#jqvmap1_' + stateCode),
+        $daysAway = $state.find('.prim').data('text');
+
+
+      if ($stateOnMap.length) {
+        setTimeout(function () {
+          if ($daysAway < 0) {
+            $stateOnMap.velocity({ fill: '#f4a582' });
+          } else if ($daysAway < 7) {
+            $stateOnMap.velocity({ fill: '#ca0020' });
+          } else if ($daysAway < 14) {
+            $stateOnMap.velocity({ fill: '#B94F4F' });
+          } else if ($daysAway < 30) {
+            $stateOnMap.velocity({ fill: '#0571b0' });
+          } else {
+            $stateOnMap.velocity({ fill: '#92c5de' });
+          }
+
+          if (i === $stateList.length - 1) {
+
+          }
+        }, delay);
+        delay += 15;
+      }
+    });
+  }
+
+};
+
 vfb.handleNewsletters = function () {
   jQuery('body').on('submit' ,'.yiks-mailchimp-custom-form', function() {
     // Don't show newsletter popup if subbed
@@ -476,6 +557,10 @@ vfb.handleNewsletters = function () {
   // if (document.cookie.indexOf('vfbsub') === -1) {
   // }
 
+};
+
+vfb.tableInit = function () {
+  jQuery('.tablesorter').tablesorter();
 };
 
 /*
@@ -498,6 +583,10 @@ jQuery(document).ready(function($) {
   vfb.stateInit();
 
   vfb.trackElements();
+
+  vfb.scheduleInit();
+
+  vfb.tableInit();
 
   activeCallback.add(function () {
 

@@ -21,7 +21,7 @@
     </h2>
     <img class="svg" data-src="<?php echo get_template_directory_uri(); ?>/dist/images/svg/states/<?php echo $state->state; ?>.svg"/>
   </div>
-  <p class="not-state np"><a href="<?php echo home_url(); ?>">Not from <?php echo $state->getTitle(); ?>? <span>Choose your state!</span></a></p>
+  <p class="map-link np"><a href="<?php echo home_url(); ?>">Not from <?php echo $state->getTitle(); ?>? <span>Choose your state!</span></a></p>
 
 
   <div class="state-info <?php echo $state->state; ?> <?php echo $helper->getStatusClass($state); ?>">

@@ -10,11 +10,13 @@ $stateService = new StateService();
 $helper = new VoteInfoHelper();
 $states = $stateService->getStatesByDate();
 $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
+
+date_default_timezone_set('America/New_York');
 ?>
 
 <?php get_header(); ?>
 
-      <div class="vote-info">
+      <div class="schedule-page">
 
 
         <div>
@@ -24,41 +26,58 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
               <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
               <article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-
                 <header class="article-header">
-                  <h1 class="page-title"><?php the_title(); ?></h1>
+                  <h2 class="page-title">Primary <strong>Schedule</strong> and <strong>Deadlines</strong></h2>
+                  <div class="state-select">
+                    <p>See deadlines for <span class="no-mobile">your state by clicking it or</span>
+                      <select class="state-selector">
+                        <option>Select Your State</option>
+                        <?php foreach ($states as $state): ?>
+                          <option value="<?php echo $state->state; ?>"><?php echo $state->getTitle(); ?></option>
+                        <?php endforeach; ?>
+                      </select>
+                    </p>
+                  </div>
                 </header>
+
+                <div class="map-container">
+                  <div id="vmap" class="schedule-map"></div>
+                </div>
+
+                <div class="m-all t-all d-all sign-up-notice newsletter">
+                  <p>Dates and deadlines can change at any time.</p>
+                  <p>Sign up to be reminded of deadlines and important changes in your state</p>
+                  <?php echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" ); ?>
+                  <p class="tentative">Last updated on <?php echo $mostRecentStateUpdate ?>.</p>
+                  <p class="map-link np"><a href="<?php echo home_url(); ?>">Not registered to vote? <span>Find your state!</span></a></p>
+                </div>
 
                 <section class="entry-content cf" itemprop="articleBody">
                   <div class="page-content">
                     <div class="states wrap">
                     <?php // if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
-                <table>
-                  <tr>
-                    <th>State</th>
-                    <th>Date</th>
-                    <th>Type</th>
-                    <th>Registration Deadline</th>
-                    <th>Affiliation Deadline</th>
-                    <th>To vote for Bernie:</th>
-                    <th>GOTV!</th>
-                  </tr>
-
-                  <?php foreach ($states as $state): ?>
-
-
+                <table class="state-table tablesorter tablesaw tablesaw-stack" data-tablesaw-mode="stack" data-sortlist="[[3,0]]">
+                  <thead>
                     <tr>
-                      <td><a href="<?php echo esc_url( get_permalink($state->post) ); ?>" title="How to vote in <?php echo $state->getTitle(); ?>" data-track="schedule,<?php echo $state->state; ?>"><?php echo $state->getTitle(); ?></a></td>
-                      <td><?php echo $helper->formatDate($state->primary_date); ?></td>
-                      <td><?php echo $state->status; ?> <?php echo $state->type; ?></td>
-                      <td><?php echo $helper->formatDate($state->deadline_date); ?></td>
-                      <td><?php if ($state->aff_deadline_date) { echo $helper->formatDate($state->aff_deadline_date); } ?></td>
-                      <td><a href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-track="scheduleBtn,<?php echo $state->state; ?>"><?php echo $helper->getActionText($state); ?></a></td>
-                      <td><div class="fb-like" data-href="<?php echo esc_url( get_permalink($state->post) ); ?>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div></td>
+                      <th scope="col" data-tablesaw-priority="persist">State</th>
+                      <th scope="col" data-tablesaw-priority="4">Affiliate By</th>
+                      <th scope="col" data-tablesaw-priority="3">Register By</th>
+                      <th scope="col" data-tablesaw-priority="2">Primary / Caucus Date</th>
                     </tr>
-                  <?php endforeach; ?>
+                  </thead>
+                  <tbody>
+                    <?php foreach ($states as $state): ?>
+                      <tr class="state-data <?php echo $state->state; ?>" data-code="<?php echo $state->state; ?>">
+                        <td class="name"><a href="<?php echo esc_url( get_permalink($state->post) ); ?>" title="How to vote in <?php echo $state->getTitle(); ?>" data-track="schedule,<?php echo $state->state; ?>"><?php echo $state->getTitle(); ?></a></td>
+                        <td class="aff" data-text="<?php echo $helper->daysAway($state->aff_deadline_date); ?>"><?php if ($state->aff_deadline_date) { echo $helper->formatDate($state->aff_deadline_date); } ?></td>
+                        <td class="reg" data-text="<?php echo $helper->daysAway($state->deadline_date); ?>"><?php echo $helper->formatDate($state->deadline_date); ?></td>
+                        <td class="prim" data-text="<?php echo $helper->daysAway($state->primary_date); ?>"><?php echo $helper->formatDate($state->primary_date); ?></td>
+                      </tr>
+                    <?php endforeach; ?>
+                  </tbody>
                 </table>
               </div>
+              <p class="map-link np"><a href="<?php echo home_url(); ?>">Not registered to vote? <span>Find your state!</span></a></p>
              </div>
              </section>
 

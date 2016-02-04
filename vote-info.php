@@ -18,7 +18,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
       <div class="vote-info">
 
         <div class="map-intro">
-          <h2>Will you be able to <strong>Vote for Bernie?</strong></h2>
+          <h2 class="page-title">Will you be able to <strong>Vote for Bernie?</strong></h2>
           <div class="state-select">
             <p>Learn how to vote in <span class="no-mobile">your state by clicking it or</span>
               <select class="state-selector">
@@ -47,7 +47,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
           </div>
         </div>
         <div class="map-container">
-          <div id="vmap"></div>
+          <div id="vmap" class="primary-map"></div>
         </div>
 
 
@@ -60,7 +60,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
               <article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
                 <header class="article-header">
-                  <h1 class="page-title">Why is voting in the primaries important?</h1>
+                  <h2 class="page-title"><strong>Why</strong> is voting in the primaries important?</h2>
                   <div class="m-all t-3of4 d-4of5">
                     <?php the_content(); ?>
                   </div>
