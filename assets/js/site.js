@@ -553,6 +553,42 @@ vfb.handleNewsletters = function () {
     document.cookie = 'wBounce=true';
   });
 
+  // Find state via zipcode
+  var $newsletters = jQuery('.yks-mailchimpFormContainer'),
+    $zipcode = $newsletters.find('.yks-mc-input-zip-code'),
+    $state = $newsletters.find('.yks-mc-input-state'),
+    $submit = $newsletters.find('.ykfmc-submit');
+
+  var isValidZip = function(zip) {
+     return /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(zip);
+  };
+
+
+  $submit.addClass('disabled');
+
+  $newsletters.addClass('has-js');
+
+  $zipcode.on('input', function () {
+    var zip = jQuery(this).val();
+    if (isValidZip(zip)) {
+      jQuery.get('http://api.zippopotam.us/us/' + zip, function (data) {
+        $submit.removeClass('disabled');
+        if (data && data.places) {
+          $state.val(data.places[0].state);
+        } else {
+          $newsletters.removeClass('has-js');
+        }
+      })
+      .fail(function () {
+        $submit.removeClass('disabled');
+        $newsletters.removeClass('has-js');
+      });
+    }
+  });
+
+
+
+
   // Check for newsletter cookie
   // if (document.cookie.indexOf('vfbsub') === -1) {
   // }

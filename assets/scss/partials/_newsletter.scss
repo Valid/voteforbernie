@@ -1,8 +1,8 @@
 // Email List Signup
 .yks-mailchimpFormContainer {
   background-color: $white;
-  border-radius: 2px;
   border: 1px solid #9b9b98;
+  border-radius: 2px;
   font-size: 13px;
   margin: 0 auto;
   max-width: 600px;
@@ -83,6 +83,10 @@
       &:hover {
         background-color: lighten($blue, 10%);
       }
+      &.disabled {
+        background-color: $meta-gray !important;
+        pointer-events: none;
+      }
     }
   }
   .disclaimer {
@@ -92,10 +96,29 @@
     margin: 15px 0 10px!important;
     text-align: center;
   }
+  &.has-js {
+    .yks-mc-form-row-zip-code {
+      width: 100%;
+    }
+    .yks-mc-form-row-state {
+      display: none;
+    }
+  }
 }
 
 // Newsletter sidebar signup
-@media (min-width: 766px) {
+@media (min-width: 484px) {
+  .yks-mailchimpFormContainer {
+    &.has-js {
+      .yks-mc-form-row-email-address {
+        width: 48%;
+      }
+      .yks-mc-form-row-zip-code {
+        float: right;
+        width: 49%;
+      }
+    }
+  }
   .sidebar {
     .yks-mailchimpFormContainer {
       .yks-mc-form-row-email-address {
@@ -104,6 +127,12 @@
       }
       .yks-mc-form-row-zip-code, .yks-mc-form-row-state {
         width: 48%;
+      }
+      &.has-js {
+        .yks-mc-form-row-zip-code {
+          float: none;
+          width: 100%;
+        }
       }
     }
   }
