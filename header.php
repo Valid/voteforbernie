@@ -116,7 +116,7 @@
             <?php // TODO: Pull from ACF ?>
             <?php // <strong>VoteForBernie Facelift &mdash;</strong> New look, new content, same goal: <strong>Get Out The Vote!</strong> <a href="/alerts/voteforbernie-two-point-oh">See What's New</a> ?>
             <?php // <strong>WE DID IT! &mdash;</strong> $1,000,000 raised for Bernie by the grassroots community! <a href="http://berniesanders.com/reddit" data-track="CTA,1mdonate">Donate to Bernie!</a> ?>
-            <strong>#FundTheBern &mdash;</strong> New Hampshire is voting today <a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" data-track="ActionBar,msnbcDonate">Donate to Bernie!</a>
+            <strong>#FundTheBern &mdash;</strong> Bernie is projected winner of New Hampshire by over 10%! <a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" data-track="ActionBar,msnbcDonate">Donate to Bernie</a>
             <?php // <strong>#DebateWithBernie &mdash;</strong> Feeling the Bern after the debate?  <a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" data-track="ActionBar,msnbcDonate">Donate to Bernie!</a> ?>
             <?php // <strong>#GetOutTheVote &mdash;</strong> 15 deadlines passed, 6 more this week!</strong> <a href="/schedule/" data-track="CTA,schedule">See Primary Schedule</a> ?>
             <div class="fb-like vfb-like" data-href="http://voteforbernie.org/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
