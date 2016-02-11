@@ -28,6 +28,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                 <?php endforeach; ?>
               </select>
             </p>
+            <p class="democrats-abroad">Not in the States? Join <a href="state/democrats-abroad/">Democrats Abroad</a></p>
           </div>
           <ul class="legend">
             <li class="closed" data-type="closed">Closed Primary</li>
@@ -61,20 +62,20 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
 
                 <header class="article-header">
                   <h2 class="page-title"><strong>Why</strong> is voting in the primaries important?</h2>
-                  <div class="m-all t-3of4 d-4of5">
+                  <div class="m-all t-all d-all">
+                    <div class="np gaunit">
+                      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                      <!-- In Intro Text -->
+                      <ins class="adsbygoogle"
+                           style="display:block"
+                           data-ad-client="ca-pub-3203899049474789"
+                           data-ad-slot="8959909552"
+                           data-ad-format="auto"></ins>
+                      <script>
+                      (adsbygoogle = window.adsbygoogle || []).push({});
+                      </script>
+                    </div>
                     <?php the_content(); ?>
-                  </div>
-                  <div class="np m-all t-1of4 d-1of5 last-col gaunit">
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- Beside Intro Text -->
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-client="ca-pub-3203899049474789"
-                         data-ad-slot="4667165153"
-                         data-ad-format="auto"></ins>
-                    <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
                   </div>
 
                   <div class="m-all t-all d-all sign-up-notice newsletter">

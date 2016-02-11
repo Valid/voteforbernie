@@ -21,7 +21,13 @@
     </h2>
     <img class="svg" data-src="<?php echo get_template_directory_uri(); ?>/dist/images/svg/states/<?php echo $state->state; ?>.svg"/>
   </div>
-  <p class="map-link np"><a href="<?php echo home_url(); ?>">Not from <?php echo $state->getTitle(); ?>? <span>Choose your state!</span></a></p>
+  <p class="map-link np"><a href="<?php echo home_url(); ?>">
+  <?php if ($state->state == 'da') { ?>
+    Not living abroad?
+  <?php } else { ?>
+    Not from <?php echo $state->getTitle(); ?>?
+  <?php } ?>
+  <span>Choose your state!</span></a></p>
 
 
   <div class="state-info <?php echo $state->state; ?> <?php echo $helper->getStatusClass($state); ?>">
@@ -61,7 +67,7 @@
               </p>
             <?php } ?>
             <?php if ($state->hasAffiliationDeadline() && !$helper->datePassed($state->aff_deadline_date)) { ?>
-              <p><strong>Not a democrat?</strong> <?php echo $state->getTitle(); ?> has a <em>special deadline</em> for changing affiliation: <strong><?php echo $helper->formatDate($state->aff_deadline_date); ?>!</strong></p>
+              <p><strong>Not a democrat?</strong> <?php echo $state->getTitle(); ?> has a <em>special deadline</em> for changing affiliation: <strong><?php echo $helper->formatDate($state->aff_deadline_date); ?></strong></p>
             <?php } ?>
           <?php } else { ?>
             <h3>No Registration!</h3>
@@ -97,7 +103,10 @@
     </div>
 
     <div class="share np m-all t-all d-all">
-      <?php if ($state->status !== 'open') { ?>
+      <?php if ($state->state == 'da') { ?>
+        <h3>Didn't know you could vote from abroad?</h3>
+        <p>Many Americans living outside the country don't know that they can participate.</p>
+      <?php } else if ($state->status !== 'open') { ?>
         <h3>Didn't know about <?php echo $state->status ?> <?php echo $state->type; ?>? You're not alone.</h3>
         <p>People are planning to vote for Bernie in <?php echo $state->getTitle(); ?>, but they <strong>will not be able to!</strong></p>
       <?php } else { ?>
@@ -113,7 +122,12 @@
     </div>
 
     <div class="vote-content m-all t-3of4 d-4of5">
-      <h3><?php echo $state->getTitle(); ?> Voter Information</h3>
+      <?php if ($state->state == 'da') { ?>
+        <h3>How to vote from abroad</h3>
+      <?php } else { ?>
+        <h3><?php echo $state->getTitle(); ?> Voter Information</h3>
+      <?php } ?>
+      <h4>Get Registered</h4>
       <?php if (!$state->hasRegistration()) { ?>
         <p>Good news! Because <?php echo $state->getTitle(); ?> doesn't have voter registration, you can vote for Bernie Sanders by just showing up and voting!</p>
 
@@ -163,6 +177,17 @@
         <a class="ui-btn" href="<?php echo $state->bern_advisory_link ?>" target="_blank" data-track="howCaucus,<?php echo $state->state; ?>">Learn how to Caucus in <?php echo $state->getTitle(); ?>!</a>
       <?php } ?>
 
+      <?php if($state->hasVoteHowTo()) { ?>
+        <h4>Vote!</h4>
+        <?php echo $state->how_to_vote; ?>
+      <?php } ?>
+
+      <?php if($state->hasEligibility()) { ?>
+        <h4>Eligibility</h4>
+        <p>To vote in the <?php echo $state->getTitle(); ?> <?php echo $state->getTypeText(); ?> you must meet the following criteria:
+        <?php echo $state->eligibility; ?>
+      <?php } ?>
+
       <?php if (false && $state->hasAbsenteeVoting()) { // Will re-enable after all absentee data is verified ?>
         <h4>Vote By Mail</h4>
         <p><strong>Being busy or working</strong> on election day is the <strong>most common reason</strong> for not voting according to the U.S. Census. This is completely understandable, and will continue to be a problem until <a href="http://www.sanders.senate.gov/democracyday" data-track="DemDay,<?php echo $state->state; ?>" target="_blank">election day becomes a national holiday</a>!</p>
@@ -191,8 +216,8 @@
         <p>If you are a college student <strong>not living in your home state</strong>, you can vote for Bernie in either your home state or in the state in which you are attending school!</p>
 
         <?php if ($state->type != 'caucuses') { ?>
-          <h4>Military/Overseas Voters</h4>
-          <p>If you are a Military Voter or a United States citizen living abroad, you are able to <a href="https://www.overseasvotefoundation.org/vote/VoterInformation.htm" data-track="Overseas,<?php echo $state->state; ?>" target="_blank">complete a ballot here</a>.</p>
+          <h4>Military Voters</h4>
+          <p>If you are a Military Voter living abroad, you are able to <a href="https://www.overseasvotefoundation.org/vote/VoterInformation.htm" data-track="Overseas,<?php echo $state->state; ?>" target="_blank">complete a ballot here</a> to vote for Bernie.</p>
         <?php } ?>
 
 
@@ -215,7 +240,6 @@
         <li>Phone: <?php echo $state->state_phone; ?></li>
       </ul>
       <p>Find other Bernie supporters and get help from <?php echo $state->discussion_link; ?></p>
-
     </div>
 
     <div class="np m-all t-1of4 d-1of5 last-col gaunit">
@@ -232,9 +256,11 @@
     </div>
 
     <div class="np m-all t-all d-all newsletter">
-      <p>Dates and deadlines can change at any time!</p>
-      <p>Sign up below to be reminded of deadlines and be notified of important changes in <?php echo $state->getTitle(); ?></p>
-      <?php echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" ); ?>
+      <?php if ($state->state != 'da') { ?>
+        <p>Dates and deadlines can change at any time!</p>
+        <p>Sign up below to be reminded of deadlines and be notified of important changes in <?php echo $state->getTitle(); ?></p>
+        <?php echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" ); ?>
+      <?php } ?>
       <div class="updated">
         <p><?php echo $state->getTitle(); ?> was last updated on <?php the_modified_time('F j, Y'); ?> <a href="/contact" class="correction-btn ui-btn">submit correction</a></p>
         <?php echo do_shortcode( '[contact-form-7 id="157" title="Submit Correction" html_class="submit-correction"]' ); ?>

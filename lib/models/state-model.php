@@ -10,6 +10,8 @@ class StateModel extends PostModel {
     'state_video',
     'bern_advisory_link',
     'status',
+    'how_to_vote',
+    'eligibility',
     'campaign_special_need',
     'special_explanation',
     'extra_explanation',
@@ -103,6 +105,14 @@ class StateModel extends PostModel {
 
   public function hasCampaignNeed() {
     return !empty($this->campaign_special_need);
+  }
+
+  public function hasVoteHowTo() {
+    return !empty($this->how_to_vote);
+  }
+
+  public function hasEligibility() {
+    return !empty($this->eligibility);
   }
 
   public function hasCheckRegistrationLink() {

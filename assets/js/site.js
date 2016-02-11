@@ -117,14 +117,22 @@ vfb.chooseState = function (stateCode) {
   $states.find('.active').removeClass('active');
   $state.addClass('active');
 
-  $mapState.velocity('callout.bounce', { complete: function () {
+  var scrollToState = function () {
     if ($state.is('tr')) {
       $newsletter.insertAfter($state).wrap('<tr><td colspan="4"></td></tr>').find('select').val($state.find('.name').find('span').text());
     } else {
       $newsletter.appendTo($state).find('select').val($state.find('h3').text());
     }
     jQuery('html, body').animate({ scrollTop: $state.offset().top - 100 }, 1000);
-  }});
+  }
+
+  if ($mapState.length) {
+    $mapState.velocity('callout.bounce', { complete: function () {
+      scrollToState();
+    }});
+  } else {
+    scrollToState();
+  }
 
 };
 
