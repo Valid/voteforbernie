@@ -65,12 +65,11 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                   <div class="m-all t-all d-all">
                     <div class="np gaunit">
                       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                      <!-- In Intro Text -->
+                      <!-- Inside Intro Text -->
                       <ins class="adsbygoogle"
-                           style="display:block"
+                           style="display:inline-block;width:336px;height:280px"
                            data-ad-client="ca-pub-3203899049474789"
-                           data-ad-slot="8959909552"
-                           data-ad-format="auto"></ins>
+                           data-ad-slot="8820308755"></ins>
                       <script>
                       (adsbygoogle = window.adsbygoogle || []).push({});
                       </script>
