@@ -286,8 +286,6 @@
       <h4>Phone Bank for Bernie</h4>
       <p>Phonebanking is the single most important thing you can do for the campaign besides voting. Primaries are here, and we need to be calling people and letting them know about how to vote in their state. <strong>Don't be scared!</strong> I hear from many people that it's daunting to call strangers on the phone, but you will have a script to read and the typical call length is very short.</p>
       <p><a href="https://go.berniesanders.com/page/content/phonebank?source=voteforbernie" class="ui-btn" data-track="phonebank,<?php echo $state->state; ?>" target="_blank">Start Phonebanking for Bernie!</a></p>
-      <p>If you want to join a group of other phone bankers for Bernie, join <a href="http://www.phonebankduel.com/j/4kwwuD2Pl" data-track="duel,<?php echo $state->state; ?>" target="_blank">Phonebank Duel</a> and compete to see who can make the most calls!</p>
-
 
       <h4>Attend or host a local event</h4>
       <p>Phone Banking, Canvassing, Voter Registration Drives, Carpools -- these are just a few of the volunteer-hosted events popping up around the nation in support of Bernie Sanders, and some probably in your city!</p>
