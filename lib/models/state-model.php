@@ -28,6 +28,8 @@ class StateModel extends PostModel {
     'primary_date',
     'deadline_date',
     'aff_deadline_date',
+    'has_early_voting',
+    'early_voting_info',
     'early_voting_start',
     'early_voting_end',
     'absentee_app_deadline',
@@ -96,7 +98,7 @@ class StateModel extends PostModel {
   }
 
   public function hasEarlyVoting() {
-    return !empty($this->early_voting_end);
+    return !empty($this->early_voting_info);
   }
 
   public function hasAffiliationDeadline() {

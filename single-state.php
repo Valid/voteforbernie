@@ -199,11 +199,13 @@
         <?php } ?>
       <?php } ?>
 
-      <?php if (false && $state->hasEarlyVoting()) { ?>
+      <?php if ($state->hasEarlyVoting()) { ?>
         <h4>Early Voting</h4>
-        <p><?php echo $state->getTitle(); ?> has Early Voting! This allows <?php echo $state->denonym; ?> to cast their vote in-person prior to election day.</p>
+        <p><strong>Vote Early in <?php echo $state->getTitle(); ?>!</strong> <?php echo $state->denonym; ?> can vote in-person <strong>before election day!</strong> If you'll be out of town on <?php echo date('F j', strtotime($state->getPrimaryDate())); ?> or simply find it more convenient, vote early!</p>
 
         <p>Early voting in <?php echo $state->getTitle(); ?> begins <?php echo date('F j', strtotime($state->early_voting_start)); ?> and ends on <?php echo date('F j', strtotime($state->early_voting_end)); ?>.</p>
+
+        <?php echo $state->early_voting_info; ?>
       <?php } ?>
 
       <?php if ($state->under_18): ?>
@@ -299,6 +301,8 @@
 
   </div>
 </div>
+
+<?php echo do_shortcode('[fbcomments]'); ?>
 
 <!-- <pre>
   <?php print_r($state); ?>
