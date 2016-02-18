@@ -300,7 +300,7 @@
   </div>
 </div>
 
-<?php echo // do_shortcode('[fbcomments]'); ?>
+<?php // echo do_shortcode('[fbcomments]'); ?>
 
 <!-- <pre>
   <?php print_r($state); ?>
