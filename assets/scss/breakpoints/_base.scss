@@ -15,39 +15,8 @@ Stylesheet: Base Mobile Stylesheet
 
 .inner-content {
   margin: 0 auto;
-  opacity: 0;
   padding: 0 10px;
 }
-
-// Loading Styles
-
-.wf-loading {
-  opacity: 1;
-  pointer-events: none;
-}
-.wf-loading, .wf-active {
-  &:before {
-    background: $light-gray url(images/svg/loading.svg) no-repeat 50% 50%;
-    background-size: contain;
-    bottom: 0;
-    content: '';
-    left: 0;
-    position: fixed;
-    right: 0;
-    top: 0;
-    z-index: 9999;
-  }
-}
-
-.wf-active {
-  &:before {
-    content: initial;
-    transform: translate3d(0, -100%, 0);
-    @include transition(all 0.5s ease);
-  }
-  // @include transition(opacity 0.14s ease-in-out);
-}
-
 
 // GENERAL STYLES
 

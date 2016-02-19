@@ -18,7 +18,6 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <style type="text/css">.wf-loading { opacity: 0; } .no-js.wf-loading { opacity: 1; pointer-events: initial; } .no-js.wf-loading:before { background: none; pointer-events: none; } .no-js .nav { max-height: none!important} .no-js .inner-content { opacity: 1; }</style>
   <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
 
   <!-- Optimizely A/B testing snippet -->
