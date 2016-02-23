@@ -1,6 +1,6 @@
 /*
  * Bones Scripts File
- * Author: Eddie Machado
+ * Author: Jon Hughes
  *
  * This file should contain any js scripts you want to add to the site.
  * Instead of calling it in the header or throwing it inside wp_head()
@@ -244,11 +244,13 @@ vfb.buildMap = function () {
 
           if ($stateDetails.length) {
             labelText = primaryText + ($stateDetails.hasClass('caucus') ? ' Caucus' : ' Primary');
+            labelText += '<br>' + $stateDetails.find('.resources').find('p').eq(0).html();
+            labelText += '<br>' + $stateDetails.find('.exp').html();
           } else {
             labelText = 'To Be Announced';
           }
 
-          jQuery(label).html('<strong>' + jQuery(label).text() + '</strong><br>' + labelText );
+          jQuery(label).html('<strong>' + jQuery(label).text() + '</strong><br>' + labelText);
         },
         onRegionOver: function (event, code) {
           var $stateDetails = $states.find('.' + code),
