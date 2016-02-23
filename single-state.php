@@ -203,7 +203,7 @@
         <h4>Early Voting</h4>
         <p><strong>Vote Early in <?php echo $state->getTitle(); ?>!</strong> <?php echo $state->denonym; ?> can vote in-person <strong>before election day!</strong> If you'll be out of town on <?php echo date('F j', strtotime($state->getPrimaryDate())); ?> or simply find it more convenient, vote early!</p>
 
-        <p>Early voting in <?php echo $state->getTitle(); ?> begins <?php echo date('F j', strtotime($state->early_voting_start)); ?> and ends on <?php echo date('F j', strtotime($state->early_voting_end)); ?>.</p>
+        <p><strong>Early voting in <?php echo $state->getTitle(); ?> begins <?php echo date('F j', strtotime($state->early_voting_start)); ?> and ends on <?php echo date('F j', strtotime($state->early_voting_end)); ?>.</strong></p>
 
         <?php echo $state->early_voting_info; ?>
       <?php } ?>
