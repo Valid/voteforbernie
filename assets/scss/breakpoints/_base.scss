@@ -2002,7 +2002,7 @@ FOOTER STYLES
       font-family: $headerFont;
       font-size: 40px;
     }
-    .soon {
+    .near {
       display: inline;
     }
   }
@@ -2128,7 +2128,7 @@ FOOTER STYLES
 
   }
 
-  .soon, .looming, .now {
+  .near, .looming, .now {
     display: block;
     font-size: 0.8em;
     line-height: 1;
@@ -2260,7 +2260,7 @@ FOOTER STYLES
   color: $meta-gray;
   text-decoration: line-through;
 }
-.soon {
+.near {
   color: $meta-gray;
 }
 .looming {

@@ -134,7 +134,7 @@ class VoteInfoHelper {
       } else if ($daysAway < 7) {
         $fDate = date('D, F j', $dateObj) . ' <span class="looming">(' . $daysAway . ' more days!)</span>';
       } else if ($daysAway < 30) {
-        $fDate = date('D, F j', $dateObj) . ' <span class="soon">(' . $daysAway . ' days away)</span>';
+        $fDate = date('D, F j', $dateObj) . ' <span class="near">(' . $daysAway . ' days away)</span>';
       } else {
         $fDate = date('D, F j', $dateObj);
       }
