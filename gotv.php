@@ -52,7 +52,12 @@
             <p><strong>Democracy is not a spectator sport.</strong></p>
           </div>
           <div class="m-all t-1of2 d-1of2">
-
+            <blockquote class="twitter-tweet" data-link-color="#55acee">
+              <p>Super Tuesday is TOMORROW. Let's #VoteTogether! Join the #BernTheBallot campaign at http://voteforbernie.org/GOTV #GOTV</p> — Vote For Bernie (@vote_for_bernie)
+              <a href="https://twitter.com/vote_for_bernie/status/704378101141098496">
+                February 29, 2016
+              </a>
+            </blockquote>
           </div>
 
           <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
