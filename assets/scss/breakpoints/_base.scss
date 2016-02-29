@@ -2317,9 +2317,28 @@ FOOTER STYLES
 // GOTV Page
 
 .gotv-page {
+  .page-title {
+    strong {
+      display: inline-block;
+    }
+  }
+  .state-select {
+    .page-title {
+      font-size: 30px;
+    }
+    h3 {
+      margin: 20px 0;
+    }
+    .countdown-title {
+      margin-top: 80px;
+    }
+    .soon {
+      padding: 0;
+    }
+  }
   .content {
     background-color: #F2F2F2;
-    padding: 10px 0;
+    padding: 30px 0;
     text-align: center;
     &.alt {
       background: #323944;

@@ -23,6 +23,12 @@
           <p>Bernie's campaign is unique. He doesn't have a Super PAC.</p>
           <p>He is relying on us, the young and working-class citizens of America to do something radical:</p>
           <h3>Get Out The Vote!</h3>
+
+          <div class="gotv-countdown">
+            <h4 class="page-title countdown-title">Countdown to <strong>Super Tuesday</strong></h4>
+            <div class="soon" data-due="at 23:59" data-now="<?php echo date("c"); ?>" data-face="flip corners-sharp color-dark" data-event-complete="today"></div>
+            <h4 class="page-title"><strong>March 1, 2016</strong></h4>
+          </div>
           <!--
           <p>What do to? <span class="no-mobile">your state by clicking it or</span>
             <select class="state-selector">
@@ -40,13 +46,23 @@
       <section class="entry-content cf wrap" itemprop="articleBody">
         <h3 class="page-title"><strong>What</strong> to do</h3>
 
-
-          <p>We need <strong>every able person</strong> to be helping get voter turnout up in Super Tuesday states. If you haven't volunteered yet, this is your chance. Bernie is fighting an uphill battle and needs the support of the grassroots community, and that means you.</p>
-          <p>Super Tuesday states: <strong>Alabama, Arkansas, Colorado, Georgia, Kansas, Maine, Massachusetts, Michigan  Minnesota, Nebraska, Oklahoma, Tennessee, Texas, and Virginia.</strong></p>
-          <p><strong>Democracy is not a spectator sport.</strong></p>
+          <div class="m-all t-1of2 d-1of2">
+            <p>We need <strong>every able person</strong> to be helping get voter turnout up in Super Tuesday states. If you haven't volunteered yet, this is your chance. Bernie is fighting an uphill battle and needs the support of the grassroots community, and that means you.</p>
+            <p>Super Tuesday states: <strong>Alabama, Arkansas, Colorado, Georgia, Massachusetts, Minnesota, Oklahoma, Tennessee, Texas, Virginia, Vermont, and American Samoa.</strong></p>
+            <p><strong>Democracy is not a spectator sport.</strong></p>
+          </div>
+          <div class="m-all t-1of2 d-1of2">
+            <blockquote class="twitter-tweet" data-link-color="#55acee">
+              <p>It has started! Let's tell @TheDemocrats that #WeWantDebate! Join thousands at http://voteforbernie.org/debate/ #FeelTheBern</p> — Vote For Bernie (@vote_for_bernie)
+              <a href="https://twitter.com/vote_for_bernie/status/628959240296595456">
+                August 5, 2015
+              </a>
+            </blockquote>
+          </div>
 
           <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
         <div class="content canvass">
+
           <h3>1. Canvas for Bernie</h3>
           <p>Tried and true. Knocking on doors has been the most effective method of Getting Out The Vote for a long time running. This is what everyone able <strong>should</strong> be doing. If you've never canvassed before, you're certainly not alone! You can receive training and instructions on where and how to canvass from a Bernie Sanders campaign office.</p>
           <p>In a Super Tuesday state and willing to knock on doors? <a href="http://map.berniesanders.com/go-the-distance/" class="ui-btn cta" data-track="GOTV,Canvas">Find your local office for Bernie</a></p>

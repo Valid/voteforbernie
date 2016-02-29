@@ -20,7 +20,8 @@ var gulp = require('gulp'),
           'bower_components/bigtext/dist/bigtext.js',
           'bower_components/tablesorter/dist/js/jquery.tablesorter.js',
           'bower_components/filament-tablesaw/dist/stackonly/tablesaw.stackonly.js',
-          'bower_components/filament-tablesaw/dist/tablesaw-init.js'
+          'bower_components/filament-tablesaw/dist/tablesaw-init.js',
+          'assets/vendor/soon.js'
         ],
         site: ['assets/js/**/*.js']
       },
@@ -28,7 +29,8 @@ var gulp = require('gulp'),
         vendor: [
           'bower_components/jqvmap/jqvmap/jqvmap.css',
           'bower_components/tablesorter/dist/css/theme.default.min.css',
-          'bower_components/filament-tablesaw/dist/stackonly/tablesaw.stackonly.css'
+          'bower_components/filament-tablesaw/dist/stackonly/tablesaw.stackonly.css',
+          'assets/vendor/soon.css'
         ],
         site: {
           all: 'assets/scss/**/*.scss',
