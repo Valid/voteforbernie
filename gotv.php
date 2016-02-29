@@ -47,29 +47,29 @@
 
           <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
         <div class="content canvass">
-          <h3>Canvas for Bernie</h3>
-          <p>Tried and true. knocking on doors has been the most effective method of Getting Out The Vote for a long time running. This is what everyone able <strong>should</strong> be doing. If you've never canvassed before, you're certainly not alone! You can receive training and instructions on where and how to canvass from a Bernie Sanders campaign office.</p>
+          <h3>1. Canvas for Bernie</h3>
+          <p>Tried and true. Knocking on doors has been the most effective method of Getting Out The Vote for a long time running. This is what everyone able <strong>should</strong> be doing. If you've never canvassed before, you're certainly not alone! You can receive training and instructions on where and how to canvass from a Bernie Sanders campaign office.</p>
           <p>In a Super Tuesday state and willing to knock on doors? <a href="http://map.berniesanders.com/go-the-distance/" class="ui-btn cta" data-track="GOTV,Canvas">Find your local office for Bernie</a></p>
           <p>Near a Super Tuesday state and willing to cross state lines? <a href="https://go.berniesanders.com/page/s/go-the-distance-for-bernie" class="ui-btn cta" data-track="GOTV,Canvas">Canvas for Bernie Out-Of-State</a></p>
         </div>
         <div class="content alt phonebank">
-          <h3>Phonebank for Bernie</h3>
+          <h3>2. Phonebank for Bernie</h3>
           <p>If you cannot canvas, the next best thing is phonebanking. All you have to do is call voters and let them know when and where they can vote. Training is provided!</p>
           <p><a href="https://go.berniesanders.com/page/content/phonebank" class="ui-btn cta" data-track="GOTV,Phonebank">Phonebank for Bernie</a></p>
         </div>
         <div class="content facebank">
-          <h3>"Facebank" for Bernie</h3>
+          <h3>3. "Facebank" for Bernie</h3>
           <p>This is new... Facebook allows you to create very specific searches. In fact, you can search for everyone that has 'liked' Bernie Sanders (likely Bernie supporter) AND is your friend or friend of a friend AND is from a specific state. In this way, you can contact people who are Bernie supporters and remind them to vote!</p>
           <p><a href="http://berniefriendfinder.com/" class="ui-btn cta" data-track="GOTV,BernieFriendFinder">Facebank for Bernie</a></p>
         </div>
 
         <div class="content alt donate">
-          <h3>Donate to Bernie</h3>
+          <h3>4. Donate to Bernie</h3>
           <p>If you're unable to volunteer, consider giving a donation to Bernie's campaign. Bernie is the only Democratic candidate not using a SuperPac and relies on donations from us to support his campaign.</p>
           <p><a href="http://berniesanders.com/reddit" class="ui-btn cta" data-track="GOTV,Donate">Donate to Bernie's Campaign</a></p>
         </div>
         <div class="content stay-informed">
-          <h3>Stay informed</h3>
+          <h3>5. Stay informed</h3>
           <p>The primary season is well underway. Sign up to be reminded of deadlines in your state and other important information.</p>
           <?php echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" ); ?>
           <p>Did you know there is a community of over 100,000 Bernie supporters online? Join us!</p>
@@ -77,6 +77,9 @@
         </div>
 
         <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
+
+        <p class="map-link np"><a href="<?php echo home_url(); ?>">Not registered to vote? <span>Find your state!</span></a></p>
+
         <h2 class="page-title">#WeStand<strong>Together</strong></h2>
       </section>
 
