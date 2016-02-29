@@ -47,9 +47,13 @@
         <h3 class="page-title"><strong>What</strong> to do</h3>
 
           <div class="m-all t-1of2 d-1of2">
-            <p>We need <strong>every able person</strong> to be helping get voter turnout up in Super Tuesday states. If you haven't volunteered yet, this is your chance. Bernie is fighting an uphill battle and needs the support of the grassroots community, and that means you.</p>
+            <p>Today, on <strong>#SuperMonday</strong>, we need <strong>every able person</strong> to be helping get voter turnout up in Super Tuesday states. If you haven't volunteered yet, this is your chance. Bernie is fighting an uphill battle and needs the support of the grassroots community, and that means you.</p>
             <p>Super Tuesday states: <strong>Alabama, Arkansas, Colorado, Georgia, Massachusetts, Minnesota, Oklahoma, Tennessee, Texas, Virginia, Vermont, and American Samoa.</strong></p>
             <p><strong>Democracy is not a spectator sport.</strong></p>
+
+            <p>You decide: Why GOTV for Bernie?
+            <a class="twitter-share" href="https://twitter.com/intent/tweet?text=%23SuperMonday+Get+Out+The+Vote+for+%40BernieSanders+because+...+voteforbernie.org%2FGOTV%2F&amp;source=vote_for_bernie&amp;related=vote_for_bernie" target="_blank"><span>#SuperMonday</span> Get Out The Vote for <span>@BernieSanders</span> because <strong>[add your own reason]</strong> <span>voteforbernie.org/GOTV/</span><em>Tweet This</em></a></p>
+
           </div>
           <div class="m-all t-1of2 d-1of2">
             <blockquote class="twitter-tweet" data-link-color="#55acee">
@@ -76,13 +80,17 @@
         <div class="content facebank">
           <h3>3. "Facebank" for Bernie</h3>
           <p>This is new... Facebook allows you to create very specific searches. In fact, you can search for everyone that has 'liked' Bernie Sanders (likely Bernie supporter) AND is your friend or friend of a friend AND is from a specific state. In this way, you can contact people who are Bernie supporters and remind them to vote!</p>
-          <p><a href="http://berniefriendfinder.com/" class="ui-btn cta" data-track="GOTV,BernieFriendFinder">Facebank for Bernie</a></p>
+          <p><a href="http://berniefriendfinder.com/" class="ui-btn cta" data-track="GOTV,BernieFriendFinder">"Facebank" for Bernie</a></p>
         </div>
 
         <div class="content alt donate">
           <h3>4. Donate to Bernie</h3>
-          <p>If you're unable to volunteer, consider giving a donation to Bernie's campaign. Bernie is the only Democratic candidate not using a SuperPac and relies on donations from us to support his campaign.</p>
-          <p><a href="http://berniesanders.com/reddit" class="ui-btn cta" data-track="GOTV,Donate">Donate to Bernie's Campaign</a></p>
+          <p>If you're unable to volunteer, consider giving a donation to Bernie's campaign. Bernie is the only Democratic candidate not using a Super PAC and relies on donations from us to support his campaign.</p>
+          <div class="inner-section">
+            <a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" data-track="GOTV,DonateImg"><img src="https://go.berniesanders.com/page/contribute_c/40m/graphic?todays-goal" alt=""></a>
+          </div>
+          <p>Tonight is the FEC deadline. Bernie's campaign is calling for everyone to donate today to hit a new fundraising goal: 40 Million Dollars! Donate today to show the country that the momentum is still behind Bernie!</p>
+          <p><a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" class="ui-btn cta" data-track="GOTV,Donate">Donate to Bernie's Campaign</a></p>
         </div>
         <div class="content stay-informed">
           <h3>5. Stay informed</h3>
@@ -95,6 +103,8 @@
         <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
 
         <p class="map-link np"><a href="<?php echo home_url(); ?>">Not registered to vote? <span>Find your state!</span></a></p>
+
+        <img src="https://berniesanders.com/wp-content/uploads/2016/02/20160222_electabilitygraphs_v3-1.png" alt="" />
 
         <h2 class="page-title">#WeStand<strong>Together</strong></h2>
       </section>

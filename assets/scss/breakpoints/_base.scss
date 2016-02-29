@@ -2342,11 +2342,18 @@ FOOTER STYLES
     text-align: center;
     &.alt {
       background: #323944;
-      color: #fff;
+      color: $white;
     }
     p {
       max-width: 600px;
       margin: 20px auto;
     }
+  }
+  .inner-section {
+    background-color: $white;
+    max-width: 100%;
+    padding: 30px;
+    width: 800px;
+    margin: 0 auto;
   }
 }
