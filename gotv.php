@@ -52,7 +52,7 @@
           <p><strong>Democracy is not a spectator sport.</strong></p>
 
           <p>You decide: Why GOTV for Bernie?
-          <a class="twitter-share" href="https://twitter.com/intent/tweet?text=%23SuperMonday+Get+Out+The+Vote+for+%40BernieSanders+because+...+voteforbernie.org%2FGOTV%2F&amp;source=vote_for_bernie&amp;related=vote_for_bernie" target="_blank" data-track="GOTV,Tweet"><span>#SuperMonday</span> Get Out The Vote for <span>@BernieSanders</span> because <strong>[add your own reason]</strong> <span>voteforbernie.org/GOTV/</span><em>Tweet This</em></a></p>
+          <a class="twitter-share" href="https://twitter.com/intent/tweet?text=%23SuperMonday+Get+Out+The+Vote+for+%40BernieSanders+because+...+%23BernTheBallot+voteforbernie.org%2FGOTV%2F&amp;source=vote_for_bernie&amp;related=vote_for_bernie" target="_blank" data-track="GOTV,Tweet"><span>#SuperMonday</span> Get Out The Vote for <span>@BernieSanders</span> because <strong>[add your own reason]</strong> <span>voteforbernie.org/GOTV/</span><em>Tweet This</em></a></p>
 
         </div>
         <div class="m-all t-1of2 d-1of2">
