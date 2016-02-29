@@ -52,12 +52,7 @@
             <p><strong>Democracy is not a spectator sport.</strong></p>
           </div>
           <div class="m-all t-1of2 d-1of2">
-            <blockquote class="twitter-tweet" data-link-color="#55acee">
-              <p>It has started! Let's tell @TheDemocrats that #WeWantDebate! Join thousands at http://voteforbernie.org/debate/ #FeelTheBern</p> — Vote For Bernie (@vote_for_bernie)
-              <a href="https://twitter.com/vote_for_bernie/status/628959240296595456">
-                August 5, 2015
-              </a>
-            </blockquote>
+
           </div>
 
           <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
