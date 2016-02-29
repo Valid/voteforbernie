@@ -432,7 +432,7 @@ POSTS & CONTENT STYLES
 }
 
 // Homepage/ State Overrides
-.home, .single-state, .page-template-schedule {
+.home, .single-state, .page-template-schedule, .page-template-gotv {
   .container {
     background: $light-gray url(images/paper-dark.jpg);
   }
@@ -2311,4 +2311,23 @@ FOOTER STYLES
     width: 40px;
   }
 
+}
+
+
+// GOTV Page
+
+.gotv-page {
+  .content {
+    background-color: #F2F2F2;
+    padding: 10px 0;
+    text-align: center;
+    &.alt {
+      background: #323944;
+      color: #fff;
+    }
+    p {
+      max-width: 600px;
+      margin: 20px auto;
+    }
+  }
 }
