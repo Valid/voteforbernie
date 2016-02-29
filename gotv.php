@@ -47,18 +47,18 @@
         <h3 class="page-title"><strong>What</strong> to do</h3>
 
           <div class="m-all t-1of2 d-1of2">
-            <p>Today, on <strong>#SuperMonday</strong>, we need <strong>every able person</strong> to be helping get voter turnout up in Super Tuesday states. If you haven't volunteered yet, this is your chance. Bernie is fighting an uphill battle and needs the support of the grassroots community, and that means you.</p>
+            <p>Today, on <strong><a href="https://berniesanders.com/SuperMonday" data-track="GOTV,SuperMonday">#SuperMonday</a></strong>, we need <strong>every able person</strong> to be helping get voter turnout up in Super Tuesday states. If you haven't volunteered yet, this is your chance. Bernie is fighting an uphill battle and needs the support of the grassroots community, and that means you.</p>
             <p>Super Tuesday states: <strong>Alabama, Arkansas, Colorado, Georgia, Massachusetts, Minnesota, Oklahoma, Tennessee, Texas, Virginia, Vermont, and American Samoa.</strong></p>
             <p><strong>Democracy is not a spectator sport.</strong></p>
 
             <p>You decide: Why GOTV for Bernie?
-            <a class="twitter-share" href="https://twitter.com/intent/tweet?text=%23SuperMonday+Get+Out+The+Vote+for+%40BernieSanders+because+...+voteforbernie.org%2FGOTV%2F&amp;source=vote_for_bernie&amp;related=vote_for_bernie" target="_blank"><span>#SuperMonday</span> Get Out The Vote for <span>@BernieSanders</span> because <strong>[add your own reason]</strong> <span>voteforbernie.org/GOTV/</span><em>Tweet This</em></a></p>
+            <a class="twitter-share" href="https://twitter.com/intent/tweet?text=%23SuperMonday+Get+Out+The+Vote+for+%40BernieSanders+because+...+voteforbernie.org%2FGOTV%2F&amp;source=vote_for_bernie&amp;related=vote_for_bernie" target="_blank" data-track="GOTV,Tweet"><span>#SuperMonday</span> Get Out The Vote for <span>@BernieSanders</span> because <strong>[add your own reason]</strong> <span>voteforbernie.org/GOTV/</span><em>Tweet This</em></a></p>
 
           </div>
           <div class="m-all t-1of2 d-1of2">
             <blockquote class="twitter-tweet" data-link-color="#55acee">
               <p>Super Tuesday is TOMORROW. Let's #VoteTogether! Join the #BernTheBallot campaign at http://voteforbernie.org/GOTV #GOTV</p> — Vote For Bernie (@vote_for_bernie)
-              <a href="https://twitter.com/vote_for_bernie/status/704378101141098496">
+              <a href="https://twitter.com/vote_for_bernie/status/704378101141098496"  data-track="GOTV,ReTweet">
                 February 29, 2016
               </a>
             </blockquote>
