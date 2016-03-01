@@ -25,9 +25,8 @@
           <h3>Get Out The Vote!</h3>
 
           <div class="gotv-countdown">
-            <h4 class="page-title countdown-title"><strong>Super</strong> Tuesday</h4>
+            <h4 class="page-title countdown-title"><strong>Super Tuesday</strong> is <strong>Today!</strong></h4>
             <!-- <div class="soon" data-due="at 23:59" data-now="<?php echo date("c"); ?>" data-face="flip corners-sharp color-dark" data-event-complete="today"></div> -->
-            <h4 class="page-title"><strong>Today!</strong></h4>
           </div>
           <!--
           <p>What do to? <span class="no-mobile">your state by clicking it or</span>
@@ -47,9 +46,24 @@
         <h3 class="page-title"><strong>What</strong> to do</h3>
 
         <div class="m-all t-1of2 d-1of2">
-          <p>Today, is <strong>#SuperTuesday</strong> and we need <strong>every able person</strong> to be helping get voter turnout up in all 12 Super Tuesday states. If you haven't volunteered yet, this is your chance! Bernie is fighting an uphill battle and needs the support of the grassroots community, and that means you.</p>
-          <p>Super Tuesday states: <strong>Alabama, Arkansas, Colorado, Georgia, Massachusetts, Minnesota, Oklahoma, Tennessee, Texas, Virginia, Vermont, and American Samoa.</strong></p>
-          <p><strong>Democracy is not a spectator sport.</strong></p>
+          <p>Today, is <strong>#SuperTuesday</strong> and we need <strong>every able person</strong> to be helping get voter turnout up in all 13 Super Tuesday states. If you haven't volunteered yet, this is your chance! Bernie is fighting an uphill battle and needs the support of the grassroots community, and that means you.</p>
+          <p>Super Tuesday states:</p>
+          <ul>
+            <li><a href="http://voteforbernie.org/state/alabama/" target="_blank" data-track="GOTV,Alabama">Alabama</a></li>
+            <li><a href="http://voteforbernie.org/state/arkansas/" target="_blank" data-track="GOTV,Arkansas">Arkansas</a></li>
+            <li><a href="http://voteforbernie.org/state/colorado/" target="_blank" data-track="GOTV,Colorado">Colorado</a></li>
+            <li><a href="http://voteforbernie.org/state/georgia/" target="_blank" data-track="GOTV,Georgia">Georgia</a></li>
+            <li><a href="http://voteforbernie.org/state/massachusetts/" target="_blank" data-track="GOTV,Massachusetts">Massachusetts</a></li>
+            <li><a href="http://voteforbernie.org/state/minnesota/" target="_blank" data-track="GOTV,Minnesota">Minnesota</a></li>
+            <li><a href="http://voteforbernie.org/state/oklahoma/" target="_blank" data-track="GOTV,Oklahoma">Oklahoma</a></li>
+            <li><a href="http://voteforbernie.org/state/tennessee/" target="_blank" data-track="GOTV,Tennessee">Tennessee</a></li>
+            <li><a href="http://voteforbernie.org/state/texas/" target="_blank" data-track="GOTV,Texas">Texas</a></li>
+            <li><a href="http://voteforbernie.org/state/virginia/" target="_blank" data-track="GOTV,Virginia">Virginia</a></li>
+            <li><a href="http://voteforbernie.org/state/vermont/" target="_blank" data-track="GOTV,Vermont">Vermont</a></li>
+            <li>American Samoa</li>
+            <li><a href="http://voteforbernie.org/state/democrats-abroad/" target="_blank" data-track="GOTV,DemsAbroad">Democrats Abroad</a></li>
+          </ul>
+          <p><strong>Democracy is not a spectator sport. Get Out The Vote!</strong></p>
 
         </div>
         <div class="m-all t-1of2 d-1of2">
