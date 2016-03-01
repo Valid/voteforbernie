@@ -47,7 +47,7 @@
         <h3 class="page-title"><strong>What</strong> to do</h3>
 
         <div class="m-all t-1of2 d-1of2">
-          <p>Today, on <strong><a href="https://berniesanders.com/SuperMonday" data-track="GOTV,SuperMonday">#SuperMonday</a></strong>, we need <strong>every able person</strong> to be helping get voter turnout up in Super Tuesday states. If you haven't volunteered yet, this is your chance. Bernie is fighting an uphill battle and needs the support of the grassroots community, and that means you.</p>
+          <p>Today, is <strong>#SuperTuesday</strong> and we need <strong>every able person</strong> to be helping get voter turnout up in all 12 Super Tuesday states. If you haven't volunteered yet, this is your chance! Bernie is fighting an uphill battle and needs the support of the grassroots community, and that means you.</p>
           <p>Super Tuesday states: <strong>Alabama, Arkansas, Colorado, Georgia, Massachusetts, Minnesota, Oklahoma, Tennessee, Texas, Virginia, Vermont, and American Samoa.</strong></p>
           <p><strong>Democracy is not a spectator sport.</strong></p>
 
