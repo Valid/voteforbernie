@@ -87,7 +87,7 @@
             <p>If you're unable to volunteer, consider giving a donation to Bernie's campaign. Bernie is the only Democratic candidate not using a Super PAC and relies on donations from us to support his campaign.</p>
             <?php echo wp_oembed_get('https://www.youtube.com/watch?v=50ZItA-vc9I'); ?>
             <p>Tonight is the FEC deadline. Bernie's campaign is calling for everyone to donate today to hit a new fundraising goal: 40 Million Dollars! Donate today to show the country that the momentum is still behind Bernie!</p>
-            <p><strong>New Goal!</strong> We blew past the $4,000,000 goal and are now trying to get to $4,500,000 tonight! Keep donating!</p>
+            <p><strong>New Goal!</strong> We blew past the $40,000,000 goal and are now trying to get to $45,000,000 tonight! Keep donating!</p>
             <div class="inner-section">
               <a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" data-track="GOTV,DonateImg"><img src="https://go.berniesanders.com/page/contribute_c/40m/graphic?todays-goal" alt=""></a>
             </div>
