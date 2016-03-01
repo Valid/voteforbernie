@@ -25,9 +25,9 @@
           <h3>Get Out The Vote!</h3>
 
           <div class="gotv-countdown">
-            <h4 class="page-title countdown-title">Countdown to <strong>Super Tuesday</strong></h4>
-            <div class="soon" data-due="at 23:59" data-now="<?php echo date("c"); ?>" data-face="flip corners-sharp color-dark" data-event-complete="today"></div>
-            <h4 class="page-title"><strong>March 1, 2016</strong></h4>
+            <h4 class="page-title countdown-title"><strong>Super</strong> Tuesday</h4>
+            <!-- <div class="soon" data-due="at 23:59" data-now="<?php echo date("c"); ?>" data-face="flip corners-sharp color-dark" data-event-complete="today"></div> -->
+            <h4 class="page-title"><strong>Today!</strong></h4>
           </div>
           <!--
           <p>What do to? <span class="no-mobile">your state by clicking it or</span>
