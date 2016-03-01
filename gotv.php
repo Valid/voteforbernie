@@ -66,14 +66,14 @@
 
           <div class="content canvass">
 
-            <h3>1. Canvas for Bernie</h3>
+            <h3>1. Canvass for Bernie</h3>
             <p>Tried and true. Knocking on doors has been the most effective method of Getting Out The Vote for a long time running. This is what everyone able <strong>should</strong> be doing. If you've never canvassed before, you're certainly not alone! You can receive training and instructions on where and how to canvass from a Bernie Sanders campaign office.</p>
-            <p>In a Super Tuesday state and willing to knock on doors? <a href="http://map.berniesanders.com/go-the-distance/" class="ui-btn cta" data-track="GOTV,Canvas">Find your local office for Bernie</a></p>
-            <p>Near a Super Tuesday state and willing to cross state lines? <a href="https://go.berniesanders.com/page/s/go-the-distance-for-bernie" class="ui-btn cta" data-track="GOTV,Canvas">Canvas for Bernie Out-Of-State</a></p>
+            <p>In a Super Tuesday state and willing to knock on doors? <a href="http://map.berniesanders.com/go-the-distance/" class="ui-btn cta" data-track="GOTV,Canvass">Find your local office for Bernie</a></p>
+            <p>Near a Super Tuesday state and willing to cross state lines? <a href="https://go.berniesanders.com/page/s/go-the-distance-for-bernie" class="ui-btn cta" data-track="GOTV,Canvass">Canvass for Bernie Out-Of-State</a></p>
           </div>
           <div class="content alt phonebank">
             <h3>2. Phonebank for Bernie</h3>
-            <p>If you cannot canvas, the next best thing is phonebanking. All you have to do is call voters and let them know when and where they can vote. Training is provided!</p>
+            <p>If you cannot canvass, the next best thing is phonebanking. All you have to do is call voters and let them know when and where they can vote. Training is provided!</p>
             <p><a href="https://go.berniesanders.com/page/content/phonebank" class="ui-btn cta" data-track="GOTV,Phonebank">Phonebank for Bernie</a></p>
           </div>
           <div class="content facebank">
