@@ -25,8 +25,8 @@
           <h3>Get Out The Vote!</h3>
 
           <div class="gotv-countdown">
-            <h4 class="page-title countdown-title"><strong>Super Tuesday</strong> is <strong>Today!</strong></h4>
-            <!-- <div class="soon" data-due="at 23:59" data-now="<?php echo date("c"); ?>" data-face="flip corners-sharp color-dark" data-event-complete="today"></div> -->
+            <h4 class="page-title countdown-title">Countdown to <strong>March 5th</strong></h4>
+            <div class="soon" data-due="March 4 at 23:59" data-now="<?php echo date("c"); ?>" data-face="flip corners-sharp color-dark" data-event-complete="today"></div>
           </div>
           <!--
           <p>What do to? <span class="no-mobile">your state by clicking it or</span>
@@ -46,33 +46,34 @@
         <h3 class="page-title"><strong>What</strong> to do</h3>
 
         <div class="m-all t-1of2 d-1of2">
-          <p>Today, is <strong>#SuperTuesday</strong> and we need <strong>every able person</strong> to be helping get voter turnout up in all 13 Super Tuesday states. If you haven't volunteered yet, this is your chance! Bernie is fighting an uphill battle and needs the support of the grassroots community, and that means you.</p>
-          <p>Super Tuesday states:</p>
+          <p>With Super Tuesday behind us, we need <strong>every able person</strong> to be helping get voter turnout up in all the states voting next. If you haven't volunteered yet, this is your chance!</p>
+
+          <strong>March 5th:</strong>
           <ul>
-            <li><a href="http://voteforbernie.org/state/alabama/" target="_blank" data-track="GOTV,Alabama">Alabama</a></li>
-            <li><a href="http://voteforbernie.org/state/arkansas/" target="_blank" data-track="GOTV,Arkansas">Arkansas</a></li>
-            <li><a href="http://voteforbernie.org/state/colorado/" target="_blank" data-track="GOTV,Colorado">Colorado</a></li>
-            <li><a href="http://voteforbernie.org/state/georgia/" target="_blank" data-track="GOTV,Georgia">Georgia</a></li>
-            <li><a href="http://voteforbernie.org/state/massachusetts/" target="_blank" data-track="GOTV,Massachusetts">Massachusetts</a></li>
-            <li><a href="http://voteforbernie.org/state/minnesota/" target="_blank" data-track="GOTV,Minnesota">Minnesota</a></li>
-            <li><a href="http://voteforbernie.org/state/oklahoma/" target="_blank" data-track="GOTV,Oklahoma">Oklahoma</a></li>
-            <li><a href="http://voteforbernie.org/state/tennessee/" target="_blank" data-track="GOTV,Tennessee">Tennessee</a></li>
-            <li><a href="http://voteforbernie.org/state/texas/" target="_blank" data-track="GOTV,Texas">Texas</a></li>
-            <li><a href="http://voteforbernie.org/state/virginia/" target="_blank" data-track="GOTV,Virginia">Virginia</a></li>
-            <li><a href="http://voteforbernie.org/state/vermont/" target="_blank" data-track="GOTV,Vermont">Vermont</a></li>
-            <li>American Samoa</li>
+            <li><a href="http://voteforbernie.org/state/kansas/" target="_blank" data-track="GOTV,Kansas">Kansas</a></li>
+            <li><a href="http://voteforbernie.org/state/louisiana/" target="_blank" data-track="GOTV,Louisiana">Louisiana</a></li>
+            <li><a href="http://voteforbernie.org/state/nebraska/" target="_blank" data-track="GOTV,Nebraska">Nebraska</a></li>
+<!--             <li><a href="http://voteforbernie.org/state/georgia/" target="_blank" data-track="GOTV,Georgia">Maine</a></li>
+            <li><a href="http://voteforbernie.org/state/georgia/" target="_blank" data-track="GOTV,Georgia">Michigan</a></li>
+            <li><a href="http://voteforbernie.org/state/georgia/" target="_blank" data-track="GOTV,Georgia">Mississippi</a></li> -->
+          </ul>
+
+          <strong>March 1st-8th:</strong>
+          <ul>
             <li><a href="http://voteforbernie.org/state/democrats-abroad/" target="_blank" data-track="GOTV,DemsAbroad">Democrats Abroad</a></li>
           </ul>
+
           <p><strong>Democracy is not a spectator sport. Get Out The Vote!</strong></p>
 
         </div>
         <div class="m-all t-1of2 d-1of2">
           <blockquote class="twitter-tweet" data-link-color="#55acee">
-            <p>It's time to #BernTheBallot on #SuperTuesday!<br>
-              Get Out The Vote at http://voteforbernie.org/GOTV/<br><br>
+            <p>#SuperTuesday is over, but we're not finished!<br><br>
 
-              High Turnout = Bernie Wins. #GOTV #VoteTogether</p> — Vote For Bernie (@vote_for_bernie)
-            <a href="https://twitter.com/vote_for_bernie/status/704669426998620160"  data-track="GOTV,ReTweet">
+            Voting on March 5th: Kansas, Louisiana, and Nebraska<br><br>
+
+            http://voteforbernie.org/gotv/ #BernTheBallot</p> — Vote For Bernie (@vote_for_bernie)
+            <a href="https://twitter.com/vote_for_bernie/status/704957863345524736"  data-track="GOTV,ReTweet">
               March 1, 2016
             </a>
           </blockquote>
@@ -85,8 +86,7 @@
 
             <h3>1. Canvass for Bernie</h3>
             <p>Tried and true. Knocking on doors has been the most effective method of Getting Out The Vote for a long time running. This is what everyone able <strong>should</strong> be doing. If you've never canvassed before, you're certainly not alone! You can receive training and instructions on where and how to canvass from a Bernie Sanders campaign office.</p>
-            <p>In a Super Tuesday state and willing to knock on doors? <a href="http://map.berniesanders.com/go-the-distance/" class="ui-btn cta" data-track="GOTV,Canvass">Find your local office for Bernie</a></p>
-            <p>Near a Super Tuesday state and willing to cross state lines? <a href="https://go.berniesanders.com/page/s/go-the-distance-for-bernie" class="ui-btn cta" data-track="GOTV,Canvass">Canvass for Bernie Out-Of-State</a></p>
+            <p>Willing to knock on doors? <a href="http://map.berniesanders.com/#zipcode=&distance=50&sort=time&f%5B%5D=campaign-office&f%5B%5D=canvassing" class="ui-btn cta" data-track="GOTV,Canvass">Find your local office for Bernie</a></p>
           </div>
           <div class="content alt phonebank">
             <h3>2. Phonebank for Bernie</h3>
@@ -103,8 +103,7 @@
             <h3>4. Donate to Bernie</h3>
             <p>If you're unable to volunteer, consider giving a donation to Bernie's campaign. Bernie is the only Democratic candidate not using a Super PAC and relies on donations from us to support his campaign.</p>
             <?php echo wp_oembed_get('https://www.youtube.com/watch?v=50ZItA-vc9I'); ?>
-            <p>Tonight is the FEC deadline. Bernie's campaign is calling for everyone to donate today to hit a new fundraising goal: 40 Million Dollars! Donate today to show the country that the momentum is still behind Bernie!</p>
-            <p><strong>New Goal!</strong> We blew past the $40,000,000 goal and are now trying to get to $45,000,000 tonight! Keep donating!</p>
+            <p><strong>Over $40 Million Donated in February!</strong> We blew past the $40,000,000 goal for February, more than double what we raised in in January. Let's break some new records and keep donating!</p>
             <div class="inner-section">
               <a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" data-track="GOTV,DonateImg"><img src="https://go.berniesanders.com/page/contribute_c/40m/graphic?todays-goal" alt=""></a>
             </div>
