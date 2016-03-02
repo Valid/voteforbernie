@@ -121,8 +121,6 @@
 
           <p class="map-link np"><a href="<?php echo home_url(); ?>">Not registered to vote? <span>Find your state!</span></a></p>
 
-          <img src="https://berniesanders.com/wp-content/uploads/2016/02/20160222_electabilitygraphs_v3-1.png" alt="" />
-
           <h2 class="page-title">#WeStand<strong>Together</strong></h2>
         </div>
       </section>
