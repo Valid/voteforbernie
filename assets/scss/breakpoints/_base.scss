@@ -2338,6 +2338,7 @@ FOOTER STYLES
   }
   .content {
     // background-color: #F2F2F2;
+    clear: both;
     padding: 30px 0;
     text-align: center;
     &.alt {
@@ -2353,6 +2354,9 @@ FOOTER STYLES
     p {
       margin: 20px auto;
       max-width: 600px;
+    }
+    .yks-mailchimpFormContainer {
+      color: $black;
     }
   }
   .inner-section {

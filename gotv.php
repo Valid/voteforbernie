@@ -53,15 +53,26 @@
             <li><a href="http://voteforbernie.org/state/kansas/" target="_blank" data-track="GOTV,Kansas">Kansas</a></li>
             <li><a href="http://voteforbernie.org/state/louisiana/" target="_blank" data-track="GOTV,Louisiana">Louisiana</a></li>
             <li><a href="http://voteforbernie.org/state/nebraska/" target="_blank" data-track="GOTV,Nebraska">Nebraska</a></li>
-<!--             <li><a href="http://voteforbernie.org/state/georgia/" target="_blank" data-track="GOTV,Georgia">Maine</a></li>
-            <li><a href="http://voteforbernie.org/state/georgia/" target="_blank" data-track="GOTV,Georgia">Michigan</a></li>
-            <li><a href="http://voteforbernie.org/state/georgia/" target="_blank" data-track="GOTV,Georgia">Mississippi</a></li> -->
+          </ul>
+
+          <strong>March 6th:</strong>
+          <ul>
+            <li><a href="http://voteforbernie.org/state/maine/" target="_blank" data-track="GOTV,Maine">Maine</a></li>
+          </ul>
+
+          <strong>March 8th:</strong>
+            <li><a href="http://voteforbernie.org/state/michigan/" target="_blank" data-track="GOTV,Michigan">Michigan</a> (Top priority)</li>
+            <li><a href="http://voteforbernie.org/state/mississippi/" target="_blank" data-track="GOTV,Mississippi">Mississippi</a></li>
+          <ul>
+
           </ul>
 
           <strong>March 1st-8th:</strong>
           <ul>
             <li><a href="http://voteforbernie.org/state/democrats-abroad/" target="_blank" data-track="GOTV,DemsAbroad">Democrats Abroad</a></li>
           </ul>
+
+          <p>See the full <a href="http://voteforbernie.org/schedule" data-track="GOTV,schedule">primary schedule here</a>.</p>
 
           <p><strong>Democracy is not a spectator sport. Get Out The Vote!</strong></p>
 
@@ -86,9 +97,20 @@
           <div class="content canvass">
             <h3 class="page-title">This is how we win:</h3>
 
-            <h3 class="page-title"><strong>Canvass</strong> for Bernie</h3>
-            <p>Tried and true. Knocking on doors has been the most effective method of Getting Out The Vote for a long time running. This is what everyone able <strong>should</strong> be doing. If you've never canvassed before, you're certainly not alone! You can receive training and instructions on where and how to canvass from a Bernie Sanders campaign office.</p>
-            <p>Willing to knock on doors? <a href="http://map.berniesanders.com/#zipcode=&distance=50&sort=time&f%5B%5D=campaign-office&f%5B%5D=canvassing" class="ui-btn cta" data-track="GOTV,Canvass">Find your local office for Bernie</a></p>
+            <div class="m-all t-1of2 d-1of2">
+              <h3 class="page-title"><strong>Canvass</strong> for Bernie</h3>
+              <p>Tried and true: Knocking on doors has been the most effective method of Getting Out The Vote since forever. Everyone able should be canvassing like the election depends on it, <strong>because it does!</strong> If you've never canvassed before, you're certainly not alone. You can receive training and instructions on where and how to canvass from a Bernie Sanders campaign office.</p>
+
+              <h3 class="page-title"><strong>New!</strong></h3>
+
+              <p>Have an iPhone or Android device? Use the <strong>Field the Bern</strong> app to easily start canvassing for Bernie. Includes instructions for how to canvass and integrates data from <a href="http://voteforbernie.org">VoteForBernie.org</a> and <a href="http://feelthebern.org/">FeelTheBern.org</a>.</p>
+              <a href="https://fieldthebern.com/" class="ui-btn cta" data-track="GOTV,FieldTheBern">Get the 'Field The Bern' app</a>
+              <p>Willing to travel?</p>
+              <a href="https://go.berniesanders.com/page/content/gtd/" class="ui-btn cta" data-track="GOTV,GTD">Go the Distance for Bernie</a>
+            </div>
+            <div class="m-all t-1of2 d-1of2">
+              <a href="https://fieldthebern.com/" data-track="GOTV,FieldTheBernImg"><img src="http://voteforbernie.org/wp-content/uploads/2016/03/field-the-bern-app.png" alt="" /></a>
+            </div>
           </div>
           <div class="content alt phonebank">
             <h3 class="page-title"><strong>Phonebank</strong> for Bernie</h3>
@@ -111,7 +133,12 @@
             </div>
             <p><a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" class="ui-btn cta" data-track="GOTV,Donate">Donate to Bernie's Campaign</a></p>
           </div>
-          <div class="content stay-informed">
+          <div class="content volunteer">
+            <h3 class="page-title"><strong>Volunteer</strong> for Bernie</h3>
+            <p>Bernie needs to know where his support base is, so it is important to sign up as a volunteer with the official Bernie Sanders campaign.</p>
+            <p><a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" class="ui-btn cta" data-track="GOTV,Volunteer">Sign up as a volunteer</a></p>
+          </div>
+          <div class="content alt stay-informed">
             <h3 class="page-title"><strong>Stay informed!</strong></h3>
             <p>The primary season is well underway. Sign up to be reminded of deadlines in your state and other important information.</p>
             <?php echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" ); ?>
