@@ -25,8 +25,9 @@
           <h1 class="page-title">#<strong>Vote</strong>TheBern</h1>
 
           <div class="gotv-countdown">
-            <h4 class="page-title countdown-title">Countdown to <strong>March 5th</strong></h4>
-            <div class="soon" data-due="March 4 at 23:59" data-now="<?php echo date("c"); ?>" data-face="flip corners-sharp color-dark" data-event-complete="today"></div>
+            <h4 class="page-title countdown-title">Countdown to <strong>Maine</strong></h4>
+            <div class="soon" data-due="March 5 at 23:59" data-now="<?php echo date("c"); ?>" data-face="flip corners-sharp color-dark" data-event-complete="today"></div>
+            <h4 class="page-title">KS, LA, and NE <strong>vote today!</strong></h4>
           </div>
           <!--
           <p>What do to? <span class="no-mobile">your state by clicking it or</span>
