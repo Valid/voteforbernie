@@ -76,12 +76,12 @@
         </div>
         <div class="m-all t-1of2 d-1of2">
           <blockquote class="twitter-tweet" data-link-color="#55acee">
-            <p>TOO MANY #FeelTheBern but aren't voting. IT'S TIME TO #VoteTheBern!<br><br>
+            <p>The #PoliticalRevolution requires high voter turnout. It's up to us to #GetOutTheVote<br><br>
 
-            Voting on March 5th: Kansas, Louisiana, Nebraska<br><br>
+            Maine is voting TODAY! #GOTV @<br><br>
 
             http://voteforbernie.org/GOTV/</p> — Vote For Bernie (@vote_for_bernie)
-            <a href="https://twitter.com/vote_for_bernie/status/705145186146357248"  data-track="GOTV,ReTweet">
+            <a href="https://twitter.com/vote_for_bernie/status/706396217345855488"  data-track="GOTV,ReTweet">
               March 1, 2016
             </a>
           </blockquote>
