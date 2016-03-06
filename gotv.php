@@ -26,7 +26,7 @@
 
           <div class="gotv-countdown">
             <h4 class="page-title countdown-title">Countdown to <strong>March 8</strong></h4>
-            <div class="soon" data-due="March 7 at 23:59" data-now="<?php echo date("c"); ?>" data-face="flip corners-sharp color-dark" data-event-complete="today"></div>
+            <div class="soon" data-due="2016-03-08T08:18:06+00:00" data-now="<?php echo date("c"); ?>" data-face="flip corners-sharp color-dark" data-event-complete="today"></div>
             <h4 class="page-title">Maine <strong>votes today!</strong></h4>
           </div>
           <!--
