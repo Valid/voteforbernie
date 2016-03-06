@@ -2024,6 +2024,9 @@ FOOTER STYLES
         display: block;
       }
     }
+    .near, .looming, .now {
+      display: block;
+    }
   }
   .type {
     text-align: center;
@@ -2129,7 +2132,6 @@ FOOTER STYLES
   }
 
   .near, .looming, .now {
-    display: block;
     font-size: 0.8em;
     line-height: 1;
   }
