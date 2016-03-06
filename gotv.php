@@ -25,9 +25,9 @@
           <h1 class="page-title">#<strong>Vote</strong>TheBern</h1>
 
           <div class="gotv-countdown">
-            <h4 class="page-title countdown-title">Countdown to <strong>Maine</strong></h4>
-            <div class="soon" data-due="March 5 at 23:59" data-now="<?php echo date("c"); ?>" data-face="flip corners-sharp color-dark" data-event-complete="today"></div>
-            <h4 class="page-title">KS, LA, and NE <strong>vote today!</strong></h4>
+            <h4 class="page-title countdown-title">Countdown to <strong>March 8</strong></h4>
+            <div class="soon" data-due="March 7 at 23:59" data-now="<?php echo date("c"); ?>" data-face="flip corners-sharp color-dark" data-event-complete="today"></div>
+            <h4 class="page-title">Maine <strong>votes today!</strong></h4>
           </div>
           <!--
           <p>What do to? <span class="no-mobile">your state by clicking it or</span>
@@ -47,22 +47,18 @@
         <h3 class="page-title"><strong>Upcoming</strong> elections</h3>
 
         <div class="m-all t-1of2 d-1of2">
-          <p>With Super Tuesday behind us, we need <strong>every able person</strong> to be helping get voter turnout up in all the states voting next. If you haven't volunteered yet, this is your chance!</p>
+          <p>We won in Kansas and Nebraska, and today we're going to win Maine! We need <strong>all of us</strong> to be helping get voter turnout up in Maine, Michigan and Mississippi. If you haven't volunteered yet, this is your chance!</p>
 
-          <strong>March 5th:</strong>
-          <ul>
-            <li><a href="http://voteforbernie.org/state/kansas/" target="_blank" data-track="GOTV,Kansas">Kansas</a></li>
-            <li><a href="http://voteforbernie.org/state/louisiana/" target="_blank" data-track="GOTV,Louisiana">Louisiana</a></li>
-            <li><a href="http://voteforbernie.org/state/nebraska/" target="_blank" data-track="GOTV,Nebraska">Nebraska</a></li>
-          </ul>
+          <p><em>Click each state to find out how to vote there!</em></p>
 
-          <strong>March 6th:</strong>
+
+          <strong>March 6th (today!):</strong>
           <ul>
             <li><a href="http://voteforbernie.org/state/maine/" target="_blank" data-track="GOTV,Maine">Maine</a></li>
           </ul>
 
           <strong>March 8th:</strong>
-            <li><a href="http://voteforbernie.org/state/michigan/" target="_blank" data-track="GOTV,Michigan">Michigan</a> (Top priority)</li>
+            <li><a href="http://voteforbernie.org/state/michigan/" target="_blank" data-track="GOTV,Michigan">Michigan</a></li>
             <li><a href="http://voteforbernie.org/state/mississippi/" target="_blank" data-track="GOTV,Mississippi">Mississippi</a></li>
           <ul>
 
