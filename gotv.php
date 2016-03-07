@@ -27,7 +27,7 @@
           <div class="gotv-countdown">
             <h4 class="page-title countdown-title">Countdown to <strong>March 8</strong></h4>
             <div class="soon" data-due="2016-03-08T08:18:06+00:00" data-now="<?php echo date("c"); ?>" data-face="flip corners-sharp color-dark" data-event-complete="today"></div>
-            <h4 class="page-title">Maine <strong>votes today!</strong></h4>
+            <h4 class="page-title"><strong>Michigan</strong> and <strong>Mississippi</strong></h4>
           </div>
           <!--
           <p>What do to? <span class="no-mobile">your state by clicking it or</span>
@@ -44,18 +44,12 @@
       </div>
 
       <section class="entry-content cf wrap" itemprop="articleBody">
-        <h3 class="page-title"><strong>Upcoming</strong> elections</h3>
-
         <div class="m-all t-1of2 d-1of2">
-          <p>We won in Kansas and Nebraska, and today we're going to win Maine! We need <strong>all of us</strong> to be helping get voter turnout up in Maine, Michigan and Mississippi. If you haven't volunteered yet, this is your chance!</p>
+          <p>Yuuuuge 29-point victory in Maine! Victory in Kansas and Nebraska, too! Do you know what these states had in common? <strong>Voter turnout was high!</strong> Bernie has lost states, too. Do you know what those states had in common? <strong>Voter turnout was low!</strong> If we are going to win Michigan, it's clear what needs to happen. In every state where Bernie has won, there has been a concerted effort by ground-forces to Get Out The Vote all around the state, and <em>we need to do the same for Michigan!</em></p>
+
+          <h3 class="page-title"><strong>Upcoming</strong> elections</h3>
 
           <p><em>Click each state to find out how to vote there!</em></p>
-
-
-          <strong>March 6th (today!):</strong>
-          <ul>
-            <li><a href="http://voteforbernie.org/state/maine/" target="_blank" data-track="GOTV,Maine">Maine</a></li>
-          </ul>
 
           <strong>March 8th:</strong>
             <li><a href="http://voteforbernie.org/state/michigan/" target="_blank" data-track="GOTV,Michigan">Michigan</a></li>
