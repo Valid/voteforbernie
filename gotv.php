@@ -71,12 +71,12 @@
         </div>
         <div class="m-all t-1of2 d-1of2">
           <blockquote class="twitter-tweet" data-link-color="#55acee">
-            <p>The #PoliticalRevolution requires high voter turnout. It's up to us to #GetOutTheVote<br><br>
+            <p>Michigan and Mississippi vote today! #VoteTogether<br><br>
 
-            Maine is voting TODAY! #GOTV @<br><br>
+              #GOTVforBernie @ http://voteforbernie.org/gotv/<br><br>
 
-            http://voteforbernie.org/GOTV/</p> — Vote For Bernie (@vote_for_bernie)
-            <a href="https://twitter.com/vote_for_bernie/status/706396217345855488"  data-track="GOTV,ReTweet">
+              How to vote: http://voteforbernie.org</p> — Vote For Bernie (@vote_for_bernie)
+            <a href="https://twitter.com/vote_for_bernie/status/707152378764464128"  data-track="GOTV,ReTweet">
               March 1, 2016
             </a>
           </blockquote>
