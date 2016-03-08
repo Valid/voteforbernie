@@ -19,15 +19,14 @@
 
       <div class="map-intro">
         <div class="state-select">
-          <p>We all <strong>#FeelTheBern</strong>, but feelings don't win elections</p>
-          <p>Elections are won with votes, and our job is to Get Out The Vote</p>
+          <p>Michigan and Mississippi are voting today</p>
           <p><strong>When voter turnout is high, Bernie wins.</strong></p>
-          <h1 class="page-title">#<strong>Vote</strong>TheBern</h1>
+          <h1 class="page-title">#<strong>Bern</strong>TheBallot</h1>
 
           <div class="gotv-countdown">
-            <h4 class="page-title countdown-title">Countdown to <strong>March 8</strong></h4>
-            <div class="soon" data-due="2016-03-08T08:18:06+00:00" data-now="<?php echo date("c"); ?>" data-face="flip corners-sharp color-dark" data-event-complete="today"></div>
-            <h4 class="page-title"><strong>Michigan</strong> and <strong>Mississippi</strong></h4>
+            <!-- <h4 class="page-title countdown-title">Countdown to <strong>March 8</strong></h4> -->
+            <!-- <div class="soon" data-due="2016-03-08T08:18:06+00:00" data-now="<?php echo date("c"); ?>" data-face="flip corners-sharp color-dark" data-event-complete="today"></div> -->
+            <h4 class="page-title">GOTV in <strong>Michigan</strong> and <strong>Mississippi</strong>!</h4>
           </div>
           <!--
           <p>What do to? <span class="no-mobile">your state by clicking it or</span>
@@ -45,7 +44,9 @@
 
       <section class="entry-content cf wrap" itemprop="articleBody">
         <div class="m-all t-1of2 d-1of2">
-          <p>Yuuuuge 29-point victory in Maine! Victory in Kansas and Nebraska, too! Do you know what these states had in common? <strong>Voter turnout was high!</strong> Bernie has lost states, too. Do you know what those states had in common? <strong>Voter turnout was low!</strong> If we are going to win Michigan, it's clear what needs to happen. In every state where Bernie has won, there has been a concerted effort by ground-forces to Get Out The Vote all around the state, and <em>we need to do the same for Michigan!</em></p>
+          <p>From a "yuge" 29-point victory in Maine, and wins in Kansas and Nebraska, too, it's Michigan and Mississippi's turn to show the country that we #FeelTheBern. Do you know what these states had in common? <strong>Voter turnout was high!</strong> Bernie has lost some states and what did those states have in common? <strong>Voter turnout was low!</strong> If we are going to win Michigan, it's clear what needs to happen. In every state where Bernie has won, there has been a concerted effort by ground-forces to Get Out The Vote all around the state, and <em>we need to do the same for Michigan and Mississippi!</em></p>
+
+          <p>If you are a Bernie supporter living abroad, today is also the deadline for <a href="http://voteforbernie.org/state/democrats-abroad/" target="_blank" data-track="GOTV,DemsAbroad">Democrats Abroad</a>. Get your vote in today!</p>
 
           <h3 class="page-title"><strong>Upcoming</strong> elections</h3>
 
@@ -90,14 +91,12 @@
 
             <div class="m-all t-1of2 d-1of2">
               <h3 class="page-title"><strong>Canvass</strong> for Bernie</h3>
-              <p>Tried and true: Knocking on doors has been the most effective method of Getting Out The Vote since forever. Everyone able should be canvassing like the election depends on it, <strong>because it does!</strong> If you've never canvassed before, you're certainly not alone. You can receive training and instructions on where and how to canvass from a Bernie Sanders campaign office.</p>
+              <p>If you live in or around Michigan or Mississippi, you are invited to participate in our new <em>ultramodern</em> GOTV strategy: <strong>Knocking on doors</strong>. Okay, maybe not so modern, but it works. It gets votes out.  <a href="https://go.berniesanders.com/page/content/gtd/" data-track="GOTV,CanvassGTD">Sign up here with the official campaign</a> and <a href="https://fieldthebern.com/" data-track="GOTV,FieldTheBern">get the 'FieldTheBern' app</a>, featuring data from both <a href="http://voteforbernie.org">VoteForBernie.org</a> and <a href="http://feelthebern.org/">FeelTheBern.org</a>. It also helpfully includes a canvassing tutorial and a very simple interface to interact with residents.</p>
 
-              <h3 class="page-title"><strong>New!</strong></h3>
+              <p><a href="https://go.berniesanders.com/page/content/gtd/" class="ui-btn cta" data-track="GOTV,GTD">In or near MI or MS? Canvass!</a></p>
 
-              <p>Have an iPhone or Android device? Use the <strong>Field the Bern</strong> app to easily start canvassing for Bernie. Includes instructions for how to canvass and integrates data from <a href="http://voteforbernie.org">VoteForBernie.org</a> and <a href="http://feelthebern.org/">FeelTheBern.org</a>.</p>
-              <a href="https://fieldthebern.com/" class="ui-btn cta" data-track="GOTV,FieldTheBern">Get the 'Field The Bern' app</a>
-              <p>Willing to travel?</p>
-              <a href="https://go.berniesanders.com/page/content/gtd/" class="ui-btn cta" data-track="GOTV,GTD">Go the Distance for Bernie</a>
+              <p><a href="https://fieldthebern.com/" class="ui-btn cta" data-track="GOTV,FieldTheBern">Get the 'Field The Bern' app</a></p>
+
             </div>
             <div class="m-all t-1of2 d-1of2">
               <a href="https://fieldthebern.com/" data-track="GOTV,FieldTheBernImg"><img src="http://voteforbernie.org/wp-content/uploads/2016/03/field-the-bern-app.png" alt="" /></a>
@@ -105,8 +104,9 @@
           </div>
           <div class="content alt phonebank">
             <h3 class="page-title"><strong>Phonebank</strong> for Bernie</h3>
-            <p>If you cannot canvass, the next best thing is phonebanking. All you have to do is call voters and let them know when and where they can vote. Training is provided!</p>
-            <p><a href="https://go.berniesanders.com/page/content/phonebank" class="ui-btn cta" data-track="GOTV,Phonebank">Phonebank for Bernie</a></p>
+            <p>If you cannot canvass, the next best thing is phonebanking. All you have to do is call voters and let them know when and where they can vote, not convincing them to vote for Bernie. No experience necessary!</p>
+            <p><a href="http://berniesanders.com/miphonebank" class="ui-btn cta" data-track="GOTV,MIPhonebank">Phonebank in Michigan</a></p>
+            <p><a href="http://berniesanders.com/msphonebank" class="ui-btn cta" data-track="GOTV,MSPhonebank">Phonebank in Mississippi</a></p>
           </div>
           <div class="content facebank">
             <h3 class="page-title"><strong>Facebank</strong> for Bernie</h3>
@@ -116,18 +116,14 @@
 
           <div class="content alt donate">
             <h3 class="page-title"><strong>Donate</strong> to Bernie</h3>
-            <p>If you're unable to volunteer, consider giving a donation to Bernie's campaign. Bernie is the only Democratic candidate not using a Super PAC and relies on donations from us to support his campaign.</p>
-            <?php echo wp_oembed_get('https://www.youtube.com/watch?v=50ZItA-vc9I'); ?>
-            <p><strong>Over $40 Million Donated in February!</strong> We blew past the $40,000,000 goal for February, more than double what we raised in in January. Let's break some new records and keep donating!</p>
-            <div class="inner-section">
-              <a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" data-track="GOTV,DonateImg"><img src="https://go.berniesanders.com/page/contribute_c/40m/graphic?todays-goal" alt=""></a>
-            </div>
+            <p>If you're <strong>unable to volunteer</strong>, consider contributing to Bernie's campaign. Bernie is the <strong>only Democratic candidate</strong> not using a Super PAC and relies on donations from us to support his campaign.</p>
+            <p>Bernie's campaign has received <strong>over 4 million contributions so far!</strong> No other candidate has had this many contributions this early in the race! Let's break another record and get to 5,000,000. Donate!</p>
             <p><a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" class="ui-btn cta" data-track="GOTV,Donate">Donate to Bernie's Campaign</a></p>
           </div>
           <div class="content volunteer">
             <h3 class="page-title"><strong>Volunteer</strong> for Bernie</h3>
-            <p>Bernie needs to know where his support base is, so it is important to sign up as a volunteer with the official Bernie Sanders campaign.</p>
-            <p><a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" class="ui-btn cta" data-track="GOTV,Volunteer">Sign up as a volunteer</a></p>
+            <p>The information contained on this page is general-use, but to be truly effective, you should sign up to be a volunteer for Bernie's campaign.</p>
+            <p><a href="https://go.berniesanders.com/page/s/bernie-journey?source=voteforbernieorg" class="ui-btn cta" data-track="GOTV,Volunteer">Join the revolution.</a></p>
           </div>
           <div class="content alt stay-informed">
             <h3 class="page-title"><strong>Stay informed!</strong></h3>
