@@ -19,14 +19,13 @@
 
       <div class="map-intro">
         <div class="state-select">
-          <p>Michigan and Mississippi are voting today</p>
-          <p><strong>When voter turnout is high, Bernie wins.</strong></p>
+          <p>Bernie asked us to help with the political revolution</p>
+          <p><strong>Michigan was not the finish line!</strong></p>
           <h1 class="page-title">#<strong>Bern</strong>TheBallot</h1>
 
           <div class="gotv-countdown">
-            <!-- <h4 class="page-title countdown-title">Countdown to <strong>March 8</strong></h4> -->
-            <!-- <div class="soon" data-due="2016-03-08T08:18:06+00:00" data-now="<?php echo date("c"); ?>" data-face="flip corners-sharp color-dark" data-event-complete="today"></div> -->
-            <h4 class="page-title">GOTV in <strong>Michigan</strong> and <strong>Mississippi</strong>!</h4>
+            <h4 class="page-title countdown-title">Countdown to <strong>March 15</strong></h4>
+            <div class="soon" data-due="2016-03-15T08:18:06+00:00" data-now="<?php echo date("c"); ?>" data-face="flip corners-sharp color-dark" data-event-complete="today"></div>
           </div>
           <!--
           <p>What do to? <span class="no-mobile">your state by clicking it or</span>
@@ -44,25 +43,22 @@
 
       <section class="entry-content cf wrap" itemprop="articleBody">
         <div class="m-all t-1of2 d-1of2">
-          <p>From a "yuge" 29-point victory in Maine, and wins in Kansas and Nebraska, too, it's Michigan and Mississippi's turn to show the country that we #FeelTheBern. Do you know what these states had in common? <strong>Voter turnout was high!</strong> Bernie has lost some states and what did those states have in common? <strong>Voter turnout was low!</strong> If we are going to win Michigan, it's clear what needs to happen. In every state where Bernie has won, there has been a concerted effort by ground-forces to Get Out The Vote all around the state, and <em>we need to do the same for Michigan and Mississippi!</em></p>
+          <p>Bernie's historic victory in Michigan has us understandably happy, but since the win, <a href="https://www.berniepb.com/" target="_blank" data-track="GOTV,berniepb">phonebanking calls have decreased</a>. Now is not the time to be celebrating, Michigan was not the finish line, <strong>it was the <em>start</em></strong>. Millions of dollars of SuperPAC money is flooding into these states for Hillary. Bernie doesn't have a SuperPAC, he has us - grassroots support. We are who Bernie is fighting for, let's do our part in getting others to the polls. Remember: <strong>When voter turnout is high, Bernie wins!</strong></p>
 
-          <p>If you are a Bernie supporter living abroad, today is also the deadline for <a href="http://voteforbernie.org/state/democrats-abroad/" target="_blank" data-track="GOTV,DemsAbroad">Democrats Abroad</a>. Get your vote in today!</p>
-
-          <h3 class="page-title"><strong>Upcoming</strong> elections</h3>
+          <h3 class="page-title">Upcoming</h3>
 
           <p><em>Click each state to find out how to vote there!</em></p>
 
-          <strong>March 8th:</strong>
-            <li><a href="http://voteforbernie.org/state/michigan/" target="_blank" data-track="GOTV,Michigan">Michigan</a></li>
-            <li><a href="http://voteforbernie.org/state/mississippi/" target="_blank" data-track="GOTV,Mississippi">Mississippi</a></li>
+          <strong>March 15th:</strong>
           <ul>
-
+            <li><a href="http://voteforbernie.org/state/florida/" target="_blank" data-track="GOTV,Florida">Florida</a></li>
+            <li><a href="http://voteforbernie.org/state/illinois/" target="_blank" data-track="GOTV,Illinois">Illinois</a></li>
+            <li><a href="http://voteforbernie.org/state/missouri/" target="_blank" data-track="GOTV,Missouri">Missouri</a></li>
+            <li><a href="http://voteforbernie.org/state/north-carolina/" target="_blank" data-track="GOTV,North Carolina">North Carolina</a></li>
+            <li><a href="http://voteforbernie.org/state/ohio/" target="_blank" data-track="GOTV,Ohio">Ohio</a></li>
+            <li><a href="https://vote.berniesanders.com/NMI/" target="_blank" data-track="GOTV,NMI">Northern Mariana Islands</a></li>
           </ul>
 
-          <strong>March 1st-8th:</strong>
-          <ul>
-            <li><a href="http://voteforbernie.org/state/democrats-abroad/" target="_blank" data-track="GOTV,DemsAbroad">Democrats Abroad</a></li>
-          </ul>
 
           <p>See the full <a href="http://voteforbernie.org/schedule" data-track="GOTV,schedule">primary schedule here</a>.</p>
 
@@ -91,9 +87,9 @@
 
             <div class="m-all t-1of2 d-1of2">
               <h3 class="page-title"><strong>Canvass</strong> for Bernie</h3>
-              <p>If you live in or around Michigan or Mississippi, you are invited to participate in our new <em>ultramodern</em> GOTV strategy: <strong>Knocking on doors</strong>. Okay, maybe not so modern, but it works. It gets votes out.  <a href="https://go.berniesanders.com/page/content/gtd/" data-track="GOTV,CanvassGTD">Sign up here with the official campaign</a> and <a href="https://fieldthebern.com/" data-track="GOTV,FieldTheBern">get the 'FieldTheBern' app</a>, featuring data from both <a href="http://voteforbernie.org">VoteForBernie.org</a> and <a href="http://feelthebern.org/">FeelTheBern.org</a>. It also helpfully includes a canvassing tutorial and a very simple interface to interact with residents.</p>
+              <p>If you live in or around any of the voting states, we need you to be physically knocking on doors if you're able. It's perhaps a bit old-fashioned, but it's effective.  <a href="https://go.berniesanders.com/page/content/gtd/" data-track="GOTV,CanvassMap">Find your canvassing location on the map</a> and <a href="https://fieldthebern.com/" data-track="GOTV,FieldTheBern">get the 'FieldTheBern' app</a>, featuring information from both <a href="http://voteforbernie.org">VoteForBernie.org</a> and <a href="http://feelthebern.org/">FeelTheBern.org</a>. No experience required!</p>
 
-              <p><a href="https://go.berniesanders.com/page/content/gtd/" class="ui-btn cta" data-track="GOTV,GTD">In or near MI or MS? Canvass!</a></p>
+              <p><a href="https://go.berniesanders.com/page/content/gtd/" class="ui-btn cta" data-track="GOTV,GTD">In or near a voting state? Canvass!</a></p>
 
               <p><a href="https://fieldthebern.com/" class="ui-btn cta" data-track="GOTV,FieldTheBern">Get the 'Field The Bern' app</a></p>
 
@@ -105,12 +101,11 @@
           <div class="content alt phonebank">
             <h3 class="page-title"><strong>Phonebank</strong> for Bernie</h3>
             <p>If you cannot canvass, the next best thing is phonebanking. All you have to do is call voters and let them know when and where they can vote, not convincing them to vote for Bernie. No experience necessary!</p>
-            <p><a href="http://berniesanders.com/miphonebank" class="ui-btn cta" data-track="GOTV,MIPhonebank">Phonebank in Michigan</a></p>
-            <p><a href="http://berniesanders.com/msphonebank" class="ui-btn cta" data-track="GOTV,MSPhonebank">Phonebank in Mississippi</a></p>
+            <p><a href="https://go.berniesanders.com/page/content/phonebank/" class="ui-btn cta" data-track="GOTV,Phonebank">Phonebank for Bernie</a></p>
           </div>
           <div class="content facebank">
             <h3 class="page-title"><strong>Facebank</strong> for Bernie</h3>
-            <p>This is new... Facebook allows you to create very specific searches. In fact, you can search for everyone that has 'liked' Bernie Sanders (likely Bernie supporter) AND is your friend or friend of a friend AND is from a specific state. In this way, you can contact people who are Bernie supporters and remind them to vote!</p>
+            <p>Facebook allows you to create very specific searches. In fact, you can search for everyone that has 'liked' Bernie Sanders AND is a "friend of a friend" AND is from a specific state. In this way, you can contact people who are Bernie supporters and remind them to vote!</p>
             <p><a href="http://berniefriendfinder.com/" class="ui-btn cta" data-track="GOTV,BernieFriendFinder">"Facebank" for Bernie</a></p>
           </div>
 
@@ -123,7 +118,7 @@
           <div class="content volunteer">
             <h3 class="page-title"><strong>Volunteer</strong> for Bernie</h3>
             <p>The information contained on this page is general-use, but to be truly effective, you should sign up to be a volunteer for Bernie's campaign.</p>
-            <p><a href="https://go.berniesanders.com/page/s/bernie-journey?source=voteforbernieorg" class="ui-btn cta" data-track="GOTV,Volunteer">Join the revolution.</a></p>
+            <p><a href="https://go.berniesanders.com/page/s/bernie-journey" class="ui-btn cta" data-track="GOTV,Volunteer">Join the revolution.</a></p>
           </div>
           <div class="content alt stay-informed">
             <h3 class="page-title"><strong>Stay informed!</strong></h3>
