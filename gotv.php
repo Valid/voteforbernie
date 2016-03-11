@@ -67,13 +67,11 @@
         </div>
         <div class="m-all t-1of2 d-1of2">
           <blockquote class="twitter-tweet" data-link-color="#55acee">
-            <p>Michigan and Mississippi vote today! #VoteTogether<br><br>
+            <p>Michigan was not the finish line! #GOTVforBernie at http://voteforbernie.org/GOTV/<br><br>
 
-              #GOTVforBernie @ http://voteforbernie.org/gotv/<br><br>
-
-              How to vote: http://voteforbernie.org</p> — Vote For Bernie (@vote_for_bernie)
-            <a href="https://twitter.com/vote_for_bernie/status/707152378764464128"  data-track="GOTV,ReTweet">
-              March 1, 2016
+On March 15th, 5 states + 1 territory are voting. #VoteTogether</p> — Vote For Bernie (@vote_for_bernie)
+            <a href="https://twitter.com/vote_for_bernie/status/708219847021166598"  data-track="GOTV,ReTweet">
+              March 11, 2016
             </a>
           </blockquote>
         </div>
@@ -89,7 +87,7 @@
               <h3 class="page-title"><strong>Canvass</strong> for Bernie</h3>
               <p>If you live in or around any of the voting states, we need you to be physically knocking on doors if you're able. It's perhaps a bit old-fashioned, but it's effective.  <a href="https://go.berniesanders.com/page/content/gtd/" data-track="GOTV,CanvassMap">Find your canvassing location on the map</a> and <a href="https://fieldthebern.com/" data-track="GOTV,FieldTheBern">get the 'FieldTheBern' app</a>, featuring information from both <a href="http://voteforbernie.org">VoteForBernie.org</a> and <a href="http://feelthebern.org/">FeelTheBern.org</a>. No experience required!</p>
 
-              <p><a href="https://go.berniesanders.com/page/content/gtd/" class="ui-btn cta" data-track="GOTV,GTD">In or near a voting state? Canvass!</a></p>
+              <p><a href="https://go.berniesanders.com/page/content/gtd/" class="ui-btn cta" data-track="GOTV,CanvassMapBtn">In or near a voting state? Canvass!</a></p>
 
               <p><a href="https://fieldthebern.com/" class="ui-btn cta" data-track="GOTV,FieldTheBern">Get the 'Field The Bern' app</a></p>
 
