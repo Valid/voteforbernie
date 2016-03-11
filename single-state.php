@@ -218,8 +218,8 @@
         <p>If you are a college student <strong>not living in your home state</strong>, you can vote for Bernie in either your home state or in the state in which you are attending school!</p>
 
         <?php if ($state->type != 'caucuses') { ?>
-          <h4>Military Voters</h4>
-          <p>If you are a Military Voter living abroad, you are able to <a href="https://www.overseasvotefoundation.org/vote/VoterInformation.htm" data-track="Overseas,<?php echo $state->state; ?>" target="_blank">complete a ballot here</a> to vote for Bernie.</p>
+          <h4>Military/Overseas Voters</h4>
+          <p>If you are a Military Voter or a US Citizen living abroad, you are able to <a href="https://www.overseasvotefoundation.org/vote/VoterInformation.htm" data-track="Overseas,<?php echo $state->state; ?>" target="_blank">request a ballot here</a> to vote for Bernie.</p>
         <?php } ?>
 
 
