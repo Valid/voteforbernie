@@ -20,34 +20,24 @@
       <div class="map-intro">
         <div class="state-select">
           <p>Bernie asked us to help with the political revolution</p>
-          <p><strong>Michigan was not the finish line!</strong></p>
+          <p><strong>It's time to step it up.</strong></p>
           <h1 class="page-title">#<strong>Bern</strong>TheBallot</h1>
 
           <div class="gotv-countdown">
             <h4 class="page-title countdown-title">Countdown to <strong>March 15</strong></h4>
             <div class="soon" data-due="2016-03-15T08:18:06+00:00" data-now="<?php echo date("c"); ?>" data-face="flip corners-sharp color-dark" data-event-complete="today"></div>
           </div>
-          <!--
-          <p>What do to? <span class="no-mobile">your state by clicking it or</span>
-            <select class="state-selector">
-              <option>Select Your State</option>
-              <?php foreach ($states as $state): ?>
-                <option value="<?php echo $state->state; ?>"><?php echo $state->getTitle(); ?></option>
-              <?php endforeach; ?>
-            </select>
-          </p> -->
-          <!-- <p class="map-link np"><a href="<?php echo home_url(); ?>">Not registered to vote? <span>Find your state!</span></a></p> -->
         </div>
 
       </div>
 
       <section class="entry-content cf wrap" itemprop="articleBody">
         <div class="m-all t-1of2 d-1of2">
-          <p>Bernie's historic victory in Michigan has us understandably happy, but since the win, <a href="https://www.berniepb.com/" target="_blank" data-track="GOTV,berniepb">phonebanking calls have decreased</a>. Now is not the time to be celebrating, Michigan was not the finish line, <strong>it was the <em>start</em></strong>. Millions of dollars of SuperPAC money is flooding into these states for Hillary. Bernie doesn't have a SuperPAC, he has us - grassroots support. We are who Bernie is fighting for, let's do our part in getting others to the polls. Remember: <strong>When voter turnout is high, Bernie wins!</strong></p>
+          <p>The time has come for another #SuperTuesday. Five states and the Northern Mariana Islands are voting on March 15th, and <strong>we need every Bernie supporter around the country to help Get Out The Vote!</strong> We made history in Michigan last Tuesday because so many of us dedicated energy toward it. We can do the same this Tuesday, but <strong>there is still a lot of work to do!</strong>  Millions of dollars of SuperPAC money is flooding into these states for Hillary. Bernie doesn't have a SuperPAC, he has us - grassroots support. We are who Bernie is fighting for, let's do our part in getting others to the polls. Remember: <strong>When voter turnout is high, Bernie wins!</strong></p>
 
           <h3 class="page-title">Upcoming</h3>
 
-          <p><em>Click each state to find out how to vote there!</em></p>
+          <p><em>Click each state to find out how to vote there</em></p>
 
           <strong>March 15th:</strong>
           <ul>
@@ -67,11 +57,13 @@
         </div>
         <div class="m-all t-1of2 d-1of2">
           <blockquote class="twitter-tweet" data-link-color="#55acee">
-            <p>Michigan was not the finish line! #GOTVforBernie at http://voteforbernie.org/GOTV/<br><br>
+            <p>March 15th is #SuperTuesday mk II<br><br>
 
-On March 15th, 5 states + 1 territory are voting. #VoteTogether</p> — Vote For Bernie (@vote_for_bernie)
-            <a href="https://twitter.com/vote_for_bernie/status/708219847021166598"  data-track="GOTV,ReTweet">
-              March 11, 2016
+5 states+1 territory at stake. EVERYONE should be helping GOTV!<br><br>
+
+#BernTheBallot @ voteforbernie.org/GOTV</p> — Vote For Bernie (@vote_for_bernie)
+            <a href="https://twitter.com/vote_for_bernie/status/709493461020377088" data-track="GOTV,ReTweet">
+              March 14, 2016
             </a>
           </blockquote>
         </div>
@@ -85,51 +77,58 @@ On March 15th, 5 states + 1 territory are voting. #VoteTogether</p> — Vote For
 
             <div class="m-all t-1of2 d-1of2">
               <h3 class="page-title"><strong>Canvass</strong> for Bernie</h3>
-              <p>If you live in or around any of the voting states, we need you to be physically knocking on doors if you're able. It's perhaps a bit old-fashioned, but it's effective.  <a href="https://go.berniesanders.com/page/content/gtd/" data-track="GOTV,CanvassMap">Find your canvassing location on the map</a> and <a href="https://fieldthebern.com/" data-track="GOTV,FieldTheBern">get the 'FieldTheBern' app</a>, featuring information from both <a href="http://voteforbernie.org">VoteForBernie.org</a> and <a href="http://feelthebern.org/">FeelTheBern.org</a>. No experience required!</p>
+              <p>If you live in or around any of the voting states, we need you to be physically knocking on doors if you're able. It's perhaps a bit old-fashioned, but it's effective.</p>
+              <p>Get the <a href="https://fieldthebern.com/" data-track="GOTV,FieldTheBern" target="_blank">'FieldTheBern' app</a>, featuring information from both <a href="http://voteforbernie.org">VoteForBernie.org</a> and <a href="http://feelthebern.org/" target="_blank">FeelTheBern.org</a>. No experience required! The app walks you through everything you need to know, and you can canvass in your own neighborhood.</p>
 
-              <p><a href="https://go.berniesanders.com/page/content/gtd/" class="ui-btn cta" data-track="GOTV,CanvassMapBtn">In or near a voting state? Canvass!</a></p>
+              <p>In a voting state or willing to travel? <a href="https://go.berniesanders.com/page/s/bernie-journey" class="ui-btn cta" data-track="GOTV,BernieJourney">Go on a Bernie Journey!</a></p>
 
-              <p><a href="https://fieldthebern.com/" class="ui-btn cta" data-track="GOTV,FieldTheBern">Get the 'Field The Bern' app</a></p>
+              <p><a href="https://fieldthebern.com/" class="ui-btn cta" data-track="GOTV,FieldTheBern" target="_blank">Get the 'Field The Bern' app</a></p>
 
             </div>
             <div class="m-all t-1of2 d-1of2">
-              <a href="https://fieldthebern.com/" data-track="GOTV,FieldTheBernImg"><img src="http://voteforbernie.org/wp-content/uploads/2016/03/field-the-bern-app.png" alt="" /></a>
+              <a href="https://fieldthebern.com/" data-track="GOTV,FieldTheBernImg" target="_blank"><img src="http://voteforbernie.org/wp-content/uploads/2016/03/field-the-bern-app.png" alt="" /></a>
             </div>
           </div>
           <div class="content alt phonebank">
             <h3 class="page-title"><strong>Phonebank</strong> for Bernie</h3>
-            <p>If you cannot canvass, the next best thing is phonebanking. All you have to do is call voters and let them know when and where they can vote, not convincing them to vote for Bernie. No experience necessary!</p>
-            <p><a href="https://go.berniesanders.com/page/content/phonebank/" class="ui-btn cta" data-track="GOTV,Phonebank">Phonebank for Bernie</a></p>
+            <p>If you cannot canvass, the next best thing is phonebanking. All you have to do is call voters and let them know when and where they can vote, not convincing them to vote for Bernie. No experience necessary! If you're nervous or not sure where to start, there are <a href="http://organize.berniesanders.com/slack/callforbernie/" data-track="GOTV,callforbernie" target="_blank">experts standing by</a> to help you get started!</p>
+
+            <p><a href="https://go.berniesanders.com/page/content/phonebank/" class="ui-btn cta" data-track="GOTV,Phonebank" target="_blank">Phonebank for Bernie</a></p>
+
+            <a href="https://www.berniepb.com/" data=track="GOTV,BerniePBImg" target="_blank"><img src="http://voteforbernie.org/wp-content/uploads/2016/03/phonebank-for-bernie.gif" alt=""></a>
+
+            <p>Track and gamify your phonebanking! <a href="https://www.berniepb.com/" class="ui-btn cta" data-track="GOTV,BerniePB" target="_blank">Track your calls with BerniePB!</a></p>
           </div>
+
           <div class="content facebank">
             <h3 class="page-title"><strong>Facebank</strong> for Bernie</h3>
-            <p>Facebook allows you to create very specific searches. In fact, you can search for everyone that has 'liked' Bernie Sanders AND is a "friend of a friend" AND is from a specific state. In this way, you can contact people who are Bernie supporters and remind them to vote!</p>
-            <p><a href="http://berniefriendfinder.com/" class="ui-btn cta" data-track="GOTV,BernieFriendFinder">"Facebank" for Bernie</a></p>
+            <p><strong>Are you on Facebook?</strong> A new tool created by grassroots supporters allows you to help remind people in voting states to vote in their primary, up to 500 a day! This is very effective if we all pitch in, and only takes a few minutes.</p>
+            <p><a href="http://feelthebern.events/" class="ui-btn cta" data-track="GOTV,FacebankEvents" target="_blank">"Facebank" for Bernie</a></p>
           </div>
 
           <div class="content alt donate">
             <h3 class="page-title"><strong>Donate</strong> to Bernie</h3>
             <p>If you're <strong>unable to volunteer</strong>, consider contributing to Bernie's campaign. Bernie is the <strong>only Democratic candidate</strong> not using a Super PAC and relies on donations from us to support his campaign.</p>
             <p>Bernie's campaign has received <strong>over 4 million contributions so far!</strong> No other candidate has had this many contributions this early in the race! Let's break another record and get to 5,000,000. Donate!</p>
-            <p><a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" class="ui-btn cta" data-track="GOTV,Donate">Donate to Bernie's Campaign</a></p>
+            <p><a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" class="ui-btn cta" data-track="GOTV,Donate" target="_blank">Donate to Bernie's Campaign</a></p>
           </div>
           <div class="content volunteer">
             <h3 class="page-title"><strong>Volunteer</strong> for Bernie</h3>
             <p>The information contained on this page is general-use, but to be truly effective, you should sign up to be a volunteer for Bernie's campaign.</p>
-            <p><a href="https://go.berniesanders.com/page/s/bernie-journey" class="ui-btn cta" data-track="GOTV,Volunteer">Join the revolution.</a></p>
+            <p><a href="https://go.berniesanders.com/page/s/volunteer-for-bernie" class="ui-btn cta" data-track="GOTV,Volunteer" target="_blank">Join the revolution.</a></p>
           </div>
           <div class="content alt stay-informed">
             <h3 class="page-title"><strong>Stay informed!</strong></h3>
             <p>The primary season is well underway. Sign up to be reminded of deadlines in your state and other important information.</p>
             <?php echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" ); ?>
             <p>Did you know there is a community of over 100,000 Bernie supporters online?</p>
-            <p><a href="http://SandersForPresident.reddit.com" class="ui-btn cta" data-track="GOTV,Reddit">Join the Conversation</a></p>
+            <p><a href="http://SandersForPresident.reddit.com" class="ui-btn cta" data-track="GOTV,Reddit" target="_blank">Join the Conversation</a></p>
             <h2 class="page-title">#WeStand<strong>Together</strong></h2>
           </div>
 
           <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
 
-          <p class="map-link np"><a href="<?php echo home_url(); ?>">Not registered to vote? <span>Find your state!</span></a></p>
+          <p class="map-link np"><a href="<?php echo home_url(); ?>">Know how to vote? <span>Find your state!</span></a></p>
         </div>
       </section>
 
