@@ -103,7 +103,7 @@
           <div class="content facebank">
             <h3 class="page-title"><strong>Facebank</strong> for Bernie</h3>
             <p><strong>Are you on Facebook?</strong> A new tool created by grassroots supporters allows you to help remind people in voting states to vote in their primary, up to 500 a day! This is very effective if we all pitch in, and only takes a few minutes.</p>
-            <p><a href="http://feelthebern.events/" class="ui-btn cta" data-track="GOTV,FacebankEvents" target="_blank">"Facebank" for Bernie</a></p>
+            <p><a href="http://berniefriendfinder.com/" class="ui-btn cta" data-track="GOTV,BernieFriendFinder" target="_blank">"Facebank" for Bernie</a></p>
           </div>
 
           <div class="content alt donate">
