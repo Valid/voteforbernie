@@ -24,8 +24,8 @@
           <h1 class="page-title">#<strong>Bern</strong>TheBallot</h1>
 
           <div class="gotv-countdown">
-            <h4 class="page-title countdown-title">Countdown to <strong>March 15</strong></h4>
-            <div class="soon" data-due="2016-03-15T08:18:06+00:00" data-now="<?php echo date("c"); ?>" data-face="flip corners-sharp color-dark" data-event-complete="today"></div>
+            <h4 class="page-title countdown-title"><strong>Voting Today!</strong></h4>
+            <!-- <div class="soon" data-due="2016-03-15T08:18:06+00:00" data-now="<?php echo date("c"); ?>" data-face="flip corners-sharp color-dark" data-event-complete="today"></div> -->
           </div>
         </div>
 
@@ -57,13 +57,11 @@
         </div>
         <div class="m-all t-1of2 d-1of2">
           <blockquote class="twitter-tweet" data-link-color="#55acee">
-            <p>March 15th is #SuperTuesday mk II<br><br>
-
-5 states+1 territory at stake. EVERYONE should be helping GOTV!<br><br>
-
-#BernTheBallot @ voteforbernie.org/GOTV</p> — Vote For Bernie (@vote_for_bernie)
-            <a href="https://twitter.com/vote_for_bernie/status/709493461020377088" data-track="GOTV,ReTweet">
-              March 14, 2016
+            <p>#SuperTuesday Mk II. #BernTheBallot<br>
+            5 States are voting TODAY. Let's make history, people!<br>
+            This is how we will win:  voteforbernie.org/GOTV</p> — Vote For Bernie (@vote_for_bernie)
+            <a href="https://twitter.com/vote_for_bernie/status/709647846987796481" data-track="GOTV,ReTweet">
+              March 15, 2016
             </a>
           </blockquote>
         </div>
