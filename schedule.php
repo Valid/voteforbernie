@@ -56,10 +56,11 @@ date_default_timezone_set('America/New_York');
                 <section class="entry-content cf" itemprop="articleBody">
                   <div class="page-content">
                     <div class="states wrap">
-                <table class="state-table tablesorter tablesaw tablesaw-stack" data-tablesaw-mode="stack" data-sortlist="[[3,0]]">
+                <table class="state-table tablesorter tablesaw tablesaw-stack" data-tablesaw-mode="stack" data-sortlist="[[4,0]]">
                   <thead>
                     <tr>
                       <th scope="col" data-tablesaw-priority="persist">State</th>
+                      <th scope="col" data-tablesaw-priority="persist">type</th>
                       <th scope="col" data-tablesaw-priority="4">Affiliate By</th>
                       <th scope="col" data-tablesaw-priority="3">Register By</th>
                       <th scope="col" data-tablesaw-priority="2">Primary / Caucus Date</th>
@@ -69,6 +70,7 @@ date_default_timezone_set('America/New_York');
                     <?php foreach ($states as $state): ?>
                       <tr class="state-data <?php echo $state->state; ?>" data-code="<?php echo $state->state; ?>">
                         <td class="name"><a href="<?php echo esc_url( get_permalink($state->post) ); ?>" title="How to vote in <?php echo $state->getTitle(); ?>" data-track="schedule,<?php echo $state->state; ?>"><?php echo $state->getTitle(); ?></a></td>
+                        <td class="type"><?php echo $state->status; ?> <?php echo strtolower($state->getTypeText()); ?></td>
                         <td class="aff" data-text="<?php echo $helper->daysAway($state->aff_deadline_date); ?>"><?php if ($state->aff_deadline_date) { echo $helper->formatDate($state->aff_deadline_date); } ?></td>
                         <td class="reg" data-text="<?php echo $helper->daysAway($state->deadline_date); ?>"><?php echo $helper->formatDate($state->deadline_date); ?></td>
                         <td class="prim" data-text="<?php echo $helper->daysAway($state->primary_date); ?>"><?php echo $helper->formatDate($state->primary_date); ?></td>
