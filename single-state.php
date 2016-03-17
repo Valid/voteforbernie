@@ -101,6 +101,11 @@
         </script>
       </div>
     </div>
+    <?php if ($state->hasAdditionalNote()): ?>
+      <div class="m-all t-all d-all">
+        <p class="note"><?php echo $state->additional_note; ?></p>
+      </div>
+    <?php endif; ?>
 
     <div class="share np m-all t-all d-all">
       <?php if ($state->state == 'da') { ?>
@@ -178,8 +183,18 @@
       <?php } ?>
 
       <?php if($state->hasVoteHowTo()) { ?>
-        <h4>Vote!</h4>
+        <h4>Go Vote!</h4>
         <?php echo $state->how_to_vote; ?>
+      <?php } ?>
+
+      <?php if($state->hasIDLaws()) { ?>
+        <h4>Id Requirement</h4>
+        <?php echo $state->voter_id; ?>
+      <?php } ?>
+
+      <?php if($state->hasWorkLaws()) { ?>
+        <h4>Voter Workplace Protection</h4>
+        <?php echo $state->work_laws; ?>
       <?php } ?>
 
       <?php if($state->hasEligibility()) { ?>
@@ -226,22 +241,21 @@
       <?php } ?>
       <?php //<p>You have until TODO to request your ballot, and it must be submitted by TODO.</p> ?>
 
-      <?php if ($state->hasAdditionalNote()): ?>
-        <h4>Did you know?</h4>
-
-        <?php if ($state->hasAdditionalNote()): ?>
-          <p class="note"><?php echo $state->additional_note; ?></p>
-        <?php endif; ?>
-
-      <?php endif; ?>
-
       <h4>More Information</h4>
-      <p>If you have any questions about voting in <?php echo $state->getTitle(); ?> you may contact your official elections office.</p>
+      <p>If you have any questions about voting in <?php echo $state->getTitle(); ?> you may contact your state official elections office or Democratic party.</p>
       <ul>
-        <li><a href="<?php echo $state->state_link; ?>" data-track="StateLink,<?php echo $state->state; ?>" target="_blank">Official <?php echo $state->getTitle(); ?> Elections Website</a></li>
-        <li>Phone: <?php echo $state->state_phone; ?></li>
+        <?php if ($state->type != 'caucuses') { ?>
+          <li><a href="<?php echo $state->state_link; ?>" data-track="StateLink,<?php echo $state->state; ?>" target="_blank">Official <?php echo $state->getTitle(); ?> Elections Website</a></li>
+          <li>Phone: <?php echo $state->state_phone; ?></li>
+        <?php } ?>
+        <?php if ($state->dem_website) { ?>
+          <li><a href="<?php echo $state->dem_website; ?>" data-track="DemLink,<?php echo $state->state; ?>" target="_blank"><?php echo $state->getTitle(); ?> Democratic Party</a>
+        <?php } ?>
+        <?php if ($state->dem_phone) { ?>
+          <li>Phone: <?php echo $state->dem_phone; ?></li>
+        <?php } ?>
       </ul>
-      <p>Find other Bernie supporters and get help from <?php echo $state->discussion_link; ?></p>
+      <p>Find local Bernie supporters and get help from <?php echo $state->discussion_link; ?></p>
     </div>
 
     <div class="np m-all t-1of4 d-1of5 last-col gaunit">

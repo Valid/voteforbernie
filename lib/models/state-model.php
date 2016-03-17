@@ -11,6 +11,8 @@ class StateModel extends PostModel {
     'bern_advisory_link',
     'status',
     'how_to_vote',
+    'voter_id',
+    'work_laws',
     'eligibility',
     'campaign_special_need',
     'special_explanation',
@@ -19,6 +21,8 @@ class StateModel extends PostModel {
     'additional_note',
     'state_link',
     'state_phone',
+    'dem_website',
+    'dem_phone',
     'no_registration',
     'check_registration_link',
     'register_link',
@@ -111,6 +115,14 @@ class StateModel extends PostModel {
 
   public function hasVoteHowTo() {
     return !empty($this->how_to_vote);
+  }
+
+  public function hasIDLaws() {
+    return !empty($this->voter_id);
+  }
+
+  public function hasWorkLaws() {
+    return !empty($this->work_laws);
   }
 
   public function hasEligibility() {
