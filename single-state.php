@@ -126,14 +126,12 @@
       <!-- <p>You can also print this page, and it turns into a flier you can post or give out!</p> -->
     </div>
 
-    <div class="vote-content m-all t-all d-all">
+    <div class="vote-content m-all t-3of4 d-4of5">
       <?php if ($state->state == 'da') { ?>
         <h3>How to vote from abroad</h3>
       <?php } else { ?>
         <h3><?php echo $state->getTitle(); ?> Voter Information</h3>
       <?php } ?>
-    </div>
-    <div class="vote-content m-all t-2of3 d-3of5">
       <h4>Get Registered</h4>
       <?php if (!$state->hasRegistration()) { ?>
         <p>Good news! Because <?php echo $state->getTitle(); ?> doesn't have voter registration, you can vote for Bernie Sanders by just showing up and voting!</p>
@@ -260,8 +258,7 @@
       <p>Find local Bernie supporters and get help from <?php echo $state->discussion_link; ?></p>
     </div>
 
-    <div class="np m-all t-1of3 d-2of5 last-col gaunit">
-      <?php /*
+    <div class="np m-all t-1of4 d-1of5 last-col gaunit">
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <!-- Beside Content -->
       <ins class="adsbygoogle"
@@ -271,11 +268,7 @@
            data-ad-format="vertical"></ins>
       <script>
       (adsbygoogle = window.adsbygoogle || []).push({});
-      </script> */ ?>
-      <script language="JavaScript">
-      var zflag_nid="305"; var zflag_cid="42522/42521/1"; var zflag_sid="4756"; var zflag_width="300"; var zflag_height="600"; var zflag_sz="29";
       </script>
-      <script language="JavaScript" src="http://c5.zedo.com/jsc/c5/fo.js"></script>
     </div>
 
     <div class="np m-all t-all d-all newsletter">
@@ -291,7 +284,7 @@
     </div>
 
     <div id="getinvolved" class="np m-all t-all d-all activism">
-      <div class="m-all t-all d-all">
+      <div class="m-all t-1of2 d-1of2">
         <p>Will you help Bernie win?</p>
         <p><strong>"I've said it since day one: I can't do it alone." - <em>Bernie Sanders</em></strong></p>
         <p>This grassroots campaign depends on grassroots support <strong>like you!</strong> There are many opportunities to help out Bernie's campaign right now, and if you want more, <a href="https://go.berniesanders.com/page/s/volunteer-for-bernie?source=voteforbernie" data-track="volunteer,<?php echo $state->state; ?>" target="_blank">sign up as a volunteer</a> with the official campaign.</p>
@@ -318,10 +311,9 @@
           <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
         </div>
       </div>
-      <?php /*
       <div class="m-all t-1of2 d-1of2">
         <?php echo do_shortcode( '[add_eventon_list event_count="10" show_limit="yes" event_order="DESC" hide_past="yes" ]'); ?>
-      </div> */ ?>
+      </div>
     </div>
 
   </div>

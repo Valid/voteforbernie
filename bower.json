@@ -12,6 +12,7 @@
     "bigtext": "~0.1.8",
     "bower-webfontloader": "https://github.com/Valid/bower-webfontloader.git#master",
     "tablesorter": "jquery.tablesorter#^2.25.3",
-    "filament-tablesaw": "^2.0.2"
+    "filament-tablesaw": "^2.0.2",
+    "three.js": "^0.75.0"
   }
 }

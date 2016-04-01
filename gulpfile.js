@@ -21,6 +21,7 @@ var gulp = require('gulp'),
           'bower_components/tablesorter/dist/js/jquery.tablesorter.js',
           'bower_components/filament-tablesaw/dist/stackonly/tablesaw.stackonly.js',
           'bower_components/filament-tablesaw/dist/tablesaw-init.js',
+          'bower_components/three.js/three.js',
           'assets/vendor/soon.js'
         ],
         site: ['assets/js/**/*.js']

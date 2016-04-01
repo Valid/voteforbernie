@@ -258,7 +258,8 @@ HEADER STYLES
   float: left;
   margin: 20px auto 0;
   a {
-    background: url(images/vote-for-bernie-sm.png);
+    // background: url(images/vote-for-bernie-sm.png);
+    background: url(images/vote-for-birdie.png);
     background-size: contain;
     display: block;
     height: 50px;
@@ -2373,5 +2374,19 @@ FOOTER STYLES
   ul {
     list-style-type: disc;
     padding-left: 20px;
+  }
+}
+
+.birds {
+  left: 0;
+  min-width: 320px;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  #birds {
+    left: 0;
+    position: absolute;
+    top: 0;
   }
 }

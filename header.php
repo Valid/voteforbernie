@@ -113,13 +113,12 @@
         <header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
           <div class="action-bar np">
             <?php // TODO: Pull from ACF ?>
-            <?php // <strong>VoteForBernie Facelift &mdash;</strong> New look, new content, same goal: <strong>Get Out The Vote!</strong> <a href="/alerts/voteforbernie-two-point-oh">See What's New</a> ?>
             <?php // <strong>WE DID IT! &mdash;</strong> $1,000,000 raised for Bernie by the grassroots community! <a href="http://berniesanders.com/reddit" data-track="CTA,1mdonate">Donate to Bernie!</a> ?>
             <?php // <strong>#FundTheBern &mdash;</strong> Bernie wins New Hampshire with a 22.4% lead! <a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" data-track="ActionBar,msnbcDonate">Donate to Bernie</a> ?>
             <?php // <strong>#DebateWithBernie &mdash;</strong> Feeling the Bern after the debate?  <a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" data-track="ActionBar,msnbcDonate">Donate to Bernie!</a> ?>
             <?php // <strong>Don't Miss Out! &mdash;</strong> 19 deadlines passed, get registered today!</strong> <a href="/schedule/" data-track="CTA,schedule">See Primary Schedule</a> ?>
             <?php // <strong>Phone Bank for Bernie &mdash;</strong> South Carolina votes in a week! </strong> <a href="https://go.berniesanders.com/page/content/scphonebank/" data-track="CTA,phonebank">Call Voters in SC</a> ?>
-            Over 135,000 voter registrations since February! #GOTR </strong> <a href="http://voteforbernie.org/register-to-vote/" data-track="RegToVote,CTA">Get Registered Now</a>
+            Over 150,000 voter registrations through VoteForBernie.org since February! </strong> <a href="http://voteforbernie.org/register-to-vote/" data-track="RegToVote,CTA">Get Registered Now</a>
             <?php // <strong>Help needed</strong> March 15th could make or break Bernie's campaign. <a href="http://voteforbernie.org/GOTV/" data-track="CTA,GOTV_MakeOrBreak">Get Out The Vote</a> ?>
             <div class="fb-like vfb-like" data-href="http://voteforbernie.org/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
           </div>

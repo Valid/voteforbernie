@@ -14,7 +14,9 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
 ?>
 
 <?php get_header(); ?>
-
+    <div class="birds">
+      <div id="birds"></div>
+    </div>
       <div class="vote-info">
 
         <div class="map-intro">
@@ -63,7 +65,6 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                   <h2 class="page-title"><strong>Why</strong> is voting in the primaries important?</h2>
                   <div class="m-all t-all d-all">
                     <div class="np gaunit">
-                      <?php /*
                       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                       <!-- Inside Intro Text -->
                       <ins class="adsbygoogle"
@@ -72,9 +73,6 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                            data-ad-slot="8820308755"></ins>
                       <script>
                       (adsbygoogle = window.adsbygoogle || []).push({});
-                      </script> */ ?>
-                      <script language="JavaScript">
-                      var zflag_nid="305"; var zflag_cid="42522/42521/1"; var zflag_sid="4756"; var zflag_width="300"; var zflag_height="600"; var zflag_sz="29";
                       </script>
                       <script language="JavaScript" src="http://c5.zedo.com/jsc/c5/fo.js"></script>
                     </div>
