@@ -92,15 +92,13 @@
       </div>
 
       <div class="np m-all t-1of3 d-1of3 last-col">
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- Beside Dates -->
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-3203899049474789"
-             data-ad-slot="4941207957"
-             data-ad-format="rectangle,horizontal"></ins>
-        <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
+        <script type="text/javascript" language="javascript" src="//c.amazon-adsystem.com/aax2/getads.js"></script>
+        <script type="text/javascript" language="javascript">
+        //<![CDATA[
+        aax_getad_mpb({
+          "slot_uuid":"cc23cdec-2dee-4f5a-a34b-9a4a4e012d85"
+        });
+        //]]>
         </script>
       </div>
     </div>
