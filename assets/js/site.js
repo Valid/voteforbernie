@@ -613,6 +613,10 @@ vfb.feelTheBird = function() {
 
   // April Fools!
 
+  if (!jQuery('#birds').length) {
+    return;
+  }
+
   // jQuery('body').children().each(function() {
   //   jQuery(this).html(jQuery(this).html().replace(/Bernie/g,'Birdie'));
   // });

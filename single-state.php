@@ -6,6 +6,9 @@
   $state = new StateModel($post);
   $helper = new VoteInfoHelper();
 ?>
+<div class="birds">
+  <div id="birds"></div>
+</div>
 <div class="state-page wrap" data-state="<?php echo $state->getTitle(); ?>" data-state-code="<?php echo $state->state; ?>">
 
   <div class="state-header init">
@@ -284,7 +287,7 @@
     </div>
 
     <div id="getinvolved" class="np m-all t-all d-all activism">
-      <div class="m-all t-1of2 d-1of2">
+      <div class="m-all t-all d-all">
         <p>Will you help Bernie win?</p>
         <p><strong>"I've said it since day one: I can't do it alone." - <em>Bernie Sanders</em></strong></p>
         <p>This grassroots campaign depends on grassroots support <strong>like you!</strong> There are many opportunities to help out Bernie's campaign right now, and if you want more, <a href="https://go.berniesanders.com/page/s/volunteer-for-bernie?source=voteforbernie" data-track="volunteer,<?php echo $state->state; ?>" target="_blank">sign up as a volunteer</a> with the official campaign.</p>
@@ -311,9 +314,11 @@
           <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
         </div>
       </div>
+      <?php /*
       <div class="m-all t-1of2 d-1of2">
         <?php echo do_shortcode( '[add_eventon_list event_count="10" show_limit="yes" event_order="DESC" hide_past="yes" ]'); ?>
       </div>
+      */?>
     </div>
 
   </div>
