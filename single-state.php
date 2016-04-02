@@ -6,9 +6,6 @@
   $state = new StateModel($post);
   $helper = new VoteInfoHelper();
 ?>
-<div class="birds">
-  <div id="birds"></div>
-</div>
 <div class="state-page wrap" data-state="<?php echo $state->getTitle(); ?>" data-state-code="<?php echo $state->state; ?>">
 
   <div class="state-header init">

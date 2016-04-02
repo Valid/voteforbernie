@@ -14,9 +14,6 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
 ?>
 
 <?php get_header(); ?>
-    <div class="birds">
-      <div id="birds"></div>
-    </div>
       <div class="vote-info">
 
         <div class="map-intro">
