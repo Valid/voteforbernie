@@ -130,7 +130,7 @@
       <?php } else { ?>
         <h3><?php echo $state->getTitle(); ?> Voter Information</h3>
       <?php } ?>
-      <h4>Get Registered</h4>
+      <h4 id="register">Get Registered</h4>
       <?php if (!$state->hasRegistration()) { ?>
         <p>Good news! Because <?php echo $state->getTitle(); ?> doesn't have voter registration, you can vote for Bernie Sanders by just showing up and voting!</p>
 
@@ -181,22 +181,22 @@
       <?php } ?>
 
       <?php if($state->hasVoteHowTo()) { ?>
-        <h4>Go Vote!</h4>
+        <h4 id="vote">Go Vote!</h4>
         <?php echo $state->how_to_vote; ?>
       <?php } ?>
 
       <?php if($state->hasIDLaws()) { ?>
-        <h4>Id Requirement</h4>
+        <h4 id="id">Id Requirement</h4>
         <?php echo $state->voter_id; ?>
       <?php } ?>
 
       <?php if($state->hasWorkLaws()) { ?>
-        <h4>Voter Workplace Protection</h4>
+        <h4 id="work">Voter Workplace Protection</h4>
         <?php echo $state->work_laws; ?>
       <?php } ?>
 
       <?php if($state->hasEligibility()) { ?>
-        <h4>Eligibility</h4>
+        <h4 id="eligible">Eligibility</h4>
         <p>To vote in the <?php echo $state->getTitle(); ?> <?php echo $state->getTypeText(); ?> you must meet the following criteria:
         <?php echo $state->eligibility; ?>
       <?php } ?>
@@ -213,7 +213,7 @@
       <?php } ?>
 
       <?php if ($state->hasEarlyVoting()) { ?>
-        <h4>Early Voting</h4>
+        <h4 id="early">Early Voting</h4>
         <p><strong>Vote Early in <?php echo $state->getTitle(); ?>!</strong> <?php echo $state->denonym; ?> can vote in-person <strong>before election day!</strong> If you'll be out of town on <?php echo date('F j', strtotime($state->getPrimaryDate())); ?> or simply find it more convenient, vote early!</p>
 
         <p><strong>Early voting in <?php echo $state->getTitle(); ?> begins <?php echo date('F j', strtotime($state->early_voting_start)); ?> and ends on <?php echo date('F j', strtotime($state->early_voting_end)); ?>.</strong></p>
@@ -222,16 +222,16 @@
       <?php } ?>
 
       <?php if ($state->under_18): ?>
-        <h4>Only 17?</h4>
+        <h4 id="seventeen">Only 17?</h4>
         <p>You may still vote in <?php echo $state->getTitle(); ?>'s <?php echo $state->type; ?> if you will be 18 years old by November 8, 2016.</p>
       <?php endif; ?>
 
       <?php if ($state->state != 'da') { ?>
-        <h4>College Students</h4>
+        <h4 id="college">College Students</h4>
         <p>If you are a college student <strong>not living in your home state</strong>, you can vote for Bernie in either your home state or in the state in which you are attending school!</p>
 
         <?php if ($state->type != 'caucuses') { ?>
-          <h4>Military/Overseas Voters</h4>
+          <h4 id="overseas">Military/Overseas Voters</h4>
           <p>If you are a Military Voter or a US Citizen living abroad, you are able to <a href="https://www.overseasvotefoundation.org/vote/VoterInformation.htm" data-track="Overseas,<?php echo $state->state; ?>" target="_blank">request a ballot here</a> to vote for Bernie.</p>
         <?php } ?>
 
@@ -239,7 +239,7 @@
       <?php } ?>
       <?php //<p>You have until TODO to request your ballot, and it must be submitted by TODO.</p> ?>
 
-      <h4>More Information</h4>
+      <h4 id="contact">More Information</h4>
       <p>If you have any questions about voting in <?php echo $state->getTitle(); ?> you may contact your state official elections office or Democratic party.</p>
       <ul>
         <?php if ($state->type != 'caucuses') { ?>
@@ -281,7 +281,7 @@
       </div>
     </div>
 
-    <div id="getinvolved" class="np m-all t-all d-all activism">
+    <div id="gotv" class="np m-all t-all d-all activism">
       <div class="m-all t-all d-all">
         <p>Will you help Bernie win?</p>
         <p><strong>"I've said it since day one: I can't do it alone." - <em>Bernie Sanders</em></strong></p>
