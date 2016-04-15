@@ -118,8 +118,9 @@
             <?php // <strong>#DebateWithBernie &mdash;</strong> Feeling the Bern after the debate?  <a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" data-track="ActionBar,msnbcDonate">Donate to Bernie!</a> ?>
             <?php // <strong>Don't Miss Out! &mdash;</strong> 19 deadlines passed, get registered today!</strong> <a href="/schedule/" data-track="CTA,schedule">See Primary Schedule</a> ?>
             <?php // <strong>Phone Bank for Bernie &mdash;</strong> South Carolina votes in a week! </strong> <a href="https://go.berniesanders.com/page/content/scphonebank/" data-track="CTA,phonebank">Call Voters in SC</a> ?>
-            Over 150,000 voter registrations through VoteForBernie.org since February! </strong> <a href="http://voteforbernie.org/register-to-vote/" data-track="RegToVote,CTA">Get Registered Now</a>
+            <?php // Over 150,000 voter registrations through VoteForBernie.org since February! </strong> <a href="http://voteforbernie.org/register-to-vote/" data-track="RegToVote,CTA">Get Registered Now</a> ?>
             <?php // <strong>Help needed</strong> March 15th could make or break Bernie's campaign. <a href="http://voteforbernie.org/GOTV/" data-track="CTA,GOTV_MakeOrBreak">Get Out The Vote</a> ?>
+            <strong>New York Debate!</strong>  Bernie debating Hillary in New York LIVE! <a href="https://www.youtube.com/watch?v=yzR7LmhuIYM" target="_blank">Watch Now</a>
             <div class="fb-like vfb-like" data-href="http://voteforbernie.org/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
           </div>
           <div id="inner-header" class="branding wrap">
