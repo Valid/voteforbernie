@@ -20,12 +20,9 @@
 
 
           <div class="gotv-countdown">
-            <h4 class="page-title countdown-title">New York Primary: <strong>April 19th</strong></h4>
-            <div class="soon" data-due="2016-04-19T00:00:00+00:00" data-now="<?php echo date("c"); ?>" data-face="flip corners-sharp color-dark" data-event-complete="today"></div>
+            <h4 class="page-title countdown-title">New York Primary <strong>is today!</strong></h4>
+            <!-- <div class="soon" data-due="2016-04-19T00:00:00+00:00" data-now="<?php echo date("c"); ?>" data-face="flip corners-sharp color-dark" data-event-complete="today"></div> -->
           </div>
-
-          <h3 class="page-title">New York <strong>Schedule</strong></h3>
-          <img src="<?php the_field('image'); ?>" alt="" />
         </div>
 
       </div>
