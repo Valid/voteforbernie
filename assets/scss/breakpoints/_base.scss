@@ -1754,9 +1754,10 @@ FOOTER STYLES
   select {
     background-color: transparent;
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAMAAAAmGUT3AAAALVBMVEUBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQGZM2FOAAAAD3RSTlMADxAUFRwfJCuZqKmrrMTqLQAAAAAALklEQVR42kXFSRIAEAwAwRFkQfz/uapy0Zfmi1GNYKYAciboabRUAFt9G8WvAw8QwgCtfrBP9wAAAABJRU5ErkJggg==');
-    border: 2px dashed;
+    border: 2px solid;
+    border-color: #0571b0;
     border-radius: 0;
-    border-width: 0 0 2px;
+    border-width: 0 0 3px;
     display: inline-block;
     font-size: 13px;
     height: 25px;

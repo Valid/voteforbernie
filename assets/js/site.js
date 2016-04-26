@@ -398,6 +398,8 @@ vfb.handleLegend = function () {
   var $legend = jQuery('.legend');
 
   if ($legend.length) {
+    $legend.find('li').velocity('transition.slideLeftIn', { delay: 500, stagger: 100, display: 'inline-block', opacity: 1 } );
+
     $legend.on('mouseover click', 'li', function () {
       vfb.explain(jQuery(this));
     });
@@ -552,6 +554,106 @@ vfb.scheduleInit = function () {
         delay += 15;
       }
     });
+  }
+
+};
+
+vfb.formatDaysAway = function (daysAway) {
+
+  var daysAwayText;
+  console.log(daysAway);
+
+  if (daysAway !== '') {
+    daysAway = parseInt(daysAway, 10);
+
+    if (daysAway < 0) {
+      daysAwayText = 'has already passed';
+    } else if (daysAway === 0) {
+      daysAwayText = 'is <strong>today</strong>!';
+    } else if (daysAway === 1) {
+      daysAwayText = 'is <strong>tomorrow</strong>!';
+    } else {
+      daysAwayText = 'in ' + daysAway + ' days';
+    }
+  }
+
+  return daysAwayText;
+};
+
+vfb.gotvInit = function () {
+  var $gotvMap = jQuery('.gotv-map'),
+    $states = jQuery('.states');
+
+  if ($gotvMap.length) {
+    vfb.resizeMap();
+
+    $gotvMap.vectorMap({
+      map: 'usa_en',
+      backgroundColor: null,
+      borderColor: '#fff',
+      color: '#0571b0',
+      hoverColor: '#c9dfaf',
+      selectedColor: '#c9dfaf',
+      hoverOpacity: 0.5,
+      enableZoom: false,
+      showTooltip: true,
+      selectedRegion: null,
+      onLabelShow: function (element, label, code) {
+        var stateData = statesData[code],
+          $stateOnMap = jQuery('#jqvmap1_' + code),
+          labelText;
+
+        labelText = 'Voting ' + vfb.formatDaysAway(stateData.primaryDaysAway) + '<br>';
+
+        if (stateData.registerDaysAway && stateData.primaryDaysAway >= 0) {
+          labelText += 'Registration Deadline ' + vfb.formatDaysAway(stateData.registerDaysAway) + '</strong><br>';
+        }
+
+        console.log('$stateOnMap', $stateOnMap);
+        if ($stateOnMap.data('type') === 'phonebank') {
+          labelText += '<br>Phonebank!';
+        } else {
+          labelText += '<br>Canvass!';
+        }
+
+        jQuery(label).html('<strong>' + jQuery(label).text() + '</strong><br>' + labelText);
+      },
+      onRegionClick: function (element, code, region) {
+        var $stateOnMap = jQuery('#jqvmap1_' + code);
+        vfb.trackEvent('GOTV State click', code);
+
+
+        jQuery('html, body').animate({ scrollTop: jQuery('.' + $stateOnMap.data('type')).offset().top - 100 }, 1000);
+      }
+    });
+
+    vfb.map.find('.jqvmap-region').velocity('transition.perspectiveDownIn', { opacity: 1 });
+
+    // Animate in map colors
+    var delay = 0,
+      canvassColor = '#ca0020',
+      pbColor = '#0571b0';
+
+    for (var stateCode in statesData) {
+      // console.log(stateCode, statesData[stateCode]);
+
+      var $stateOnMap = jQuery('#jqvmap1_' + stateCode),
+        stateData = statesData[stateCode],
+        canvass = false;
+
+      if ((stateData.primaryDaysAway >= 0 && stateData.primaryDaysAway < 10) || stateData.registerDaysAway && stateData.registerDaysAway >= 0 && stateData.registerDaysAway < 10) {
+        canvass = true;
+      }
+
+      if ($stateOnMap.length) {
+        if (!canvass) {
+          $stateOnMap.data('type','phonebank').velocity({ fill: pbColor });
+        } else {
+          $stateOnMap.data('type','canvass').velocity({ fill: canvassColor });
+        }
+      }
+    }
+    // });
   }
 
 };
@@ -3178,6 +3280,8 @@ jQuery(document).ready(function($) {
   vfb.trackElements();
 
   vfb.scheduleInit();
+
+  vfb.gotvInit();
 
   vfb.tableInit();
 
