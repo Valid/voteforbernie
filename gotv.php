@@ -65,7 +65,7 @@ var statesData = {
             <p>If you live in any of the action states, we need you to be physically knocking on doors if you're able!</p>
 
             <p>In a voting state or willing to travel?</p>
-            <p><a href="http://voter.fyi/journey" class="ui-btn cta" data-track="GOTV,BernieJourney">Sign up to Canvass now!</a></p>
+            <p><a href="http://map.berniesanders.com/#zipcode=&distance=50&sort=time&f%5B%5D=campaign-office&f%5B%5D=canvassing" class="ui-btn cta" data-track="GOTV,BernieJourney">Connect with the nearest Bernie office!</a></p>
           </div>
           <div class="content alt phonebank">
             <h3 class="page-title"><strong>Phonebank</strong> for Bernie</h3>
@@ -73,25 +73,24 @@ var statesData = {
 
             <p>Ready to help?</p>
 
-            <p><a href="http://voter.fyi/phonebank" class="ui-btn cta" data-track="GOTV,BerniePB" target="_blank">Start phonebanking now!</a></p>
-
+            <p><a href="https://go.berniesanders.com/page/content/phonebank" class="ui-btn cta" data-track="GOTV,BerniePB" target="_blank">Start phonebanking now!</a></p>
           </div>
 
           <div class="content facebank">
             <h3 class="page-title"><strong>Facebank</strong> for Bernie</h3>
             <p><strong>Are you on Facebook?</strong> A new tool created by grassroots supporters allows you to help remind people in voting states to vote in their primary, up to 500 a day! This is very effective if we all pitch in, and only takes a few minutes.</p>
-            <p><a href="http://voter.fyi/facebank" class="ui-btn cta" data-track="GOTV,BernieFriendFinder" target="_blank">"Facebank" for Bernie</a></p>
+            <p><a href="http://berniefriendfinder.com/" class="ui-btn cta" data-track="GOTV,BernieFriendFinder" target="_blank">"Facebank" for Bernie</a></p>
           </div>
 
           <div class="content alt donate">
             <h3 class="page-title"><strong>Donate</strong> to Bernie</h3>
             <p>If you're <strong>unable to volunteer</strong>, consider contributing to Bernie's campaign. Bernie is the <strong>only Democratic candidate</strong> not using a Super PAC and relies on donations from us to support his campaign.</p>
-            <p><a href="http://voter.fyi/donate" class="ui-btn cta" data-track="GOTV,Donate" target="_blank">Donate to Bernie's Campaign</a></p>
+            <p><a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" class="ui-btn cta" data-track="GOTV,Donate" target="_blank">Donate to Bernie's Campaign</a></p>
           </div>
           <div class="content follow">
             <h3 class="page-title"><strong>Volunteer</strong> for Bernie</h3>
             <p>The information contained on this page is general-use, but to be truly effective, you should sign up to be a volunteer for Bernie's campaign.</p>
-            <p><a href="http://voter.fyi/volunteer-for-bernie" class="ui-btn cta" data-track="GOTV,Volunteer" target="_blank">Join the revolution.</a></p>
+            <p><a href="https://go.berniesanders.com/page/s/volunteer-for-bernie" class="ui-btn cta" data-track="GOTV,Volunteer" target="_blank">Join the revolution.</a></p>
           </div>
           <div class="content alt stay-informed">
             <h3 class="page-title"><strong>Stay informed!</strong></h3>
