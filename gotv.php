@@ -20,12 +20,14 @@
       <div class="map-intro vote-info">
         <div class="state-select">
           <!-- <p>The Revolution Is Calling. <strong>This is how we win.</strong></p> -->
-          <h2 class="page-title">The revolution is <strong>calling</strong></h2>
+<!--           <h2 class="page-title">The revolution is <strong>calling</strong></h2> -->
 
-<!--           <div class="gotv-countdown">
-            <h4 class="page-title countdown-title"><strong>Voting Today!</strong></h4>
-            <div class="soon" data-due="2016-03-15T08:18:06+00:00" data-now="<?php echo date("c"); ?>" data-face="flip corners-sharp color-dark" data-event-complete="today"></div>
-          </div> -->
+          <div class="gotv-countdown">
+            <h4 class="page-title countdown-title"><strong>Countdown to Cali</strong></h4>
+            <div class="soon" data-due="2016-05-23T23:00:00-08:00" data-now="<?php echo date("c"); ?>" data-face="flip corners-sharp color-dark" data-event-complete="today"></div>
+            <p>California's registration deadline is on May 23rd &mdash; Get the word out!</p>
+            <p><a href="http://voteforbernie.org/state/california/" class="ui-btn cta" data-track="GOTV,CAPage" target="_blank">See California's Information</a></p>
+          </div>
         </div>
         <ul class="legend">
           <li class="closed" data-type="l-canvass">Canvass</li>
