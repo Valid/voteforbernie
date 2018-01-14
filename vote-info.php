@@ -61,18 +61,6 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                 <header class="article-header">
                   <h2 class="page-title"><strong>Why</strong> is voting in the primaries important?</h2>
                   <div class="m-all t-all d-all">
-                    <div class="np gaunit">
-                      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                      <!-- Inside Intro Text -->
-                      <ins class="adsbygoogle"
-                           style="display:inline-block;width:336px;height:280px"
-                           data-ad-client="ca-pub-3203899049474789"
-                           data-ad-slot="8820308755"></ins>
-                      <script>
-                      (adsbygoogle = window.adsbygoogle || []).push({});
-                      </script>
-                      <script language="JavaScript" src="http://c5.zedo.com/jsc/c5/fo.js"></script>
-                    </div>
                     <?php the_content(); ?>
                   </div>
 
@@ -81,19 +69,6 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                     <p>Sign up to be reminded of deadlines and important changes in your state</p>
                     <?php echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" ); ?>
                     <p class="tentative">Last updated on <?php echo $mostRecentStateUpdate ?>.</p>
-
-                    <div class="one-percent-here-i-come">
-                      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                      <!-- Below The Newsletter -->
-                      <ins class="adsbygoogle"
-                           style="display:block"
-                           data-ad-client="ca-pub-3203899049474789"
-                           data-ad-slot="8132117151"
-                           data-ad-format="auto"></ins>
-                      <script>
-                      (adsbygoogle = window.adsbygoogle || []).push({});
-                      </script>
-                    </div>
                   </div>
                 </header>
 

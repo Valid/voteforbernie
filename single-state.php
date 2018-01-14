@@ -89,16 +89,6 @@
       </div>
 
       <div class="np m-all t-1of3 d-1of3 last-col">
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- Beside Dates -->
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-3203899049474789"
-             data-ad-slot="4941207957"
-             data-ad-format="rectangle,horizontal"></ins>
-        <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
       </div>
     </div>
     <?php if ($state->hasAdditionalNote()): ?>
@@ -259,16 +249,6 @@
     </div>
 
     <div class="np m-all t-1of4 d-1of5 last-col gaunit">
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <!-- Beside Content -->
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-3203899049474789"
-           data-ad-slot="3464474750"
-           data-ad-format="vertical"></ins>
-      <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
     </div>
 
     <div class="np m-all t-all d-all newsletter">
