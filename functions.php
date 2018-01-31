@@ -1,5 +1,20 @@
 <?php
 
+add_filter( 'wpseo_opengraph_url', 'my_opengraph_url' );
+function my_opengraph_url( $url ) {
+        return str_replace( 'https://', 'http://', $url );
+}
+#add_filter( 'wpseo_canonical', '__return_false' );
+
+function rsssl_recover_shares($html) {
+    //replace the https url back to http
+    $html = str_replace('og:url" content="https://voteforbernie.org', 'og:url" content="http://voteforbernie.org', $html);
+    $html = str_replace('data-href="https://voteforbernie.org', 'data-href="http://voteforbernie.org', $html); 
+    $html = str_replace('<link rel="canonical" href="https://voteforbernie.org/" />', '<link rel="canonical" href="http://voteforbernie.org/" />', $html); 
+    return $html; 
+}
+add_filter('rsssl_fixer_output','rsssl_recover_shares');
+
 // VoteForBernie includes
 $vfb_includes = array(
   'lib/init.php',
