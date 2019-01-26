@@ -20,7 +20,7 @@
                   <h2 class="page-title"><strong>Register</strong> to vote!</h2>
                 </header> -->
 
-                <iframe src="https://votebymail.longdistancevoter.org/?partner_key=d9666fe0a0b6013358af396eca8e5c5c" scrolling="auto" frameborder="0" width="100%" height="1000"></iframe>
+                <iframe src="https://absentee.vote.org/?partner=d9666fe0a0b6013358af396eca8e5c5c&campaign=vfb" width="100%" marginheight="0" frameborder="0" id="frame2" scrollable="no"></iframe><script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.3/iframeResizer.min.js"></script><script type="text/javascript">iFrameResize({ log:true, checkOrigin:false});</script>
 
             <article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 

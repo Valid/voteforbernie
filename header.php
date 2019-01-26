@@ -126,8 +126,9 @@
             <?php // <strong>Don't Miss Out! &mdash;</strong> 19 deadlines passed, get registered today!</strong> <a href="/schedule/" data-track="CTA,schedule">See Primary Schedule</a> ?>
             <?php // <strong>Phone Bank for Bernie &mdash;</strong> South Carolina votes in a week! </strong> <a href="https://go.berniesanders.com/page/content/scphonebank/" data-track="CTA,phonebank">Call Voters in SC</a> ?>
             <?php // Over 150,000 voter registrations through VoteForBernie.org since February! </strong> <a href="http://voteforbernie.org/register-to-vote/" data-track="RegToVote,CTA">Get Registered Now</a> ?>
-            <strong>Action Needed!</strong> Big Turnout = Bernie Wins <a href="http://voteforbernie.org/gotv" data-track="CTA,GOTV">Get Out The Vote</a>
+            <?php // <strong>Action Needed!</strong> Big Turnout = Bernie Wins <a href="http://voteforbernie.org/gotv" data-track="CTA,GOTV">Get Out The Vote</a> ?>
             <?php // <strong>New York Votes Today!</strong> It's going to take all of us to win <a href="http://voteforbernie.org/win-new-york/" data-track="CTA,winny">This is how we win</a> ?>
+            <strong>Midterms 2018</strong> <a href="https://voter.ly/">We've got you covered.</a>
             <div class="fb-like vfb-like" data-href="http://voteforbernie.org/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
           </div>
           <div id="inner-header" class="branding wrap">
