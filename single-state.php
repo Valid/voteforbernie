@@ -279,24 +279,19 @@
 
         <p>Many of us don't have much time for volunteer work, and if you're not able to volunteer but still want Bernie to win:</p>
 
-        <p><a class="ui-btn" href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" data-track="donate,<?php echo $state->state; ?>" target="_blank">Donate to the Bernie Sanders Campaign</a></p>
+        <p><a class="ui-btn" href="https://secure.actblue.com/donate/sanders-for-president?refcode=vfb" data-track="donate,<?php echo $state->state; ?>" target="_blank">Donate to the Bernie Sanders Campaign</a></p>
 
         <?php if ($state->hasCampaignNeed()) { ?>
           <h4>Bernie needs you in <?php echo $state->getTitle(); ?>!</h4>
           <?php echo $state->campaign_special_need; ?>
         <?php } ?>
 
-        <h4>Phone Bank for Bernie</h4>
-        <p>Phonebanking is the single most important thing you can do for the campaign besides voting. Primaries are here, and we need to be calling people and letting them know about how to vote in their state. <strong>Don't be scared!</strong> I hear from many people that it's daunting to call strangers on the phone, but you will have a script to read and the typical call length is very short.</p>
-        <p><a href="https://go.berniesanders.com/page/content/phonebank?source=voteforbernie" class="ui-btn" data-track="phonebank,<?php echo $state->state; ?>" target="_blank">Start Phonebanking for Bernie!</a></p>
-
-        <h4>Attend or host a local event</h4>
-        <p>Phone Banking, Canvassing, Voter Registration Drives, Carpools -- these are just a few of the volunteer-hosted events popping up around the nation in support of Bernie Sanders, and some probably in your city!</p>
-        <p><a class="ui-btn" href="http://map.berniesanders.com/" data-track="attend,<?php echo $state->state; ?>" target="_blank">Find a local event to attend</a></p>
-        <p>If you can't find any events nearby, you should <a href="https://go.berniesanders.com/page/event/create" data-track="host,<?php echo $state->state; ?>" target="_blank">host your own</a> &mdash; I've done it several times and it's been a great experience meeting local Bernie supporters!</p>
+        <h4>Volunteer for Bernie</h4>
+        <p>Bernie wants 1,000,000 volunteers, and it's up to us to make that happen.</p>
+        <p><a href="https://act.berniesanders.com/signup/social-launch?source=vfb" class="ui-btn" data-track="phonebank,<?php echo $state->state; ?>" target="_blank">Volunteer for Bernie</a></p>
 
         <div class="np m-all t-all d-all">
-          <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
+          <?php echo do_shortcode('[social_warfare]'); ?>
         </div>
       </div>
       <?php /*
