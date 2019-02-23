@@ -50,7 +50,7 @@ date_default_timezone_set('America/New_York');
                   <?php echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" ); ?>
                   <p class="tentative">Last updated on <?php echo $mostRecentStateUpdate ?>.</p>
                   <p class="map-link np"><a href="<?php echo home_url(); ?>">Not registered to vote? <span>Find your state!</span></a></p>
-                  <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
+                  <?php echo do_shortcode('[social_warfare]'); ?>
                 </div>
 
                 <section class="entry-content cf" itemprop="articleBody">
@@ -79,7 +79,7 @@ date_default_timezone_set('America/New_York');
                   </tbody>
                 </table>
               </div>
-              <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
+              <?php echo do_shortcode('[social_warfare]'); ?>
               <p class="map-link np"><a href="<?php echo home_url(); ?>">Not registered to vote? <span>Find your state!</span></a></p>
              </div>
              </section>

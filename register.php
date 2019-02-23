@@ -31,7 +31,7 @@
                   <p>After you register, you still need to vote in your state!</p>
                   <?php echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" ); ?>
                   <p class="map-link np"><a href="<?php echo home_url(); ?>">Don't know your deadlines? <span>Find your state!</span></a></p>
-                  <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
+                  <?php echo do_shortcode('[social_warfare]'); ?>
                 </div>
                </div>
              </section>

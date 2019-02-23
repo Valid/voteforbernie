@@ -59,7 +59,7 @@ var statesData = {
       <section class="entry-content cf wrap" itemprop="articleBody">
 
         <div class="m-all t-all d-all">
-          <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
+          <?php echo do_shortcode('[social_warfare]'); ?>
 
 
           <div class="content canvass">
@@ -103,7 +103,7 @@ var statesData = {
             <h2 class="page-title">#WeStand<strong>Together</strong></h2>
           </div>
 
-          <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
+          <?php echo do_shortcode('[social_warfare]'); ?>
 
           <p class="map-link np"><a href="<?php echo home_url(); ?>">Know how to vote? <span>Find your state!</span></a></p>
         </div>

@@ -44,7 +44,7 @@
                     </div>
  -->
                     <div class="m-all t-1of2 d-1of2 section spread-word">
-                      <h2><span>Step 1: Get the word out! <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?></span></h2>
+                      <h2><span>Step 1: Get the word out! <?php echo do_shortcode('[social_warfare]'); ?></span></h2>
                       <p>Retweet the below to let everyone know that the campaign is live, and that they can join us here.</p>
                       <blockquote class="twitter-tweet" data-link-color="#55acee">
                         <p>It has started! Let's tell @TheDemocrats that #WeWantDebate! Join thousands at http://voteforbernie.org/debate/ #FeelTheBern</p> — Vote For Bernie (@vote_for_bernie)

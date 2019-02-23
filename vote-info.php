@@ -156,7 +156,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                   </div>
                   <?php endforeach; ?>
 
-                  <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
+                  <?php echo do_shortcode('[social_warfare]'); ?>
                   </div>
 
                     <?php // the_content(); ?>
