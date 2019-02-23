@@ -130,7 +130,13 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                           <?php if ($state->hasRegistration()) { ?>
                             <div class="m-1of2 t-all d-all">
                               <h4>Register By</h4>
-                              <p><?php echo $helper->formatDate($state->deadline_date); ?></p>
+                              <p>
+                                <?php if ($state->hasDeadlineDate()) {
+                                  echo $helper->formatDate($state->deadline_date);
+                                 } else {
+                                   echo 'TBD';
+                                 } ?>
+                              </p>
                             </div>
                           <?php } ?>
 
