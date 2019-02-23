@@ -1,6 +1,10 @@
 <?php
 namespace VoteForBernie\Wordpress\Models;
 
+function isValidDate($myDateString){
+  return (bool)strtotime($myDateString);
+}
+
 class StateModel extends PostModel {
   const POST_TYPE = 'state';
   public static $customFields = array(
@@ -54,7 +58,7 @@ class StateModel extends PostModel {
   }
 
   public function getPrimaryDate() {
-    if (!empty($this->primary_date)) {
+    if (!empty($this->primary_date) && isValidDate($this->primary_date)) {
       return $this->primary_date;
     } else {
       return 'TBD';
@@ -90,7 +94,7 @@ class StateModel extends PostModel {
   }
 
   public function hasDeadlineDate() {
-    return !empty($this->deadline_date);
+    return !empty($this->deadline_date) && isValidDate($this->deadline_date);
   }
 
   public function hasAbsenteeVoting() {
@@ -106,7 +110,7 @@ class StateModel extends PostModel {
   }
 
   public function hasAffiliationDeadline() {
-    return !empty($this->aff_deadline_date);
+    return !empty($this->aff_deadline_date) && isValidDate($this->aff_deadline_date);
   }
 
   public function hasCampaignNeed() {
@@ -144,5 +148,7 @@ class StateModel extends PostModel {
   public function hasSameDayRegistrationRestriction() {
     return !empty($this->same_day_registration_restriction);
   }
+
+
 
 }
