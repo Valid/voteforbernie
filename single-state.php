@@ -51,13 +51,20 @@
             <h3>Register By</h3>
 
             <div class="date">
+              <?php if ($state->hasDeadlineDate()) { ?>
               <strong><?php echo date('F', strtotime($state->deadline_date)); ?></strong>
               <span><?php echo date('j', strtotime($state->deadline_date)); ?></span>
               <em>(<?php echo date('l', strtotime($state->deadline_date)); ?>)</em>
+              <?php } else {
+                echo 'TBD';
+              }
+              ?>
             </div>
+            <?php /*
             <p><?php echo $helper->getActionText($state); ?> by:
             <strong><?php echo $helper->formatDate($state->deadline_date); ?></strong>
             </p>
+            */ ?>
             <?php if ($state->hasSameDayRegistration()) { ?>
               <p><strong>Same-Day Registration</strong>
                 <?php echo $state->getTitle(); ?> has <em>Same-Day Registration</em> on <?php echo date('F j', strtotime($state->getPrimaryDate())); ?>
@@ -106,13 +113,14 @@
         <p>People are planning to vote for Bernie in <?php echo $state->getTitle(); ?>, but they <strong>will not be able to!</strong></p>
       <?php } else { ?>
         <blockquote cite="http://www.thenation.com/article/bernie-sanders-explains-the-new-math-of-2016-to-democratic-leaders/">
-          <p>﻿“I think you're looking at the candidate who can substantially increase voter turnout all across the country.”</p>
+          <p>“I think you're looking at the candidate who can substantially increase voter turnout all across the country.”</p>
         </blockquote>
         <p>Bernie Sanders will only win if we can <strong>get enough people to vote!</strong></p>
       <?php } ?>
 
-      <p class="share-text">Help <strong>Get The Vote Out in <?php echo $state->getTitle(); ?></strong> by sharing this page:</p>
-      <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
+      <p class="share-text">Help <strong>Get Out The Vote in <?php echo $state->getTitle(); ?></strong> by sharing this page:</p>
+      <?php // if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
+      <?php echo do_shortcode('[social_warfare]'); ?>
       <!-- <p>You can also print this page, and it turns into a flier you can post or give out!</p> -->
     </div>
 
