@@ -273,11 +273,14 @@
 
     <div id="gotv" class="np m-all t-all d-all activism">
       <div class="m-all t-all d-all">
-        <p>Will you help Bernie win?</p>
+        <h4>Will you help Bernie win?</h4>
         <p><strong>"I've said it since day one: I can't do it alone." - <em>Bernie Sanders</em></strong></p>
-        <p>This grassroots campaign depends on grassroots support <strong>like you!</strong> There are many opportunities to help out Bernie's campaign right now, and if you want more, <a href="https://go.berniesanders.com/page/s/volunteer-for-bernie?source=voteforbernie" data-track="volunteer,<?php echo $state->state; ?>" target="_blank">sign up as a volunteer</a> with the official campaign.</p>
+        <p>This grassroots campaign depends on grassroots supporters <strong>like you!</strong> <a href="https://act.berniesanders.com/signup/social-launch?source=vfb" data-track="volunteer,<?php echo $state->state; ?>" target="_blank">Sign up as a volunteer</a> with the official campaign to find opportunities to help the campaign directly.</p>
 
-        <p>Many of us don't have much time for volunteer work, and if you're not able to volunteer but still want Bernie to win:</p>
+        <p>Bernie wants 1,000,000 volunteers, and it's up to us to make that happen.</p>
+        <p><a href="https://act.berniesanders.com/signup/social-launch?source=vfb" class="ui-btn" data-track="volunteer,<?php echo $state->state; ?>" target="_blank">Volunteer for Bernie</a></p>
+
+        <p>Bernie continues to fund his campaign from small donations from people like us. Show your support by donating to the campaign!</p>
 
         <p><a class="ui-btn" href="https://secure.actblue.com/donate/sanders-for-president?refcode=vfb" data-track="donate,<?php echo $state->state; ?>" target="_blank">Donate to the Bernie Sanders Campaign</a></p>
 
@@ -285,10 +288,6 @@
           <h4>Bernie needs you in <?php echo $state->getTitle(); ?>!</h4>
           <?php echo $state->campaign_special_need; ?>
         <?php } ?>
-
-        <h4>Volunteer for Bernie</h4>
-        <p>Bernie wants 1,000,000 volunteers, and it's up to us to make that happen.</p>
-        <p><a href="https://act.berniesanders.com/signup/social-launch?source=vfb" class="ui-btn" data-track="phonebank,<?php echo $state->state; ?>" target="_blank">Volunteer for Bernie</a></p>
 
         <div class="np m-all t-all d-all">
           <?php echo do_shortcode('[social_warfare]'); ?>
