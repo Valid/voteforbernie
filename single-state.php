@@ -223,7 +223,7 @@
 
       <?php if ($state->under_18): ?>
         <h4 id="seventeen">Only 17?</h4>
-        <p>You may still vote in <?php echo $state->getTitle(); ?>'s <?php echo $state->type; ?> if you will be 18 years old by November 8, 2016.</p>
+        <p>You may still vote in <?php echo $state->getTitle(); ?>'s <?php echo $state->type; ?> if you will be 18 years old by November 3, 2020.</p>
       <?php endif; ?>
 
       <?php if ($state->state != 'da') { ?>

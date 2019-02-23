@@ -112,7 +112,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                                 <p><strong>Online Registration Available!</strong></p>
                               <?php } ?>
                               <?php if ($state->under_18): ?>
-                                <p class="only17"><strong>Only 17?</strong> If you will be 18 by November 8, 2016, you can vote in the <?php echo $state->type; ?>!</p>
+                                <p class="only17"><strong>Only 17?</strong> If you will be 18 by November 3, 2020, you can vote in the <?php echo $state->type; ?>!</p>
                               <?php endif; ?>
                               <?php if ($state->hasAdditionalNote()): ?>
                                 <p class="note"><?php echo $state->additional_note; ?></p>
