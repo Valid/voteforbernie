@@ -9,6 +9,7 @@ class StateService {
     $statePosts = get_posts(array(
       'post_type' => StateModel::POST_TYPE,
       'posts_per_page' => -1,
+      'orderby' => 'title',
       'order' => 'ASC'
     ));
 
