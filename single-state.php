@@ -176,9 +176,11 @@
         <p>Not sure if you are registered, or what you're registered as? Check your <a href="<?php echo $state->check_registration_link ?>" data-track="ChkLnk,<?php echo $state->state; ?>" target="_blank">current registration status online</a>.</p>
       <?php } ?>
 
+        <?php /*
       <?php if ($state->hasCaucusLink()) { ?>
         <a class="ui-btn" href="<?php echo $state->bern_advisory_link ?>" target="_blank" data-track="howCaucus,<?php echo $state->state; ?>">Learn how to Caucus in <?php echo $state->getTitle(); ?>!</a>
       <?php } ?>
+      */ ?>
 
       <?php if($state->hasVoteHowTo()) { ?>
         <h4 id="vote">Go Vote!</h4>
