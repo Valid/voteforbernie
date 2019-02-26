@@ -98,6 +98,18 @@
       <div class="np m-all t-1of3 d-1of3 last-col">
       </div>
     </div>
+
+    <div class="m-all t-all d-all">
+    <?php if ($state->isTentative()): ?>
+      <p class="tentative">While all dates are subject to change, the above dates are <strong>especially likely to change</strong> due to being based on the previous election. The final date will likely be close, but please sign up below for Voter Alerts in <?php echo $state->getTitle(); ?> and we'll email you the official dates when they are finalized.</p>
+      <?php else: ?>
+      <p class="tentative">It's still very early in the election season, and dates often change. Please sign up below for Voter Alerts in <?php echo $state->getTitle(); ?> and we'll send you an email if the dates change!</p>
+    <?php endif; ?>
+      <div class="newsletter">
+        <?php echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" ); ?>
+      </div>
+    </div>
+
     <?php if ($state->hasAdditionalNote()): ?>
       <div class="m-all t-all d-all">
         <p class="note"><?php echo $state->additional_note; ?></p>

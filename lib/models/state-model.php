@@ -28,6 +28,7 @@ class StateModel extends PostModel {
     'dem_website',
     'dem_phone',
     'no_registration',
+    'tentative',
     'check_registration_link',
     'register_link',
     'online_reg',
@@ -71,6 +72,10 @@ class StateModel extends PostModel {
 
   public function hasRegistration() {
     return empty($this->no_registration);
+  }
+
+  public function isTentative() {
+    return !empty($this->tentative);
   }
 
   public function hasVideo() {
