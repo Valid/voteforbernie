@@ -54,8 +54,14 @@
               <?php if ($state->hasDeadlineDate()) { ?>
               <strong><?php echo date('F', strtotime($state->deadline_date)); ?></strong>
               <span><?php echo date('j', strtotime($state->deadline_date)); ?></span>
-              <em>(<?php echo date('l', strtotime($state->deadline_date)); ?>)</em>
-              <?php } else {
+              <?php
+                if (date('Y') !== date('Y', strtotime($state->deadline_date))) { ?>
+                  <em>(<?php echo date('Y', strtotime($state->deadline_date)); ?>)</em>
+                <?php } else { ?>
+                  <em>(<?php echo date('l', strtotime($state->deadline_date)); ?>)</em>
+                <?php
+                }
+              } else {
                 echo 'TBD';
               }
               ?>
@@ -89,7 +95,14 @@
           <div class="date">
             <strong><?php echo date('F', strtotime($state->getPrimaryDate())); ?></strong>
             <span><?php echo date('j', strtotime($state->getPrimaryDate())); ?></span>
-            <em>(<?php echo date('l', strtotime($state->getPrimaryDate())); ?>)</em>
+            <?php
+                if (date('Y') !== date('Y', strtotime($state->getPrimaryDate()))) { ?>
+                  <em>(<?php echo date('Y', strtotime($state->getPrimaryDate())); ?>)</em>
+                <?php } else { ?>
+                  <em>(<?php echo date('l', strtotime($state->getPrimaryDate())); ?>)</em>
+                <?php
+                }
+            ?>
           </div>
           <p><?php echo $state->getTitle(); ?> <?php echo $state->getTypeText(); ?>: <strong><?php echo $helper->formatDate($state->getPrimaryDate()); ?></strong></p>
         </div>
