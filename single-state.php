@@ -156,7 +156,7 @@ get_header();
         for Voter Alerts in <?php echo $state->getTitle(); ?> and we'll send you an email if the dates change!</p>
       <?php endif; ?>
       <div class="newsletter">
-        <?php echo function_exists('yksemeProcessSnippet') && yksemeProcessSnippet('2da18e85f7', 'Keep me informed!'); ?>
+        <?php if (function_exists('yksemeProcessSnippet')) echo yksemeProcessSnippet('2da18e85f7', 'Keep me informed!'); ?>
       </div>
     </div>
 
@@ -441,7 +441,7 @@ get_header();
       <p>Dates and deadlines can change at any time!</p>
       <p>Sign up below to be reminded of deadlines and be notified of important changes in
         <?php echo $state->getTitle(); ?></p>
-      <?php echo function_exists('yksemeProcessSnippet') && yksemeProcessSnippet('2da18e85f7', 'Keep me informed!'); ?>
+      <?php if (function_exists('yksemeProcessSnippet')) echo yksemeProcessSnippet('2da18e85f7', 'Keep me informed!'); ?>
       <?php
       } ?>
       <div class="updated">
