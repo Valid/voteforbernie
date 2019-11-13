@@ -476,9 +476,9 @@ vfb.stateInit = function () {
       $correctionForm.fadeIn();
     });
 
-    $('.delegate-button').on('click', function (event) {
+    jQuery('.delegate-button').on('click', function (event) {
       event.preventDefault();
-      $('.delegate-info').toggle();
+      jQuery('.delegate-info').toggle();
     })
 
   }
