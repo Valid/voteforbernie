@@ -74,7 +74,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
             <p>Dates and deadlines can change at any time.</p>
             <p>Sign up to be reminded of deadlines and important changes in your state</p>
             <?php if (function_exists('yksemeProcessSnippet')) {
-    yksemeProcessSnippet('2da18e85f7', 'Keep me informed!');
+    echo yksemeProcessSnippet('2da18e85f7', 'Keep me informed!');
 } ?>
             <p class="tentative">Last updated on <?php echo $mostRecentStateUpdate; ?>.</p>
           </div>
