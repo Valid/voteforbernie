@@ -18,16 +18,15 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
 <div class="vote-info">
 
   <div class="map-intro">
-    <h2 class="page-title">Will you be able to <strong>Vote for Bernie?</strong></h2>
+    <h2 class="page-title">Will <em>you</em> be able to <strong>Vote for Bernie?</strong></h2>
     <div class="state-select">
-      <p>Learn how to vote in <span class="no-mobile">your state by clicking it or</span>
-        <select class="state-selector">
-          <option>Select Your State</option>
-          <?php foreach ($states as $state): ?>
-          <option value="<?php echo $state->state; ?>"><?php echo $state->getTitle(); ?></option>
-          <?php endforeach; ?>
-        </select>
-      </p>
+
+      <select class="state-selector">
+        <option></option>
+        <?php foreach ($states as $state): ?>
+        <option value="<?php echo $state->state; ?>"><?php echo $state->getTitle(); ?></option>
+        <?php endforeach; ?>
+      </select>
     </div>
     <ul class="legend">
       <li class="closed" data-type="closed">Closed Primary</li>
@@ -96,12 +95,12 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
 
                   <div class="m-all t-all d-all">
                     <div class="state-title">
+                      <img class="svg"
+                        data-src="<?php echo get_template_directory_uri(); ?>/dist/images/svg/states/<?php echo $state->state; ?>.svg" />
                       <h3><a href="<?php echo esc_url(get_permalink($state->post)); ?>"
                           title="<?php echo $state->getTitle(); ?> Voter Information"
                           data-track="stateTitle,<?php echo $state->state; ?>"><?php echo $state->getTitle(); ?></a>
                       </h3>
-                      <img class="svg"
-                        data-src="<?php echo get_template_directory_uri(); ?>/dist/images/svg/states/<?php echo $state->state; ?>.svg" />
                     </div>
                   </div>
                   <div class="state-content c-bo m-all t-all d-all">
@@ -120,7 +119,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                       <a class="ui-btn" href="<?php echo esc_url(get_permalink($state->post)); ?>"
                         data-track="howTo,<?php echo $state->state; ?>">How to vote in
                         <?php echo $state->getTitle(); ?></a>
-
+                      <?php /*
 
                       <?php if ($state->hasOnlineRegistration() || $state->under_18 || $state->hasAdditionalNote()): ?>
                       <div class="extra">
@@ -138,8 +137,8 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                         <?php endif; ?>
                       </div>
                       <?php endif; ?>
+                      */ ?>
                     </div>
-
                     <div class="resources m-all t-1of4 d-1of4">
                       <div class="m-1of2 t-all d-all">
                         <h4><?php echo $state->getTypeText(); ?> On</h4>
@@ -147,19 +146,19 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                       </div>
 
                       <?php if ($state->hasRegistration()) {
-        ?>
+    ?>
                       <div class="m-1of2 t-all d-all">
                         <h4>Register By</h4>
                         <p>
                           <?php if ($state->hasDeadlineDate()) {
-            echo $helper->formatDate($state->deadline_date);
-        } else {
-            echo 'TBD';
-        } ?>
+        echo $helper->formatDate($state->deadline_date);
+    } else {
+        echo 'TBD';
+    } ?>
                         </p>
                       </div>
                       <?php
-    } ?>
+} ?>
 
                       <?php if ($state->hasAffiliationDeadline()) {
         ?>
@@ -170,11 +169,11 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
                       <?php
     } ?>
 
-                      <?php if ($state->hasSameDayRegistration()) {
+                      <?php /* if ($state->hasSameDayRegistration()) {
         ?>
                       <p>Same-Day Registration!</p>
                       <?php
-    } ?>
+    } */ ?>
                     </div>
                   </div>
                 </div>

@@ -94,7 +94,7 @@ do they need tweaking?
       p {
         &:after {
           border-bottom: 3px solid black(0.15);
-          content: "";
+          content: '';
           display: block;
           margin: 0 auto;
           padding-bottom: 5px;
@@ -113,11 +113,6 @@ do they need tweaking?
     }
     .ui-btn {
       text-align: center;
-    }
-    &.other {
-      .ui-btn {
-        font-size: 24px;
-      }
     }
   }
   .gaunit {

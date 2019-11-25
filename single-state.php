@@ -43,22 +43,15 @@ get_header();
 
   <div class="state-info <?php echo $state->state; ?> <?php echo $helper->getStatusClass($state); ?>">
 
-    <div class="type m-all t-all d-all">
-      <div class="slab">
-        <p class="status-info"><?php echo $state->getTitle(); ?> has <strong
-            class="status c-bb c-t init"><?php echo $state->status; ?></strong> <?php echo $state->type; ?></p>
-      </div>
-      <p class="meaning"><?php echo $helper->getExplanationText($state); ?></p>
-    </div>
 
-    <?php if ($state->hasVideo()) {
+    <?php /* if ($state->hasVideo()) {
         ?>
     <div class="video-slot m-all t-all d-all">
       <h3>How to participate in <?php echo $state->getTitle(); ?> <?php echo $state->type; ?>:</h3>
       <?php echo wp_oembed_get($state->state_video); ?>
     </div>
     <?php
-    } ?>
+    } */ ?>
 
     <div class="info-wrapper m-all t-all d-all">
       <div class="m-1of2 t-1of3 d-1of3">
@@ -145,6 +138,13 @@ get_header();
       </div>
     </div>
 
+
+    <?php if ($state->hasAdditionalNote()): ?>
+    <div class="m-all t-all d-all">
+      <p class="note"><?php echo $state->additional_note; ?></p>
+    </div>
+    <?php endif; ?>
+
     <div class="m-all t-all d-all">
       <?php if ($state->isTentative()): ?>
       <p class="tentative">While all dates are subject to change, the above dates are <strong>especially likely to
@@ -156,39 +156,41 @@ get_header();
         for Voter Alerts in <?php echo $state->getTitle(); ?> and we'll send you an email if the dates change!</p>
       <?php endif; ?>
       <div class="newsletter">
-        <?php if (function_exists('yksemeProcessSnippet')) echo yksemeProcessSnippet('2da18e85f7', 'Keep me informed!'); ?>
+        <?php if (function_exists('yksemeProcessSnippet')) {
+                echo yksemeProcessSnippet('2da18e85f7', 'Keep me informed!');
+            } ?>
       </div>
     </div>
 
-    <?php if ($state->hasAdditionalNote()): ?>
-    <div class="m-all t-all d-all">
-      <p class="note"><?php echo $state->additional_note; ?></p>
-    </div>
-    <?php endif; ?>
-
     <div class="share np m-all t-all d-all">
-      <?php if ($state->state == 'da') {
+      <div class="type m-all t-all d-all">
+        <h3 class="status-info"><?php echo $state->getTitle(); ?> has <strong
+            class="status c-bb c-t init"><?php echo $state->status; ?></strong> <?php echo $state->type; ?></h3>
+        <p class="meaning"><?php echo $helper->getExplanationText($state); ?></p>
+      </div>
+
+      <div class="share-text-info">
+        <?php if ($state->state == 'da') {
                 ?>
-      <h3>Didn't know you could vote from abroad?</h3>
-      <p>Many Americans living outside the country don't know that they can participate.</p>
-      <?php
+        <h3>Didn't know you could vote from abroad?</h3>
+        <p>Many Americans living outside the country don't know that they can participate.</p>
+        <?php
             } elseif ($state->status !== 'open') {
                 ?>
-      <h3>Didn't know about <?php echo $state->status; ?> <?php echo $state->type; ?>? You're not alone.</h3>
-      <p>People are planning to vote for Bernie in <?php echo $state->getTitle(); ?>, but they <strong>will not be able
-          to!</strong></p>
-      <?php
+        <h3>Didn't know about <?php echo $state->status; ?> <?php echo $state->type; ?>? <strong>You're not
+            alone.</strong></h3>
+        <?php
             } else {
                 ?>
-      <blockquote
-        cite="http://www.thenation.com/article/bernie-sanders-explains-the-new-math-of-2016-to-democratic-leaders/">
-        <p>“I think you're looking at the candidate who can substantially increase voter turnout all across the
-          country.”</p>
-      </blockquote>
-      <p>Bernie Sanders will only win if we can <strong>get enough people to vote!</strong></p>
-      <?php
-            } ?>
 
+        <blockquote
+          cite="http://www.thenation.com/article/bernie-sanders-explains-the-new-math-of-2016-to-democratic-leaders/">
+          <p>“I think you're looking at the candidate who can substantially increase voter turnout all across the
+            country.”</p>
+        </blockquote>
+        <?php
+            } ?>
+      </div>
       <p class="share-text">Help <strong>Get Out The Vote in <?php echo $state->getTitle(); ?></strong> by sharing this
         page:</p>
       <?php // if(function_exists('add_social_button_in_content')) echo add_social_button_in_content();?>
@@ -441,7 +443,9 @@ get_header();
       <p>Dates and deadlines can change at any time!</p>
       <p>Sign up below to be reminded of deadlines and be notified of important changes in
         <?php echo $state->getTitle(); ?></p>
-      <?php if (function_exists('yksemeProcessSnippet')) echo yksemeProcessSnippet('2da18e85f7', 'Keep me informed!'); ?>
+      <?php if (function_exists('yksemeProcessSnippet')) {
+              echo yksemeProcessSnippet('2da18e85f7', 'Keep me informed!');
+          } ?>
       <?php
       } ?>
       <div class="updated">
@@ -453,17 +457,21 @@ get_header();
 
     <div id="gotv" class="np m-all t-all d-all activism">
       <div class="m-all t-all d-all">
-        <h4>Will you help Bernie win?</h4>
+        <h4>Join the GOTV Squad</h4>
         <p><strong>"I've said it since day one: I can't do it alone." - <em>Bernie Sanders</em></strong></p>
-        <p>This grassroots campaign depends on grassroots supporters <strong>like you!</strong> <a
+        <p>This grassroots campaign depends on grassroots supporters <strong>like you!</strong></p>
+        <p>Everyone should sign up and volunteer for the <a
             href="https://act.berniesanders.com/signup/social-launch?source=vfb"
-            data-track="volunteer,<?php echo $state->state; ?>" target="_blank">Sign up as a volunteer</a> with the
-          official campaign to find opportunities to help the campaign directly.</p>
+            data-track="volunteer,<?php echo $state->state; ?>" target="_blank">official Sanders 2020 campaign</a>, of
+          course.</p>
+        <p>If you are passionate about Getting Out The Vote like we are, you should also <a
+            href="https://forms.gle/hDRnJBoTNN5MkVus5" data-track="gotvsquad,<?php echo $state->state; ?>"
+            target="_blank">join the GOTV Squad</a></p>
 
-        <p>Bernie wants 1,000,000 volunteers, and it's up to us to make that happen.</p>
-        <p><a href="https://act.berniesanders.com/signup/social-launch?source=vfb" class="ui-btn"
-            data-track="volunteer,<?php echo $state->state; ?>" target="_blank">Volunteer for Bernie</a></p>
+        <p><a href="https://forms.gle/hDRnJBoTNN5MkVus5" class="ui-btn"
+            data-track="gotvsquad,<?php echo $state->state; ?>" target="_blank">Join the GOTV Squad</a></p>
 
+        <h4>Donate</h4>
         <p>Bernie continues to fund his campaign from small donations from people like us. Show your support by donating
           to the campaign!</p>
 
