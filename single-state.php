@@ -360,10 +360,9 @@ get_header();
           ],
           "report": {
             "enabled": true,
-            "wording": "Report Ad",
+            "wording": "Report",
             "position": "bottom-right"
-          },
-          "mediaQuery": "(min-width: 320px) and (max-width: 767px)"
+          }
         });
         </script>
 
@@ -524,10 +523,9 @@ get_header();
         ],
         "report": {
           "enabled": true,
-          "wording": "Report Ad",
+          "wording": "Report",
           "position": "bottom-right"
-        },
-        "mediaQuery": "(min-width: 320px) and (max-width: 767px)"
+        }
       });
       </script>
     </div>
