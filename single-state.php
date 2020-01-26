@@ -561,10 +561,10 @@ get_header();
             data-track="volunteer,<?php echo $state->state; ?>" target="_blank">official Sanders 2020 campaign</a>, of
           course.</p>
         <p>If you are passionate about Getting Out The Vote like we are, you should also <a
-            href="https://forms.gle/hDRnJBoTNN5MkVus5" data-track="gotvsquad,<?php echo $state->state; ?>"
+            href="https://forms.gle/D93YTYvndrbuBM419" data-track="gotvsquad,<?php echo $state->state; ?>"
             target="_blank">join the GOTV Squad</a></p>
 
-        <p><a href="https://forms.gle/hDRnJBoTNN5MkVus5" class="ui-btn"
+        <p><a href="https://forms.gle/D93YTYvndrbuBM419" class="ui-btn"
             data-track="gotvsquad,<?php echo $state->state; ?>" target="_blank">Join the GOTV Squad</a></p>
 
         <h4>Donate</h4>
