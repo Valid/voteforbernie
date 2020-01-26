@@ -91,6 +91,16 @@
   ga('send', 'pageview');
   </script>
 
+  <script type="text/javascript">
+  window['nitroAds'] = window['nitroAds'] || {
+    createAd: function() {
+      window.nitroAds.queue.push(["createAd", arguments])
+    },
+    queue: []
+  };
+  </script>
+  <script async src="https://s.nitropay.com/ads-293.js"></script>
+
   <script>
   window.fbAsyncInit = function() {
     FB.init({

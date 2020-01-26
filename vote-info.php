@@ -70,6 +70,35 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
           </div>
 
           <div class="m-all t-all d-all sign-up-notice newsletter">
+            <div id="front-page-in-state"></div>
+
+            <script type="text/javascript">
+            window['nitroAds'].createAd('front-page-in-state', {
+              "refreshLimit": 10,
+              "refreshTime": 60,
+              "renderVisibleOnly": false,
+              "refreshVisibleOnly": true,
+              "sizes": [
+                [
+                  728,
+                  90
+                ],
+                [
+                  320,
+                  50
+                ],
+                [
+                  970,
+                  90
+                ]
+              ],
+              "report": {
+                "enabled": true,
+                "wording": "Report",
+                "position": "bottom-right"
+              }
+            });
+            </script>
             <p>Dates and deadlines can change at any time.</p>
             <p>Sign up to be reminded of deadlines and important changes in your state</p>
             <?php if (function_exists('yksemeProcessSnippet')) {

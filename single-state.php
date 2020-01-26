@@ -135,6 +135,31 @@ get_header();
       </div>
 
       <div class="np m-all t-1of3 d-1of3 last-col">
+        <div id="state-page-by-dates"></div>
+
+        <script type="text/javascript">
+        window['nitroAds'].createAd('state-page-by-dates', {
+          "refreshLimit": 10,
+          "refreshTime": 60,
+          "renderVisibleOnly": false,
+          "refreshVisibleOnly": true,
+          "sizes": [
+            [
+              300,
+              250
+            ],
+            [
+              320,
+              50
+            ]
+          ],
+          "report": {
+            "enabled": true,
+            "wording": "Report",
+            "position": "bottom-right"
+          }
+        });
+        </script>
       </div>
     </div>
 
@@ -306,6 +331,42 @@ get_header();
         <?php
       } ?>
 
+
+        <div id="state-page-under-register"></div>
+
+        <script type="text/javascript">
+        window['nitroAds'].createAd('state-page-under-register', {
+          "refreshLimit": 10,
+          "refreshTime": 90,
+          "renderVisibleOnly": false,
+          "refreshVisibleOnly": true,
+          "sizes": [
+            [
+              300,
+              250
+            ],
+            [
+              728,
+              90
+            ],
+            [
+              320,
+              50
+            ],
+            [
+              970,
+              90
+            ]
+          ],
+          "report": {
+            "enabled": true,
+            "wording": "Report Ad",
+            "position": "bottom-right"
+          },
+          "mediaQuery": "(min-width: 320px) and (max-width: 767px)"
+        });
+        </script>
+
         <?php if ($state->hasIDLaws()) {
           ?>
         <h4 id="id">Id Requirement</h4>
@@ -434,8 +495,43 @@ get_header();
           <p>Find local Bernie supporters and get help from <?php echo $state->discussion_link; ?></p>
     </div>
 
-    <div class="np m-all t-1of4 d-1of5 last-col gaunit">
+    <div class="np gaunit">
+      <div id="state-page-footer"></div>
+
+      <script type="text/javascript">
+      window['nitroAds'].createAd('state-page-footer', {
+        "refreshLimit": 10,
+        "refreshTime": 90,
+        "renderVisibleOnly": false,
+        "refreshVisibleOnly": true,
+        "sizes": [
+          [
+            300,
+            250
+          ],
+          [
+            728,
+            90
+          ],
+          [
+            320,
+            50
+          ],
+          [
+            970,
+            90
+          ]
+        ],
+        "report": {
+          "enabled": true,
+          "wording": "Report Ad",
+          "position": "bottom-right"
+        },
+        "mediaQuery": "(min-width: 320px) and (max-width: 767px)"
+      });
+      </script>
     </div>
+
 
     <div class="np m-all t-all d-all newsletter">
       <?php if ($state->state != 'da') {
