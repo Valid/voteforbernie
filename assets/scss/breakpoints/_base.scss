@@ -2465,3 +2465,13 @@ FOOTER STYLES
     top: 0;
   }
 }
+
+.donate-vfb {
+  margin: 5rem auto;
+  max-width: 520px;
+  padding: 0 1rem;
+  font-family: $bodyFont;
+  p {
+    margin-bottom: 1rem;
+  }
+}

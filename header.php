@@ -168,8 +168,7 @@
           <?php // Over 150,000 voter registrations through VoteForBernie.org since February! </strong> <a href="http://voteforbernie.org/register-to-vote/" data-track="RegToVote,CTA">Get Registered Now</a>?>
           <?php // <strong>Action Needed!</strong> Big Turnout = Bernie Wins <a href="http://voteforbernie.org/gotv" data-track="CTA,GOTV">Get Out The Vote</a>?>
           <?php // <strong>New York Votes Today!</strong> It's going to take all of us to win <a href="http://voteforbernie.org/win-new-york/" data-track="CTA,winny">This is how we win</a>?>
-          <strong>Bernie 2020!</strong> <a href="https://secure.actblue.com/donate/sanders-for-president?refcode=vfb"
-            rel="nofollow" title="Donate to Bernie 2020">Donate today!</a>
+          <strong>Bernie 2020!</strong> <a href="/donate" title="Donate">Donate today!</a>
           <div class="fb-like vfb-like" data-href="http://voteforbernie.org/" data-layout="button_count"
             data-action="like" data-show-faces="true" data-share="false"></div>
         </div>
