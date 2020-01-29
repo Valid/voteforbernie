@@ -569,8 +569,8 @@ get_header();
         <p>Bernie continues to fund his campaign from small donations from people like us. Show your support by donating
           to the campaign!</p>
 
-        <p><a class="ui-btn" href="https://secure.actblue.com/donate/sanders-for-president?refcode=vfb"
-            data-track="donate,<?php echo $state->state; ?>" target="_blank">Donate to the Bernie Sanders Campaign</a>
+        <p><a class="ui-btn" href="/donate" data-track="donate,<?php echo $state->state; ?>">Donate to
+            the Bernie Sanders Campaign</a>
         </p>
 
         <?php if ($state->hasCampaignNeed()) {
