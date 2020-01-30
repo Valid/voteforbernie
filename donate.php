@@ -26,8 +26,10 @@
           <p>Donations using the above link <strong>do not</strong> benefit VoteForBernie.org, they go to Bernie
             Sander's 2020 campaign.</p>
 
-          <p>If you would like to
-            support VoteForBernie.org, you can donate using this button:</p>
+          <p><strong>Can you help keep VoteForBernie.org running?</strong></p>
+          <p>Please consider donating to VoteForBernie to keep help pay for the
+            server, hosting, and email alerts that are required to keep this service running by using the button below.
+          </p>
 
           <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
             <input type="hidden" name="cmd" value="_donations" />
