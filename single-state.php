@@ -491,43 +491,6 @@ get_header();
             <?php
       } ?>
           </ul>
-          <p>Find local Bernie supporters and get help from <?php echo $state->discussion_link; ?></p>
-    </div>
-
-    <div class="np gaunit">
-      <div id="state-page-footer"></div>
-
-      <script type="text/javascript">
-      window['nitroAds'].createAd('state-page-footer', {
-        "refreshLimit": 10,
-        "refreshTime": 90,
-        "renderVisibleOnly": false,
-        "refreshVisibleOnly": true,
-        "sizes": [
-          [
-            300,
-            250
-          ],
-          [
-            728,
-            90
-          ],
-          [
-            320,
-            50
-          ],
-          [
-            970,
-            90
-          ]
-        ],
-        "report": {
-          "enabled": true,
-          "wording": "Report",
-          "position": "bottom-right"
-        }
-      });
-      </script>
     </div>
 
 
