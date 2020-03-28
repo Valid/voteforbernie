@@ -16,7 +16,6 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
 
 <?php get_header(); ?>
 <div class="vote-info">
-
   <div class="map-intro">
     <h2 class="page-title">Will <em>you</em> be able to <strong>Vote for Bernie?</strong></h2>
     <div class="state-select">
@@ -72,33 +71,7 @@ $mostRecentStateUpdate = $stateService->determineMostRecentUpdate($states);
           <div class="m-all t-all d-all sign-up-notice newsletter">
             <div id="front-page-in-state"></div>
 
-            <script type="text/javascript">
-            window['nitroAds'].createAd('front-page-in-state', {
-              "refreshLimit": 10,
-              "refreshTime": 60,
-              "renderVisibleOnly": false,
-              "refreshVisibleOnly": true,
-              "sizes": [
-                [
-                  728,
-                  90
-                ],
-                [
-                  320,
-                  50
-                ],
-                [
-                  970,
-                  90
-                ]
-              ],
-              "report": {
-                "enabled": true,
-                "wording": "Report",
-                "position": "bottom-right"
-              }
-            });
-            </script>
+
             <p>Dates and deadlines can change at any time.</p>
             <p>Sign up to be reminded of deadlines and important changes in your state</p>
             <?php if (function_exists('yksemeProcessSnippet')) {

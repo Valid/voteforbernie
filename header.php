@@ -91,16 +91,6 @@
   ga('send', 'pageview');
   </script>
 
-  <script type="text/javascript">
-  window['nitroAds'] = window['nitroAds'] || {
-    createAd: function() {
-      window.nitroAds.queue.push(["createAd", arguments])
-    },
-    queue: []
-  };
-  </script>
-  <script async src="https://s.nitropay.com/ads-293.js"></script>
-
   <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -141,14 +131,6 @@
   }(document, "script", "twitter-wjs"));
   </script>
   <?php // end analytics?>
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-3543510024089552",
-    enable_page_level_ads: true
-  });
-  </script>
-
   <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
 </head>
@@ -159,16 +141,15 @@
     <div class="header-wrapper">
       <header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
         <div class="action-bar np">
-          <?php // TODO: Pull from ACF?>
-          <?php // <strong>WE DID IT! &mdash;</strong> $1,000,000 raised for Bernie by the grassroots community! <a href="http://berniesanders.com/reddit" data-track="CTA,1mdonate">Donate to Bernie!</a>?>
-          <?php // <strong>#FundTheBern &mdash;</strong> Bernie wins New Hampshire with a 22.4% lead! <a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" data-track="ActionBar,msnbcDonate">Donate to Bernie</a>?>
-          <?php // <strong>#DebateWithBernie &mdash;</strong> Feeling the Bern after the debate?  <a href="https://secure.berniesanders.com/page/outreach/view/grassroots-fundraising/VFB" data-track="ActionBar,msnbcDonate">Donate to Bernie!</a>?>
-          <?php // <strong>Don't Miss Out! &mdash;</strong> 19 deadlines passed, get registered today!</strong> <a href="/schedule/" data-track="CTA,schedule">See Primary Schedule</a>?>
-          <?php // <strong>Phone Bank for Bernie &mdash;</strong> South Carolina votes in a week! </strong> <a href="https://go.berniesanders.com/page/content/scphonebank/" data-track="CTA,phonebank">Call Voters in SC</a>?>
-          <?php // Over 150,000 voter registrations through VoteForBernie.org since February! </strong> <a href="http://voteforbernie.org/register-to-vote/" data-track="RegToVote,CTA">Get Registered Now</a>?>
-          <?php // <strong>Action Needed!</strong> Big Turnout = Bernie Wins <a href="http://voteforbernie.org/gotv" data-track="CTA,GOTV">Get Out The Vote</a>?>
-          <?php // <strong>New York Votes Today!</strong> It's going to take all of us to win <a href="http://voteforbernie.org/win-new-york/" data-track="CTA,winny">This is how we win</a>?>
-          <strong>Bernie 2020!</strong> <a href="/donate" title="Donate">Donate today!</a>
+
+          <div class="action-bar-flex">
+            <div>
+              Donate and get free Bernie Stickers
+            </div>
+            <div>
+              <a href="https://voteforbernie.org/free-stickers/" title="Free Bernie Stickers">Donate Today!</a>
+            </div>
+          </div>
           <div class="fb-like vfb-like" data-href="http://voteforbernie.org/" data-layout="button_count"
             data-action="like" data-show-faces="true" data-share="false"></div>
         </div>

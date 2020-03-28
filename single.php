@@ -21,37 +21,6 @@
           </p>
           <div id="blog-single"></div>
 
-          <script type="text/javascript">
-          window['nitroAds'].createAd('blog-single', {
-            "refreshLimit": 10,
-            "refreshTime": 60,
-            "renderVisibleOnly": false,
-            "refreshVisibleOnly": false,
-            "sizes": [
-              [
-                300,
-                250
-              ],
-              [
-                728,
-                90
-              ],
-              [
-                320,
-                50
-              ],
-              [
-                970,
-                250
-              ]
-            ],
-            "report": {
-              "enabled": true,
-              "wording": "Report",
-              "position": "bottom-right"
-            }
-          });
-          </script>
           <?php
               the_content();
               // if(function_exists('add_social_button_in_content')) echo add_social_button_in_content();
